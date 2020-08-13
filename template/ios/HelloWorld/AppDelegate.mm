@@ -25,6 +25,7 @@
 #import <React/JSCExecutorFactory.h>
 #import <RNReanimated/RETurboModuleProvider.h>
 #import <RNReanimated/REAModule.h>
+#import "Orientation.h"
 
 @interface AppDelegate() <RCTCxxBridgeDelegate, RCTTurboModuleManagerDelegate> {
     RCTTurboModuleManager *_turboModuleManager;
@@ -133,6 +134,10 @@ static void InitializeFlipper(UIApplication *application) {
    }];
  }
  return [moduleClass new];
+}
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+  return [Orientation getOrientation];
 }
 
 @end

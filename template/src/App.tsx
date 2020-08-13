@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, {useEffect} from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,8 +16,13 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
+import {setDefaultOrientation} from "./common/helpers/orientationHelper";
 
 const App = () => {
+  useEffect(() => {
+    setDefaultOrientation();
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />

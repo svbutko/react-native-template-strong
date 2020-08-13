@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.facebook.react.bridge.JSIModulePackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
+import org.wonday.orientation.OrientationActivityLifecycle;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -52,6 +53,7 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    registerActivityLifecycleCallbacks(OrientationActivityLifecycle.getInstance());
   }
 
   /**
