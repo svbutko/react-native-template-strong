@@ -1,0 +1,22 @@
+{
+  "name": "react-native-template-oneup",
+  "version": "1.0.0",
+  "description": "React Native OneUp Template",
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svbutko/react-native-template-oneup.git"
+  },
+  "keywords": [
+    "react-native",
+    "typescript",
+    "redux",
+    "uikit",
+    "oneup",
+    "template",
+    "boilerplate"
+  ]
+}
