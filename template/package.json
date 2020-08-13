@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "preinstall": "node tools/forceYarn.js",
-    "postinstall": "node tools/init.js && node tools/postinstallFixes.js",
+    "postinstall": "node tools/postinstallFixes.js",
     "ts": "tsc -p .",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start-reset-cache": "node node_modules/react-native/local-cli/cli.js start -- --reset-cache",
@@ -15,9 +15,11 @@
     "android:bundle": "node node_modules/react-native/local-cli/cli.js bundle --platform android --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/ --dev false --sourcemap-sources-root=build",
     "ios:run": "node node_modules/react-native/local-cli/cli.js run-ios --no-packager",
     "check-dependencies-updates": "yarn outdated",
+    "check-pods-updates": "cd ios && pod outdated",
     "tests": "jest",
     "tests:watch": "jest --watchAll",
-    "lint": "eslint ."
+    "eslint:run": "eslint --ext=jsx,ts,tsx",
+    "eslint:fix": "eslint --fix --ext=jsx,ts,tsx ."
   },
   "dependencies": {
     "react": "16.13.1",
@@ -33,6 +35,7 @@
     "@types/react-test-renderer": "16.9.3",
     "babel-jest": "26.3.0",
     "eslint": "7.6.0",
+    "husky": "4.2.5",
     "jest": "26.4.0",
     "metro-react-native-babel-preset": "0.62.0",
     "react-test-renderer": "16.13.1",
@@ -58,5 +61,12 @@
       "js"
     ],
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run ts && yarn run eslint:run",
+      "pre-push": "yarn run ts && yarn run eslint:run",
+      "post-merge": "yarn run ts && yarn run eslint:run"
+    }
   }
 }
