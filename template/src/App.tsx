@@ -18,7 +18,7 @@ import {
 } from "react-native/Libraries/NewAppScreen";
 import {setDefaultOrientation} from "./common/helpers/orientationHelper";
 
-const App = () => {
+export const App = () => {
   useEffect(() => {
     setDefaultOrientation();
   }, []);
@@ -108,5 +108,3 @@ const styles = StyleSheet.create({
     textAlign: "right",
   },
 });
-
-export default App;
