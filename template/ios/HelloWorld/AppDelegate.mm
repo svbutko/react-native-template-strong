@@ -14,6 +14,7 @@
 
 #import <React/RCTCxxBridgeDelegate.h>
 #import <ReactCommon/RCTTurboModuleManager.h>
+#import <React/RCTI18nUtil.h>
 
 #import <React/RCTDataRequestHandler.h>
 #import <React/RCTFileRequestHandler.h>
@@ -65,6 +66,7 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [[RCTI18nUtil sharedInstance] allowRTL:YES];
   return YES;
 }
 
