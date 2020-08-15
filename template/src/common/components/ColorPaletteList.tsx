@@ -2,8 +2,8 @@ import React, {FC, memo, useCallback, useMemo} from "react";
 import {FlatList, Platform, PlatformColor, ViewStyle} from "react-native";
 import {Colors, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {styleSheetCreate} from "../utils";
-import {ColorPaletteSeparator} from "./ColorPaletteSeparator";
-import {ColorPaletteItem} from "./ColorPaletteItem";
+import {ListSeparator} from "./ListSeparator";
+import {ColorPaletteListItem} from "./ColorPaletteListItem";
 
 interface IProps {
     isPlatformColors: boolean;
@@ -11,7 +11,7 @@ interface IProps {
 
 export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
     const renderItem = useCallback(({item}) => {
-        return <ColorPaletteItem key={item} color={item} isPlatformColor={isPlatformColors}/>;
+        return <ColorPaletteListItem key={item} color={item} isPlatformColor={isPlatformColors}/>;
     }, [isPlatformColors]);
 
     const data = useMemo(() => isPlatformColors ? platformPalette : colorPalette,
@@ -23,12 +23,12 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
             data={data}
             style={styles.container}
             renderItem={renderItem}
-            ItemSeparatorComponent={ColorPaletteSeparator}
+            ItemSeparatorComponent={ListSeparator}
         />
     );
 });
 
-const platformPalette: string[] = Object.values(isIos ? PlatformColorsIOS : PlatformColorsAndroid);
+const platformPalette: string[] = Object.keys(isIos ? PlatformColorsIOS : PlatformColorsAndroid);
 const colorPalette: string[] = Object.values(Colors);
 
 const styles = styleSheetCreate({

@@ -14,7 +14,7 @@ interface IProps {
     isPlatformColor: boolean;
 }
 
-export const ColorPaletteItem: FC<IProps> = memo(({color, isPlatformColor}) => {
+export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) => {
     const colorStyle = styleSheetFlatten([
         styles.colorContainer,
         {backgroundColor: isPlatformColor ? PlatformColor(((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[color]) : color}

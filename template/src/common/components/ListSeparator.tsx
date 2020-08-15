@@ -1,9 +1,9 @@
 import React, {memo} from "react";
 import {Platform, PlatformColor, View, ViewStyle} from "react-native";
 import {styleSheetCreate} from "../utils";
-import {hairlineWidth, PlatformColorsIOS} from "../../core/theme";
+import {Colors, hairlineWidth, PlatformColorsIOS} from "../../core/theme";
 
-export const ColorPaletteSeparator = memo(() => {
+export const ListSeparator = memo(() => {
    return <View style={styles.container}/>;
 });
 
@@ -13,6 +13,9 @@ const styles = styleSheetCreate({
         ...Platform.select({
             ios: {
                 backgroundColor: PlatformColor(PlatformColorsIOS.separator),
+            },
+            android: {
+                backgroundColor: Colors.gray,
             },
         }),
         marginTop: 10,
