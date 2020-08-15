@@ -29,7 +29,7 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
 });
 
 const platformPalette: string[] = Object.keys(isIos ? PlatformColorsIOS : PlatformColorsAndroid);
-const colorPalette: string[] = Object.values(Colors);
+const colorPalette: string[] = Object.keys(Colors);
 
 const styles = styleSheetCreate({
     container: {

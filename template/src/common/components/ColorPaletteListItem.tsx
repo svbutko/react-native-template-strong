@@ -2,6 +2,7 @@ import React, {FC, memo} from "react";
 import {Platform, PlatformColor, Text, TextStyle, View, ViewStyle} from "react-native";
 import {styleSheetCreate, styleSheetFlatten} from "../utils";
 import {
+    Colors,
     isIos,
     maxWindowDimension,
     minWindowDimension,
@@ -17,7 +18,12 @@ interface IProps {
 export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) => {
     const colorStyle = styleSheetFlatten([
         styles.colorContainer,
-        {backgroundColor: isPlatformColor ? PlatformColor(((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[color]) : color}
+        {
+            backgroundColor:
+                isPlatformColor
+                    ? PlatformColor(((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[color])
+                    : (Colors as any)[color]
+        }
     ]) as ViewStyle;
 
     return (
