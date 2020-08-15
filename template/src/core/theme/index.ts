@@ -1,4 +1,4 @@
-import {Colors} from "./colors";
+import {Colors, PlatformColorsIOS, PlatformColorsAndroid} from "./colors";
 import {
     isAndroid,
     isIos,
@@ -8,7 +8,8 @@ import {
     windowHeight,
     windowWidth,
     minWindowDimension,
-    maxWindowDimension
+    maxWindowDimension,
+    hairlineWidth
 } from "./commonConsts";
 import {CommonStyles} from "./commonStyles";
 import {Fonts} from "./fonts";
@@ -24,6 +25,9 @@ export {
     Fonts,
     CommonStyles,
     Colors,
+    PlatformColorsAndroid,
+    PlatformColorsIOS,
     menuWidth,
     screenTabInitialLayout,
+    hairlineWidth,
 };

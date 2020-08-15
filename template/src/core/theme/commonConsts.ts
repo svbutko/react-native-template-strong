@@ -1,4 +1,4 @@
-import {Dimensions, PixelRatio, Platform, StatusBar} from "react-native";
+import {Dimensions, PixelRatio, Platform, StatusBar, StyleSheet} from "react-native";
 import {isIphoneX as isIphoneXFunc} from "./isIphoneX";
 
 const windowDimensions = Dimensions.get("window");
@@ -14,6 +14,7 @@ export const windowHeight = windowDimensions.height - (!isIos ? StatusBar.curren
 
 export const screenTabInitialLayout = {height: 0, width: windowWidth};
 export const menuWidth = windowWidth - windowWidth * 0.2;
+export const hairlineWidth = StyleSheet.hairlineWidth;
 
 export const hitSlop = {top: 10, bottom: 10, left: 10, right: 10};
 export const hitSlopBig = {top: 20, bottom: 20, left: 20, right: 20};
