@@ -13,9 +13,14 @@ export const DateFormatList: FC = memo(() => {
         return <TitleDescriptionBorder key={item[0]} title={title} description={item[0]} isLast={true}/>;
     }, []);
 
+    const keyExtractor = useCallback((item) => {
+        return item[0];
+    }, []);
+
     return (
         <FlatList
             data={formats}
+            keyExtractor={keyExtractor}
             style={styles.container}
             renderItem={renderItem}
             ItemSeparatorComponent={ListSeparator}

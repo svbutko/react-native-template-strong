@@ -10,9 +10,14 @@ export const FontsList: FC = memo(() => {
         return <FontListItem key={item} font={item}/>;
     }, []);
 
+    const keyExtractor = useCallback((item) => {
+        return item;
+    }, []);
+
     return (
         <FlatList
             data={fonts}
+            keyExtractor={keyExtractor}
             style={styles.container}
             renderItem={renderItem}
             ItemSeparatorComponent={ListSeparator}

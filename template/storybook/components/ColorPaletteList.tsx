@@ -14,6 +14,10 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
         return <ColorPaletteListItem key={item} color={item} isPlatformColor={isPlatformColors}/>;
     }, [isPlatformColors]);
 
+    const keyExtractor = useCallback((item) => {
+        return item;
+    }, []);
+
     const data = useMemo(() => isPlatformColors ? platformPalette : colorPalette,
         [isPlatformColors, platformPalette, colorPalette]
     );
@@ -21,6 +25,7 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
     return (
         <FlatList
             data={data}
+            keyExtractor={keyExtractor}
             style={styles.container}
             renderItem={renderItem}
             ItemSeparatorComponent={ListSeparator}
