@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Black.ttf</string>
@@ -58,6 +58,7 @@
 		<string>SF-Pro-Text-Semibold.otf</string>
 		<string>SF-Pro-Text-Thin.otf</string>
 		<string>SF-Pro-Text-Ultralight.otf</string>
+		<string>MaterialIcons-Regular.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

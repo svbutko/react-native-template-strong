@@ -38,6 +38,7 @@
 		B82204993A6FCB267D43589E /* libPods-HelloWorld-HelloWorldTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 331EAFB8B3347612B9609318 /* libPods-HelloWorld-HelloWorldTests.a */; };
 		F3E9FD27F3404B488F8211B0 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B439B42AABB40608C9DA3F8 /* SF-Pro-Text-Bold.otf */; };
 		F826B7BC45E642FCADE09548 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F966EB9FA8D4E60A6CC7155 /* SF-Pro-Text-Medium.otf */; };
+		4A3D468DD806403DB97F7974 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACB7F64756174B3F8C5D174C /* MaterialIcons-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		F9E4D0350F214EE7B3A67958 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Semibold.otf"; path = "../resources/fonts/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		FA30F942289693BBF4F1FF15 /* Pods-HelloWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloWorld.debug.xcconfig"; path = "Target Support Files/Pods-HelloWorld/Pods-HelloWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF20CEDCA884F50B2FF50E6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../resources/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		ACB7F64756174B3F8C5D174C /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; name = "MaterialIcons-Regular.ttf"; path = "../resources/fonts/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				F9E4D0350F214EE7B3A67958 /* SF-Pro-Text-Semibold.otf */,
 				3A3D1150E7AA4CCBA18F24DF /* SF-Pro-Text-Thin.otf */,
 				E8AE389A071D4868B66EFACC /* SF-Pro-Text-Ultralight.otf */,
+				ACB7F64756174B3F8C5D174C /* MaterialIcons-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				5E2A3EDE3FD140A8BDAC228E /* SF-Pro-Text-Semibold.otf in Resources */,
 				5326CF63CE9E4E90A03E428A /* SF-Pro-Text-Thin.otf in Resources */,
 				6A3D4D7556BB4B8694C65F6A /* SF-Pro-Text-Ultralight.otf in Resources */,
+				4A3D468DD806403DB97F7974 /* MaterialIcons-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
