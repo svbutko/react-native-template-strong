@@ -11,4 +11,5 @@ export class Fonts {
     static thin = isIos ? "SFProText-Thin" : "Roboto-Thin";
     static black = isIos ? "SFProText-Black" : "Roboto-Black";
     static heavy = isIos ? "SFProText-Heavy" : "Roboto-Black";
+    static glyph = isIos ? "SFProText-Regular" : "MaterialIcons-Regular";
 }
