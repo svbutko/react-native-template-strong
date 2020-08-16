@@ -1,4 +1,4 @@
-export enum SFSymbols {
+export enum Indices {
     zeroCircle = "􀀸",
     zeroZeroCircle = "􀓫",
     zeroCircleFill = "􀀹",
