@@ -3,7 +3,7 @@ import React, {FC, useEffect} from "react";
 import {Platform, PlatformColor, SafeAreaView, ScrollView, Text, TextStyle, View, ViewStyle} from "react-native";
 
 import {DebugInstructions, ReloadInstructions,} from "react-native/Libraries/NewAppScreen";
-import {setDefaultOrientation} from "./common/helpers/orientationHelper";
+import {setDefaultOrientation} from "./common/helpers";
 import {styleSheetCreate} from "./common/utils";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./core/theme";
 

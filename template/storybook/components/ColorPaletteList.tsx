@@ -1,7 +1,7 @@
 import React, {FC, memo, useCallback, useMemo} from "react";
 import {FlatList, Platform, PlatformColor, ViewStyle} from "react-native";
-import {Colors, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
-import {styleSheetCreate} from "../utils";
+import {Colors, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
+import {styleSheetCreate} from "../../src/common/utils";
 import {ListSeparator} from "./ListSeparator";
 import {ColorPaletteListItem} from "./ColorPaletteListItem";
 

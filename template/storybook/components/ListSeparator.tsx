@@ -1,7 +1,7 @@
 import React, {memo} from "react";
 import {Platform, PlatformColor, View, ViewStyle} from "react-native";
-import {styleSheetCreate} from "../utils";
-import {Colors, hairlineWidth, PlatformColorsIOS} from "../../core/theme";
+import {styleSheetCreate} from "../../src/common/utils";
+import {Colors, hairlineWidth, PlatformColorsIOS} from "../../src/core/theme";
 
 export const ListSeparator = memo(() => {
    return <View style={styles.container}/>;

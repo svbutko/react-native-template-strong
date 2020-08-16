@@ -1819,6 +1819,11 @@
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.7.tgz#613957d900fab9ff84c8dfb24fa3eef0c2a40896"
   integrity sha512-2xtoL22/3Mv6a70i4+4RB7VgbDDORoWwjcqeNysojZA0R7NK17RbY5Gof/2QiFfJgX+KkWghbwJ+d/2SB8Ndzg==
 
+"@types/intl@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@types/intl/-/intl-1.2.0.tgz#1245511f13064402087979f498764611a3c758fc"
+  integrity sha512-BP+KwmOvD9AR5aoxnbyyPr3fAtpjEI/bVImHsotmpuC43+z0NAmjJ9cQbX7vPCq8XcvCeAVc8E3KSQPYNaPsUQ==
+
 "@types/is-function@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/is-function/-/is-function-1.0.0.tgz#1b0b819b1636c7baf0d6785d030d12edf70c3e83"
@@ -4383,6 +4388,11 @@ internal-slot@^1.0.2:
     has "^1.0.3"
     side-channel "^1.0.2"
 
+intl@1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/intl/-/intl-1.2.5.tgz#82244a2190c4e419f8371f5aa34daa3420e2abde"
+  integrity sha1-giRKIZDE5Bn4Nx9ao02qNCDiq94=
+
 invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -5425,6 +5435,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+localized-strings@^0.2.0:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/localized-strings/-/localized-strings-0.2.4.tgz#9d61c06b60cc7b5edf7c46e6c7f2d1ecb84aeb2c"
+  integrity sha512-TKDhqFPkIIN/if2FSvVVZTaM/GP9TzfgdQ2uY65mr32xgFu5nqkKXprXbzy5rfx32DF5LDvS/y1UqYF/mAscYA==
+
 locate-path@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-3.0.0.tgz#dbec3b3ab759758071b58fe59fc41871af21400e"
@@ -6061,6 +6076,11 @@ mkdirp@^0.5.1:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
+
+moment@2.27.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
+  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
 
 ms@2.0.0:
   version "2.0.0"
@@ -6841,6 +6861,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-localization@^1.0.14:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/react-localization/-/react-localization-1.0.15.tgz#624bd0b514100488a84204e20b398750313d1708"
+  integrity sha512-s+yK3EqPUhN8kAfUIoA5m0a0iGOvxB3DrvngYnSZNLRQRX+yS7LYfTuKT66KVa3Cr6EP4iGRtw4XRqpsi1ZLjw==
+  dependencies:
+    localized-strings "^0.2.0"
+
 react-native-animatable@1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
@@ -6875,6 +6902,13 @@ react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
+
+react-native-localization@2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-localization/-/react-native-localization-2.1.6.tgz#86d50a09d50495a5b9b789c3981acbd5cb0c38b7"
+  integrity sha512-L0ZKfN49TtZJoBJZ4M5Uh+d/q5GB0Vpbd/fmysfXljOAwZiy2h1ZlytTnbjElYp61FELZmvyXymlgt4kvVpx1A==
+  dependencies:
+    react-localization "^1.0.14"
 
 react-native-modal-datetime-picker@^7.4.2:
   version "7.6.1"

@@ -1,6 +1,6 @@
 import React, {FC, memo} from "react";
 import {Platform, PlatformColor, Text, TextStyle, View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {styleSheetCreate, styleSheetFlatten} from "../../src/common/utils";
 import {
     Colors,
     isIos,
@@ -8,7 +8,7 @@ import {
     minWindowDimension,
     PlatformColorsAndroid,
     PlatformColorsIOS
-} from "../../core/theme";
+} from "../../src/core/theme";
 
 interface IProps {
     color: string;

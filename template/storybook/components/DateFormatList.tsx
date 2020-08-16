@@ -1,18 +1,21 @@
 import React, {FC, memo, useCallback} from "react";
 import {FlatList, Platform, PlatformColor, ViewStyle} from "react-native";
-import {Fonts, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
-import {styleSheetCreate} from "../utils";
+import {PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
+import {styleSheetCreate} from "../../src/common/utils";
 import {ListSeparator} from "./ListSeparator";
-import {FontListItem} from "./FontListItem";
+import {DateFormat, dateFromFormat} from "../../src/common/localization";
+import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
 
-export const FontsList: FC = memo(() => {
+export const DateFormatList: FC = memo(() => {
     const renderItem = useCallback(({item}) => {
-        return <FontListItem key={item} font={item}/>;
+        const title = item[1] + "\n" + dateFromFormat(new Date(), item[1]);
+
+        return <TitleDescriptionBorder key={item[0]} title={title} description={item[0]} isLast={true}/>;
     }, []);
 
     return (
         <FlatList
-            data={fonts}
+            data={formats}
             style={styles.container}
             renderItem={renderItem}
             ItemSeparatorComponent={ListSeparator}
@@ -20,7 +23,7 @@ export const FontsList: FC = memo(() => {
     );
 });
 
-const fonts: string[] = Object.keys(Fonts);
+const formats = Object.entries(DateFormat);
 
 const styles = styleSheetCreate({
     container: {

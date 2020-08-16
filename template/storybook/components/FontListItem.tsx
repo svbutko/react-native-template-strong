@@ -1,7 +1,7 @@
 import React, {FC, memo} from "react";
 import {Platform, PlatformColor, Text, TextStyle, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
-import {Fonts, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {styleSheetCreate, styleSheetFlatten} from "../../src/common/utils";
+import {Fonts, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 
 interface IProps {
     font: string;

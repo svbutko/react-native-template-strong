@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react-native";
-import {ColorPaletteList} from "../../src/common/components/ColorPaletteList";
-import {FontsList} from "../../src/common/components/FontsList";
+import {ColorPaletteList} from "../components/ColorPaletteList";
+import {FontsList} from "../components/FontsList";
 
 const ThemeStories = storiesOf('Theme', module);
 
