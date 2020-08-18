@@ -9,8 +9,10 @@ import {Arrows} from "./categories/arrows";
 import {Media} from "./categories/media";
 import {TextFormatting} from "./categories/textFormatting";
 import {Editing} from "./categories/editing";
+import {Nature} from "./categories/nature";
 
 export const SFSymbols = {
+    nature: Nature,
     editing: Editing,
     textFormatting: TextFormatting,
     media: Media,
