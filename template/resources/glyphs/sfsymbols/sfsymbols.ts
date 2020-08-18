@@ -10,8 +10,10 @@ import {Media} from "./categories/media";
 import {TextFormatting} from "./categories/textFormatting";
 import {Editing} from "./categories/editing";
 import {Nature} from "./categories/nature";
+import {Human} from "./categories/human";
 
 export const SFSymbols = {
+    human: Human,
     nature: Nature,
     editing: Editing,
     textFormatting: TextFormatting,
