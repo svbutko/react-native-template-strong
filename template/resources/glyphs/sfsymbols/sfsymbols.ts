@@ -15,8 +15,10 @@ import {Transport} from "./categories/transport";
 import {Connectivity} from "./categories/connectivity";
 import {Devices} from "./categories/devices";
 import {Weather} from "./categories/weather";
+import {Communication} from "./categories/communication";
 
 export const SFSymbols = {
+    communication: Communication,
     weather: Weather,
     devices: Devices,
     connectivity: Connectivity,
