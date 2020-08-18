@@ -13,8 +13,10 @@ import {Nature} from "./categories/nature";
 import {Human} from "./categories/human";
 import {Transport} from "./categories/transport";
 import {Connectivity} from "./categories/connectivity";
+import {Devices} from "./categories/devices";
 
 export const SFSymbols = {
+    devices: Devices,
     connectivity: Connectivity,
     transport: Transport,
     human: Human,
