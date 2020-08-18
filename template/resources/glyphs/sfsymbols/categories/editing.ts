@@ -5,8 +5,6 @@ export enum Editing {
     arrowUpAndDownRightTriangleUpRightTriangleDown = "􀟨",
     aspectRation = "􀞖",
     aspectRationFill = "􀞏",
-    bandage = "􀎓",
-    bandageFill = "􀎔",
     cameraFilters = "􀟗",
     circleDashed = "􀓞",
     circleLeftHalfFill = "􀀂",

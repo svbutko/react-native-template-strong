@@ -26,8 +26,4 @@ export enum Keyboard {
     projective = "􀆎",
     shift = "􀆝",
     shiftFill = "􀆞",
-    sunMax = "􀆭",
-    sunMaxFill = "􀆮",
-    sunMin = "􀆫",
-    sunMinFill = "􀆬",
 }
