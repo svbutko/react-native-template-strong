@@ -7,8 +7,10 @@ import {Commerce} from "./categories/commerce";
 import {Keyboard} from "./categories/keyboard";
 import {Arrows} from "./categories/arrows";
 import {Media} from "./categories/media";
+import {TextFormatting} from "./categories/textFormatting";
 
 export const SFSymbols = {
+    textFormatting: TextFormatting,
     media: Media,
     keyboard: Keyboard,
     commerce: Commerce,
