@@ -8,8 +8,10 @@ import {Keyboard} from "./categories/keyboard";
 import {Arrows} from "./categories/arrows";
 import {Media} from "./categories/media";
 import {TextFormatting} from "./categories/textFormatting";
+import {Editing} from "./categories/editing";
 
 export const SFSymbols = {
+    editing: Editing,
     textFormatting: TextFormatting,
     media: Media,
     keyboard: Keyboard,
