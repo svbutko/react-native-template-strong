@@ -6,8 +6,10 @@ import {Time} from "./categories/time";
 import {Commerce} from "./categories/commerce";
 import {Keyboard} from "./categories/keyboard";
 import {Arrows} from "./categories/arrows";
+import {Media} from "./categories/media";
 
 export const SFSymbols = {
+    media: Media,
     keyboard: Keyboard,
     commerce: Commerce,
     time: Time,
