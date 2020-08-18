@@ -11,8 +11,10 @@ import {TextFormatting} from "./categories/textFormatting";
 import {Editing} from "./categories/editing";
 import {Nature} from "./categories/nature";
 import {Human} from "./categories/human";
+import {Transport} from "./categories/transport";
 
 export const SFSymbols = {
+    transport: Transport,
     human: Human,
     nature: Nature,
     editing: Editing,
