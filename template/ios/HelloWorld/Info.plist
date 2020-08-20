@@ -59,6 +59,10 @@
 		<string>SF-Pro-Text-Thin.otf</string>
 		<string>SF-Pro-Text-Ultralight.otf</string>
 		<string>MaterialIcons-Regular.ttf</string>
+		<string>MaterialIconsOutlined-Regular.otf</string>
+		<string>MaterialIconsRound-Regular.otf</string>
+		<string>MaterialIconsSharp-Regular.otf</string>
+		<string>MaterialIconsTwoTone-Regular.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
