@@ -46,11 +46,11 @@
     "redux-persist": "6.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.11.1",
+    "@babel/core": "7.11.4",
     "@babel/runtime": "7.11.2",
     "@react-native-community/eslint-config": "2.0.0",
-    "@storybook/addon-actions": "6.0.13",
-    "@storybook/addon-knobs": "6.0.13",
+    "@storybook/addon-actions": "6.0.16",
+    "@storybook/addon-knobs": "6.0.16",
     "@storybook/addon-ondevice-actions": "5.3.19",
     "@storybook/addon-ondevice-knobs": "5.3.19",
     "@storybook/react-native": "5.3.19",
@@ -64,11 +64,11 @@
     "babel-jest": "26.3.0",
     "eslint": "7.7.0",
     "husky": "4.2.5",
-    "jest": "26.4.0",
+    "jest": "26.4.1",
     "metro-react-native-babel-preset": "0.62.0",
     "react-test-renderer": "16.13.1",
     "ts-jest": "26.2.0",
-    "typescript": "3.9.7"
+    "typescript": "4.0.2"
   },
   "jest": {
     "preset": "react-native",
