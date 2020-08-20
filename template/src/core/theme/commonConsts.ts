@@ -1,13 +1,14 @@
 import {Dimensions, PixelRatio, Platform, StatusBar, StyleSheet} from "react-native";
-import {isIphoneX as isIphoneXFunc} from "./isIphoneX";
+import Device from "react-native-device-detection";
 
 const windowDimensions = Dimensions.get("window");
-export const isIos = Platform.OS == "ios";
-export const isIphoneX = isIphoneXFunc();
-export const isIpad = Platform.OS == "ios" && Platform.isPad;
+export const isIos = Device.isIos;
+export const isIphoneX = Device.isIphoneX;
+export const isIpad = isIos && (Platform as any).isPad;
+export const isTablet = Device.isTablet;
 
-export const isAndroid = Platform.OS != "ios";
-export const isAndroidLollipop = Platform.Version >= 21 && Platform.Version < 23;
+export const isAndroid = Device.isAndroid;
+export const isAndroidLollipop = isAndroid && Platform.Version >= 21 && Platform.Version < 23;
 
 export const windowWidth = windowDimensions.width;
 export const windowHeight = windowDimensions.height - (!isIos ? StatusBar.currentHeight || 0 : 0);
