@@ -1,6 +1,9 @@
 import { getCurrentOrientation, setDefaultOrientation } from "./orientationHelper";
 import { fromArray, fromMap, withNewElement, withNewElements } from "./fromMap";
-import { defaultIdExtractor } from "./defaultIdExtractor";
+import { defaultKeyIdExtractor } from "./defaultKeyIdExtractor";
+import { calculatePage } from "./calculatePage";
+import { capitalizeFirstLetter, removeEmojis, removeHtmlTags } from "./stringsHelpers";
+import { isEmail } from "./regexHelpers";
 
 export {
     getCurrentOrientation,
@@ -9,5 +12,10 @@ export {
     fromMap,
     withNewElement,
     withNewElements,
-    defaultIdExtractor,
+    defaultKeyIdExtractor,
+    calculatePage,
+    capitalizeFirstLetter,
+    removeEmojis,
+    removeHtmlTags,
+    isEmail,
 }
