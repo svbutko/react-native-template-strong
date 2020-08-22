@@ -64,7 +64,7 @@
     "babel-jest": "26.3.0",
     "eslint": "7.7.0",
     "husky": "4.2.5",
-    "jest": "26.4.1",
+    "jest": "26.4.2",
     "metro-react-native-babel-preset": "0.63.0",
     "react-test-renderer": "16.13.1",
     "ts-jest": "26.2.0",
