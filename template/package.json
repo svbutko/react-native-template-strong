@@ -95,15 +95,14 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn run ts",
+      "pre-push": "lint-staged",
       "post-merge": "yarn run ts && yarn run eslint:run"
     }
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
       "yarn run ts",
-      "yarn run eslint:run",
-      "git add"
+      "yarn run eslint:run"
     ]
   }
 }
