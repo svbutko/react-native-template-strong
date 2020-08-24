@@ -95,7 +95,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "lint-staged",
       "post-merge": "yarn run ts && yarn run eslint:run"
     }
   },
