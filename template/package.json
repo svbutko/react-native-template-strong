@@ -65,6 +65,7 @@
     "eslint": "7.7.0",
     "husky": "4.2.5",
     "jest": "26.4.2",
+    "lint-staged": "10.2.11",
     "metro-react-native-babel-preset": "0.63.0",
     "react-test-renderer": "16.13.1",
     "ts-jest": "26.2.0",
@@ -93,9 +94,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run ts && yarn run eslint:run",
-      "pre-push": "yarn run ts && yarn run eslint:run",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run ts",
       "post-merge": "yarn run ts && yarn run eslint:run"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "yarn run ts",
+      "yarn run eslint:run",
+      "git add"
+    ]
   }
 }
