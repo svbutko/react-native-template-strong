@@ -36,13 +36,13 @@
     "react": "16.13.1",
     "react-native": "0.63.2",
     "react-native-device-detection": "0.2.1",
+    "react-native-fast-image": "8.3.2",
     "react-native-gesture-handler": "1.7.0",
     "react-native-localization": "2.1.6",
     "react-native-orientation-locker": "1.2.0",
     "react-native-reanimated": "2.0.0-alpha.5",
     "react-native-safe-area-context": "3.1.7",
     "react-native-screens": "2.10.1",
-    "react-native-swiper": "1.6.0",
     "redux-persist": "6.0.0"
   },
   "devDependencies": {
