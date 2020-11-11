@@ -1,13 +1,10 @@
-import {AppRegistry} from "react-native";
-import {name as appName} from "./app.json";
-import {App} from "./src/App";
-import { getStorybookUI, configure } from "@storybook/react-native";
+import {configure} from "@storybook/react-native";
 import "./storybook.config"
+import "react-native-gesture-handler";
+import {initializeApp} from "./src/app";
 
 configure(() => {
     require("./storybook/stories.ts");
 }, module);
 
-const StorybookUIRoot = getStorybookUI({});
-
-AppRegistry.registerComponent(appName, () => StorybookUIRoot);
+initializeApp();

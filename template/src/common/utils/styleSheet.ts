@@ -8,8 +8,5 @@ export function styleSheetFlatten<T>(...args: T[]): T {
 }
 
 export function styleSheetCreate<T>(styles: T): T {
-    return (Appearance.getColorScheme() === "dark"
-        ? StyleSheet.create(styles as any) as any
-        : StyleSheet.create(styles as any) as any
-    );
+    return StyleSheet.create(styles as any) as any;
 }

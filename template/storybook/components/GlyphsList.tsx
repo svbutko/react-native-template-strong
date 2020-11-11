@@ -3,7 +3,6 @@ import {FlatList, Platform, PlatformColor, ViewStyle} from "react-native";
 import {isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 import {styleSheetCreate} from "../../src/common/utils";
 import {ListSeparator} from "./ListSeparator";
-import {Material} from "../../resources/glyphs/material";
 import {GlyphListItem} from "./GlyphListItem";
 import {SFSymbols} from "../../resources/glyphs/sfsymbols/sfsymbols";
 
@@ -27,7 +26,7 @@ export const GlyphsList: FC = memo(() => {
     );
 });
 
-const glyphs = Object.entries(isIos ? SFSymbols : Material);
+const glyphs = Object.entries(isIos ? SFSymbols : []);
 
 const styles = styleSheetCreate({
     container: {

@@ -3,6 +3,7 @@ import {commonLocalization} from "./translations/commonLocalization";
 import {errorsLocalization} from "./translations/errorsLocalization";
 import {emptyLocalization} from "./translations/emptyLocalization";
 import {setMomentLocale} from "./index";
+import {pagesLocalization} from "./translations/pagesLocalization";
 
 export enum Languages {
     en = "en",
@@ -13,6 +14,7 @@ export const localization = {
     common: new LocalizedStrings(commonLocalization),
     errors: new LocalizedStrings(errorsLocalization),
     empty: new LocalizedStrings(emptyLocalization),
+    pages: new LocalizedStrings(pagesLocalization),
 };
 
 export function getLanguage(): string {
