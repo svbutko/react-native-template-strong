@@ -7,8 +7,6 @@ import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {localization} from "../../common/localization";
 
 export const Demo: NavigationFunctionComponent = (): JSX.Element => {
-    console.log("RERENDER");
-
     return (
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
