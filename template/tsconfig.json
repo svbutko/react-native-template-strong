@@ -14,15 +14,20 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
+    "module": "ESNext",
     "target": "esnext",
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
-    "preserveConstEnums": false,
+    "preserveConstEnums": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
     "skipLibCheck": true
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
   "exclude": [
     "node_modules",
     "babel.config.js",
