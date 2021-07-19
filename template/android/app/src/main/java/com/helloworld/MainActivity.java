@@ -1,8 +1,6 @@
 package com.helloworld;
 
 import com.reactnativenavigation.NavigationActivity;
-import com.reactnativenavigation.NavigationApplication;
-
 import android.content.Intent;
 import android.content.res.Configuration;
 

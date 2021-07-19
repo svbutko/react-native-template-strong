@@ -2,7 +2,14 @@
   package="com.helloworld">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -11,6 +18,7 @@
       android:allowBackup="false"
       android:usesCleartextTraffic="true"
       android:supportsRtl="true"
+      android:largeHeap="true"
       android:theme="@style/AppTheme">
       <activity
         android:name=".MainActivity"
