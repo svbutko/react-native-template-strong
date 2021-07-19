@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "preinstall": "node tools/forceYarn.js",
     "postinstall": "node tools/postinstallFixes.js",
     "ts": "tsc -p .",
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -11,12 +10,13 @@
     "android:run": "node node_modules/react-native/local-cli/cli.js run-android --no-packager",
     "android:run+start": "node node_modules/react-native/local-cli/cli.js run-android --no-packager && node node_modules/react-native/local-cli/cli.js start",
     "android:build-release-bundle": "(cd android/ && ./gradlew bundleRelease)",
+    "android:build-release-apk": "(cd android/ && ./gradlew assembleRelease)",
     "android:clean": "(cd android/ && ./gradlew clean)",
     "android:bundle": "node node_modules/react-native/local-cli/cli.js bundle --platform android --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/ --dev false --sourcemap-sources-root=build",
     "android:bundle-visualizer": "react-native-bundle-visualizer --platform android",
     "ios:run": "node node_modules/react-native/local-cli/cli.js run-ios --no-packager",
     "ios:bundle-visualizer": "react-native-bundle-visualizer --platform ios",
-    "check-dependencies-updates": "yarn outdated",
+    "check-dependencies-updates": "npm outdated",
     "check-pods-updates": "cd ios && pod outdated",
     "tests": "jest",
     "tests:watch": "jest --watchAll",
@@ -30,7 +30,7 @@
     "intl": "1.2.5",
     "lodash": "4.17.20",
     "moment": "2.29.1",
-    "react": "16.14.0",
+    "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-device-detection": "0.2.1",
     "react-native-fast-image": "8.3.4",
@@ -95,13 +95,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "post-merge": "yarn run ts && yarn run eslint:run"
+      "post-merge": "npm run ts && npm run eslint:run"
     }
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
-      "yarn run ts",
-      "yarn run eslint:run"
+      "npm run ts",
+      "npm run eslint:run"
     ]
   }
 }
