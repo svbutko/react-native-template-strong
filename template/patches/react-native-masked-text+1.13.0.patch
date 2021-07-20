@@ -1,0 +1,309 @@
+diff --git a/node_modules/react-native-masked-text/dist/lib/text-input-mask.js b/node_modules/react-native-masked-text/dist/lib/text-input-mask.js
+index a4b74fe..24bb38e 100644
+--- a/node_modules/react-native-masked-text/dist/lib/text-input-mask.js
++++ b/node_modules/react-native-masked-text/dist/lib/text-input-mask.js
+@@ -1 +1,154 @@
+-Object.defineProperty(exports,"__esModule",{value:true});var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='./lib/text-input-mask.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require('react');var _react2=_interopRequireDefault(_react);var _reactNative=require('react-native');var _baseTextComponent=require('./base-text-component');var _baseTextComponent2=_interopRequireDefault(_baseTextComponent);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var TextInputMask=function(_BaseTextComponent){_inherits(TextInputMask,_BaseTextComponent);function TextInputMask(){_classCallCheck(this,TextInputMask);return _possibleConstructorReturn(this,(TextInputMask.__proto__||Object.getPrototypeOf(TextInputMask)).apply(this,arguments));}_createClass(TextInputMask,[{key:'getElement',value:function getElement(){return this._inputElement;}},{key:'_onChangeText',value:function _onChangeText(text){if(!this._checkText(text)){return;}var _updateValue=this.updateValue(text),maskedText=_updateValue.maskedText,rawText=_updateValue.rawText;if(this.props.onChangeText){this._trySetNativeProps(maskedText);this.props.onChangeText(maskedText,rawText);}}},{key:'_trySetNativeProps',value:function _trySetNativeProps(maskedText){try{var element=this.getElement();element.setNativeProps&&element.setNativeProps({text:maskedText});}catch(error){}}},{key:'_checkText',value:function _checkText(text){if(this.props.checkText){return this.props.checkText(this.props.value,text);}return true;}},{key:'_getKeyboardType',value:function _getKeyboardType(){return this.props.keyboardType||this._maskHandler.getKeyboardType();}},{key:'render',value:function render(){var _this2=this;var Input=_reactNative.TextInput;var customTextInputProps={};if(this.props.customTextInput){Input=this.props.customTextInput;customTextInputProps=this.props.customTextInputProps||{};}return _react2.default.createElement(Input,_extends({ref:function ref(_ref){if(_ref){_this2._inputElement=_ref;if(typeof _this2.props.refInput==='function'){_this2.props.refInput(_ref);}}},keyboardType:this._getKeyboardType()},this.props,customTextInputProps,{onChangeText:function onChangeText(text){return _this2._onChangeText(text);},value:this.getDisplayValueFor(this.props.value),__source:{fileName:_jsxFileName,lineNumber:54}}));}}]);return TextInputMask;}(_baseTextComponent2.default);exports.default=TextInputMask;
+\ No newline at end of file
++Object.defineProperty(exports, "__esModule", {value: true});
++var _extends =
++    Object.assign ||
++    function (target) {
++        for (var i = 1; i < arguments.length; i++) {
++            var source = arguments[i];
++            for (var key in source) {
++                if (Object.prototype.hasOwnProperty.call(source, key)) {
++                    target[key] = source[key];
++                }
++            }
++        }
++        return target;
++    };
++var _jsxFileName = "./lib/text-input-mask.js";
++var _createClass = (function () {
++    function defineProperties(target, props) {
++        for (var i = 0; i < props.length; i++) {
++            var descriptor = props[i];
++            descriptor.enumerable = descriptor.enumerable || false;
++            descriptor.configurable = true;
++            if ("value" in descriptor) descriptor.writable = true;
++            Object.defineProperty(target, descriptor.key, descriptor);
++        }
++    }
++    return function (Constructor, protoProps, staticProps) {
++        if (protoProps) defineProperties(Constructor.prototype, protoProps);
++        if (staticProps) defineProperties(Constructor, staticProps);
++        return Constructor;
++    };
++})();
++var _react = require("react");
++var _react2 = _interopRequireDefault(_react);
++var _reactNative = require("react-native");
++var _baseTextComponent = require("./base-text-component");
++var _baseTextComponent2 = _interopRequireDefault(_baseTextComponent);
++function _interopRequireDefault(obj) {
++    return obj && obj.__esModule ? obj : {default: obj};
++}
++function _classCallCheck(instance, Constructor) {
++    if (!(instance instanceof Constructor)) {
++        throw new TypeError("Cannot call a class as a function");
++    }
++}
++function _possibleConstructorReturn(self, call) {
++    if (!self) {
++        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
++    }
++    return call && (typeof call === "object" || typeof call === "function") ? call : self;
++}
++function _inherits(subClass, superClass) {
++    if (typeof superClass !== "function" && superClass !== null) {
++        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
++    }
++    subClass.prototype = Object.create(superClass && superClass.prototype, {
++        constructor: {value: subClass, enumerable: false, writable: true, configurable: true},
++    });
++    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : (subClass.__proto__ = superClass);
++}
++var TextInputMask = (function (_BaseTextComponent) {
++    _inherits(TextInputMask, _BaseTextComponent);
++    function TextInputMask() {
++        _classCallCheck(this, TextInputMask);
++        return _possibleConstructorReturn(this, (TextInputMask.__proto__ || Object.getPrototypeOf(TextInputMask)).apply(this, arguments));
++    }
++    _createClass(TextInputMask, [
++        {
++            key: "getElement",
++            value: function getElement() {
++                return this._inputElement;
++            },
++        },
++        {
++            key: "_onChangeText",
++            value: function _onChangeText(text) {
++                if (!this._checkText(text)) {
++                    return;
++                }
++                var _updateValue = this.updateValue(text),
++                    maskedText = _updateValue.maskedText,
++                    rawText = _updateValue.rawText;
++                if (this.props.onChangeText) {
++                    this._trySetNativeProps(maskedText);
++                    this.props.onChangeText(maskedText, rawText);
++                }
++            },
++        },
++        {
++            key: "_trySetNativeProps",
++            value: function _trySetNativeProps(maskedText) {
++                try {
++                    var element = this.getElement();
++                    element.setNativeProps && element.setNativeProps({text: maskedText});
++                } catch (error) {}
++            },
++        },
++        {
++            key: "_checkText",
++            value: function _checkText(text) {
++                if (this.props.checkText) {
++                    return this.props.checkText(this.props.value, text);
++                }
++                return true;
++            },
++        },
++        {
++            key: "_getKeyboardType",
++            value: function _getKeyboardType() {
++                return this.props.keyboardType || this._maskHandler.getKeyboardType();
++            },
++        },
++        {
++            key: "render",
++            value: function render() {
++                var _this2 = this;
++                var Input = _reactNative.TextInput;
++                var customTextInputProps = {};
++                if (this.props.customTextInput) {
++                    Input = this.props.customTextInput;
++                    customTextInputProps = this.props.customTextInputProps || {};
++                }
++                return _react2.default.createElement(
++                    Input,
++                    _extends(
++                        {
++                            ref: function ref(_ref) {
++                                if (_ref) {
++                                    _this2._inputElement = _ref;
++                                    if (typeof _this2.props.refInput === "function") {
++                                        _this2.props.refInput(_ref);
++                                    } else if (_this2.props.refInput && typeof _this2.props.refInput === "object") {
++                                        _this2.props.refInput.current = _ref;
++                                    }
++                                }
++                            },
++                            keyboardType: this._getKeyboardType(),
++                        },
++                        this.props,
++                        customTextInputProps,
++                        {
++                            onChangeText: function onChangeText(text) {
++                                return _this2._onChangeText(text);
++                            },
++                            value: this.getDisplayValueFor(this.props.value),
++                            __source: {fileName: _jsxFileName, lineNumber: 54},
++                        },
++                    ),
++                );
++            },
++        },
++    ]);
++    return TextInputMask;
++})(_baseTextComponent2.default);
++exports.default = TextInputMask;
+diff --git a/node_modules/react-native-masked-text/index.d.ts b/node_modules/react-native-masked-text/index.d.ts
+index 8c831e9..e2cebae 100644
+--- a/node_modules/react-native-masked-text/index.d.ts
++++ b/node_modules/react-native-masked-text/index.d.ts
+@@ -6,60 +6,60 @@
+  * Definitions by: Italo Izaac <https://github.com/iiandrade>
+  */
+ 
+-import * as React from 'react'
+-import { TextInput, TextInputProps } from 'react-native'
++import * as React from "react";
++import {TextInput, TextInputProps} from "react-native";
+ 
+ // Type prop of TextInputMask.
+ export type TextInputMaskTypeProp =
+-    | 'credit-card'
+-    | 'cpf'
+-    | 'cnpj'
+-    | 'zip-code'
+-    | 'only-numbers'
+-    | 'money'
+-    | 'cel-phone'
+-    | 'datetime'
+-    | 'custom'
++    | "credit-card"
++    | "cpf"
++    | "cnpj"
++    | "zip-code"
++    | "only-numbers"
++    | "money"
++    | "cel-phone"
++    | "datetime"
++    | "custom";
+ 
+ // Option prop of TextInputMask.
+ export interface TextInputMaskOptionProp {
+     // Money type.
+-    precision?: number
+-    separator?: string
+-    delimiter?: string
+-    unit?: string
+-    suffixUnit?: string
+-    zeroCents?: boolean
++    precision?: number;
++    separator?: string;
++    delimiter?: string;
++    unit?: string;
++    suffixUnit?: string;
++    zeroCents?: boolean;
+ 
+     // Phone type.
+-    withDDD?: boolean
+-    dddMask?: string
+-    maskType?: 'BRL' | 'INTERNATIONAL'
++    withDDD?: boolean;
++    dddMask?: string;
++    maskType?: "BRL" | "INTERNATIONAL";
+ 
+     // Datetime type.
+-    format?: string
++    format?: string;
+ 
+     // Credit card type.
+-    obfuscated?: boolean
+-    issuer?: 'visa-or-mastercard' | 'diners' | 'amex'
++    obfuscated?: boolean;
++    issuer?: "visa-or-mastercard" | "diners" | "amex";
+ 
+     // Custom type.
+-    mask?: string
+-    validator?: (value: string, settings: TextInputMaskOptionProp) => boolean
+-    getRawValue?: (value: string, settings: TextInputMaskOptionProp) => any
+-    translation?: { [s: string]: (val: string) => string | null | undefined }
++    mask?: string;
++    validator?: (value: string, settings: TextInputMaskOptionProp) => boolean;
++    getRawValue?: (value: string, settings: TextInputMaskOptionProp) => any;
++    translation?: {[s: string]: (val: string) => string | null | undefined};
+ }
+ 
+ // TextInputMask Props
+-export interface TextInputMaskProps extends Pick<TextInputProps, Exclude<keyof TextInputProps, 'onChangeText'>> {
+-    type: TextInputMaskTypeProp
+-    options?: TextInputMaskOptionProp
+-    checkText?: (previous: string, next: string) => boolean
+-    onChangeText?: (text: string, rawText?: string) => void
+-    refInput?: (ref: any) => void
+-    customTextInput?: any
+-    customTextInputProps?: Object
+-    includeRawValueInChangeText?: boolean
++export interface TextInputMaskProps extends Pick<TextInputProps, Exclude<keyof TextInputProps, "onChangeText">> {
++    type: TextInputMaskTypeProp;
++    options?: TextInputMaskOptionProp;
++    checkText?: (previous: string, next: string) => boolean;
++    onChangeText?: (text: string, rawText?: string) => void;
++    refInput?: ((ref: any) => void) | React.Ref<any>;
++    customTextInput?: any;
++    customTextInputProps?: Object;
++    includeRawValueInChangeText?: boolean;
+ }
+ 
+ // TextInputMask Component
+@@ -70,37 +70,25 @@ export class TextMask extends React.Component<TextInputMaskProps> {}
+ 
+ // MaskService
+ export namespace MaskService {
+-    function toMask(
+-        type: string,
+-        value: string,
+-        options?: TextInputMaskOptionProp
+-    ): string
+-    function toRawValue(
+-        type: string,
+-        maskedValue: string,
+-        options?: TextInputMaskOptionProp
+-    ): string
+-    function isValid(
+-        type: string,
+-        value: string,
+-        options?: TextInputMaskOptionProp
+-    ): boolean
++    function toMask(type: string, value: string, options?: TextInputMaskOptionProp): string;
++    function toRawValue(type: string, maskedValue: string, options?: TextInputMaskOptionProp): string;
++    function isValid(type: string, value: string, options?: TextInputMaskOptionProp): boolean;
+ }
+ 
+ // TextInputMaskMethods
+ export class TextInputMaskMethods {
+-    getElement(): TextInput
+-    getRawValue(): string
+-    isValid(): boolean
++    getElement(): TextInput;
++    getRawValue(): string;
++    isValid(): boolean;
+ }
+ 
+ // TextInputMasked
+-export type TextInputMasked = TextInputMaskMethods | null
++export type TextInputMasked = TextInputMaskMethods | null;
+ 
+ // TextMaskMethods
+ export class TextMaskMethods {
+-    getElement(): TextInput
++    getElement(): TextInput;
+ }
+ 
+ // TextMaskInstance
+-export type TextMaskInstance = TextMaskMethods | null
++export type TextMaskInstance = TextMaskMethods | null;
