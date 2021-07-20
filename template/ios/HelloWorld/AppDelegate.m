@@ -2,6 +2,10 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 
+#import <React/RCTI18nUtil.h>
+#import <ReactNativeNavigation/ReactNativeNavigation.h>
+#import "Orientation.h"
+
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
 #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
@@ -9,10 +13,6 @@
 #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
 #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
-
-#import <React/RCTI18nUtil.h>
-#import <ReactNativeNavigation/ReactNativeNavigation.h>
-#import "Orientation.h"
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
