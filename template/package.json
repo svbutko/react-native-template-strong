@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "patch-package",
     "ts": "tsc -p .",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start-reset-cache": "node node_modules/react-native/local-cli/cli.js start -- --reset-cache",
@@ -37,6 +38,7 @@
     "react-native-gesture-handler": "1.10.3",
     "react-native-image-crop-picker": "0.36.2",
     "react-native-localization": "2.1.7",
+    "react-native-masked-text": "1.13.0",
     "react-native-navigation": "7.18.0",
     "react-native-navigation-hooks": "6.3.0",
     "react-native-orientation-locker": "1.3.1",
@@ -76,6 +78,7 @@
     "jest": "27.0.6",
     "lint-staged": "11.0.1",
     "metro-react-native-babel-preset": "0.66.1",
+    "patch-package": "6.4.7",
     "prettier": "2.3.2",
     "react-native-bundle-visualizer": "2.2.1",
     "react-test-renderer": "16.14.0",
@@ -114,5 +117,9 @@
       "npm run ts",
       "npm run eslint:run"
     ]
+  },
+  "engines": {
+    "npm": ">= 6.14.13",
+    "yarn": "please-use-npm"
   }
 }

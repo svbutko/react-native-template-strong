@@ -36,6 +36,7 @@
     "node_modules",
     "ios",
     "android",
-    "tools"
+    "tools",
+    "patches"
   ]
 }
