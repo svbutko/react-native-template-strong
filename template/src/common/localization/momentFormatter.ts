@@ -1,8 +1,12 @@
-import moment from "moment";
+import moment, {CalendarSpec} from "moment";
+// eslint-disable-next-line import/no-unassigned-import
 import "moment/locale/ru";
+// eslint-disable-next-line import/no-unassigned-import
+import "moment/locale/en-gb";
 
 export enum DateFormat {
-    dayMonthShortYear = "DD MM YYYY",
+    dayMonthShortYear = "DD.MM.YYYY",
+    dayShortMonthYear = "DD MMM YYYY",
     dayMonthWeekdayShort = "DD MMMM, dd",
     dayMonthWeekdayFull = "DD MMMM, dddd",
     monthFullAndDay = "MMMM, DD",
@@ -20,6 +24,15 @@ export enum DateFormat {
     yearMonthDay = "YYYY.MM.DD",
 }
 
+const calendarFormat: CalendarSpec = {
+    sameDay: "[Today]",
+    nextDay: "[Tomorrow]",
+    lastDay: "[Yesterday]",
+    nextWeek: "dddd",
+    lastWeek: "[Last] dddd",
+    sameElse: DateFormat.dayMonthShortYear,
+};
+
 export function dateFromString(obj: string | Date): Date {
     if (obj instanceof Date) {
         return obj;
@@ -28,7 +41,7 @@ export function dateFromString(obj: string | Date): Date {
     return new Date(obj);
 }
 
-export function dateFromUnknown(obj: string | Date | null | undefined): Date | null {
+export function dateFromUnknown(obj: string | Date | null | number | undefined): Date | null {
     if (obj == null) {
         return null;
     }
@@ -39,23 +52,23 @@ export function dateFromUnknown(obj: string | Date | null | undefined): Date | n
     return new Date(obj);
 }
 
-export function dateFromFormat(date: Date | null | undefined | string, format: string): string {
+export function dateFromFormat(date: Date | number | null | undefined | string, format: string): string {
     let result = "";
 
-    const _date: Date | null = dateFromUnknown(date);
-    if (_date) {
-        result = moment(_date).format(format).toLowerCase();
+    const formattedDate: Date | null = dateFromUnknown(date);
+    if (formattedDate) {
+        result = moment(formattedDate).format(format);
     }
 
     return result;
 }
 
-export function calendarDate(date: Date | null | undefined | string): string {
+export function calendarDate(date: Date | null | number | undefined | string, withFormat?: boolean): string {
     let result = "";
 
-    const _date: Date | null = dateFromUnknown(date);
-    if (_date) {
-        result = moment(_date).calendar();
+    const formattedDate: Date | null = dateFromUnknown(date);
+    if (formattedDate) {
+        result = withFormat ? moment(formattedDate).calendar(null, calendarFormat) : moment(formattedDate).calendar();
     }
 
     return result;
@@ -63,4 +76,16 @@ export function calendarDate(date: Date | null | undefined | string): string {
 
 export function setMomentLocale(locale?: string): void {
     moment.locale(locale);
+}
+
+export function getUnixDate(date: Date | null | number | undefined | string): number {
+    return moment(date).unix() * 1000;
+}
+
+export function getInitialDate(date: Date | null | number | undefined | string, defaultDate?: Date): Date {
+    if (date != null) {
+        return moment(date).toDate();
+    } else {
+        return defaultDate || new Date();
+    }
 }

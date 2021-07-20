@@ -1,6 +1,7 @@
 import Intl from "intl";
-import {getLanguage} from "./index";
+// eslint-disable-next-line import/no-unassigned-import
 import "intl/locale-data/jsonp/ru";
+import {getLanguage} from "./localization";
 
 export function formatPercent(percent: number | string): string {
     const formatter = new Intl.NumberFormat(getLanguage(), {

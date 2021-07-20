@@ -2,8 +2,9 @@ import LocalizedStrings from "react-native-localization";
 import {commonLocalization} from "./translations/commonLocalization";
 import {errorsLocalization} from "./translations/errorsLocalization";
 import {emptyLocalization} from "./translations/emptyLocalization";
-import {setMomentLocale} from "./index";
 import {pagesLocalization} from "./translations/pagesLocalization";
+import {onboardingLocalization} from "./translations/onboardingLocalization";
+import {setMomentLocale} from "./momentFormatter";
 
 export enum Languages {
     en = "en",
@@ -15,6 +16,7 @@ export const localization = {
     errors: new LocalizedStrings(errorsLocalization),
     empty: new LocalizedStrings(emptyLocalization),
     pages: new LocalizedStrings(pagesLocalization),
+    onboarding: new LocalizedStrings(onboardingLocalization),
 };
 
 export function getLanguage(): string {
@@ -35,8 +37,8 @@ export function setLanguage(language?: Languages): void {
     const strings: any = Object.keys(localization);
 
     for (const key of strings) {
-        if (strings[key].setLanguage) {
-            strings[key].setLanguage(localizationLanguage);
+        if ((localization as any)[key].setLanguage) {
+            (localization as any)[key].setLanguage(localizationLanguage);
         }
     }
 

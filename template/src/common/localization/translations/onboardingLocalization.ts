@@ -1,4 +1,4 @@
-export const errorsLocalization = {
+export const onboardingLocalization = {
   en: {
     listErrorTitle: "Failed to load data.",
     tryAgain: "Try again.",

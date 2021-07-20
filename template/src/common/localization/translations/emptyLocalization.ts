@@ -1,8 +1,10 @@
 export const emptyLocalization = {
-    "en": {
-
-    },
-    "ru": {
-
-    },
+  en: {
+    noData: "No data",
+    checkThisPageLater: "Check this page later",
+  },
+  ru: {
+    noData: "Нет данных",
+    checkThisPageLater: "Посетите эту страницу позже",
+  },
 };

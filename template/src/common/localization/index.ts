@@ -6,7 +6,9 @@ import {
     dateFromFormat,
     dateFromString,
     dateFromUnknown,
-    setMomentLocale
+    getInitialDate,
+    getUnixDate,
+    setMomentLocale,
 } from "./momentFormatter";
 
 export {
@@ -23,5 +25,7 @@ export {
     dateFromFormat,
     calendarDate,
     setMomentLocale,
-    Languages
+    Languages,
+    getUnixDate,
+    getInitialDate,
 };
