@@ -1,3 +1,4 @@
+import moment from "moment";
 import {Dimensions, PixelRatio, Platform, StatusBar, StyleSheet} from "react-native";
 import Device from "react-native-device-detection";
 
@@ -14,14 +15,15 @@ export const windowWidth = windowDimensions.width;
 export const windowHeight = windowDimensions.height - (!isIos ? StatusBar.currentHeight || 0 : 0);
 
 export const screenTabInitialLayout = {height: 0, width: windowWidth};
-export const menuWidth = windowWidth - windowWidth * 0.2;
 export const hairlineWidth = StyleSheet.hairlineWidth;
 
 export const hitSlop = {top: 10, bottom: 10, left: 10, right: 10};
 export const hitSlopBig = {top: 20, bottom: 20, left: 20, right: 20};
 
 export const pixelRatio = PixelRatio.get();
-export const tabBarHeight = isIphoneX ? 65 : 49;
 
 export const maxWindowDimension = Math.max(windowWidth, windowHeight);
 export const minWindowDimension = Math.min(windowHeight, windowWidth);
+
+export const minimalLegalAge = moment().subtract(16, "years").toDate();
+export const maximalAge = moment().subtract(100, "years").toDate();
