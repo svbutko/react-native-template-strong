@@ -5,14 +5,14 @@ export function useWhyDidYouUpdate<T>(name: string, props: T): void {
 
     useEffect(() => {
         if (previousProps.current) {
-            const allKeys = Object.keys({ ...previousProps.current, ...props });
+            const allKeys = Object.keys({...previousProps.current, ...props});
             const changesObj: Partial<T> = {};
 
-            allKeys.forEach(key => {
+            allKeys.forEach((key) => {
                 if ((previousProps.current as any)[key] !== (props as any)[key]) {
                     (changesObj as any)[key] = {
                         from: (previousProps.current as any)[key],
-                        to: (props as any)[key]
+                        to: (props as any)[key],
                     };
                 }
             });

@@ -13,13 +13,16 @@ export function useEventRegister(eventName: string, callback: (data: any) => voi
         const callbacks = getOrCreateListeners(eventName);
         const id = eventName + callbacks.length;
 
-        callbacks.push({id, callback,});
+        callbacks.push({id, callback});
         listenersToEvent.set(id, eventName);
 
         return () => {
-            listeners.set(eventName, callbacks.filter((i) => i.id != id))
+            listeners.set(
+                eventName,
+                callbacks.filter((i) => i.id != id),
+            );
         };
-    }, [eventName]);
+    }, [eventName, callback]);
 }
 
 export function removeAllListeners(eventName: string): void {
@@ -27,18 +30,18 @@ export function removeAllListeners(eventName: string): void {
 }
 
 export function emitEvent(eventName: string, data?: any): void {
-    const _listeners = listeners.get(eventName);
-    if (_listeners != null) {
-        _listeners.forEach((i: IListenerHandler) => i.callback(data));
+    const listenersList = listeners.get(eventName);
+    if (listenersList != null) {
+        listenersList.forEach((i: IListenerHandler) => i.callback(data));
     }
 }
 
 function getOrCreateListeners(eventName: string): IListenerHandler[] {
-    let _listeners = listeners.get(eventName);
-    if (_listeners == null) {
-        _listeners = [];
-        listeners.set(eventName, _listeners);
+    let listenersList = listeners.get(eventName);
+    if (listenersList == null) {
+        listenersList = [];
+        listeners.set(eventName, listenersList);
     }
 
-    return _listeners;
+    return listenersList;
 }
