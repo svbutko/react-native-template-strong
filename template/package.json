@@ -49,8 +49,8 @@
     "redux-persist-filesystem-storage": "3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.6",
-    "@babel/runtime": "7.14.6",
+    "@babel/core": "7.14.8",
+    "@babel/runtime": "7.14.8",
     "@storybook/addon-actions": "6.3.4",
     "@storybook/addon-knobs": "6.3.0",
     "@storybook/addon-ondevice-actions": "5.3.23",
@@ -120,6 +120,6 @@
   },
   "engines": {
     "npm": ">= 6.14.13",
-    "yarn": "please-use-npm"
+    "yarn": "Please use npm >= 6.14.13"
   }
 }
