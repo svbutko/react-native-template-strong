@@ -1,9 +1,10 @@
 {
   "name": "HelloWorld",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "postinstall": "patch-package",
+    "postversion": "react-native-version",
     "ts": "tsc -p .",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start-reset-cache": "node node_modules/react-native/local-cli/cli.js start -- --reset-cache",
@@ -18,6 +19,11 @@
     "ios:bundle-visualizer": "react-native-bundle-visualizer --platform ios",
     "check-dependencies-updates": "npm outdated",
     "check-pods-updates": "cd ios && pod outdated",
+    "environment:development": "ENVFILE=.env",
+    "environment:test": "ENVFILE=.env.test",
+    "environment:staging": "ENVFILE=.env.staging",
+    "environment:production": "ENVFILE=.env.production",
+    "version:bump": "npm version",
     "tests": "jest",
     "tests:watch": "jest --watchAll",
     "eslint:run": "eslint --ext=jsx,ts,tsx",
@@ -85,6 +91,7 @@
     "prettier": "2.3.2",
     "react-native-bundle-visualizer": "2.2.1",
     "react-native-config-node": "0.0.3",
+    "react-native-version": "4.0.0",
     "react-test-renderer": "16.14.0",
     "ts-jest": "27.0.3",
     "typescript": "4.3.5"
