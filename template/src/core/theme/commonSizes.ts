@@ -1,6 +1,6 @@
 import {ISize} from "../../types";
 
-export const FontSize: ISize = {
+export const FontSize: Readonly<ISize> = {
   extraSmall: 10,
   small: 12,
   medium: 17,
@@ -8,7 +8,7 @@ export const FontSize: ISize = {
   extraLarge: 40,
 };
 
-export const LineHeightSize: ISize = {
+export const LineHeightSize: Readonly<ISize> = {
   extraSmall: 12,
   small: 15,
   medium: 22,
@@ -16,7 +16,7 @@ export const LineHeightSize: ISize = {
   extraLarge: 48,
 };
 
-export const SpacingSize: ISize = {
+export const SpacingSize: Readonly<ISize> = {
   extraSmall: 8,
   small: 10,
   medium: 16,
