@@ -12,6 +12,7 @@ import {
   minimalLegalAge,
   maximalAge,
 } from "./commonConsts";
+import {FontSize, LineHeightSize, SpacingSize} from "./commonSizes";
 import {CommonStyles} from "./commonStyles";
 import {Fonts} from "./fonts";
 
@@ -32,4 +33,7 @@ export {
   hairlineWidth,
   minimalLegalAge,
   maximalAge,
+  FontSize,
+  LineHeightSize,
+  SpacingSize,
 };

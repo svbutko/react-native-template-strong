@@ -2,6 +2,7 @@ import {Platform, PlatformColor, TextStyle, ViewStyle} from "react-native";
 import {styleSheetCreate} from "../../common/utils";
 import {Fonts} from "./fonts";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
+import {FontSize} from "./commonSizes";
 
 export const CommonStyles = styleSheetCreate({
   flex1: {
@@ -11,6 +12,12 @@ export const CommonStyles = styleSheetCreate({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  } as ViewStyle,
+  flexColumnCenterStretch: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "flex-start",
   } as ViewStyle,
   flexPlatformBackground: {
     flex: 1,
@@ -22,6 +29,14 @@ export const CommonStyles = styleSheetCreate({
         backgroundColor: PlatformColor(PlatformColorsAndroid.primarySurface),
       },
     }),
+  } as ViewStyle,
+  rowCenter: {
+    flexDirection: "row",
+    alignItems: "center",
+  } as ViewStyle,
+  columnAlignStart: {
+    flexDirection: "column",
+    alignItems: "flex-start",
   } as ViewStyle,
   shadow: {
     ...Platform.select({
@@ -35,40 +50,14 @@ export const CommonStyles = styleSheetCreate({
       },
     }),
   },
-  shadow2: {
-    ...Platform.select({
-      ios: {
-        shadowOffset: {height: 3, width: 0},
-        shadowOpacity: 0.45,
-        shadowRadius: 6,
-      },
-      android: {
-        elevation: 4,
-      },
-    }),
-  },
   iPhoneXFooter: {
     height: 20,
-  } as ViewStyle,
-  rowCenter: {
-    flexDirection: "row",
-    alignItems: "center",
-  } as ViewStyle,
-  columnAlignStart: {
-    flexDirection: "column",
-    alignItems: "flex-start",
-  } as ViewStyle,
-  columnCenterStretch: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "stretch",
-    justifyContent: "flex-start",
   } as ViewStyle,
   normalText: {
     fontFamily: Fonts.system,
     fontWeight: "400",
     fontStyle: "normal",
-    fontSize: 14,
-    lineHeight: 22,
+    fontSize: FontSize.medium,
+    lineHeight: FontSize.medium,
   } as TextStyle,
 });

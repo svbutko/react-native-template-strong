@@ -74,3 +74,11 @@ export interface ITextInputMask {
   options?: TextInputMaskOptionProp;
   maxLength?: number;
 }
+
+export interface ISize {
+  extraSmall: number;
+  small: number;
+  medium: number;
+  large: number;
+  extraLarge: number;
+}

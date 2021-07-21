@@ -1,5 +1,5 @@
 import {isIos} from "./commonConsts";
 
-export class Fonts {
-  static system = isIos ? "SFProText-Regular" : "Roboto";
-}
+export const Fonts = {
+  system: isIos ? "SFProText-Regular" : "Roboto",
+};
