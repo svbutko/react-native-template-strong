@@ -33,6 +33,7 @@
     "moment": "2.29.1",
     "react": "16.14.0",
     "react-native": "0.64.2",
+    "react-native-dev-menu": "4.0.2",
     "react-native-device-detection": "0.2.1",
     "react-native-fast-image": "8.3.6",
     "react-native-gesture-handler": "1.10.3",

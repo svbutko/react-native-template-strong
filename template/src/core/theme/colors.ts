@@ -5,7 +5,6 @@ export enum Colors {
   blue = "#0A60FF",
   green = "#4DAD4A",
   red = "#CE3C3E",
-  orange = "#EB9E3E",
   transparent = "transparent",
 }
 
