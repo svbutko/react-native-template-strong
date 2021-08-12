@@ -1,8 +1,7 @@
-import {ActivityIndicator, Text, TextStyle, View} from "react-native";
+import {ActivityIndicator, Text, TextStyle, View, StyleSheet} from "react-native";
 import React from "react";
 import {localization} from "../localization";
 import {Colors, CommonStyles} from "../../core/theme";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
 
 export const LoadingComponent = () => {
   return (
@@ -15,6 +14,6 @@ export const LoadingComponent = () => {
   );
 };
 
-const styles = styleSheetCreate({
-  text: styleSheetFlatten([CommonStyles.normalText, {color: Colors.black}]) as TextStyle,
+const styles = StyleSheet.create({
+  text: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.black}]) as TextStyle,
 });

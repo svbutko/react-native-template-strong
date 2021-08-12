@@ -1,9 +1,8 @@
 import React, {FC, useMemo} from "react";
-import {FlatList, FlatListProps, ViewStyle} from "react-native";
+import {FlatList, FlatListProps, StyleSheet, ViewStyle} from "react-native";
 import {LoadState} from "../../types";
 import {defaultKeyIdExtractor} from "../helpers";
 import {localization} from "../localization";
-import {styleSheetCreate} from "../utils";
 import {TryAgain} from "./TryAgain";
 import {Separator} from "./Separator";
 import {EmptyView} from "./EmptyView";
@@ -49,7 +48,7 @@ FlatListWrapper.defaultProps = {
   onEndReachedThreshold: 1,
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
   } as ViewStyle,

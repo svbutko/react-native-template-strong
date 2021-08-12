@@ -1,6 +1,16 @@
 import React, {FC, memo, MutableRefObject, Ref, useCallback, useMemo, useState} from "react";
-import {ImageURISource, Platform, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {
+  ImageURISource,
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TextInputProps,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
 import {Colors, CommonStyles, Fonts} from "../../core/theme";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
@@ -174,7 +184,7 @@ const commonInputContainer: ViewStyle = {
   }),
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
   } as ViewStyle,
@@ -188,15 +198,15 @@ const styles = styleSheetCreate({
     textAlignVertical: "center",
     backgroundColor: Colors.transparent,
   } as TextStyle,
-  inputContainer: styleSheetFlatten([commonInputContainer, {backgroundColor: Colors.lightestBlue}]) as ViewStyle,
-  errorInputContainer: styleSheetFlatten([commonInputContainer, {backgroundColor: Colors.errorLightRed}]) as TextStyle,
-  disabledInputContainer: styleSheetFlatten([
+  inputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.lightestBlue}]) as ViewStyle,
+  errorInputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.errorLightRed}]) as TextStyle,
+  disabledInputContainer: StyleSheet.flatten([
     commonInputContainer,
     {
       backgroundColor: Colors.nonEditableInput,
     },
   ]) as TextStyle,
-  focusedInputContainer: styleSheetFlatten([
+  focusedInputContainer: StyleSheet.flatten([
     commonInputContainer,
     {
       backgroundColor: Colors.lightestBlue,
@@ -213,8 +223,8 @@ const styles = styleSheetCreate({
       }),
     },
   ]) as TextStyle,
-  label: styleSheetFlatten([CommonStyles.normalText, {color: Colors.gray}]) as TextStyle,
-  error: styleSheetFlatten([CommonStyles.normalText, {color: Colors.errorRed}]) as TextStyle,
+  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.gray}]) as TextStyle,
+  error: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.errorRed}]) as TextStyle,
 });
 
 PrimaryTextInput.defaultProps = {

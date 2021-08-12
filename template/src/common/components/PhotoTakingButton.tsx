@@ -1,6 +1,5 @@
 import React, {FC, Fragment, memo} from "react";
-import {Image, ImageBackground, ImageStyle, ImageURISource, TouchableOpacity, ViewStyle} from "react-native";
-import {styleSheetCreate} from "../utils";
+import {Image, ImageBackground, ImageStyle, ImageURISource, StyleSheet, TouchableOpacity, ViewStyle} from "react-native";
 import {Colors} from "../../core/theme";
 import {ImageResources} from "../ImageResources.g";
 import {Image as CropperImage} from "react-native-image-crop-picker";
@@ -46,7 +45,7 @@ PhotoTakingButton.defaultProps = {
   icon: ImageResources.camera,
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",

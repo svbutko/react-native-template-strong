@@ -1,7 +1,6 @@
 import React, {FC, memo, useCallback, useMemo} from "react";
-import {FlatList, Platform, PlatformColor, ViewStyle} from "react-native";
+import {FlatList, Platform, PlatformColor, StyleSheet, ViewStyle} from "react-native";
 import {Colors, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
-import {styleSheetCreate} from "../../src/common/utils";
 import {ListSeparator} from "./ListSeparator";
 import {ColorPaletteListItem} from "./ColorPaletteListItem";
 
@@ -37,7 +36,7 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
 const platformPalette: string[] = Object.keys(isIos ? PlatformColorsIOS : PlatformColorsAndroid);
 const colorPalette: string[] = Object.keys(Colors);
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     ...Platform.select({

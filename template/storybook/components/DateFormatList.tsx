@@ -1,7 +1,6 @@
 import React, {FC, memo, useCallback} from "react";
-import {FlatList, Platform, PlatformColor, ViewStyle} from "react-native";
+import {FlatList, Platform, PlatformColor, StyleSheet, ViewStyle} from "react-native";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
-import {styleSheetCreate} from "../../src/common/utils";
 import {ListSeparator} from "./ListSeparator";
 import {DateFormat, dateFromFormat} from "../../src/common/localization";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
@@ -30,7 +29,7 @@ export const DateFormatList: FC = memo(() => {
 
 const formats = Object.entries(DateFormat);
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     ...Platform.select({

@@ -1,6 +1,5 @@
 import React, {useCallback, useEffect, useMemo} from "react";
-import {Image, ImageStyle, ImageURISource, SafeAreaView, Text, View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {Image, ImageStyle, ImageURISource, SafeAreaView, StyleSheet, Text, View, ViewStyle} from "react-native";
 import {Colors, CommonStyles, windowWidth} from "../../core/theme";
 import {ToastType} from "../../types";
 import {Navigation, NavigationFunctionComponent} from "react-native-navigation";
@@ -81,8 +80,8 @@ const commonIconContainer: ViewStyle = {
   justifyContent: "center",
 };
 
-const commonStyles = styleSheetCreate({
-  label: styleSheetFlatten([CommonStyles.normalText, {color: Colors.dark, paddingHorizontal: 9}]),
+const commonStyles = StyleSheet.create({
+  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.dark, paddingHorizontal: 9}]),
   icon: {
     width: 8,
     height: 8,
@@ -91,22 +90,22 @@ const commonStyles = styleSheetCreate({
   } as ImageStyle,
 });
 
-const infoStyles = styleSheetCreate({
+const infoStyles = StyleSheet.create({
   ...commonStyles,
-  container: styleSheetFlatten([commonContainer, {backgroundColor: Colors.volcanoOne}]) as ViewStyle,
-  iconContainer: styleSheetFlatten([commonIconContainer, {backgroundColor: Colors.volcano}]) as ViewStyle,
+  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.volcanoOne}]) as ViewStyle,
+  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.volcano}]) as ViewStyle,
 });
 
-const successStyles = styleSheetCreate({
+const successStyles = StyleSheet.create({
   ...commonStyles,
-  container: styleSheetFlatten([commonContainer, {backgroundColor: Colors.lightGreen}]) as ViewStyle,
-  iconContainer: styleSheetFlatten([commonIconContainer, {backgroundColor: Colors.green}]) as ViewStyle,
+  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.lightGreen}]) as ViewStyle,
+  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.green}]) as ViewStyle,
 });
 
-const errorStyles = styleSheetCreate({
+const errorStyles = StyleSheet.create({
   ...commonStyles,
-  container: styleSheetFlatten([commonContainer, {backgroundColor: Colors.errorLightRed}]) as ViewStyle,
-  iconContainer: styleSheetFlatten([commonIconContainer, {backgroundColor: Colors.errorRed}]) as ViewStyle,
+  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.errorLightRed}]) as ViewStyle,
+  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.errorRed}]) as ViewStyle,
 });
 
 Toast.options = {

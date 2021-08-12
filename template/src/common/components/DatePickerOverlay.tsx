@@ -2,8 +2,7 @@ import React, {useCallback, useMemo, useState} from "react";
 import {Colors, CommonStyles, Fonts, isAndroid, isIos} from "../../core/theme";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import {getLanguage, localization} from "../localization";
-import {styleSheetCreate} from "../utils";
-import {Platform, SafeAreaView, View, ViewStyle} from "react-native";
+import {Platform, SafeAreaView, View, ViewStyle, StyleSheet} from "react-native";
 import {Navigation, NavigationFunctionComponent, OptionsTopBarButton} from "react-native-navigation";
 import {ButtonType} from "../../types";
 import {useNavigationButtonPress} from "react-native-navigation-hooks";
@@ -95,7 +94,7 @@ DatePickerOverlay.options = {
   }),
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     ...Platform.select({
       ios: {

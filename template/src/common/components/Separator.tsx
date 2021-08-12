@@ -1,6 +1,5 @@
 import React, {FC, useMemo} from "react";
-import {View, ViewStyle} from "react-native";
-import {styleSheetCreate} from "../utils";
+import {StyleSheet, View, ViewStyle} from "react-native";
 import {hairlineWidth, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 
 interface IProps {
@@ -15,7 +14,7 @@ export const Separator: FC<IProps> = ({isFull}) => {
   return <View style={containerStyle} />;
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     height: hairlineWidth,
     backgroundColor: isIos ? PlatformColorsIOS.separator : PlatformColorsAndroid.secondary,

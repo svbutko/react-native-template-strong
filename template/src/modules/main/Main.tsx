@@ -1,8 +1,7 @@
 import {NavigationFunctionComponent} from "react-native-navigation";
-import {Platform, PlatformColor, ScrollView, Text, TextStyle, View, ViewStyle} from "react-native";
+import {Platform, PlatformColor, ScrollView, Text, TextStyle, View, ViewStyle, StyleSheet} from "react-native";
 import {DebugInstructions, ReloadInstructions} from "react-native/Libraries/NewAppScreen";
 import React from "react";
-import {styleSheetCreate} from "../../common/utils";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {localization} from "../../common/localization";
 
@@ -57,7 +56,7 @@ Main.options = {
   },
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
     paddingHorizontal: 18,
@@ -69,10 +68,6 @@ const styles = styleSheetCreate({
         backgroundColor: PlatformColor(PlatformColorsAndroid.background),
       },
     }),
-  } as ViewStyle,
-  engine: {
-    position: "absolute",
-    right: 0,
   } as ViewStyle,
   sectionContainer: {
     marginTop: 32,

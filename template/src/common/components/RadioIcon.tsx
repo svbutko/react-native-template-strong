@@ -1,6 +1,5 @@
 import React, {FC, memo, useMemo} from "react";
-import {View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {View, ViewStyle, StyleSheet} from "react-native";
 import {Colors} from "../../core/theme";
 
 interface IProps {
@@ -36,9 +35,9 @@ const commonInnerCircle: ViewStyle = {
   borderRadius: 4,
 };
 
-const styles = styleSheetCreate({
-  outerCircle: styleSheetFlatten([commonOuterCircle, {borderColor: Colors.lightBlue}]) as ViewStyle,
-  outerCircleSelected: styleSheetFlatten([commonOuterCircle, {borderColor: Colors.red}]) as ViewStyle,
-  innerCircle: styleSheetFlatten([commonInnerCircle, {backgroundColor: Colors.red}]) as ViewStyle,
-  innerCircleDisabled: styleSheetFlatten([commonInnerCircle, {backgroundColor: Colors.lightBlue}]) as ViewStyle,
+const styles = StyleSheet.create({
+  outerCircle: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.lightBlue}]) as ViewStyle,
+  outerCircleSelected: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.red}]) as ViewStyle,
+  innerCircle: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.red}]) as ViewStyle,
+  innerCircleDisabled: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.lightBlue}]) as ViewStyle,
 });

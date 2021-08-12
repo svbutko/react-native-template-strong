@@ -1,6 +1,5 @@
 import React, {FC, memo} from "react";
-import {Platform, PlatformColor, Text, TextStyle, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../../src/common/utils";
+import {Platform, PlatformColor, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
 import {Fonts, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 
 interface IProps {
@@ -8,12 +7,12 @@ interface IProps {
 }
 
 export const FontListItem: FC<IProps> = memo(({font}) => {
-  const titleStyle = styleSheetFlatten([styles.title, {fontFamily: (Fonts as any)[font]}]) as ViewStyle;
+  const titleStyle = StyleSheet.flatten([styles.title, {fontFamily: (Fonts as any)[font]}]) as ViewStyle;
 
   return <Text style={titleStyle}>{font}</Text>;
 });
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     padding: 10,

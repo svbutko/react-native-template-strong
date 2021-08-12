@@ -1,6 +1,5 @@
 import React, {FC, memo} from "react";
-import {Platform, PlatformColor, Text, TextStyle, View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../../src/common/utils";
+import {Platform, PlatformColor, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
 import {Colors, isIos, maxWindowDimension, minWindowDimension, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 
 interface IProps {
@@ -9,7 +8,7 @@ interface IProps {
 }
 
 export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) => {
-  const colorStyle = styleSheetFlatten([
+  const colorStyle = StyleSheet.flatten([
     styles.colorContainer,
     {
       backgroundColor: isPlatformColor
@@ -26,7 +25,7 @@ export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) 
   );
 });
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     alignItems: "center",

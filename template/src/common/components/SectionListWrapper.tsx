@@ -1,10 +1,9 @@
 import React, {FC, useMemo} from "react";
-import {SectionList, SectionListProps, ViewStyle} from "react-native";
+import {SectionList, SectionListProps, StyleSheet, ViewStyle} from "react-native";
 import {LoadState} from "../../types";
 import {isAndroid} from "../../core/theme";
 import {defaultKeyIdExtractor} from "../helpers";
 import {localization} from "../localization";
-import {styleSheetCreate} from "../utils";
 import {TryAgain} from "./TryAgain";
 import {Separator} from "./Separator";
 import {EmptyView} from "./EmptyView";
@@ -52,7 +51,7 @@ SectionListWrapper.defaultProps = {
   onEndReachedThreshold: 1,
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
   } as ViewStyle,

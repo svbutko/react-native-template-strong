@@ -1,6 +1,5 @@
 import React, {FC, FunctionComponent, memo, useCallback} from "react";
-import {Text, TextStyle, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
 import {Colors, CommonStyles} from "../../core/theme";
 import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
@@ -37,13 +36,13 @@ RadioButton.defaultProps = {
   IconComponent: RadioIcon,
 };
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 16,
     alignItems: "center",
   } as ViewStyle,
-  label: styleSheetFlatten([
+  label: StyleSheet.flatten([
     CommonStyles.normalText,
     {
       flex: 1,

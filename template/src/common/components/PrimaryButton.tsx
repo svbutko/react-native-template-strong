@@ -1,6 +1,5 @@
 import React, {FC, memo, useMemo} from "react";
-import {ActivityIndicator, Image, ImageProps, ImageStyle, ImageURISource, Text, TextStyle, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {ActivityIndicator, Image, ImageProps, ImageStyle, ImageURISource, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
 import {Colors, CommonStyles, Fonts} from "../../core/theme";
 import {ButtonType, TouchablePlatformProps} from "../../types";
 import {TouchablePlatform} from "./TouchablePlatform";
@@ -117,14 +116,14 @@ const commonIcon: ImageStyle = {
   tintColor: Colors.white,
 };
 
-const solidStyles = styleSheetCreate({
-  button: styleSheetFlatten([commonButtonStyle, {backgroundColor: Colors.red}]) as ViewStyle,
-  label: styleSheetFlatten([commonLabelStyle, {color: Colors.white}]) as TextStyle,
+const solidStyles = StyleSheet.create({
+  button: StyleSheet.flatten([commonButtonStyle, {backgroundColor: Colors.red}]) as ViewStyle,
+  label: StyleSheet.flatten([commonLabelStyle, {color: Colors.white}]) as TextStyle,
   icon: commonIcon,
 });
 
-const outlineStyles = styleSheetCreate({
-  button: styleSheetFlatten([
+const outlineStyles = StyleSheet.create({
+  button: StyleSheet.flatten([
     commonButtonStyle,
     {
       borderColor: Colors.red,
@@ -132,13 +131,13 @@ const outlineStyles = styleSheetCreate({
       padding: (commonButtonStyle.padding as number) - 1,
     },
   ]) as ViewStyle,
-  label: styleSheetFlatten([commonLabelStyle, {color: Colors.red}]) as TextStyle,
-  icon: styleSheetFlatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
+  label: StyleSheet.flatten([commonLabelStyle, {color: Colors.red}]) as TextStyle,
+  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
 });
 
 //TODO: Add outlineNegative in Storybook
-const outlineNegativeStyles = styleSheetCreate({
-  button: styleSheetFlatten([
+const outlineNegativeStyles = StyleSheet.create({
+  button: StyleSheet.flatten([
     commonButtonStyle,
     {
       borderColor: Colors.lightBlue,
@@ -146,14 +145,14 @@ const outlineNegativeStyles = styleSheetCreate({
       padding: (commonButtonStyle.padding as number) - 1,
     },
   ]) as ViewStyle,
-  label: styleSheetFlatten([commonLabelStyle, {color: Colors.dark}]) as TextStyle,
-  icon: styleSheetFlatten([commonIcon, {tintColor: Colors.dark}]) as ImageStyle,
+  label: StyleSheet.flatten([commonLabelStyle, {color: Colors.dark}]) as TextStyle,
+  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.dark}]) as ImageStyle,
 });
 
-const borderlessStyles = styleSheetCreate({
-  button: styleSheetFlatten([commonButtonStyle, {borderRadius: undefined}]) as ViewStyle,
-  label: styleSheetFlatten([CommonStyles.normalText, {color: Colors.dark}]) as TextStyle,
-  icon: styleSheetFlatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
+const borderlessStyles = StyleSheet.create({
+  button: StyleSheet.flatten([commonButtonStyle, {borderRadius: undefined}]) as ViewStyle,
+  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.dark}]) as TextStyle,
+  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
 });
 
 const roundedButtonStyle: ViewStyle = {
@@ -167,14 +166,14 @@ const roundedButtonStyle: ViewStyle = {
 };
 
 //TODO: Small styles are incorrect
-const smallSolidStyles = styleSheetCreate({
-  button: styleSheetFlatten([roundedButtonStyle, {backgroundColor: Colors.red}]) as ViewStyle,
-  label: styleSheetFlatten([CommonStyles.normalText, {color: Colors.white, textAlign: "center"}]) as TextStyle,
+const smallSolidStyles = StyleSheet.create({
+  button: StyleSheet.flatten([roundedButtonStyle, {backgroundColor: Colors.red}]) as ViewStyle,
+  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.white, textAlign: "center"}]) as TextStyle,
   icon: commonIcon,
 });
 
-const smallOutlineStyles = styleSheetCreate({
-  button: styleSheetFlatten([
+const smallOutlineStyles = StyleSheet.create({
+  button: StyleSheet.flatten([
     roundedButtonStyle,
     {
       borderColor: Colors.red,
@@ -183,6 +182,6 @@ const smallOutlineStyles = styleSheetCreate({
       paddingHorizontal: (roundedButtonStyle.paddingHorizontal as number) - 1,
     },
   ]) as ViewStyle,
-  label: styleSheetFlatten([CommonStyles.normalText, {color: Colors.red, textAlign: "center"}]) as TextStyle,
-  icon: styleSheetFlatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
+  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.red, textAlign: "center"}]) as TextStyle,
+  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
 });

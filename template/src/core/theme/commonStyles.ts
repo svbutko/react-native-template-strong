@@ -1,10 +1,9 @@
-import {Platform, PlatformColor, TextStyle, ViewStyle} from "react-native";
-import {styleSheetCreate} from "../../common/utils";
+import {Platform, PlatformColor, StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {Fonts} from "./fonts";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
 import {FontSize} from "./commonSizes";
 
-export const CommonStyles = styleSheetCreate({
+export const CommonStyles = StyleSheet.create({
   flex1: {
     flex: 1,
   } as ViewStyle,

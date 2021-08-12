@@ -1,6 +1,5 @@
 import React, {FC, memo} from "react";
-import {Text, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
 import {Colors, CommonStyles} from "../../core/theme";
 import {localization} from "../localization";
 
@@ -22,13 +21,13 @@ export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
   );
 });
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.flatten({
   container: {
     flex: 1,
     justifyContent: "center",
     padding: 24,
   } as ViewStyle,
-  title: styleSheetFlatten([
+  title: StyleSheet.flatten([
     CommonStyles.normalText,
     {
       color: Colors.dark,
@@ -36,7 +35,7 @@ const styles = styleSheetCreate({
       marginBottom: 8,
     },
   ]) as TextStyle,
-  description: styleSheetFlatten([
+  description: StyleSheet.flatten([
     CommonStyles.normalText,
     {
       color: Colors.highlightRed,

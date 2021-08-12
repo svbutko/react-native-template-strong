@@ -1,6 +1,5 @@
 import React, {FC, memo} from "react";
-import {Platform, PlatformColor, ScrollView, ViewStyle} from "react-native";
-import {styleSheetCreate} from "../../src/common/utils";
+import {Platform, PlatformColor, ScrollView, StyleSheet, ViewStyle} from "react-native";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
 import {formatCurrency, formatDecimal, formatPercent} from "../../src/common/localization";
@@ -15,7 +14,7 @@ export const IntlFormatterStory: FC = memo(() => {
   );
 });
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     ...Platform.select({

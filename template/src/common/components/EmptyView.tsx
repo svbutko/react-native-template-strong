@@ -1,6 +1,5 @@
 import React, {FC, memo} from "react";
-import {Text, TextStyle, View, ViewStyle} from "react-native";
-import {styleSheetCreate, styleSheetFlatten} from "../utils";
+import {StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
 import {Colors, CommonStyles} from "../../core/theme";
 
 interface IProps {
@@ -17,14 +16,14 @@ export const EmptyView: FC<IProps> = memo(({title, description}) => {
   );
 });
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     padding: 24,
   } as ViewStyle,
-  title: styleSheetFlatten([
+  title: StyleSheet.flatten([
     CommonStyles.normalText,
     {
       fontWeight: "500",
@@ -35,7 +34,7 @@ const styles = styleSheetCreate({
       marginBottom: 8,
     },
   ]) as TextStyle,
-  description: styleSheetFlatten([
+  description: StyleSheet.flatten([
     CommonStyles.normalText,
     {
       color: Colors.gray,

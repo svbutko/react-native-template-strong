@@ -1,6 +1,5 @@
 import React, {FC, Fragment, memo} from "react";
-import {styleSheetCreate} from "../../src/common/utils";
-import {Platform, PlatformColor, Text, TextStyle} from "react-native";
+import {Platform, PlatformColor, StyleSheet, Text, TextStyle} from "react-native";
 import {ListSeparator} from "./ListSeparator";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 
@@ -20,7 +19,7 @@ export const TitleDescriptionBorder: FC<IProps> = memo(({title, description, isL
   );
 });
 
-const styles = styleSheetCreate({
+const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     padding: 10,
