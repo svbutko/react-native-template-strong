@@ -7,40 +7,39 @@ import {onboardingLocalization} from "./translations/onboardingLocalization";
 import {setMomentLocale} from "./momentFormatter";
 
 export enum Languages {
-    en = "en",
-    ru = "ru",
+  en = "en",
 }
 
 export const localization = {
-    common: new LocalizedStrings(commonLocalization),
-    errors: new LocalizedStrings(errorsLocalization),
-    empty: new LocalizedStrings(emptyLocalization),
-    pages: new LocalizedStrings(pagesLocalization),
-    onboarding: new LocalizedStrings(onboardingLocalization),
+  common: new LocalizedStrings(commonLocalization),
+  errors: new LocalizedStrings(errorsLocalization),
+  empty: new LocalizedStrings(emptyLocalization),
+  pages: new LocalizedStrings(pagesLocalization),
+  onboarding: new LocalizedStrings(onboardingLocalization),
 };
 
 export function getLanguage(): string {
-    return localization.common.getLanguage();
+  return localization.common.getLanguage();
 }
 
 export function getInterfaceLanguage(): string {
-    return localization.common.getInterfaceLanguage();
+  return localization.common.getInterfaceLanguage();
 }
 
 export function setLanguage(language?: Languages): void {
-    let localizationLanguage: Languages | string | undefined = language;
+  let localizationLanguage: Languages | string | undefined = language;
 
-    if (localizationLanguage == null) {
-        localizationLanguage = getLanguage();
+  if (localizationLanguage == null) {
+    localizationLanguage = getLanguage();
+  }
+
+  const strings: any = Object.keys(localization);
+
+  for (const key of strings) {
+    if ((localization as any)[key].setLanguage) {
+      (localization as any)[key].setLanguage(localizationLanguage);
     }
+  }
 
-    const strings: any = Object.keys(localization);
-
-    for (const key of strings) {
-        if ((localization as any)[key].setLanguage) {
-            (localization as any)[key].setLanguage(localizationLanguage);
-        }
-    }
-
-    setMomentLocale(localizationLanguage);
+  setMomentLocale(localizationLanguage);
 }

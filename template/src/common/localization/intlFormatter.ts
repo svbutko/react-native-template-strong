@@ -1,34 +1,31 @@
-import Intl from "intl";
-// eslint-disable-next-line import/no-unassigned-import
-import "intl/locale-data/jsonp/ru";
 import {getLanguage} from "./localization";
 
 export function formatPercent(percent: number | string): string {
-    const formatter = new Intl.NumberFormat(getLanguage(), {
-        style: "percent",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2,
-    });
+  const formatter = new Intl.NumberFormat(getLanguage(), {
+    style: "percent",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
 
-    return formatter.format(Number(percent) / 100);
+  return formatter.format(Number(percent) / 100);
 }
 
 export function formatCurrency(price: number | string, currency?: string): string {
-    const formatter = new Intl.NumberFormat(getLanguage(), {
-        style: "currency",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2,
-        currency: currency || "USD",
-    });
+  const formatter = new Intl.NumberFormat(getLanguage(), {
+    style: "currency",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+    currency: currency || "USD",
+  });
 
-    return formatter.format(Number(price));
+  return formatter.format(Number(price));
 }
 
 export function formatDecimal(value: number | string): string {
-    const formatter = new Intl.NumberFormat(getLanguage(), {
-        style: "decimal",
-        minimumFractionDigits: 0,
-    });
+  const formatter = new Intl.NumberFormat(getLanguage(), {
+    style: "decimal",
+    minimumFractionDigits: 0,
+  });
 
-    return formatter.format(Number(value));
+  return formatter.format(Number(value));
 }
