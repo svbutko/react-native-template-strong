@@ -1,8 +1,9 @@
 import React, {FC, Fragment, memo} from "react";
 import {Image, ImageBackground, ImageStyle, ImageURISource, StyleSheet, TouchableOpacity, ViewStyle} from "react-native";
-import {Colors} from "../../core/theme";
+import {CommonSizes, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ImageResources} from "../ImageResources.g";
 import {Image as CropperImage} from "react-native-image-crop-picker";
+import {platformNativeColor} from "../helpers";
 
 interface IProps {
   onPress?: () => void;
@@ -47,22 +48,28 @@ PhotoTakingButton.defaultProps = {
 
 const styles = StyleSheet.create({
   button: {
+    height: 120,
+    width: 120,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 8,
+    borderRadius: CommonSizes.borderRadius.small,
+    borderWidth: 1,
+    borderColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
   } as ViewStyle,
   image: {
+    height: 120,
+    width: 120,
     resizeMode: "contain",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 8,
+    borderRadius: CommonSizes.borderRadius.small,
     overflow: "hidden",
   } as ImageStyle,
   icon: {
     width: 32,
     height: 32,
     resizeMode: "contain",
-    tintColor: Colors.black,
+    tintColor: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primary),
     opacity: 0.8,
   } as ImageStyle,
 });
