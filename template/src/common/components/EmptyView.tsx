@@ -1,6 +1,6 @@
 import React, {FC, memo} from "react";
 import {StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
-import {Colors, CommonStyles} from "../../core/theme";
+import {CommonSizes, CommonStyles} from "../../core/theme";
 
 interface IProps {
   title: string;
@@ -18,27 +18,17 @@ export const EmptyView: FC<IProps> = memo(({title, description}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 24,
+    ...CommonStyles.flexCenter,
+    padding: CommonSizes.spacing.medium,
   } as ViewStyle,
-  title: StyleSheet.flatten([
-    CommonStyles.normalText,
-    {
-      fontWeight: "500",
-      fontSize: 16,
-      lineHeight: 24,
-      color: Colors.black,
-      textAlign: "center",
-      marginBottom: 8,
-    },
-  ]) as TextStyle,
-  description: StyleSheet.flatten([
-    CommonStyles.normalText,
-    {
-      color: Colors.black,
-      textAlign: "center",
-    },
-  ]) as TextStyle,
+  title: {
+    ...CommonStyles.normalText,
+    fontWeight: "600",
+    textAlign: "center",
+    marginBottom: CommonSizes.spacing.extraSmall,
+  } as TextStyle,
+  description: {
+    ...CommonStyles.normalText,
+    textAlign: "center",
+  },
 });
