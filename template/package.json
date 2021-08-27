@@ -61,8 +61,9 @@
   "devDependencies": {
     "@babel/core": "7.15.0",
     "@babel/runtime": "7.15.3",
-    "@storybook/addon-actions": "6.3.7",
-    "@storybook/addon-knobs": "6.3.0",
+    "@storybook/addon-actions": "5.3.21",
+    "@storybook/addon-knobs": "5.3.21",
+    "@storybook/addon-links": "5.3.21",
     "@storybook/addon-ondevice-actions": "5.3.23",
     "@storybook/addon-ondevice-knobs": "5.3.25",
     "@storybook/react-native": "5.3.25",
