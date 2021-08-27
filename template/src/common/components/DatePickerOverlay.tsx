@@ -1,8 +1,8 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {Colors, CommonStyles, Fonts, isAndroid, isIos} from "../../core/theme";
+import {Colors, CommonSizes, CommonStyles, Fonts, isAndroid, isIos} from "../../core/theme";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import {getLanguage, localization} from "../localization";
-import {Platform, SafeAreaView, View, ViewStyle, StyleSheet} from "react-native";
+import {Platform, SafeAreaView, StyleSheet, View, ViewStyle} from "react-native";
 import {Navigation, NavigationFunctionComponent, OptionsTopBarButton} from "react-native-navigation";
 import {ButtonType} from "../../types";
 import {useNavigationButtonPress} from "react-native-navigation-hooks";
@@ -68,7 +68,6 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
           minimumDate={minDate}
           maximumDate={maxDate}
           locale={locale}
-          textColor={Colors.red}
         />
         {isIos && <PrimaryButton label={localization.common.select} type={ButtonType.solid} onPress={changeDate} />}
       </View>
@@ -100,13 +99,11 @@ const styles = StyleSheet.create({
       ios: {
         flex: 1,
         justifyContent: "space-between",
-        paddingHorizontal: 16,
-        paddingVertical: 24,
+        paddingHorizontal: CommonSizes.spacing.medium,
+        paddingVertical: CommonSizes.spacing.large,
       } as ViewStyle,
       android: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        ...CommonStyles.flexCenter,
         backgroundColor: Colors.transparent,
       } as ViewStyle,
     }),

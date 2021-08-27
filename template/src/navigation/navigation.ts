@@ -8,7 +8,7 @@ import {localization} from "../common/localization";
 import {Main} from "../modules/main/Main";
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
-import {Toast} from "../common/components";
+import {DatePickerOverlay, Toast} from "../common/components";
 import {getStorybookUI} from "@storybook/react-native";
 import {reduxProvider} from "../core/store/store";
 import {useState} from "react";
@@ -69,7 +69,7 @@ export function setDefaultOptions() {
         fontFamily: Fonts.system,
       },
       searchBar: {
-        visible: true,
+        visible: false,
         hideOnScroll: true,
         hideTopBarOnFocus: true,
         obscuresBackgroundDuringPresentation: true,
@@ -110,4 +110,5 @@ export function registerComponents() {
   Navigation.registerComponent(Pages.demo.name, () => Demo);
   Navigation.registerComponent(Pages.more.name, () => More);
   Navigation.registerComponent(Pages.toast.name, () => Toast);
+  Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);
 }
