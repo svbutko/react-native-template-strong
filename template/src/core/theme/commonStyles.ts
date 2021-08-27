@@ -2,6 +2,7 @@ import {Platform, PlatformColor, StyleSheet, TextStyle, ViewStyle} from "react-n
 import {Fonts} from "./fonts";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
 import {CommonSizes} from "./commonSizes";
+import {platformNativeColor} from "../../common/helpers";
 
 export const CommonStyles = StyleSheet.create({
   flex1: {
@@ -57,6 +58,7 @@ export const CommonStyles = StyleSheet.create({
     fontWeight: "400",
     fontStyle: "normal",
     fontSize: CommonSizes.font.medium,
-    lineHeight: CommonSizes.font.medium,
+    lineHeight: CommonSizes.lineHeight.medium,
+    color: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.onBackground),
   } as TextStyle,
 });

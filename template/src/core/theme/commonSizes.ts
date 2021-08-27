@@ -22,4 +22,11 @@ export const CommonSizes = {
     large: 32,
     extraLarge: 40,
   } as Readonly<ISize>,
+  borderRadius: {
+    extraSmall: 4,
+    small: 8,
+    medium: 12,
+    large: 14,
+    extraLarge: 18,
+  } as Readonly<ISize>,
 };

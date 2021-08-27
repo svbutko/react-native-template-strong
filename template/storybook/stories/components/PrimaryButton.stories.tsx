@@ -22,9 +22,11 @@ export const PrimaryButtonStories: FC = () => {
       <PrimaryButton label={"Solid Disabled"} type={ButtonType.solid} disabled={true} onPress={onEmptyPress} />
       <PrimaryButton label={"Outline Disabled"} type={ButtonType.outline} disabled={true} onPress={onEmptyPress} />
 
-      <PrimaryButton label={"Solid Icon"} type={ButtonType.solid} onPress={onEmptyPress} icon={ImageResources.wallet} />
-      <PrimaryButton label={"Borderless Icon"} type={ButtonType.borderless} onPress={onEmptyPress} icon={ImageResources.wallet} />
-      <PrimaryButton label={"Outline Icon"} type={ButtonType.outline} onPress={onEmptyPress} icon={ImageResources.wallet} />
+      <PrimaryButton label={"Solid Icon"} type={ButtonType.solid} onPress={onEmptyPress} icon={ImageResources.camera} />
+      <PrimaryButton label={"Borderless Icon"} type={ButtonType.borderless} onPress={onEmptyPress} icon={ImageResources.camera} />
+      <PrimaryButton label={"Outline Icon"} type={ButtonType.outline} onPress={onEmptyPress} icon={ImageResources.camera} />
+
+      <PrimaryButton label={"Outline Negative"} type={ButtonType.outlineNegative} onPress={onEmptyPress} icon={ImageResources.camera} />
     </ScrollView>
   );
 };

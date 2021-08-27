@@ -1,8 +1,9 @@
 import React, {FC, memo, useMemo} from "react";
 import {ActivityIndicator, Image, ImageProps, ImageStyle, ImageURISource, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Colors, CommonStyles, Fonts} from "../../core/theme";
+import {Colors, CommonSizes, CommonStyles, hairlineWidth, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ButtonType, TouchablePlatformProps} from "../../types";
 import {TouchablePlatform} from "./TouchablePlatform";
+import {platformNativeColor} from "../helpers";
 
 interface IProps extends TouchablePlatformProps {
   label: string;
@@ -20,12 +21,18 @@ export const PrimaryButton: FC<IProps> = memo(({label, icon, iconStyle, type, ro
   }, [type, rounded, props.disabled]);
 
   const highlightColor = useMemo(() => {
-    return type == ButtonType.solid ? Colors.red : undefined;
+    return type == ButtonType.solid ? platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated) : undefined;
   }, [type]);
 
   const content = useMemo(() => {
     if (isLoading) {
-      return <ActivityIndicator animating={true} color={Colors.black} size={"small"} />;
+      return (
+        <ActivityIndicator
+          animating={true}
+          color={platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.activated)}
+          size={"small"}
+        />
+      );
     } else {
       return (
         <>
@@ -70,16 +77,18 @@ function mergeStylesWithDisabled(styles: IStyles, disabled?: boolean | null, out
         ...styles,
         button: {
           ...styles.button,
-          backgroundColor: Colors.gray,
-          borderColor: outline ? Colors.red : styles.button.borderColor,
+          backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.primary),
+          borderColor: outline
+            ? platformNativeColor(PlatformColorsIOS.tertiarySystemFill, PlatformColorsAndroid.primary)
+            : styles.button.borderColor,
         } as ViewStyle,
         icon: {
           ...styles.icon,
-          tintColor: Colors.gray,
+          tintColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.primary),
         } as ImageStyle,
         label: {
           ...styles.label,
-          color: Colors.gray,
+          color: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.primary),
         } as TextStyle,
       }
     : styles;
@@ -92,74 +101,72 @@ interface IStyles {
 }
 
 const commonButtonStyle: ViewStyle = {
-  padding: 12,
+  padding: CommonSizes.spacing.medium,
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: 5,
+  borderRadius: CommonSizes.borderRadius.large,
   flexDirection: "row",
   backgroundColor: Colors.transparent,
 };
 
 const commonLabelStyle: TextStyle = {
-  fontFamily: Fonts.system,
-  fontStyle: "normal",
-  fontWeight: "800",
-  fontSize: 18,
-  lineHeight: 24,
+  ...CommonStyles.normalText,
+  color: Colors.white,
   textAlign: "center",
+  textAlignVertical: "center",
 };
 
 const commonIcon: ImageStyle = {
-  width: 24,
-  height: 24,
+  width: 22,
+  height: 22,
+  marginHorizontal: CommonSizes.spacing.extraSmall,
   resizeMode: "contain",
-  tintColor: Colors.white,
+  tintColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
 };
 
 const solidStyles = StyleSheet.create({
   button: {
     ...commonButtonStyle,
-    backgroundColor: Colors.red,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ViewStyle,
   label: {
     ...commonLabelStyle,
-    color: Colors.white,
   } as TextStyle,
-  icon: commonIcon,
+  icon: {
+    ...commonIcon,
+    tintColor: Colors.white,
+  },
 });
 
 const outlineStyles = StyleSheet.create({
   button: {
     ...commonButtonStyle,
-    borderColor: Colors.red,
-    borderWidth: 1,
-    padding: (commonButtonStyle.padding as number) - 1,
+    borderColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    borderWidth: hairlineWidth,
   } as ViewStyle,
   label: {
     ...commonLabelStyle,
-    color: Colors.red,
+    color: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as TextStyle,
   icon: {
     ...commonIcon,
-    tintColor: Colors.red,
+    tintColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ImageStyle,
 });
 
-//TODO: Add outlineNegative in Storybook
 const outlineNegativeStyles = StyleSheet.create({
   button: {
     ...commonButtonStyle,
-    borderColor: Colors.gray,
-    borderWidth: 1,
-    padding: (commonButtonStyle.padding as number) - 1,
+    borderColor: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.primary),
+    borderWidth: hairlineWidth,
   } as ViewStyle,
   label: {
     ...commonLabelStyle,
-    color: Colors.black,
+    color: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.primary),
   } as TextStyle,
   icon: {
     ...commonIcon,
-    tintColor: Colors.black,
+    tintColor: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.primary),
   } as ImageStyle,
 });
 
@@ -169,54 +176,50 @@ const borderlessStyles = StyleSheet.create({
     borderRadius: undefined,
   } as ViewStyle,
   label: {
-    ...CommonStyles.normalText,
-    color: Colors.black,
+    ...commonLabelStyle,
+    color: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as TextStyle,
   icon: {
     ...commonIcon,
-    tintColor: Colors.red,
+    tintColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ImageStyle,
 });
 
 const roundedButtonStyle: ViewStyle = {
-  paddingHorizontal: 18,
-  paddingVertical: 6,
+  paddingHorizontal: CommonSizes.spacing.medium,
+  paddingVertical: CommonSizes.spacing.extraSmall,
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: 16,
+  borderRadius: CommonSizes.borderRadius.extraLarge,
   flexDirection: "row",
   backgroundColor: Colors.transparent,
 };
 
-//TODO: Small styles are incorrect
 const smallSolidStyles = StyleSheet.create({
   button: {
     ...roundedButtonStyle,
-    backgroundColor: Colors.red,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ViewStyle,
   label: {
     ...CommonStyles.normalText,
-    color: Colors.white,
-    textAlign: "center",
   } as TextStyle,
-  icon: commonIcon,
+  icon: {
+    ...commonIcon,
+  },
 });
 
 const smallOutlineStyles = StyleSheet.create({
   button: {
     ...roundedButtonStyle,
-    borderColor: Colors.red,
-    borderWidth: 1,
-    paddingVertical: (roundedButtonStyle.paddingVertical as number) - 1,
-    paddingHorizontal: (roundedButtonStyle.paddingHorizontal as number) - 1,
+    borderColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    borderWidth: hairlineWidth,
   } as ViewStyle,
   label: {
     ...CommonStyles.normalText,
-    color: Colors.red,
-    textAlign: "center",
+    color: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as TextStyle,
   icon: {
     ...commonIcon,
-    tintColor: Colors.red,
+    tintColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ImageStyle,
 });
