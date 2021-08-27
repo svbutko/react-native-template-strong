@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
       fontWeight: "500",
       fontSize: 16,
       lineHeight: 24,
-      color: Colors.gray,
+      color: Colors.black,
       textAlign: "center",
       marginBottom: 8,
     },
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   description: StyleSheet.flatten([
     CommonStyles.normalText,
     {
-      color: Colors.gray,
+      color: Colors.black,
       textAlign: "center",
     },
   ]) as TextStyle,

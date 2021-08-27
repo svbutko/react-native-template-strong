@@ -1,6 +1,7 @@
 import React, {FC, useMemo} from "react";
-import {PlatformColor, StyleSheet, View, ViewStyle} from "react-native";
-import {hairlineWidth, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {StyleSheet, View, ViewStyle} from "react-native";
+import {CommonSizes, hairlineWidth, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {platformNativeColor} from "../helpers";
 
 interface IProps {
   isFull?: boolean;
@@ -17,11 +18,11 @@ export const Separator: FC<IProps> = ({isFull}) => {
 const styles = StyleSheet.create({
   container: {
     height: hairlineWidth,
-    backgroundColor: isIos ? PlatformColor(PlatformColorsIOS.separator) : PlatformColor(PlatformColorsAndroid.secondary),
-    marginHorizontal: 16,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.secondary),
+    marginHorizontal: CommonSizes.spacing.medium,
   } as ViewStyle,
   fullContainer: {
     height: hairlineWidth,
-    backgroundColor: isIos ? PlatformColor(PlatformColorsIOS.separator) : PlatformColorsAndroid.secondary,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.secondary),
   } as ViewStyle,
 });

@@ -191,31 +191,31 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 16,
-    fontFamily: Fonts.avenir,
+    fontFamily: Fonts.system,
     fontWeight: "500",
     fontStyle: "normal",
-    color: Colors.dark,
+    color: Colors.black,
     textAlignVertical: "center",
     backgroundColor: Colors.transparent,
   } as TextStyle,
-  inputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.lightestBlue}]) as ViewStyle,
-  errorInputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.errorLightRed}]) as TextStyle,
+  inputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.gray}]) as ViewStyle,
+  errorInputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.red}]) as TextStyle,
   disabledInputContainer: StyleSheet.flatten([
     commonInputContainer,
     {
-      backgroundColor: Colors.nonEditableInput,
+      backgroundColor: Colors.gray,
     },
   ]) as TextStyle,
   focusedInputContainer: StyleSheet.flatten([
     commonInputContainer,
     {
-      backgroundColor: Colors.lightestBlue,
+      backgroundColor: Colors.red,
       ...Platform.select({
         ios: {
           shadowOffset: {height: 0, width: 0},
           shadowOpacity: 0.5,
           shadowRadius: 4,
-          shadowColor: Colors.inputShadow,
+          shadowColor: Colors.black,
         },
         android: {
           elevation: 2,
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     },
   ]) as TextStyle,
   label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.gray}]) as TextStyle,
-  error: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.errorRed}]) as TextStyle,
+  error: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.red}]) as TextStyle,
 });
 
 PrimaryTextInput.defaultProps = {
@@ -233,6 +233,6 @@ PrimaryTextInput.defaultProps = {
   disableFullscreenUI: true,
   enablesReturnKeyAutomatically: true,
   underlineColorAndroid: Colors.transparent,
-  placeholderTextColor: Colors.lightBlue,
+  placeholderTextColor: Colors.black,
   editable: true,
 };

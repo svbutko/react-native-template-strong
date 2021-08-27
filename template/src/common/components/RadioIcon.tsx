@@ -36,8 +36,8 @@ const commonInnerCircle: ViewStyle = {
 };
 
 const styles = StyleSheet.create({
-  outerCircle: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.lightBlue}]) as ViewStyle,
+  outerCircle: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.black}]) as ViewStyle,
   outerCircleSelected: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.red}]) as ViewStyle,
   innerCircle: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.red}]) as ViewStyle,
-  innerCircleDisabled: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.lightBlue}]) as ViewStyle,
+  innerCircleDisabled: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.black}]) as ViewStyle,
 });

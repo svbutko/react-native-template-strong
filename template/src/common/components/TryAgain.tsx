@@ -30,7 +30,7 @@ const styles = StyleSheet.flatten({
   title: StyleSheet.flatten([
     CommonStyles.normalText,
     {
-      color: Colors.dark,
+      color: Colors.black,
       textAlign: "center",
       marginBottom: 8,
     },
@@ -38,7 +38,7 @@ const styles = StyleSheet.flatten({
   description: StyleSheet.flatten([
     CommonStyles.normalText,
     {
-      color: Colors.highlightRed,
+      color: Colors.black,
       textAlign: "center",
       textDecorationLine: "underline",
     },

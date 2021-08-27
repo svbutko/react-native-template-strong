@@ -1,6 +1,6 @@
 import React, {FC, FunctionComponent, memo, useCallback} from "react";
 import {StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Colors, CommonStyles} from "../../core/theme";
+import {Colors, CommonSizes, CommonStyles} from "../../core/theme";
 import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
 
@@ -42,13 +42,11 @@ const styles = StyleSheet.create({
     padding: 16,
     alignItems: "center",
   } as ViewStyle,
-  label: StyleSheet.flatten([
-    CommonStyles.normalText,
-    {
-      flex: 1,
-      fontWeight: "500",
-      color: Colors.dark,
-      paddingLeft: 8,
-    },
-  ]) as TextStyle,
+  label: {
+    ...CommonStyles.normalText,
+    flex: 1,
+    fontWeight: "500",
+    color: Colors.black,
+    paddingLeft: CommonSizes.spacing.extraSmall,
+  } as TextStyle,
 });

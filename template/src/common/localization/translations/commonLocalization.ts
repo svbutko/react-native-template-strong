@@ -21,5 +21,6 @@ export const commonLocalization = {
     warning: "Warning",
     success: "Success",
     select: "Select",
+    dataSuccessfullyUpdated: "Data has been successfully updated",
   },
 };

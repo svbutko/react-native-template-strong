@@ -81,7 +81,9 @@ const commonIconContainer: ViewStyle = {
 };
 
 const commonStyles = StyleSheet.create({
-  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.dark, paddingHorizontal: 9}]),
+  // eslint-disable-next-line react-native/no-unused-styles
+  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.black, paddingHorizontal: 9}]),
+  // eslint-disable-next-line react-native/no-unused-styles
   icon: {
     width: 8,
     height: 8,
@@ -92,20 +94,26 @@ const commonStyles = StyleSheet.create({
 
 const infoStyles = StyleSheet.create({
   ...commonStyles,
-  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.volcanoOne}]) as ViewStyle,
-  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.volcano}]) as ViewStyle,
+  // eslint-disable-next-line react-native/no-unused-styles
+  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.gray}]) as ViewStyle,
+  // eslint-disable-next-line react-native/no-unused-styles
+  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.gray}]) as ViewStyle,
 });
 
 const successStyles = StyleSheet.create({
   ...commonStyles,
-  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.lightGreen}]) as ViewStyle,
+  // eslint-disable-next-line react-native/no-unused-styles
+  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.green}]) as ViewStyle,
+  // eslint-disable-next-line react-native/no-unused-styles
   iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.green}]) as ViewStyle,
 });
 
 const errorStyles = StyleSheet.create({
   ...commonStyles,
-  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.errorLightRed}]) as ViewStyle,
-  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.errorRed}]) as ViewStyle,
+  // eslint-disable-next-line react-native/no-unused-styles
+  container: StyleSheet.flatten([commonContainer, {backgroundColor: Colors.red}]) as ViewStyle,
+  // eslint-disable-next-line react-native/no-unused-styles
+  iconContainer: StyleSheet.flatten([commonIconContainer, {backgroundColor: Colors.red}]) as ViewStyle,
 });
 
 Toast.options = {

@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     resizeMode: "contain",
-    tintColor: Colors.white,
+    tintColor: Colors.black,
     opacity: 0.8,
   } as ImageStyle,
 });

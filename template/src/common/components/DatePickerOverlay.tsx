@@ -26,7 +26,7 @@ const rightButton: OptionsTopBarButton = {
   enabled: true,
 };
 
-//TODO: Add to Storybook, check Android
+//TODO: Add to Storybook
 export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = ({componentId, maxDate, minDate, onDateChange, value}) => {
   const [date, setDate] = useState<Date>(value);
 

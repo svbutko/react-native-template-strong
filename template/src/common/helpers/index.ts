@@ -7,6 +7,7 @@ import {isEmail} from "./regexHelpers";
 import {showActionSheet, showCommonDialog} from "./dialogsHelper";
 import {convertCropperImageToBase64} from "./imageHelpers";
 import {InputMask} from "./inputMask";
+import {platformLocalColor, platformNativeColor} from "./colorHelpers";
 
 export {
   getCurrentOrientation,
@@ -25,4 +26,6 @@ export {
   showCommonDialog,
   convertCropperImageToBase64,
   InputMask,
+  platformNativeColor,
+  platformLocalColor,
 };

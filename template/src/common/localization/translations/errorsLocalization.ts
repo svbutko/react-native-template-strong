@@ -7,6 +7,11 @@ export const errorsLocalization = {
     failedToOpenUrl: "Failed to open URL. Check that the app is installed.",
     pleaseCheckYourInternetConnection: "Please check your Internet connection.",
     invalidEmail: "Invalid Email",
+    invalidPhoneNumber: "Invalid phone number",
+    invalidFullName: "Invalid full name",
+    invalidFromDate: (fromField: string, toField: string) => `${fromField} can't be later than ${toField.toLowerCase()}`,
+    invalidToDate: (fromField: string, toField: string) => `${toField} can't be earlier than ${fromField.toLowerCase()}`,
+    datesCantBeEqual: (fromField: string, toField: string) => `${fromField} and ${toField.toLowerCase()} can't be equal`,
     error: "Error",
   },
 };

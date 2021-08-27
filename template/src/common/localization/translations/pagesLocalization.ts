@@ -3,5 +3,6 @@ export const pagesLocalization = {
     main: "Main",
     demo: "Demo",
     more: "More",
+    selectDate: "Select date",
   },
 };

@@ -5,6 +5,7 @@ import Carousel, {ParallaxImage} from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {localization} from "../../common/localization";
 import {OnboardingPagination} from "./components/OnboardingPagination";
+import {IllustrationsResources} from "../../common/ImageResources.g";
 
 const carouselData: {header: string; body: string; image: ImageURISource}[] = [
   {

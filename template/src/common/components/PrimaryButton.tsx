@@ -20,7 +20,7 @@ export const PrimaryButton: FC<IProps> = memo(({label, icon, iconStyle, type, ro
   }, [type, rounded, props.disabled]);
 
   const highlightColor = useMemo(() => {
-    return type == ButtonType.solid ? Colors.highlightRed : undefined;
+    return type == ButtonType.solid ? Colors.red : undefined;
   }, [type]);
 
   const content = useMemo(() => {
@@ -70,16 +70,16 @@ function mergeStylesWithDisabled(styles: IStyles, disabled?: boolean | null, out
         ...styles,
         button: {
           ...styles.button,
-          backgroundColor: Colors.grayDisabled,
-          borderColor: outline ? Colors.lightBlue : styles.button.borderColor,
+          backgroundColor: Colors.gray,
+          borderColor: outline ? Colors.red : styles.button.borderColor,
         } as ViewStyle,
         icon: {
           ...styles.icon,
-          tintColor: Colors.lightGray,
+          tintColor: Colors.gray,
         } as ImageStyle,
         label: {
           ...styles.label,
-          color: Colors.lightGray,
+          color: Colors.gray,
         } as TextStyle,
       }
     : styles;
@@ -101,7 +101,7 @@ const commonButtonStyle: ViewStyle = {
 };
 
 const commonLabelStyle: TextStyle = {
-  fontFamily: Fonts.avenir,
+  fontFamily: Fonts.system,
   fontStyle: "normal",
   fontWeight: "800",
   fontSize: 18,
@@ -117,42 +117,65 @@ const commonIcon: ImageStyle = {
 };
 
 const solidStyles = StyleSheet.create({
-  button: StyleSheet.flatten([commonButtonStyle, {backgroundColor: Colors.red}]) as ViewStyle,
-  label: StyleSheet.flatten([commonLabelStyle, {color: Colors.white}]) as TextStyle,
+  button: {
+    ...commonButtonStyle,
+    backgroundColor: Colors.red,
+  } as ViewStyle,
+  label: {
+    ...commonLabelStyle,
+    color: Colors.white,
+  } as TextStyle,
   icon: commonIcon,
 });
 
 const outlineStyles = StyleSheet.create({
-  button: StyleSheet.flatten([
-    commonButtonStyle,
-    {
-      borderColor: Colors.red,
-      borderWidth: 1,
-      padding: (commonButtonStyle.padding as number) - 1,
-    },
-  ]) as ViewStyle,
-  label: StyleSheet.flatten([commonLabelStyle, {color: Colors.red}]) as TextStyle,
-  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
+  button: {
+    ...commonButtonStyle,
+    borderColor: Colors.red,
+    borderWidth: 1,
+    padding: (commonButtonStyle.padding as number) - 1,
+  } as ViewStyle,
+  label: {
+    ...commonLabelStyle,
+    color: Colors.red,
+  } as TextStyle,
+  icon: {
+    ...commonIcon,
+    tintColor: Colors.red,
+  } as ImageStyle,
 });
 
 //TODO: Add outlineNegative in Storybook
 const outlineNegativeStyles = StyleSheet.create({
-  button: StyleSheet.flatten([
-    commonButtonStyle,
-    {
-      borderColor: Colors.lightBlue,
-      borderWidth: 1,
-      padding: (commonButtonStyle.padding as number) - 1,
-    },
-  ]) as ViewStyle,
-  label: StyleSheet.flatten([commonLabelStyle, {color: Colors.dark}]) as TextStyle,
-  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.dark}]) as ImageStyle,
+  button: {
+    ...commonButtonStyle,
+    borderColor: Colors.gray,
+    borderWidth: 1,
+    padding: (commonButtonStyle.padding as number) - 1,
+  } as ViewStyle,
+  label: {
+    ...commonLabelStyle,
+    color: Colors.black,
+  } as TextStyle,
+  icon: {
+    ...commonIcon,
+    tintColor: Colors.black,
+  } as ImageStyle,
 });
 
 const borderlessStyles = StyleSheet.create({
-  button: StyleSheet.flatten([commonButtonStyle, {borderRadius: undefined}]) as ViewStyle,
-  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.dark}]) as TextStyle,
-  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
+  button: {
+    ...commonButtonStyle,
+    borderRadius: undefined,
+  } as ViewStyle,
+  label: {
+    ...CommonStyles.normalText,
+    color: Colors.black,
+  } as TextStyle,
+  icon: {
+    ...commonIcon,
+    tintColor: Colors.red,
+  } as ImageStyle,
 });
 
 const roundedButtonStyle: ViewStyle = {
@@ -167,21 +190,33 @@ const roundedButtonStyle: ViewStyle = {
 
 //TODO: Small styles are incorrect
 const smallSolidStyles = StyleSheet.create({
-  button: StyleSheet.flatten([roundedButtonStyle, {backgroundColor: Colors.red}]) as ViewStyle,
-  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.white, textAlign: "center"}]) as TextStyle,
+  button: {
+    ...roundedButtonStyle,
+    backgroundColor: Colors.red,
+  } as ViewStyle,
+  label: {
+    ...CommonStyles.normalText,
+    color: Colors.white,
+    textAlign: "center",
+  } as TextStyle,
   icon: commonIcon,
 });
 
 const smallOutlineStyles = StyleSheet.create({
-  button: StyleSheet.flatten([
-    roundedButtonStyle,
-    {
-      borderColor: Colors.red,
-      borderWidth: 1,
-      paddingVertical: (roundedButtonStyle.paddingVertical as number) - 1,
-      paddingHorizontal: (roundedButtonStyle.paddingHorizontal as number) - 1,
-    },
-  ]) as ViewStyle,
-  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.red, textAlign: "center"}]) as TextStyle,
-  icon: StyleSheet.flatten([commonIcon, {tintColor: Colors.red}]) as ImageStyle,
+  button: {
+    ...roundedButtonStyle,
+    borderColor: Colors.red,
+    borderWidth: 1,
+    paddingVertical: (roundedButtonStyle.paddingVertical as number) - 1,
+    paddingHorizontal: (roundedButtonStyle.paddingHorizontal as number) - 1,
+  } as ViewStyle,
+  label: {
+    ...CommonStyles.normalText,
+    color: Colors.red,
+    textAlign: "center",
+  } as TextStyle,
+  icon: {
+    ...commonIcon,
+    tintColor: Colors.red,
+  } as ImageStyle,
 });
