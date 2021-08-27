@@ -15,5 +15,8 @@ export const LoadingComponent = () => {
 };
 
 const styles = StyleSheet.create({
-  text: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.black}]) as TextStyle,
+  text: {
+    ...CommonStyles.normalText,
+    color: Colors.black,
+  } as TextStyle,
 });

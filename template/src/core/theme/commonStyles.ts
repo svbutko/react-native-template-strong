@@ -1,7 +1,7 @@
 import {Platform, PlatformColor, StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {Fonts} from "./fonts";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
-import {FontSize} from "./commonSizes";
+import {CommonSizes} from "./commonSizes";
 
 export const CommonStyles = StyleSheet.create({
   flex1: {
@@ -56,7 +56,7 @@ export const CommonStyles = StyleSheet.create({
     fontFamily: Fonts.system,
     fontWeight: "400",
     fontStyle: "normal",
-    fontSize: FontSize.medium,
-    lineHeight: FontSize.medium,
+    fontSize: CommonSizes.font.medium,
+    lineHeight: CommonSizes.font.medium,
   } as TextStyle,
 });
