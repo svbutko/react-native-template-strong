@@ -11,15 +11,15 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.65.1)
   - fmt (6.2.1)
   - glog (0.3.5)
-  - libwebp (1.1.0):
-    - libwebp/demux (= 1.1.0)
-    - libwebp/mux (= 1.1.0)
-    - libwebp/webp (= 1.1.0)
-  - libwebp/demux (1.1.0):
+  - libwebp (1.2.0):
+    - libwebp/demux (= 1.2.0)
+    - libwebp/mux (= 1.2.0)
+    - libwebp/webp (= 1.2.0)
+  - libwebp/demux (1.2.0):
     - libwebp/webp
-  - libwebp/mux (1.1.0):
+  - libwebp/mux (1.2.0):
     - libwebp/demux
-  - libwebp/webp (1.1.0)
+  - libwebp/webp (1.2.0)
   - Permission-Camera (3.0.5):
     - RNPermissions
   - Permission-PhotoLibrary (3.0.5):
@@ -219,6 +219,8 @@ PODS:
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
   - React-jsinspector (0.65.1)
+  - react-native-blob-util (0.13.12):
+    - React-Core
   - react-native-config (1.4.3):
     - react-native-config/App (= 1.4.3)
   - react-native-config/App (1.4.3):
@@ -325,9 +327,9 @@ PODS:
     - TOCropViewController
   - RNPermissions (3.0.5):
     - React-Core
-  - SDWebImage (5.9.0):
-    - SDWebImage/Core (= 5.9.0)
-  - SDWebImage/Core (5.9.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - SDWebImageWebPCoder (0.6.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.7)
@@ -354,6 +356,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-blob-util (from `../node_modules/react-native-blob-util`)
   - react-native-config (from `../node_modules/react-native-config`)
   - react-native-orientation-locker (from `../node_modules/react-native-orientation-locker`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -423,6 +426,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-blob-util:
+    :path: "../node_modules/react-native-blob-util"
   react-native-config:
     :path: "../node_modules/react-native-config"
   react-native-orientation-locker:
@@ -479,7 +484,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: df8f81d2a7541ee6755a047b398a5cb5a72acd0e
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 5337263514dd6f09803962437687240c5dc39aa4
-  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
+  libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
   Permission-Camera: ac603073e4128e51e6ca3c39129778f05b4082fa
   Permission-PhotoLibrary: 0748c1a490fad126dfe36dbea8234dedfe59cc27
   RCT-Folly: 0dd9e1eb86348ecab5ba76f910b56f4b5fef3c46
@@ -493,6 +498,7 @@ SPEC CHECKSUMS:
   React-jsi: 12913c841713a15f64eabf5c9ad98592c0ec5940
   React-jsiexecutor: 43f2542aed3c26e42175b339f8d37fe3dd683765
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
+  react-native-blob-util: 8794c554acf61a15a9f0c2fd171be8578f4c8bd7
   react-native-config: 387b1ea507bc50a2059e69149dac1342b9532f58
   react-native-orientation-locker: 998c0744e26624407dac068c04c605b4af7304a2
   React-perflogger: fd28ee1f2b5b150b00043f0301d96bd417fdc339
@@ -516,11 +522,11 @@ SPEC CHECKSUMS:
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNImageCropPicker: 35a3ceb837446fa11547704709bb22b5fac6d584
   RNPermissions: 7043bacbf928eae25808275cfe73799b8f618911
-  SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   Yoga: aa0cb45287ebe1004c02a13f279c55a95f1572f4
 
-PODFILE CHECKSUM: 3ba3f41106456689b8183caca3a65b42b0ab6e62
+PODFILE CHECKSUM: f9d643c7ecf8b2b70f23cd606b0ba44ab212f482
 
 COCOAPODS: 1.10.1
