@@ -1,22 +1,35 @@
 {
-  "name": "react-native-template-oneup",
+  "name": "react-native-template-strong",
   "version": "1.0.0",
-  "description": "React Native OneUp Template",
+  "description": "React Native Strong Template made with react-native-navigation, TypeScript and Redux",
   "files": [
     "template",
     "template.config.js"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/svbutko/react-native-template-oneup.git"
+    "url": "git+https://github.com/svbutko/react-native-template-strong.git"
   },
   "keywords": [
     "react-native",
+    "react-native-navigation",
     "typescript",
     "redux",
     "uikit",
-    "oneup",
+    "strong",
     "template",
     "boilerplate"
+  ],
+  "author": "Sergei Butko (https://twitter.com/@svbutko)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svbutko/react-native-template-strong/issues"
+  },
+  "homepage": "https://github.com/svbutko/react-native-template-strong#readme",
+  "contributors": [
+    {
+      "name": "Sergei Butko",
+      "url": "https://twitter.com/@svbutko"
+    }
   ]
 }
