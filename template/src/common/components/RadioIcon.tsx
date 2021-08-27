@@ -1,32 +1,29 @@
 import React, {FC, memo, useMemo} from "react";
-import {View, ViewStyle, StyleSheet} from "react-native";
-import {Colors} from "../../core/theme";
+import {StyleSheet, View, ViewStyle} from "react-native";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {platformNativeColor} from "../helpers";
 
 interface IProps {
   isSelected: boolean;
   disabled?: boolean;
 }
 
-//TODO: Add to Storybook
 export const RadioIcon: FC<IProps> = memo(({isSelected, disabled}) => {
   const outerCircleStyle = useMemo(() => {
     return disabled ? styles.outerCircle : isSelected ? styles.outerCircleSelected : styles.outerCircle;
   }, [isSelected, disabled]);
 
-  const innerCircleStyle = useMemo(() => {
-    return disabled ? styles.innerCircleDisabled : styles.innerCircle;
-  }, [disabled]);
-
-  return <View style={outerCircleStyle}>{isSelected && <View style={innerCircleStyle} />}</View>;
+  return <View style={outerCircleStyle}>{isSelected && <View style={styles.innerCircle} />}</View>;
 });
 
 const commonOuterCircle: ViewStyle = {
   width: 16,
   height: 16,
   borderRadius: 8,
-  borderWidth: 1,
+  borderWidth: 2,
   justifyContent: "center",
   alignItems: "center",
+  backgroundColor: Colors.transparent,
 };
 
 const commonInnerCircle: ViewStyle = {
@@ -36,8 +33,16 @@ const commonInnerCircle: ViewStyle = {
 };
 
 const styles = StyleSheet.create({
-  outerCircle: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.black}]) as ViewStyle,
-  outerCircleSelected: StyleSheet.flatten([commonOuterCircle, {borderColor: Colors.red}]) as ViewStyle,
-  innerCircle: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.red}]) as ViewStyle,
-  innerCircleDisabled: StyleSheet.flatten([commonInnerCircle, {backgroundColor: Colors.black}]) as ViewStyle,
+  outerCircle: {
+    ...commonOuterCircle,
+    borderColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
+  } as ViewStyle,
+  outerCircleSelected: {
+    ...commonOuterCircle,
+    borderColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.activated),
+  } as ViewStyle,
+  innerCircle: {
+    ...commonInnerCircle,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.activated),
+  } as ViewStyle,
 });

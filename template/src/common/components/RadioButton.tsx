@@ -1,8 +1,9 @@
-import React, {FC, FunctionComponent, memo, useCallback} from "react";
+import React, {FC, FunctionComponent, memo, useCallback, useMemo} from "react";
 import {StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Colors, CommonSizes, CommonStyles} from "../../core/theme";
+import {CommonSizes, CommonStyles, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
+import {platformNativeColor} from "../helpers";
 
 interface IIconComponentProps {
   isSelected: boolean;
@@ -16,16 +17,19 @@ interface IProps extends IIconComponentProps {
   IconComponent?: FunctionComponent<IIconComponentProps>;
 }
 
-//TODO: Add CheckBoxIcon example to Storybook
 export const RadioButton: FC<IProps> = memo(({isSelected, label, onPress, disabled, IconComponent, id}) => {
   const onButtonPress = useCallback(() => {
     onPress(id, !isSelected);
   }, [onPress, isSelected, id]);
 
+  const labelStyle = useMemo(() => {
+    return disabled ? styles.labelDisabled : styles.label;
+  }, [disabled]);
+
   return (
     <TouchablePlatform style={styles.container} onPress={onButtonPress} disabled={disabled}>
       {IconComponent && <IconComponent disabled={disabled} isSelected={isSelected} />}
-      <Text style={styles.label} numberOfLines={1}>
+      <Text style={labelStyle} numberOfLines={1}>
         {label}
       </Text>
     </TouchablePlatform>
@@ -36,17 +40,23 @@ RadioButton.defaultProps = {
   IconComponent: RadioIcon,
 };
 
+const commonLabel: TextStyle = {
+  ...CommonStyles.normalText,
+  flex: 1,
+  paddingLeft: CommonSizes.spacing.extraSmall,
+};
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    padding: 16,
+    padding: CommonSizes.spacing.medium,
     alignItems: "center",
   } as ViewStyle,
   label: {
-    ...CommonStyles.normalText,
-    flex: 1,
-    fontWeight: "500",
-    color: Colors.black,
-    paddingLeft: CommonSizes.spacing.extraSmall,
+    ...commonLabel,
+  } as TextStyle,
+  labelDisabled: {
+    ...commonLabel,
+    color: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
   } as TextStyle,
 });
