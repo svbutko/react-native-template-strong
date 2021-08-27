@@ -1,7 +1,8 @@
 import React, {FC, memo} from "react";
 import {StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {Colors, CommonStyles} from "../../core/theme";
+import {CommonSizes, CommonStyles, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {localization} from "../localization";
+import {platformNativeColor} from "../helpers";
 
 interface IProps {
   onPress?: () => void;
@@ -21,26 +22,24 @@ export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
   );
 });
 
+TryAgain.defaultProps = {
+  errorText: localization.errors.unknownErrorHasOccurred,
+};
+
 const styles = StyleSheet.flatten({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    padding: 24,
+    ...CommonStyles.flexCenter,
+    padding: CommonSizes.spacing.medium,
   } as ViewStyle,
-  title: StyleSheet.flatten([
-    CommonStyles.normalText,
-    {
-      color: Colors.black,
-      textAlign: "center",
-      marginBottom: 8,
-    },
-  ]) as TextStyle,
-  description: StyleSheet.flatten([
-    CommonStyles.normalText,
-    {
-      color: Colors.black,
-      textAlign: "center",
-      textDecorationLine: "underline",
-    },
-  ]) as TextStyle,
+  title: {
+    ...CommonStyles.normalText,
+    textAlign: "center",
+    marginBottom: CommonSizes.spacing.extraSmall,
+  } as TextStyle,
+  description: {
+    ...CommonStyles.normalText,
+    color: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    textAlign: "center",
+    textDecorationLine: "underline",
+  } as TextStyle,
 });

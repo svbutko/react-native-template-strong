@@ -7,6 +7,7 @@ import {RadioButtonStories} from "./components/RadioButton.stories";
 import {PhotoTakingButtonStories} from "./components/PhotoTakingButton.stories";
 import {EmptyViewStories} from "./components/EmptyView.stories";
 import {LoadingComponent} from "../../src/common/components/LoadingComponent";
+import {TryAgain} from "../../src/common/components";
 
 const ComponentsStories = storiesOf("Components", module);
 
@@ -23,3 +24,11 @@ ComponentsStories.add("PhotoTakingButton", () => <PhotoTakingButtonStories />);
 ComponentsStories.add("EmptyView", () => <EmptyViewStories />);
 
 ComponentsStories.add("LoadingComponent", () => <LoadingComponent />);
+
+ComponentsStories.add("TryAgain", () => (
+  <TryAgain
+    onPress={() => {
+      console.log("pressed");
+    }}
+  />
+));
