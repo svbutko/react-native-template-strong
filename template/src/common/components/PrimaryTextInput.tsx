@@ -1,19 +1,9 @@
 import React, {FC, memo, MutableRefObject, Ref, useCallback, useMemo, useState} from "react";
-import {
-  ImageURISource,
-  Platform,
-  StyleSheet,
-  Text,
-  TextInput,
-  TextInputProps,
-  TextStyle,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-} from "react-native";
-import {Colors, CommonStyles, Fonts} from "../../core/theme";
+import {ImageURISource, StyleSheet, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
+import {Colors, CommonSizes, CommonStyles, hairlineWidth, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
+import {platformNativeColor} from "../helpers";
 
 interface IProps extends TextInputProps {
   nextInputFocusRef?: MutableRefObject<any>;
@@ -99,7 +89,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
               type={mask.type}
               options={mask.options}
               includeRawValueInChangeText={true}
-              selectionColor={Colors.red}
+              selectionColor={platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary)}
               disableFullscreenUI={true}
               {...props}
               pointerEvents={pointerEvents}
@@ -112,7 +102,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
           ) : (
             <TextInput
               disableFullscreenUI={true}
-              selectionColor={Colors.red}
+              selectionColor={platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary)}
               {...props}
               pointerEvents={pointerEvents}
               ref={inputRef}
@@ -167,21 +157,14 @@ function getInputContainerStyle(isFocused: boolean, error?: string | null, edita
   }
 }
 
-const commonInputContainer: ViewStyle = {
+const commonInputContainer: TextStyle = {
   flexDirection: "row",
-  borderRadius: 2,
-  paddingHorizontal: 12,
   alignItems: "center",
   justifyContent: "center",
-  ...Platform.select({
-    android: {
-      height: 40,
-      textAlignVertical: "center",
-    },
-    ios: {
-      paddingVertical: 10.35, //Fixes incorrect iOS vertical font alignment (textVerticalAlignment doesn't work on iOS)
-    },
-  }),
+  height: CommonSizes.spacing.extraLarge,
+  textAlignVertical: "center",
+  textAlign: "center",
+  borderBottomWidth: hairlineWidth,
 };
 
 const styles = StyleSheet.create({
@@ -189,42 +172,39 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   } as ViewStyle,
   input: {
+    ...CommonStyles.normalText,
     flex: 1,
-    fontSize: 16,
-    fontFamily: Fonts.system,
-    fontWeight: "500",
-    fontStyle: "normal",
-    color: Colors.black,
     textAlignVertical: "center",
     backgroundColor: Colors.transparent,
   } as TextStyle,
-  inputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.gray}]) as ViewStyle,
-  errorInputContainer: StyleSheet.flatten([commonInputContainer, {backgroundColor: Colors.red}]) as TextStyle,
-  disabledInputContainer: StyleSheet.flatten([
-    commonInputContainer,
-    {
-      backgroundColor: Colors.gray,
-    },
-  ]) as TextStyle,
-  focusedInputContainer: StyleSheet.flatten([
-    commonInputContainer,
-    {
-      backgroundColor: Colors.red,
-      ...Platform.select({
-        ios: {
-          shadowOffset: {height: 0, width: 0},
-          shadowOpacity: 0.5,
-          shadowRadius: 4,
-          shadowColor: Colors.black,
-        },
-        android: {
-          elevation: 2,
-        },
-      }),
-    },
-  ]) as TextStyle,
-  label: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.gray}]) as TextStyle,
-  error: StyleSheet.flatten([CommonStyles.normalText, {color: Colors.red}]) as TextStyle,
+  inputContainer: {
+    ...commonInputContainer,
+    borderBottomColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.primary),
+  } as TextStyle,
+  errorInputContainer: {
+    ...commonInputContainer,
+    borderBottomColor: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.activated),
+  } as TextStyle,
+  disabledInputContainer: {
+    ...commonInputContainer,
+    borderBottomColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
+  } as TextStyle,
+  focusedInputContainer: {
+    ...commonInputContainer,
+  } as TextStyle,
+  label: {
+    ...CommonStyles.normalText,
+    color: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.activated),
+    fontSize: CommonSizes.font.small,
+    lineHeight: CommonSizes.lineHeight.small,
+  } as TextStyle,
+  error: {
+    ...CommonStyles.normalText,
+    color: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.activated),
+    fontSize: CommonSizes.font.small,
+    lineHeight: CommonSizes.lineHeight.small,
+    paddingTop: CommonSizes.spacing.small,
+  } as TextStyle,
 });
 
 PrimaryTextInput.defaultProps = {
@@ -233,6 +213,6 @@ PrimaryTextInput.defaultProps = {
   disableFullscreenUI: true,
   enablesReturnKeyAutomatically: true,
   underlineColorAndroid: Colors.transparent,
-  placeholderTextColor: Colors.black,
+  placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.activated),
   editable: true,
 };
