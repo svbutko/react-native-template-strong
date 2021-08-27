@@ -1,8 +1,8 @@
 import React, {FC, memo, useCallback} from "react";
-import {FlatList, Platform, PlatformColor, StyleSheet, ViewStyle} from "react-native";
-import {Fonts, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
-import {ListSeparator} from "./ListSeparator";
+import {FlatList} from "react-native";
+import {CommonStyles, Fonts} from "../../src/core/theme";
 import {FontListItem} from "./FontListItem";
+import {Separator} from "../../src/common/components";
 
 export const FontsList: FC = memo(() => {
   const renderItem = useCallback(({item}) => {
@@ -17,25 +17,11 @@ export const FontsList: FC = memo(() => {
     <FlatList
       data={fonts}
       keyExtractor={keyExtractor}
-      style={styles.container}
+      style={CommonStyles.flexPlatformBackground}
       renderItem={renderItem}
-      ItemSeparatorComponent={ListSeparator}
+      ItemSeparatorComponent={Separator}
     />
   );
 });
 
 const fonts: string[] = Object.keys(Fonts);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      ios: {
-        backgroundColor: PlatformColor(PlatformColorsIOS.systemBackground),
-      },
-      android: {
-        backgroundColor: PlatformColor(PlatformColorsAndroid.primarySurface),
-      },
-    }),
-  } as ViewStyle,
-});

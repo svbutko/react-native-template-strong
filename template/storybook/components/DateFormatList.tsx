@@ -1,9 +1,9 @@
 import React, {FC, memo, useCallback} from "react";
-import {FlatList, Platform, PlatformColor, StyleSheet, ViewStyle} from "react-native";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
-import {ListSeparator} from "./ListSeparator";
+import {FlatList} from "react-native";
+import {CommonStyles} from "../../src/core/theme";
 import {DateFormat, dateFromFormat} from "../../src/common/localization";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
+import {Separator} from "../../src/common/components";
 
 export const DateFormatList: FC = memo(() => {
   const renderItem = useCallback(({item}) => {
@@ -20,25 +20,11 @@ export const DateFormatList: FC = memo(() => {
     <FlatList
       data={formats}
       keyExtractor={keyExtractor}
-      style={styles.container}
+      style={CommonStyles.flexPlatformBackground}
       renderItem={renderItem}
-      ItemSeparatorComponent={ListSeparator}
+      ItemSeparatorComponent={Separator}
     />
   );
 });
 
 const formats = Object.entries(DateFormat);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      ios: {
-        backgroundColor: PlatformColor(PlatformColorsIOS.systemBackground),
-      },
-      android: {
-        backgroundColor: PlatformColor(PlatformColorsAndroid.primarySurface),
-      },
-    }),
-  } as ViewStyle,
-});

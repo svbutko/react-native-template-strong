@@ -1,8 +1,8 @@
 import React, {FC, memo, useCallback, useMemo} from "react";
-import {FlatList, Platform, PlatformColor, StyleSheet, ViewStyle} from "react-native";
-import {Colors, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
-import {ListSeparator} from "./ListSeparator";
+import {FlatList} from "react-native";
+import {Colors, CommonStyles, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 import {ColorPaletteListItem} from "./ColorPaletteListItem";
+import {Separator} from "../../src/common/components";
 
 interface IProps {
   isPlatformColors: boolean;
@@ -20,32 +20,18 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
     return item;
   }, []);
 
-  const data = useMemo(() => (isPlatformColors ? platformPalette : colorPalette), [isPlatformColors, platformPalette, colorPalette]);
+  const data = useMemo(() => (isPlatformColors ? platformPalette : colorPalette), [isPlatformColors]);
 
   return (
     <FlatList
       data={data}
       keyExtractor={keyExtractor}
-      style={styles.container}
+      style={CommonStyles.flexPlatformBackground}
       renderItem={renderItem}
-      ItemSeparatorComponent={ListSeparator}
+      ItemSeparatorComponent={Separator}
     />
   );
 });
 
 const platformPalette: string[] = Object.keys(isIos ? PlatformColorsIOS : PlatformColorsAndroid);
 const colorPalette: string[] = Object.keys(Colors);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      ios: {
-        backgroundColor: PlatformColor(PlatformColorsIOS.systemBackground),
-      },
-      android: {
-        backgroundColor: PlatformColor(PlatformColorsAndroid.primarySurface),
-      },
-    }),
-  } as ViewStyle,
-});

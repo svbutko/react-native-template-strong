@@ -1,6 +1,7 @@
 import React, {FC, memo} from "react";
-import {Platform, PlatformColor, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
+import {Platform, PlatformColor, StyleSheet, View, ViewStyle} from "react-native";
 import {Colors, isIos, maxWindowDimension, minWindowDimension, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
+import {DescriptionText} from "./DescriptionText";
 
 interface IProps {
   color: string;
@@ -20,7 +21,7 @@ export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) 
   return (
     <View style={styles.container}>
       <View style={colorStyle} />
-      <Text style={styles.title}>{color}</Text>
+      <DescriptionText>{color}</DescriptionText>
     </View>
   );
 });
@@ -44,17 +45,4 @@ const styles = StyleSheet.create({
       },
     }),
   } as ViewStyle,
-  title: {
-    fontSize: 24,
-    padding: 10,
-    textAlign: "center",
-    ...Platform.select({
-      ios: {
-        color: PlatformColor(PlatformColorsIOS.label),
-      },
-      android: {
-        color: PlatformColor(PlatformColorsAndroid.onBackground),
-      },
-    }),
-  } as TextStyle,
 });

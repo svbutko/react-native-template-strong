@@ -1,12 +1,12 @@
 import React, {FC, memo} from "react";
-import {Platform, PlatformColor, ScrollView, StyleSheet, ViewStyle} from "react-native";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
+import {ScrollView} from "react-native";
+import {CommonStyles} from "../../src/core/theme";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
 import {calendarDate, DateFormat, dateFromFormat, dateFromString, dateFromUnknown} from "../../src/common/localization";
 
 export const MomentFormatterStory: FC = memo(() => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={CommonStyles.flexPlatformBackground}>
       <TitleDescriptionBorder title={dateFromString(new Date()).toString()} description={dateFromString.name} />
       <TitleDescriptionBorder title={dateFromUnknown(new Date())?.toString() || ""} description={dateFromUnknown.name} />
       <TitleDescriptionBorder title={calendarDate(new Date()).toString()} description={calendarDate.name} />
@@ -17,18 +17,4 @@ export const MomentFormatterStory: FC = memo(() => {
       />
     </ScrollView>
   );
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    ...Platform.select({
-      ios: {
-        backgroundColor: PlatformColor(PlatformColorsIOS.systemBackground),
-      },
-      android: {
-        backgroundColor: PlatformColor(PlatformColorsAndroid.primarySurface),
-      },
-    }),
-  } as ViewStyle,
 });
