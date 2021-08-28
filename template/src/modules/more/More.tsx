@@ -50,6 +50,12 @@ export const More: NavigationFunctionComponent = (): JSX.Element => {
 
 More.options = {
   topBar: {
+    largeTitle: {
+      visible: true,
+    },
+    searchBar: {
+      visible: false,
+    },
     title: {
       text: localization.pages.more,
     },

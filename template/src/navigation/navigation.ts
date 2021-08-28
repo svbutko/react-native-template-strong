@@ -59,7 +59,7 @@ export function setDefaultOptions() {
       },
       largeTitle: {
         fontFamily: Fonts.system,
-        visible: true,
+        visible: false,
       },
       scrollEdgeAppearance: {
         active: true,

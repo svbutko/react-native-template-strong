@@ -50,6 +50,12 @@ export const Main: NavigationFunctionComponent = (): JSX.Element => {
 
 Main.options = {
   topBar: {
+    largeTitle: {
+      visible: true,
+    },
+    searchBar: {
+      visible: true,
+    },
     title: {
       text: localization.pages.main,
     },
