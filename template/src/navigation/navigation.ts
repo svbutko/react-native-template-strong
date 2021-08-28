@@ -63,11 +63,11 @@ export function setDefaultOptions() {
       hideNavBarOnFocusSearchBar: true,
       searchBarHiddenWhenScrolling: true,
       searchBarPlaceholder: localization.common.search,
-      noBorder: true,
+      noBorder: false,
     },
     bottomTabs: {
       animate: true,
-      hideShadow: true,
+      hideShadow: false,
       translucent: true,
     },
     bottomTab: {
