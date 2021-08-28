@@ -1,7 +1,6 @@
 import {Navigation, NavigationConstants} from "react-native-navigation";
 import {Pages} from "./pages";
-import {Platform, PlatformColor} from "react-native";
-import {Fonts, isAndroid, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme";
+import {isAndroid, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme";
 import {Demo} from "../modules/demo/Demo";
 import {More} from "../modules/more/More";
 import {localization} from "../common/localization";
@@ -15,6 +14,7 @@ import {useState} from "react";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 // eslint-disable-next-line import/no-unassigned-import
 import "../../storybook.config";
+import {platformNativeColor} from "../common/helpers";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
@@ -39,14 +39,7 @@ export function setDefaultOptions() {
       },
     },
     layout: {
-      ...Platform.select({
-        ios: {
-          componentBackgroundColor: PlatformColor(PlatformColorsIOS.systemBackground),
-        },
-        android: {
-          componentBackgroundColor: PlatformColor(PlatformColorsAndroid.darkerGray),
-        },
-      }),
+      componentBackgroundColor: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.darkerGray),
     },
     topBar: {
       animate: true,
@@ -54,19 +47,12 @@ export function setDefaultOptions() {
       background: {
         translucent: true,
       },
-      backButton: {
-        fontFamily: Fonts.system,
-      },
       largeTitle: {
-        fontFamily: Fonts.system,
         visible: false,
       },
       scrollEdgeAppearance: {
         active: true,
         noBorder: true,
-      },
-      title: {
-        fontFamily: Fonts.system,
       },
       searchBar: {
         visible: false,
@@ -85,15 +71,22 @@ export function setDefaultOptions() {
       translucent: true,
     },
     bottomTab: {
-      fontFamily: Fonts.system,
-      ...Platform.select({
-        ios: {
-          textColor: PlatformColor(PlatformColorsIOS.label),
-        },
-        android: {
-          textColor: PlatformColor(PlatformColorsAndroid.darkerGray),
-        },
-      }),
+      selectedTextColor: {
+        light: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
+        dark: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
+      },
+      selectedIconColor: {
+        light: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
+        dark: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
+      },
+      textColor: {
+        light: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
+        dark: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
+      },
+      iconColor: {
+        light: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
+        dark: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
+      },
     },
   });
 }
