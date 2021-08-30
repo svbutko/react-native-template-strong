@@ -18,11 +18,11 @@ export const Separator: FC<IProps> = ({isFull}) => {
 const styles = StyleSheet.create({
   container: {
     height: hairlineWidth,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.secondary),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.highlight),
     marginHorizontal: CommonSizes.spacing.medium,
   } as ViewStyle,
   fullContainer: {
     height: hairlineWidth,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.secondary),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.highlight),
   } as ViewStyle,
 });
