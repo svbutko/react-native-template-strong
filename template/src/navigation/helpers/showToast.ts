@@ -1,5 +1,4 @@
 import {Pages} from "../pages";
-import {localization} from "../../common/localization";
 import {Layout, Navigation} from "react-native-navigation";
 import {IToastNavProps} from "../../common/components/Toast";
 
@@ -9,13 +8,6 @@ export function showToast(props: IToastNavProps) {
       name: Pages.toast.name,
       id: Pages.toast.id,
       passProps: props,
-      options: {
-        topBar: {
-          title: {
-            text: localization.pages.selectDate,
-          },
-        },
-      },
     },
   };
 
