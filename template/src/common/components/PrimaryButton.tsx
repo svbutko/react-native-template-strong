@@ -1,6 +1,17 @@
 import React, {FC, memo, useMemo} from "react";
-import {ActivityIndicator, Image, ImageProps, ImageStyle, ImageURISource, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Colors, CommonSizes, CommonStyles, hairlineWidth, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {
+  ActivityIndicator,
+  Image,
+  ImageProps,
+  ImageStyle,
+  ImageURISource,
+  Platform,
+  StyleSheet,
+  Text,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
+import {Colors, CommonSizes, CommonStyles, isAndroid, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ButtonType, TouchablePlatformProps} from "../../types";
 import {TouchablePlatform} from "./TouchablePlatform";
 import {platformMixedColor, platformNativeColor} from "../helpers";
@@ -21,7 +32,18 @@ export const PrimaryButton: FC<IProps> = memo(({label, icon, iconStyle, type, ro
   }, [type, rounded, props.disabled]);
 
   const highlightColor = useMemo(() => {
-    return type == ButtonType.solid ? platformMixedColor(PlatformColorsIOS.systemFill, Colors.black) : undefined;
+    switch (type) {
+      case ButtonType.solid:
+        return platformMixedColor(PlatformColorsIOS.systemFill, Colors.white);
+      case ButtonType.outline:
+        return platformMixedColor(undefined, Colors.black);
+      case ButtonType.borderless:
+        return platformMixedColor(undefined, Colors.black);
+      case ButtonType.outlineNegative:
+        return platformMixedColor(undefined, Colors.red);
+      default:
+        return undefined;
+    }
   }, [type]);
 
   const content = useMemo(() => {
@@ -38,7 +60,7 @@ export const PrimaryButton: FC<IProps> = memo(({label, icon, iconStyle, type, ro
         <>
           <ButtonIcon source={icon} style={[styles.icon, iconStyle]} />
           <Text style={[styles.label, labelStyle]} numberOfLines={1}>
-            {label}
+            {isAndroid ? label.toUpperCase() : label}
           </Text>
         </>
       );
@@ -79,14 +101,15 @@ function mergeStylesWithDisabled(styles: IStyles, disabled?: boolean | null, out
           ...styles.button,
           backgroundColor: platformMixedColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.highlight),
           borderColor: outline ? platformMixedColor(PlatformColorsIOS.tertiarySystemFill) : styles.button.borderColor,
+          elevation: 0,
         } as ViewStyle,
         icon: {
           ...styles.icon,
-          tintColor: platformMixedColor(PlatformColorsIOS.placeholderText, Colors.black),
+          tintColor: platformMixedColor(PlatformColorsIOS.placeholderText, Colors.gray),
         } as ImageStyle,
         label: {
           ...styles.label,
-          color: platformMixedColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.darkerGray),
+          color: platformMixedColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.highlight),
         } as TextStyle,
       }
     : styles;
@@ -102,7 +125,7 @@ const commonButtonStyle: ViewStyle = {
   padding: CommonSizes.spacing.medium,
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: CommonSizes.borderRadius.large,
+  borderRadius: isIos ? CommonSizes.borderRadius.large : CommonSizes.borderRadius.extraSmall,
   flexDirection: "row",
   backgroundColor: Colors.transparent,
 };
@@ -126,6 +149,11 @@ const solidStyles = StyleSheet.create({
   button: {
     ...commonButtonStyle,
     backgroundColor: platformMixedColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    ...Platform.select({
+      android: {
+        ...CommonStyles.shadow,
+      },
+    }),
   } as ViewStyle,
   label: {
     ...commonLabelStyle,
@@ -139,16 +167,16 @@ const solidStyles = StyleSheet.create({
 const outlineStyles = StyleSheet.create({
   button: {
     ...commonButtonStyle,
-    borderColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
-    borderWidth: hairlineWidth,
+    borderColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.gray),
+    borderWidth: 1,
   } as ViewStyle,
   label: {
     ...commonLabelStyle,
-    color: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+    color: platformMixedColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as TextStyle,
   icon: {
     ...commonIcon,
-    tintColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+    tintColor: platformMixedColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ImageStyle,
 });
 
@@ -156,7 +184,7 @@ const outlineNegativeStyles = StyleSheet.create({
   button: {
     ...commonButtonStyle,
     borderColor: platformMixedColor(PlatformColorsIOS.systemRed, Colors.red),
-    borderWidth: hairlineWidth,
+    borderWidth: 1,
   } as ViewStyle,
   label: {
     ...commonLabelStyle,
@@ -209,15 +237,15 @@ const smallSolidStyles = StyleSheet.create({
 const smallOutlineStyles = StyleSheet.create({
   button: {
     ...roundedButtonStyle,
-    borderColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
-    borderWidth: hairlineWidth,
+    borderColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.gray),
+    borderWidth: 1,
   } as ViewStyle,
   label: {
     ...CommonStyles.normalText,
-    color: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+    color: platformMixedColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as TextStyle,
   icon: {
     ...commonIcon,
-    tintColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+    tintColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.gray),
   } as ImageStyle,
 });

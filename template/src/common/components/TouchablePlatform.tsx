@@ -45,10 +45,10 @@ export const TouchablePlatform: FC<IProps> = memo(({children, highlightColor, ..
 });
 
 const androidRippleConfig: PressableAndroidRippleConfig = {
-  color: Colors.black,
+  color: Colors.white,
   borderless: false,
 };
 
 TouchablePlatform.defaultProps = {
-  highlightColor: platformMixedColor(PlatformColorsIOS.quaternarySystemFill, Colors.black),
+  highlightColor: platformMixedColor(PlatformColorsIOS.quaternarySystemFill, Colors.white),
 };
