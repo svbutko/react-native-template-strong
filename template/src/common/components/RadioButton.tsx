@@ -27,7 +27,7 @@ export const RadioButton: FC<IProps> = memo(({isSelected, label, onPress, disabl
   }, [disabled]);
 
   return (
-    <TouchablePlatform style={styles.container} onPress={onButtonPress} disabled={disabled}>
+    <TouchablePlatform style={styles.container} highlightColor={Colors.black} onPress={onButtonPress} disabled={disabled}>
       {IconComponent && <IconComponent disabled={disabled} isSelected={isSelected} />}
       <Text style={labelStyle} numberOfLines={1}>
         {label}
