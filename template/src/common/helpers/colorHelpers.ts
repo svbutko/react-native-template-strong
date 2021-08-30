@@ -10,9 +10,7 @@ export function platformLocalColor(iosColor: Colors, androidColor: Colors) {
 }
 
 export function platformMixedColor(iosColor: Colors | PlatformColorsIOS, androidColor: Colors | PlatformColorsAndroid) {
-  if (isIos) {
-    return iosColor in Colors ? (iosColor as Colors) : PlatformColor(iosColor);
-  } else {
-    return androidColor in Colors ? (androidColor as Colors) : PlatformColor(androidColor);
-  }
+  const selectedColor = isIos ? iosColor : androidColor;
+
+  return Object.values(Colors).includes(selectedColor as Colors) ? (selectedColor as Colors) : PlatformColor(selectedColor);
 }
