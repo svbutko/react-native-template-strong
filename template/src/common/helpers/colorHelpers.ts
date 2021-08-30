@@ -8,3 +8,11 @@ export function platformNativeColor(iosColor: PlatformColorsIOS, androidColor: P
 export function platformLocalColor(iosColor: Colors, androidColor: Colors) {
   return isIos ? iosColor : androidColor;
 }
+
+export function platformMixedColor(iosColor: Colors | PlatformColorsIOS, androidColor: Colors | PlatformColorsAndroid) {
+  if (isIos) {
+    return iosColor in Colors ? (iosColor as Colors) : PlatformColor(iosColor);
+  } else {
+    return androidColor in Colors ? (androidColor as Colors) : PlatformColor(androidColor);
+  }
+}
