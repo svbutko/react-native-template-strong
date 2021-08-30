@@ -33,7 +33,8 @@ static void InitializeFlipper(UIApplication *application) {
   InitializeFlipper(application);
 #endif
 
-  [ReactNativeNavigation bootstrapWithDelegate:self launchOptions:launchOptions];
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  [ReactNativeNavigation bootstrapWithBridge:bridge];
   [[RCTI18nUtil sharedInstance] allowRTL:YES];
   return YES;
 }
