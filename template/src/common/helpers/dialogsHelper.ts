@@ -1,4 +1,5 @@
-import {isAndroid, isIos} from "../../core/theme";
+// noinspection ES6PreferShortImport
+import {isAndroid, isIos} from "../../core/theme/commonConsts";
 import {ActionSheetIOS, ActionSheetIOSOptions, Alert, AlertButton} from "react-native";
 import {localization} from "../localization";
 

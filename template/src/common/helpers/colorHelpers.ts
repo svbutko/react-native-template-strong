@@ -1,5 +1,8 @@
 import {PlatformColor} from "react-native";
-import {Colors, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+// noinspection ES6PreferShortImport
+import {isIos} from "../../core/theme/commonConsts";
+// noinspection ES6PreferShortImport
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
 
 export function platformNativeColor(iosColor?: PlatformColorsIOS, androidColor?: PlatformColorsAndroid) {
   const selectedColor = isIos ? iosColor : androidColor;

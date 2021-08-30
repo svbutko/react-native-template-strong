@@ -1,6 +1,7 @@
 import {emptyValidation} from "./commonValidations";
 import {localization} from "../localization";
-import {isEmail} from "../helpers";
+// noinspection ES6PreferShortImport
+import {isEmail} from "../helpers/regexHelpers";
 import {validationConstants} from "./validationConstants";
 
 export function emailValidations(checkValue: string): string | null {
