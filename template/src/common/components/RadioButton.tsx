@@ -1,9 +1,9 @@
 import React, {FC, FunctionComponent, memo, useCallback, useMemo} from "react";
 import {StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {CommonSizes, CommonStyles, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {Colors, CommonSizes, CommonStyles, PlatformColorsIOS} from "../../core/theme";
 import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
-import {platformNativeColor} from "../helpers";
+import {platformMixedColor} from "../helpers";
 
 interface IIconComponentProps {
   isSelected: boolean;
@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
   } as TextStyle,
   labelDisabled: {
     ...commonLabel,
-    color: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
+    color: platformMixedColor(PlatformColorsIOS.systemFill, Colors.black),
   } as TextStyle,
 });
