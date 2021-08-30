@@ -3,7 +3,7 @@ import {ImageURISource, StyleSheet, Text, TextInput, TextInputProps, TextStyle, 
 import {Colors, CommonSizes, CommonStyles, hairlineWidth, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
-import {platformNativeColor} from "../helpers";
+import {platformMixedColor, platformNativeColor} from "../helpers";
 
 interface IProps extends TextInputProps {
   nextInputFocusRef?: MutableRefObject<any>;
@@ -179,28 +179,28 @@ const styles = StyleSheet.create({
   } as TextStyle,
   inputContainer: {
     ...commonInputContainer,
-    borderBottomColor: platformNativeColor(PlatformColorsIOS.separator, PlatformColorsAndroid.primary),
+    borderBottomColor: platformMixedColor(PlatformColorsIOS.separator, Colors.black),
   } as TextStyle,
   errorInputContainer: {
     ...commonInputContainer,
-    borderBottomColor: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.activated),
+    borderBottomColor: platformMixedColor(PlatformColorsIOS.systemRed, Colors.red),
   } as TextStyle,
   disabledInputContainer: {
     ...commonInputContainer,
-    borderBottomColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
+    borderBottomColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.gray),
   } as TextStyle,
   focusedInputContainer: {
     ...commonInputContainer,
   } as TextStyle,
   label: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.activated),
+    color: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.highlight),
     fontSize: CommonSizes.font.small,
     lineHeight: CommonSizes.lineHeight.small,
   } as TextStyle,
   error: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.activated),
+    color: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.error),
     fontSize: CommonSizes.font.small,
     lineHeight: CommonSizes.lineHeight.small,
     paddingTop: CommonSizes.spacing.small,
@@ -213,6 +213,6 @@ PrimaryTextInput.defaultProps = {
   disableFullscreenUI: true,
   enablesReturnKeyAutomatically: true,
   underlineColorAndroid: Colors.transparent,
-  placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.activated),
+  placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.highlight),
   editable: true,
 };
