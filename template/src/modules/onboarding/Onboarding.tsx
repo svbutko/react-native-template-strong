@@ -43,7 +43,7 @@ export const Onboarding: NavigationFunctionComponent = memo(() => {
   }, []);
 
   return (
-    <SafeAreaView style={CommonStyles.flexPlatformBackground}>
+    <SafeAreaView style={CommonStyles.flex1}>
       <Carousel
         ref={carouselRef}
         data={carouselData}
