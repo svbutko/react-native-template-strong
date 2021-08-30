@@ -11,14 +11,8 @@ import {DatePickerOverlay, Toast} from "../common/components";
 import {getStorybookUI} from "@storybook/react-native";
 import {reduxProvider} from "../core/store/store";
 import {Onboarding} from "../modules/onboarding/Onboarding";
-// eslint-disable-next-line import/no-unassigned-import
-import "../../storybook.config";
 import {platformMixedColor, platformNativeColor} from "../common/helpers";
 import {Platform} from "react-native";
-
-const StorybookUIRoot = getStorybookUI({
-  asyncStorage: null,
-});
 
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
@@ -111,7 +105,13 @@ export function setDefaultOptions() {
 }
 
 export function registerComponents() {
-  Navigation.registerComponent(Pages.storybook.name, () => StorybookUIRoot);
+  if (__DEV__) {
+    Navigation.registerComponent(Pages.storybook.name, () =>
+      getStorybookUI({
+        asyncStorage: null,
+      }),
+    );
+  }
   Navigation.registerComponent(
     Pages.splash.name,
     () => gestureHandlerRootHOC(reduxProvider(Splash)),
