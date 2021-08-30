@@ -8,27 +8,7 @@ import {Alert} from "react-native";
 import {emailValidations, fullNameValidations} from "./profileValidations";
 import {unwrapResult} from "@reduxjs/toolkit";
 import {ErrorRepresentationType, IErrorResult, ToastType} from "../../types";
-
-const validationConstants = {
-  phone: {
-    minLength: 8,
-    maxLength: 18,
-  },
-  fullName: {
-    minLength: 3,
-    maxLength: 64,
-  },
-  comment: {
-    maxLength: 280,
-  },
-  email: {
-    maxLength: 254,
-  },
-  licensePlate: {
-    minLength: 4,
-    maxLength: 10,
-  },
-};
+import {validationConstants} from "./validationConstants";
 
 function processError(error: Error): IErrorResult {
   return {

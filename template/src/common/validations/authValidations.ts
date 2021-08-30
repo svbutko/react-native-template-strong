@@ -1,6 +1,6 @@
 import {emptyValidation} from "./commonValidations";
-import {validationConstants} from "./index";
 import {localization} from "../localization";
+import {validationConstants} from "./validationConstants";
 
 export function phoneValidations(checkValue: string): string | null {
   const isEmpty = emptyValidation(checkValue);

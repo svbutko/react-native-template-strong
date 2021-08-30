@@ -1,7 +1,7 @@
 import {emptyValidation} from "./commonValidations";
 import {localization} from "../localization";
 import {isEmail} from "../helpers";
-import {validationConstants} from "./index";
+import {validationConstants} from "./validationConstants";
 
 export function emailValidations(checkValue: string): string | null {
   const isEmpty = emptyValidation(checkValue);
