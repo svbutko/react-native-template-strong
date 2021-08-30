@@ -1,6 +1,6 @@
-import {Navigation, NavigationConstants} from "react-native-navigation";
+import {Navigation} from "react-native-navigation";
 import {Pages} from "./pages";
-import {isAndroid, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme";
+import {Colors, isAndroid, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme";
 import {Demo} from "../modules/demo/Demo";
 import {More} from "../modules/more/More";
 import {localization} from "../common/localization";
@@ -10,23 +10,15 @@ import {Splash} from "../modules/splash/Splash";
 import {DatePickerOverlay, Toast} from "../common/components";
 import {getStorybookUI} from "@storybook/react-native";
 import {reduxProvider} from "../core/store/store";
-import {useState} from "react";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 // eslint-disable-next-line import/no-unassigned-import
 import "../../storybook.config";
-import {platformNativeColor} from "../common/helpers";
+import {platformMixedColor, platformNativeColor} from "../common/helpers";
+import {Platform} from "react-native";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
 });
-
-export function useNavigationConstants() {
-  const [constants, setConstants] = useState<NavigationConstants>();
-
-  Navigation.constants().then(setConstants);
-
-  return constants;
-}
 
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
@@ -46,6 +38,16 @@ export function setDefaultOptions() {
       drawBehind: !isAndroid,
       background: {
         translucent: true,
+        color: {
+          light: platformMixedColor(undefined, Colors.gray),
+          dark: platformMixedColor(undefined, Colors.black),
+        },
+      },
+      title: {
+        color: {
+          light: platformMixedColor(undefined, Colors.black),
+          dark: platformMixedColor(undefined, Colors.white),
+        },
       },
       largeTitle: {
         visible: false,
@@ -69,24 +71,41 @@ export function setDefaultOptions() {
       animate: true,
       hideShadow: false,
       translucent: true,
+      animateTabSelection: true,
+      preferLargeIcons: false,
+      tabsAttachMode: "together",
+      backgroundColor: {
+        light: platformMixedColor(undefined, Colors.gray),
+        dark: platformMixedColor(undefined, Colors.black),
+      },
+      ...Platform.select({
+        android: {
+          translucent: false,
+          borderWidth: 1,
+          borderColor: Colors.gray,
+        },
+      }),
     },
     bottomTab: {
       selectedTextColor: {
-        light: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
-        dark: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
+        light: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+        dark: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.white),
       },
       selectedIconColor: {
-        light: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
-        dark: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.darkerGray),
+        light: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+        dark: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.white),
       },
       textColor: {
-        light: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
-        dark: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
+        light: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
+        dark: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
       },
       iconColor: {
-        light: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
-        dark: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.darkerGray),
+        light: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
+        dark: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
       },
+    },
+    statusBar: {
+      visible: true,
     },
   });
 }

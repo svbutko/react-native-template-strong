@@ -3,7 +3,7 @@ import {Image, ImageStyle, ImageURISource, SafeAreaView, StyleSheet, Text, View,
 import {Colors, CommonStyles, windowWidth} from "../../core/theme";
 import {ToastType} from "../../types";
 import {Navigation, NavigationFunctionComponent} from "react-native-navigation";
-import {useNavigationConstants} from "../../navigation/navigation";
+import {useNavigationConstants} from "../../navigation/hooks";
 
 export interface IToastNavProps {
   text: string;
