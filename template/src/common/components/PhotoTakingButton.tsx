@@ -1,9 +1,9 @@
 import React, {FC, Fragment, memo} from "react";
 import {Image, ImageBackground, ImageStyle, ImageURISource, StyleSheet, TouchableOpacity, ViewStyle} from "react-native";
-import {CommonSizes, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {Colors, CommonSizes, PlatformColorsIOS} from "../../core/theme";
 import {ImageResources} from "../ImageResources.g";
 import {Image as CropperImage} from "react-native-image-crop-picker";
-import {platformNativeColor} from "../helpers";
+import {platformMixedColor} from "../helpers";
 
 interface IProps {
   onPress?: () => void;
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: CommonSizes.borderRadius.small,
     borderWidth: 1,
-    borderColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.activated),
+    borderColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.gray),
   } as ViewStyle,
   image: {
     height: 120,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     resizeMode: "contain",
-    tintColor: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primary),
+    tintColor: platformMixedColor(PlatformColorsIOS.label, Colors.black),
     opacity: 0.8,
   } as ImageStyle,
 });
