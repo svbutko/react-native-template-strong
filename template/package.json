@@ -76,7 +76,7 @@
     "@types/react-native-snap-carousel": "3.8.4",
     "@types/react-redux": "7.1.18",
     "@types/react-test-renderer": "17.0.1",
-    "@typescript-eslint/eslint-plugin": "4.29.3",
+    "@typescript-eslint/eslint-plugin": "4.30.0",
     "babel-jest": "27.1.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "detox": "18.20.2",
