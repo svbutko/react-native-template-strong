@@ -4,5 +4,6 @@ export const pagesLocalization = {
     demo: "Demo",
     more: "More",
     selectDate: "Select date",
+    storybook: "Storybook",
   },
 };

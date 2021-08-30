@@ -9,6 +9,14 @@ export function setStorybookRoot() {
       component: {
         name: Pages.storybook.name,
         id: Pages.storybook.id,
+        options: {
+          topBar: {
+            visible: true,
+            title: {
+              text: localization.pages.storybook,
+            },
+          },
+        },
       },
     },
   });
