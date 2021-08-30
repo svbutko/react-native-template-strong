@@ -39,7 +39,7 @@ export function setDefaultOptions() {
       },
     },
     layout: {
-      componentBackgroundColor: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.darkerGray),
+      componentBackgroundColor: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.background),
     },
     topBar: {
       animate: true,

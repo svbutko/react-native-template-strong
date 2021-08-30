@@ -1,4 +1,4 @@
-import {Platform, PlatformColor, StyleSheet, TextStyle, ViewStyle} from "react-native";
+import {Platform, StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {Fonts} from "./fonts";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
 import {CommonSizes} from "./commonSizes";
@@ -21,14 +21,7 @@ export const CommonStyles = StyleSheet.create({
   } as ViewStyle,
   flexPlatformBackground: {
     flex: 1,
-    ...Platform.select({
-      ios: {
-        backgroundColor: PlatformColor(PlatformColorsIOS.systemBackground),
-      },
-      android: {
-        backgroundColor: PlatformColor(PlatformColorsAndroid.primarySurface),
-      },
-    }),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.background),
   } as ViewStyle,
   rowCenter: {
     flexDirection: "row",
