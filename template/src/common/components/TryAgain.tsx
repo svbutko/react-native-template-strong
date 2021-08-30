@@ -26,7 +26,7 @@ TryAgain.defaultProps = {
   errorText: localization.errors.unknownErrorHasOccurred,
 };
 
-const styles = StyleSheet.flatten({
+const styles = StyleSheet.create({
   container: {
     ...CommonStyles.flexCenter,
     padding: CommonSizes.spacing.medium,
