@@ -12,6 +12,11 @@ import {reduxProvider} from "../core/store/store";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 import {platformMixedColor, platformNativeColor} from "../common/helpers";
 import {Platform} from "react-native";
+import {getStorybookUI} from "@storybook/react-native";
+
+const StorybookUIRoot = getStorybookUI({
+  asyncStorage: null,
+});
 
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
@@ -105,13 +110,7 @@ export function setDefaultOptions() {
 
 export function registerComponents() {
   if (__DEV__) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const {getStorybookUI} = require("@storybook/react-native");
-    Navigation.registerComponent(Pages.storybook.name, () =>
-      getStorybookUI({
-        asyncStorage: null,
-      }),
-    );
+    Navigation.registerComponent(Pages.storybook.name, () => StorybookUIRoot);
   }
   Navigation.registerComponent(
     Pages.splash.name,
