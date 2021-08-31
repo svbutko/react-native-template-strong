@@ -22,5 +22,6 @@ export const commonLocalization = {
     success: "Success",
     select: "Select",
     dataSuccessfullyUpdated: "Data has been successfully updated",
+    settings: "Settings",
   },
 };

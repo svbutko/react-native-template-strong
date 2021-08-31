@@ -12,6 +12,8 @@ export const errorsLocalization = {
     invalidFromDate: (fromField: string, toField: string) => `${fromField} can't be later than ${toField.toLowerCase()}`,
     invalidToDate: (fromField: string, toField: string) => `${toField} can't be earlier than ${fromField.toLowerCase()}`,
     datesCantBeEqual: (fromField: string, toField: string) => `${fromField} and ${toField.toLowerCase()} can't be equal`,
+    mobileDataIsTurnedOff: "Mobile Data is Turned Off",
+    turnOnMobileData: "Turn on mobile data or use Wi-Fi to access data.",
     error: "Error",
   },
 };

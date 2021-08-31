@@ -2,6 +2,7 @@ import {Pages} from "./pages";
 import {Navigation} from "react-native-navigation";
 import {Tabs} from "./tabs";
 import {localization} from "../common/localization";
+import {startListeningToNetInfo} from "../common/helpers";
 
 export function setStorybookRoot() {
   Navigation.setRoot({
@@ -117,5 +118,5 @@ export function setTabsRoot() {
         ],
       },
     },
-  });
+  }).then(startListeningToNetInfo);
 }

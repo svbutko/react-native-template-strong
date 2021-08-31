@@ -35,6 +35,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/datetimepicker": "3.5.2",
+    "@react-native-community/netinfo": "6.0.1",
     "@reduxjs/toolkit": "1.6.1",
     "lodash": "4.17.21",
     "moment": "2.29.1",

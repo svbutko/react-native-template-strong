@@ -9,6 +9,7 @@ declare module "react-native-config" {
   interface EnvironmentVariables {
     API_URL: string;
     ENVIRONMENT: AppEnvironment;
+    IGNORE_NET_INFO: boolean;
   }
 
   export const Config: EnvironmentVariables;

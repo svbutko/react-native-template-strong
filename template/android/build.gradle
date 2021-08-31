@@ -8,6 +8,7 @@ buildscript {
         minSdkVersion = 21
         compileSdkVersion = 30
         targetSdkVersion = 30
+        androidXCore = "1.0.2"
         ndkVersion = "23.0.7599858"
     }
     repositories {
