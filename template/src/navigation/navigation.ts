@@ -8,7 +8,6 @@ import {Main} from "../modules/main/Main";
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
 import {DatePickerOverlay, Toast} from "../common/components";
-import {getStorybookUI} from "@storybook/react-native";
 import {reduxProvider} from "../core/store/store";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 import {platformMixedColor, platformNativeColor} from "../common/helpers";
@@ -106,6 +105,8 @@ export function setDefaultOptions() {
 
 export function registerComponents() {
   if (__DEV__) {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const {getStorybookUI} = require("@storybook/react-native");
     Navigation.registerComponent(Pages.storybook.name, () =>
       getStorybookUI({
         asyncStorage: null,
