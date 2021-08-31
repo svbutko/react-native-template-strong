@@ -219,7 +219,7 @@ PODS:
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
   - React-jsinspector (0.65.1)
-  - react-native-blob-util (0.13.13):
+  - react-native-blob-util (0.13.14):
     - React-Core
   - react-native-config (1.4.4):
     - react-native-config/App (= 1.4.4)
@@ -498,7 +498,7 @@ SPEC CHECKSUMS:
   React-jsi: 12913c841713a15f64eabf5c9ad98592c0ec5940
   React-jsiexecutor: 43f2542aed3c26e42175b339f8d37fe3dd683765
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
-  react-native-blob-util: 55960fcb72164a96e67651567b85928e78609770
+  react-native-blob-util: 7eb03208f59ea891498634746d236bc1085d1c4f
   react-native-config: 72d948053a442779b3178fddd571e37f118ef606
   react-native-orientation-locker: 998c0744e26624407dac068c04c605b4af7304a2
   React-perflogger: fd28ee1f2b5b150b00043f0301d96bd417fdc339
