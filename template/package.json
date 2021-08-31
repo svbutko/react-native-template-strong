@@ -80,7 +80,7 @@
     "babel-plugin-transform-remove-console": "6.9.4",
     "detox": "18.20.2",
     "eslint": "7.32.0",
-    "eslint-config-react-strong": "1.0.1",
+    "eslint-config-react-strong": "1.0.2",
     "eslint-plugin-import": "2.24.2",
     "eslint-plugin-react": "7.25.1",
     "eslint-plugin-react-hooks": "4.2.0",
