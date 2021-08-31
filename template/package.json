@@ -41,7 +41,7 @@
     "moment": "2.29.1",
     "react": "17.0.2",
     "react-native": "0.65.1",
-    "react-native-blob-util": "0.13.13",
+    "react-native-blob-util": "0.13.14",
     "react-native-config": "1.4.4",
     "react-native-dev-menu": "4.0.2",
     "react-native-device-detection": "0.2.1",
