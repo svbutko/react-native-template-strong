@@ -48,8 +48,6 @@ export const CommonStyles = StyleSheet.create({
   } as ViewStyle,
   normalText: {
     fontFamily: Fonts.system,
-    fontWeight: "400",
-    fontStyle: "normal",
     fontSize: CommonSizes.font.medium,
     lineHeight: CommonSizes.lineHeight.medium,
     color: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.onBackground),
