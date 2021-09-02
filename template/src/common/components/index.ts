@@ -4,7 +4,7 @@ import {PrimaryTextInput} from "./PrimaryTextInput";
 import {RadioButton} from "./RadioButton";
 import {TouchablePlatform} from "./TouchablePlatform";
 import {PhotoTakingButton} from "./PhotoTakingButton";
-import {Toast} from "./Toast";
+import {ToastOverlay} from "./ToastOverlay";
 import {EmptyView} from "./EmptyView";
 import {DatePickerOverlay} from "./DatePickerOverlay";
 import {FlatListWrapper} from "./FlatListWrapper";
@@ -20,7 +20,7 @@ export {
   RadioButton,
   ImageCropPickerButton,
   PhotoTakingButton,
-  Toast,
+  ToastOverlay,
   EmptyView,
   DatePickerOverlay,
   FlatListWrapper,

@@ -7,7 +7,7 @@ import {localization} from "../common/localization";
 import {Main} from "../modules/main/Main";
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
-import {DatePickerOverlay, Toast} from "../common/components";
+import {DatePickerOverlay, ToastOverlay} from "../common/components";
 import {reduxProvider} from "../core/store/store";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 import {platformMixedColor, platformNativeColor} from "../common/helpers";
@@ -121,6 +121,6 @@ export function registerComponents() {
   Navigation.registerComponent(Pages.main.name, () => Main);
   Navigation.registerComponent(Pages.demo.name, () => Demo);
   Navigation.registerComponent(Pages.more.name, () => More);
-  Navigation.registerComponent(Pages.toast.name, () => Toast);
+  Navigation.registerComponent(Pages.toast.name, () => ToastOverlay);
   Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);
 }

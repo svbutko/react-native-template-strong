@@ -52,12 +52,6 @@ export interface RehydrateAppAction extends RehydrateAction {
   payload?: RootState;
 }
 
-export enum ToastType {
-  success = "success",
-  error = "error",
-  info = "info",
-}
-
 export enum ErrorRepresentationType {
   input = "input",
   toast = "toast",
