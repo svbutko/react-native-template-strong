@@ -6,7 +6,6 @@ export function showToast(props: IToastNavProps) {
   const data: Layout<IToastNavProps> = {
     component: {
       name: Pages.toast.name,
-      id: Pages.toast.id,
       passProps: props,
     },
   };

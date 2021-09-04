@@ -25,6 +25,7 @@ export const ToastOverlayStories: FC = () => {
     showToast({
       text: "Loading message",
       location: "bottom",
+      loading: true,
     });
   }, []);
 
