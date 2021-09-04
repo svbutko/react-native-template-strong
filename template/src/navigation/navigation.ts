@@ -80,7 +80,10 @@ export function setDefaultOptions() {
         android: {
           translucent: false,
           borderWidth: 1,
-          borderColor: Colors.gray,
+          borderColor: {
+            light: Colors.gray,
+            dark: undefined,
+          },
         },
       }),
     },
