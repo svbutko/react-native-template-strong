@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   inactiveIcon: {
     ...commonIcon,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.onBackground),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.highlight),
   } as ViewStyle,
 });
