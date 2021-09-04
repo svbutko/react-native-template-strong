@@ -1,91 +1,51 @@
-import React, {FC, memo, useCallback, useMemo} from "react";
-import {StyleSheet, TextStyle, View, ViewStyle} from "react-native";
-import {PrimaryButton} from "../../../common/components";
-import {Colors} from "../../../core/theme";
-import {localization} from "../../../common/localization";
-import {ButtonType} from "../../../types";
-import {setTabsRoot} from "../../../navigation/roots";
+import React, {FC, memo} from "react";
+import {StyleSheet, View, ViewStyle} from "react-native";
+import {CommonSizes, PlatformColorsAndroid, PlatformColorsIOS} from "../../../core/theme";
+import {platformNativeColor} from "../../../common/helpers";
 
 interface IProps {
-  carouselRef: any;
+  totalItems: number;
   activeIndex: number;
 }
 
-export const OnboardingPagination: FC<IProps> = memo(({activeIndex, carouselRef}) => {
-  const onBackPress = useCallback(() => {
-    carouselRef && carouselRef.current && carouselRef.current.snapToPrev();
-  }, [carouselRef]);
+export const OnboardingPagination: FC<IProps> = memo(({activeIndex, totalItems}) => {
+  const dots = [];
 
-  const isZeroIndex = useMemo(() => {
-    return activeIndex == 0;
-  }, [activeIndex]);
+  for (let i = 0; i < totalItems; i++) {
+    dots.push(<View key={i} style={activeIndex == i ? styles.activeIcon : styles.inactiveIcon} />);
+  }
 
-  const onNextPress = useCallback(() => {
-    if (isZeroIndex) {
-      carouselRef && carouselRef.current && carouselRef.current.snapToNext();
-    } else {
-      setTabsRoot();
-    }
-  }, [carouselRef, isZeroIndex]);
-
-  return (
-    <View style={styles.container}>
-      <PrimaryButton
-        type={ButtonType.borderless}
-        style={styles.button}
-        label={localization.common.back}
-        onPress={onBackPress}
-        disabled={isZeroIndex}
-        labelStyle={isZeroIndex ? styles.disabledText : undefined}
-      />
-      <View style={styles.iconsContainer}>
-        <View style={[styles.inactiveIcon, isZeroIndex && styles.activeIcon]} />
-        <View style={[styles.inactiveIcon, !isZeroIndex && styles.activeIcon]} />
-      </View>
-      <PrimaryButton
-        type={ButtonType.borderless}
-        style={styles.button}
-        label={isZeroIndex ? localization.common.next : localization.common.done}
-        onPress={onNextPress}
-        labelStyle={!isZeroIndex ? styles.doneText : undefined}
-      />
-    </View>
-  );
+  return <View style={styles.container}>{dots}</View>;
 });
 
+/**
+ * Border radius is set this way in order to avoid error on Android
+ * when setting borderRadius and background with PlatformColor
+ */
 const commonIcon: ViewStyle = {
   width: 10,
   height: 10,
   borderRadius: 5,
-  marginHorizontal: 8,
+  borderTopLeftRadius: 5,
+  borderTopRightRadius: 5,
+  borderBottomLeftRadius: 5,
+  borderBottomRightRadius: 5,
+  marginHorizontal: CommonSizes.spacing.extraSmall,
 };
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-  } as ViewStyle,
-  iconsContainer: {
-    flexDirection: "row",
-    alignItems: "center",
     justifyContent: "center",
+    paddingVertical: CommonSizes.spacing.large,
   } as ViewStyle,
   activeIcon: {
     ...commonIcon,
-    backgroundColor: Colors.red,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ViewStyle,
   inactiveIcon: {
     ...commonIcon,
-    backgroundColor: Colors.black,
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.onBackground),
   } as ViewStyle,
-  button: {
-    padding: 24,
-  } as ViewStyle,
-  doneText: {
-    color: Colors.red,
-  } as TextStyle,
-  disabledText: {
-    color: Colors.black,
-  } as TextStyle,
 });
