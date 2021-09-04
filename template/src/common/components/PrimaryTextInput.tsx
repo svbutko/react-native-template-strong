@@ -1,6 +1,17 @@
 import React, {FC, memo, MutableRefObject, Ref, useCallback, useMemo, useState} from "react";
-import {ImageURISource, StyleSheet, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {Colors, CommonSizes, CommonStyles, hairlineWidth, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
+import {
+  ImageURISource,
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TextInputProps,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
+import {Colors, CommonSizes, CommonStyles, Fonts, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
 import {platformMixedColor, platformNativeColor} from "../helpers";
@@ -135,25 +146,25 @@ const BottomText: FC<{error?: string | null; hint?: string}> = memo(({error, hin
   if (error != null) {
     return <Text style={styles.error}>{error}</Text>;
   } else if (hint != null) {
-    return (
-      <Text style={styles.label} numberOfLines={1}>
-        {hint}
-      </Text>
-    );
+    return <Text style={styles.hint}>{hint}</Text>;
   } else {
     return null;
   }
 });
 
 function getInputContainerStyle(isFocused: boolean, error?: string | null, editable?: boolean): ViewStyle {
-  if (isFocused) {
-    return styles.focusedInputContainer;
-  } else if (!editable) {
-    return styles.disabledInputContainer;
-  } else if (error) {
-    return styles.errorInputContainer;
+  if (isIos) {
+    return !editable ? styles.disabledInputContainer : styles.inputContainer;
   } else {
-    return styles.inputContainer;
+    if (isFocused) {
+      return styles.focusedInputContainer;
+    } else if (!editable) {
+      return styles.disabledInputContainer;
+    } else if (error) {
+      return styles.errorInputContainer;
+    } else {
+      return styles.inputContainer;
+    }
   }
 }
 
@@ -164,7 +175,17 @@ const commonInputContainer: TextStyle = {
   height: CommonSizes.spacing.extraLarge,
   textAlignVertical: "center",
   textAlign: "center",
-  borderBottomWidth: hairlineWidth,
+  ...Platform.select({
+    ios: {
+      borderRadius: CommonSizes.borderRadius.medium,
+      backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill),
+    } as TextStyle,
+    android: {
+      borderRadius: CommonSizes.borderRadius.extraSmall,
+      borderColor: Colors.gray,
+      borderWidth: 1,
+    } as TextStyle,
+  }),
 };
 
 const styles = StyleSheet.create({
@@ -175,35 +196,63 @@ const styles = StyleSheet.create({
     ...CommonStyles.normalText,
     flex: 1,
     textAlignVertical: "center",
-    backgroundColor: Colors.transparent,
+    paddingLeft: CommonSizes.spacing.medium,
+    ...Platform.select({
+      android: {
+        paddingRight: CommonSizes.spacing.medium,
+      },
+    }),
   } as TextStyle,
   inputContainer: {
     ...commonInputContainer,
-    borderBottomColor: platformMixedColor(PlatformColorsIOS.separator, Colors.black),
+    ...Platform.select({
+      ios: {
+        paddingRight: CommonSizes.spacing.medium,
+      },
+    }),
   } as TextStyle,
   errorInputContainer: {
     ...commonInputContainer,
-    borderBottomColor: platformMixedColor(PlatformColorsIOS.systemRed, Colors.red),
+    ...Platform.select({
+      android: {
+        borderColor: Colors.red,
+      },
+    }),
   } as TextStyle,
   disabledInputContainer: {
     ...commonInputContainer,
-    borderBottomColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.gray),
+    ...Platform.select({
+      android: {
+        backgroundColor: Colors.gray,
+        borderColor: Colors.gray,
+      },
+    }),
   } as TextStyle,
   focusedInputContainer: {
     ...commonInputContainer,
+    ...Platform.select({
+      android: {
+        borderColor: Colors.darkGray,
+      },
+    }),
   } as TextStyle,
   label: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.highlight),
+    paddingBottom: CommonSizes.spacing.extraSmall,
+  } as TextStyle,
+  hint: {
+    ...CommonStyles.normalText,
+    fontFamily: Fonts.thin,
     fontSize: CommonSizes.font.small,
     lineHeight: CommonSizes.lineHeight.small,
+    paddingTop: CommonSizes.spacing.extraSmall,
   } as TextStyle,
   error: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemRed, PlatformColorsAndroid.error),
+    color: platformMixedColor(PlatformColorsIOS.systemRed, Colors.red),
     fontSize: CommonSizes.font.small,
     lineHeight: CommonSizes.lineHeight.small,
-    paddingTop: CommonSizes.spacing.small,
+    paddingTop: CommonSizes.spacing.extraSmall,
   } as TextStyle,
 });
 
@@ -215,4 +264,5 @@ PrimaryTextInput.defaultProps = {
   underlineColorAndroid: Colors.transparent,
   placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.highlight),
   editable: true,
+  clearButtonMode: "while-editing",
 };
