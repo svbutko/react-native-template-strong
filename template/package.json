@@ -35,7 +35,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/datetimepicker": "3.5.2",
-    "@react-native-community/netinfo": "6.0.1",
+    "@react-native-community/netinfo": "6.0.2",
     "@reduxjs/toolkit": "1.6.1",
     "lodash": "4.17.21",
     "moment": "2.29.1",
@@ -59,8 +59,8 @@
     "redux-persist-filesystem-storage": "4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
-    "@babel/runtime": "7.15.3",
+    "@babel/core": "7.15.4",
+    "@babel/runtime": "7.15.4",
     "@storybook/addon-actions": "5.3.21",
     "@storybook/addon-knobs": "5.3.21",
     "@storybook/addon-links": "5.3.21",
