@@ -20,7 +20,7 @@ export const CommonSizes = {
     small: 10,
     medium: 16,
     large: 32,
-    extraLarge: 40,
+    extraLarge: 48,
   } as Readonly<ISize>,
   borderRadius: {
     extraSmall: 4,
