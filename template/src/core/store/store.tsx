@@ -2,15 +2,13 @@ import React from "react";
 import {Action, configureStore, ThunkAction} from "@reduxjs/toolkit";
 import {PersistConfig, persistReducer, persistStore} from "redux-persist";
 import {rootReducer, RootState} from "./rootReducer";
-import {isIos} from "../theme";
 import AsyncStorage from "@react-native-community/async-storage";
-import FilesystemStorage from "redux-persist-filesystem-storage";
 import {Provider, TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
 
 const persistConfig: PersistConfig<RootState> = {
   key: "root",
-  storage: isIos ? AsyncStorage : FilesystemStorage,
+  storage: AsyncStorage,
   version: 1,
   timeout: 1000,
 };
