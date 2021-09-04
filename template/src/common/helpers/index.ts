@@ -9,6 +9,7 @@ import {convertCropperImageToBase64} from "./imageHelpers";
 import {InputMask} from "./inputMask";
 import {platformLocalColor, platformMixedColor, platformNativeColor} from "./colorHelpers";
 import {startListeningToNetInfo, unsubscribeFromNetInfo} from "./netInfoHelpers";
+import {showInAppReview} from "./inAppReviewHelper";
 
 export {
   getCurrentOrientation,
@@ -33,4 +34,5 @@ export {
   platformMixedColor,
   startListeningToNetInfo,
   unsubscribeFromNetInfo,
+  showInAppReview,
 };
