@@ -15,7 +15,6 @@ interface IProps extends SectionListProps<any> {
   error?: string | null;
 }
 
-//TODO: Add to Storybook
 export const SectionListWrapper: FC<IProps> = ({loadState, tryAgain, error, ...props}) => {
   const ListEmptyComponent = useMemo(() => {
     if (loadState == LoadState.error) {
