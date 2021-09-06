@@ -117,5 +117,5 @@ export function setTabsRoot() {
         ],
       },
     },
-  }).then();
+  });
 }
