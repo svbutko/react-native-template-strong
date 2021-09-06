@@ -1,5 +1,5 @@
+import {localization} from "../localization/localization";
 import {emptyValidation} from "./commonValidations";
-import {localization} from "../localization";
 import {validationConstants} from "./validationConstants";
 
 export function phoneValidations(checkValue: string): string | null {

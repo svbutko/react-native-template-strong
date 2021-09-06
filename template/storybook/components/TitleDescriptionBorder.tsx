@@ -1,5 +1,5 @@
 import React, {FC, Fragment, memo} from "react";
-import {Separator} from "../../src/common/components";
+import {Separator} from "../../src/common/components/Separator";
 import {DescriptionText} from "./DescriptionText";
 
 interface IProps {

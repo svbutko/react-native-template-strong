@@ -11,10 +11,13 @@ import {
   TextStyle,
   ViewStyle,
 } from "react-native";
-import {Colors, CommonSizes, CommonStyles, isAndroid, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ButtonType, TouchablePlatformProps} from "../../types";
 import {TouchablePlatform} from "./TouchablePlatform";
-import {platformMixedColor, platformNativeColor} from "../helpers";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {isAndroid, isIos} from "../../core/theme/commonConsts";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
 
 interface IProps extends TouchablePlatformProps {
   label: string;

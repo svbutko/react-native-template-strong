@@ -1,7 +1,7 @@
 import React, {FC, useCallback} from "react";
 import {ScrollView} from "react-native";
-import {CommonStyles} from "../../../src/core/theme";
-import {RadioButton} from "../../../src/common/components";
+import {RadioButton} from "../../../src/common/components/RadioButton";
+import {CommonStyles} from "../../../src/core/theme/commonStyles";
 
 export const RadioButtonStories: FC = () => {
   const onEmptyPress = useCallback(() => {

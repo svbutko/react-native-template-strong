@@ -1,18 +1,20 @@
 import {Navigation} from "react-native-navigation";
 import {Pages} from "./pages";
-import {Colors, isAndroid, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme";
 import {Demo} from "../modules/demo/Demo";
 import {More} from "../modules/more/More";
-import {localization} from "../common/localization";
 import {Main} from "../modules/main/Main";
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
-import {DatePickerOverlay, ToastOverlay} from "../common/components";
 import {reduxProvider} from "../core/store/store";
 import {Onboarding} from "../modules/onboarding/Onboarding";
-import {platformMixedColor, platformNativeColor} from "../common/helpers";
 import {Platform} from "react-native";
 import {getStorybookUI} from "@storybook/react-native";
+import {localization} from "../common/localization/localization";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme/colors";
+import {isAndroid} from "../core/theme/commonConsts";
+import {platformMixedColor, platformNativeColor} from "../common/helpers/colorHelpers";
+import {ToastOverlay} from "../common/components/ToastOverlay";
+import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,

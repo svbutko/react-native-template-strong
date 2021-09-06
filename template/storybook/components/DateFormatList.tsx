@@ -1,9 +1,9 @@
 import React, {FC, memo, useCallback} from "react";
 import {FlatList} from "react-native";
-import {CommonStyles} from "../../src/core/theme";
-import {DateFormat, dateFromFormat} from "../../src/common/localization";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
-import {Separator} from "../../src/common/components";
+import {DateFormat, dateFromFormat} from "../../src/common/localization/momentFormatter";
+import {CommonStyles} from "../../src/core/theme/commonStyles";
+import {Separator} from "../../src/common/components/Separator";
 
 export const DateFormatList: FC = memo(() => {
   const renderItem = useCallback(({item}) => {

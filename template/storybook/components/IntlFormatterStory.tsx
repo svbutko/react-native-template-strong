@@ -1,8 +1,8 @@
 import React, {FC, memo} from "react";
 import {ScrollView} from "react-native";
-import {CommonStyles} from "../../src/core/theme";
+import {formatCurrency, formatDecimal, formatPercent} from "../../src/common/localization/intlFormatter";
+import {CommonStyles} from "../../src/core/theme/commonStyles";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
-import {formatCurrency, formatDecimal, formatPercent} from "../../src/common/localization";
 
 export const IntlFormatterStory: FC = memo(() => {
   return (

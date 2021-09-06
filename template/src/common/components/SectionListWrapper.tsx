@@ -1,13 +1,13 @@
 import React, {FC, useMemo} from "react";
 import {SectionList, SectionListProps, StyleSheet, ViewStyle} from "react-native";
 import {LoadState} from "../../types";
-import {isAndroid} from "../../core/theme";
-import {defaultKeyIdExtractor} from "../helpers";
-import {localization} from "../localization";
 import {TryAgain} from "./TryAgain";
 import {Separator} from "./Separator";
 import {EmptyView} from "./EmptyView";
 import {LoadingComponent} from "./LoadingComponent";
+import {localization} from "../localization/localization";
+import {isAndroid} from "../../core/theme/commonConsts";
+import {defaultKeyIdExtractor} from "../helpers/defaultKeyIdExtractor";
 
 interface IProps extends SectionListProps<any> {
   loadState: LoadState;

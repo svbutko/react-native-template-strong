@@ -1,10 +1,12 @@
 import React, {FC, useCallback} from "react";
 import {ScrollView} from "react-native";
-import {Colors, CommonStyles} from "../../../src/core/theme";
-import {PrimaryButton, Separator} from "../../../src/common/components";
-import {showToast} from "../../../src/navigation/helpers";
 import {ButtonType} from "../../../src/types";
 import {ImageResources} from "../../../src/common/ImageResources.g";
+import {showToast} from "../../../src/navigation/helpers/showToast";
+import {CommonStyles} from "../../../src/core/theme/commonStyles";
+import {Colors} from "../../../src/core/theme/colors";
+import {PrimaryButton} from "../../../src/common/components/PrimaryButton";
+import {Separator} from "../../../src/common/components/Separator";
 
 export const ToastOverlayStories: FC = () => {
   const showTopToast = useCallback(() => {

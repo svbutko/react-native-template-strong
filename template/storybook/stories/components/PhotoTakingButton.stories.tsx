@@ -1,7 +1,7 @@
 import React, {FC, useCallback, useState} from "react";
 import {ImageURISource, ScrollView} from "react-native";
-import {CommonStyles} from "../../../src/core/theme";
-import {ImageCropPickerButton} from "../../../src/common/components";
+import {ImageCropPickerButton} from "../../../src/common/components/ImageCropPickerButton";
+import {CommonStyles} from "../../../src/core/theme/commonStyles";
 
 export const PhotoTakingButtonStories: FC = () => {
   const [photo, setPhoto] = useState<ImageURISource | null>(null);

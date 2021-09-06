@@ -1,9 +1,10 @@
 import React, {FC, Fragment, memo} from "react";
 import {Image, ImageBackground, ImageStyle, ImageURISource, StyleSheet, TouchableOpacity, ViewStyle} from "react-native";
-import {Colors, CommonSizes, PlatformColorsIOS} from "../../core/theme";
 import {ImageResources} from "../ImageResources.g";
 import {Image as CropperImage} from "react-native-image-crop-picker";
-import {platformMixedColor} from "../helpers";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {Colors, PlatformColorsIOS} from "../../core/theme/colors";
+import {platformMixedColor} from "../helpers/colorHelpers";
 
 interface IProps {
   onPress?: () => void;

@@ -1,5 +1,5 @@
 import React, {FC, memo} from "react";
-import {Fonts} from "../../src/core/theme";
+import {Fonts} from "../../src/core/theme/fonts";
 import {DescriptionText} from "./DescriptionText";
 
 interface IProps {

@@ -1,5 +1,5 @@
+import {isIos} from "../../core/theme/commonConsts";
 import {BaseUrlOpener} from "./baseUrlOpener";
-import {isIos} from "../../core/theme";
 
 export class MapUrl extends BaseUrlOpener {
   constructor(private latitude: number, private longitude: number, private address: string) {

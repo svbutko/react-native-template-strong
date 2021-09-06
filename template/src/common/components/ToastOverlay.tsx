@@ -1,9 +1,12 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import {ActivityIndicator, Animated, Image, ImageStyle, ImageURISource, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Colors, CommonSizes, CommonStyles, isIos, minWindowDimension, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {Navigation, NavigationConstants, NavigationFunctionComponent} from "react-native-navigation";
-import {platformNativeColor} from "../helpers";
 import {useNavigationComponentDidAppear} from "react-native-navigation-hooks";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {isIos, minWindowDimension} from "../../core/theme/commonConsts";
+import {platformNativeColor} from "../helpers/colorHelpers";
 
 export interface IToastNavProps {
   text: string;

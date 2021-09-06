@@ -1,5 +1,5 @@
 import {Linking} from "react-native";
-import {ignorePromise} from "../utils";
+import {ignorePromise} from "../utils/ignorePromise";
 
 export abstract class BaseUrlOpener {
   protected constructor() {

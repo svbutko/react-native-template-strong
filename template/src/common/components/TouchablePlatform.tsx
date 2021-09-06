@@ -7,8 +7,9 @@ import {
   PressableStateCallbackType,
   ViewStyle,
 } from "react-native";
-import {Colors, isAndroid, PlatformColorsIOS} from "../../core/theme";
-import {platformMixedColor} from "../helpers";
+import {Colors, PlatformColorsIOS} from "../../core/theme/colors";
+import {isAndroid} from "../../core/theme/commonConsts";
+import {platformMixedColor} from "../helpers/colorHelpers";
 
 interface IProps extends PressableProps {
   style?: ViewStyle | ViewStyle[];

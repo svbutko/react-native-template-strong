@@ -1,14 +1,17 @@
 import React, {useCallback, useState} from "react";
 import {Image, ImageStyle, ImageURISource, SafeAreaView, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
-import {CommonSizes, CommonStyles, Fonts, windowWidth} from "../../core/theme";
 import Carousel from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
-import {localization} from "../../common/localization";
 import {OnboardingPagination} from "./components/OnboardingPagination";
 import {IllustrationsResources} from "../../common/ImageResources.g";
-import {PrimaryButton} from "../../common/components";
 import {ButtonType} from "../../types";
 import {setTabsRoot} from "../../navigation/roots";
+import {localization} from "../../common/localization/localization";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {windowWidth} from "../../core/theme/commonConsts";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {Fonts} from "../../core/theme/fonts";
+import {PrimaryButton} from "../../common/components/PrimaryButton";
 
 const carouselData: {header: string; body: string; image: ImageURISource}[] = [
   {

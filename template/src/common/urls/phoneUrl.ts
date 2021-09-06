@@ -1,5 +1,5 @@
+import {isIos} from "../../core/theme/commonConsts";
 import {BaseUrlOpener} from "./baseUrlOpener";
-import {isIos} from "../../core/theme";
 
 export class PhoneUrl extends BaseUrlOpener {
   constructor(private phone: string | null) {

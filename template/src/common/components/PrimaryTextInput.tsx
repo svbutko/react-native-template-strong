@@ -11,10 +11,14 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import {Colors, CommonSizes, CommonStyles, Fonts, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
-import {platformMixedColor, platformNativeColor} from "../helpers";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {isIos} from "../../core/theme/commonConsts";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {Fonts} from "../../core/theme/fonts";
+import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
 
 interface IProps extends TextInputProps {
   nextInputFocusRef?: MutableRefObject<any>;

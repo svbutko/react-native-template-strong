@@ -1,8 +1,8 @@
 import React, {FC, Fragment, memo, useCallback} from "react";
 import {FlatList, Image, ImageStyle, ImageURISource, StyleSheet} from "react-native";
-import {CommonStyles} from "../../src/core/theme";
 import {DescriptionText} from "./DescriptionText";
-import {Separator} from "../../src/common/components";
+import {CommonStyles} from "../../src/core/theme/commonStyles";
+import {Separator} from "../../src/common/components/Separator";
 
 interface IProps {
   data: [string, ImageURISource][];

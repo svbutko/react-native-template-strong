@@ -1,4 +1,4 @@
-import {localization} from "../localization";
+import {localization} from "../localization/localization";
 
 export function emptyValidation(checkValue: string): string | null {
   return checkValue != null && checkValue != "" ? null : localization.errors.thisFieldIsRequired;

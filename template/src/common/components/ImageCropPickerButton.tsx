@@ -1,10 +1,10 @@
 import React, {FC, memo, useCallback} from "react";
 import ImagePicker, {Image as CropperImage, Options} from "react-native-image-crop-picker";
-import {showActionSheet} from "../helpers";
-import {localization} from "../localization";
 import {ImageStyle, ImageURISource, ViewStyle} from "react-native";
 import {ImageResources} from "../ImageResources.g";
 import {PhotoTakingButton} from "./PhotoTakingButton";
+import {localization} from "../localization/localization";
+import {showActionSheet} from "../helpers/dialogsHelpers";
 
 interface IProps {
   onImagePicked: (image: CropperImage) => void;

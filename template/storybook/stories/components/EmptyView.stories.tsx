@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import {ScrollView} from "react-native";
-import {CommonStyles} from "../../../src/core/theme";
-import {EmptyView} from "../../../src/common/components";
+import {EmptyView} from "../../../src/common/components/EmptyView";
+import {CommonStyles} from "../../../src/core/theme/commonStyles";
 
 export const EmptyViewStories: FC = () => {
   return (

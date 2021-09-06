@@ -1,8 +1,10 @@
 import React, {FC, memo} from "react";
 import {StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {CommonSizes, CommonStyles, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
-import {localization} from "../localization";
-import {platformNativeColor} from "../helpers";
+import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {platformNativeColor} from "../helpers/colorHelpers";
+import {localization} from "../localization/localization";
 
 interface IProps {
   onPress?: () => void;

@@ -1,12 +1,16 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {Colors, CommonSizes, CommonStyles, Fonts, isAndroid, isIos} from "../../core/theme";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import {getLanguage, localization} from "../localization";
 import {Platform, SafeAreaView, StyleSheet, View, ViewStyle} from "react-native";
 import {Navigation, NavigationFunctionComponent, OptionsTopBarButton} from "react-native-navigation";
 import {ButtonType} from "../../types";
 import {useNavigationButtonPress} from "react-native-navigation-hooks";
 import {PrimaryButton} from "./PrimaryButton";
+import {getLanguage, localization} from "../localization/localization";
+import {isAndroid, isIos} from "../../core/theme/commonConsts";
+import {Fonts} from "../../core/theme/fonts";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {Colors} from "../../core/theme/colors";
+import {CommonSizes} from "../../core/theme/commonSizes";
 
 export interface IDatePickerProps {
   value: Date;

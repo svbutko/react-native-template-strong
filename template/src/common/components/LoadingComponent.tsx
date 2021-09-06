@@ -1,8 +1,9 @@
 import {ActivityIndicator, Text, View} from "react-native";
 import React from "react";
-import {localization} from "../localization";
-import {CommonStyles, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme";
-import {platformNativeColor} from "../helpers";
+import {localization} from "../localization/localization";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {platformNativeColor} from "../helpers/colorHelpers";
 
 export const LoadingComponent = () => {
   return (

@@ -1,8 +1,10 @@
 import React, {FC, memo, useCallback, useMemo} from "react";
 import {FlatList} from "react-native";
-import {Colors, CommonStyles, isIos, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
 import {ColorPaletteListItem} from "./ColorPaletteListItem";
-import {Separator} from "../../src/common/components";
+import {CommonStyles} from "../../src/core/theme/commonStyles";
+import {isIos} from "../../src/core/theme/commonConsts";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme/colors";
+import {Separator} from "../../src/common/components/Separator";
 
 interface IProps {
   isPlatformColors: boolean;

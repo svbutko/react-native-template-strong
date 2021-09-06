@@ -1,9 +1,11 @@
 import React, {FC, FunctionComponent, memo, useCallback, useMemo} from "react";
 import {StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Colors, CommonSizes, CommonStyles, PlatformColorsIOS} from "../../core/theme";
 import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
-import {platformMixedColor} from "../helpers";
+import {CommonSizes} from "../../core/theme/commonSizes";
+import {CommonStyles} from "../../core/theme/commonStyles";
+import {Colors, PlatformColorsIOS} from "../../core/theme/colors";
+import {platformMixedColor} from "../helpers/colorHelpers";
 
 interface IIconComponentProps {
   isSelected: boolean;

@@ -2,7 +2,7 @@ import {Platform, StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {Fonts} from "./fonts";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
 import {CommonSizes} from "./commonSizes";
-import {platformNativeColor} from "../../common/helpers";
+import {platformNativeColor} from "../../common/helpers/colorHelpers";
 
 export const CommonStyles = StyleSheet.create({
   flex1: {

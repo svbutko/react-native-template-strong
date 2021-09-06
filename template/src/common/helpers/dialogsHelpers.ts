@@ -1,7 +1,6 @@
-// noinspection ES6PreferShortImport
 import {isAndroid, isIos} from "../../core/theme/commonConsts";
 import {ActionSheetIOS, ActionSheetIOSOptions, Alert, AlertButton, AlertOptions} from "react-native";
-import {localization} from "../localization";
+import {localization} from "../localization/localization";
 
 export function showActionSheet(options: ActionSheetIOSOptions, onOptionSelected: (optionIndex: number) => void) {
   if (isIos) {

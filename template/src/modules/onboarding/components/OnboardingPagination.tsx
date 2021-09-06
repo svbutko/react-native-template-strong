@@ -1,7 +1,8 @@
 import React, {FC, memo} from "react";
 import {StyleSheet, View, ViewStyle} from "react-native";
-import {CommonSizes, PlatformColorsAndroid, PlatformColorsIOS} from "../../../core/theme";
-import {platformNativeColor} from "../../../common/helpers";
+import {platformNativeColor} from "../../../common/helpers/colorHelpers";
+import {PlatformColorsAndroid, PlatformColorsIOS} from "../../../core/theme/colors";
+import {CommonSizes} from "../../../core/theme/commonSizes";
 
 interface IProps {
   totalItems: number;

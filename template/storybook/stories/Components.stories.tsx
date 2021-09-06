@@ -7,7 +7,7 @@ import {RadioButtonStories} from "./components/RadioButton.stories";
 import {PhotoTakingButtonStories} from "./components/PhotoTakingButton.stories";
 import {EmptyViewStories} from "./components/EmptyView.stories";
 import {LoadingComponent} from "../../src/common/components/LoadingComponent";
-import {TryAgain} from "../../src/common/components";
+import {TryAgain} from "../../src/common/components/TryAgain";
 
 const ComponentsStories = storiesOf("Components", module);
 

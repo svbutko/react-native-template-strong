@@ -1,8 +1,8 @@
 import React, {FC, memo} from "react";
 import {ScrollView} from "react-native";
-import {CommonStyles} from "../../src/core/theme";
+import {calendarDate, DateFormat, dateFromFormat, dateFromString, dateFromUnknown} from "../../src/common/localization/momentFormatter";
+import {CommonStyles} from "../../src/core/theme/commonStyles";
 import {TitleDescriptionBorder} from "./TitleDescriptionBorder";
-import {calendarDate, DateFormat, dateFromFormat, dateFromString, dateFromUnknown} from "../../src/common/localization";
 
 export const MomentFormatterStory: FC = memo(() => {
   return (

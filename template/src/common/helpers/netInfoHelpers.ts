@@ -1,8 +1,8 @@
 import NetInfo, {NetInfoState, NetInfoSubscription} from "@react-native-community/netinfo";
 import {showAlert} from "./dialogsHelpers";
-import {localization} from "../localization";
 import {Linking} from "react-native";
 import Config from "react-native-config";
+import {localization} from "../localization/localization";
 
 let netInfoUnsubscribe: undefined | NetInfoSubscription;
 let hasDialogBeenShown: boolean = false;

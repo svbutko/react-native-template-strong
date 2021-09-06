@@ -1,8 +1,8 @@
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {ScrollView} from "react-native";
 import React from "react";
-import {localization} from "../../common/localization";
-import {CommonStyles} from "../../core/theme";
+import {localization} from "../../common/localization/localization";
+import {CommonStyles} from "../../core/theme/commonStyles";
 
 export const Demo: NavigationFunctionComponent = (): JSX.Element => {
   return <ScrollView contentInsetAdjustmentBehavior={"automatic"} style={CommonStyles.flex1} />;

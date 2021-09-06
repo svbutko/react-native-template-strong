@@ -1,6 +1,7 @@
 import React, {FC, memo} from "react";
 import {Platform, PlatformColor, StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, isIos, maxWindowDimension, minWindowDimension, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme/colors";
+import {isIos, maxWindowDimension, minWindowDimension} from "../../src/core/theme/commonConsts";
 import {DescriptionText} from "./DescriptionText";
 
 interface IProps {

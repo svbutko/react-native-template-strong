@@ -1,7 +1,7 @@
 import React, {FC, memo, useMemo} from "react";
 import {StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, PlatformColorsIOS} from "../../core/theme";
-import {platformMixedColor} from "../helpers";
+import {Colors, PlatformColorsIOS} from "../../core/theme/colors";
+import {platformMixedColor} from "../helpers/colorHelpers";
 
 interface IProps {
   isSelected: boolean;

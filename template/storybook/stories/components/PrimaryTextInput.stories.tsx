@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import {ScrollView} from "react-native";
-import {CommonStyles} from "../../../src/core/theme";
-import {PrimaryTextInput} from "../../../src/common/components";
+import {PrimaryTextInput} from "../../../src/common/components/PrimaryTextInput";
+import {CommonStyles} from "../../../src/core/theme/commonStyles";
 
 export const PrimaryTextInputStories: FC = () => {
   return (

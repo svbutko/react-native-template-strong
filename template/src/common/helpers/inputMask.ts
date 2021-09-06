@@ -1,5 +1,5 @@
 import {ITextInputMask} from "../../types";
-import {validationConstants} from "../validations";
+import {validationConstants} from "../validations/validationConstants";
 
 export class InputMask {
   static readonly phone: ITextInputMask = {

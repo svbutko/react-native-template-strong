@@ -1,6 +1,7 @@
 import React, {FC, memo} from "react";
 import {StyleSheet, Text, TextStyle} from "react-native";
-import {CommonSizes, CommonStyles} from "../../src/core/theme";
+import {CommonSizes} from "../../src/core/theme/commonSizes";
+import {CommonStyles} from "../../src/core/theme/commonStyles";
 
 interface IProps {
   children: string;
