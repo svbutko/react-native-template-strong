@@ -297,12 +297,12 @@ PODS:
     - React-perflogger (= 0.65.1)
   - ReactNativeLocalization (2.1.7):
     - React-Core
-  - ReactNativeNavigation (7.20.0):
+  - ReactNativeNavigation (7.21.0):
     - React-Core
     - React-RCTImage
     - React-RCTText
-    - ReactNativeNavigation/Core (= 7.20.0)
-  - ReactNativeNavigation/Core (7.20.0):
+    - ReactNativeNavigation/Core (= 7.21.0)
+  - ReactNativeNavigation/Core (7.21.0):
     - React-Core
     - React-RCTImage
     - React-RCTText
@@ -526,7 +526,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 85187f19dd9c47a7c102f9994f9d14e4dc2110de
   ReactCommon: eafed38eec7b591c31751bfa7494801618460459
   ReactNativeLocalization: 90a1181b7672309701dd7e5364fbf587319d41c6
-  ReactNativeNavigation: 87aa2e3a749a9b338057e8d53af54d865241b843
+  ReactNativeNavigation: d6f27d4ba71887a161534a13e8ef3873b26c68b5
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNDateTimePicker: 7658208086d86d09e1627b5c34ba0cf237c60140
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
