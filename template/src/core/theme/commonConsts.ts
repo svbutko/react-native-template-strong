@@ -10,6 +10,7 @@ export const isTablet = Device.isTablet;
 
 export const isAndroid = Device.isAndroid;
 export const isAndroidLollipop = isAndroid && Platform.Version >= 21 && Platform.Version < 23;
+export const isAndroid11AndHigher = isAndroid && Platform.Version >= 30;
 
 export const windowWidth = windowDimensions.width;
 export const windowHeight = windowDimensions.height - (!isIos ? StatusBar.currentHeight || 0 : 0);
