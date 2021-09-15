@@ -9,7 +9,6 @@
 
 # Add any project specific keep options here:
 -keep class com.helloworld.BuildConfig { *; }
--keepresources string/build_config_package
 -keep class com.facebook.hermes.unicode.** { *; }
 -keep class com.facebook.jni.** { *; }
 -keep public class com.dylanvann.fastimage.* {*;}
