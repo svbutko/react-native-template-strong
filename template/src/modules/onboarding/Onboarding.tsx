@@ -1,5 +1,16 @@
 import React, {useCallback, useState} from "react";
-import {Image, ImageStyle, ImageURISource, SafeAreaView, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
+import {
+  Image,
+  ImageStyle,
+  ImageURISource,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextStyle,
+  useWindowDimensions,
+  View,
+  ViewStyle,
+} from "react-native";
 import Carousel from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {OnboardingPagination} from "./components/OnboardingPagination";
@@ -8,7 +19,6 @@ import {ButtonType} from "../../types";
 import {setTabsRoot} from "../../navigation/roots";
 import {localization} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
-import {windowWidth} from "../../core/theme/commonConsts";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {Fonts} from "../../core/theme/fonts";
 import {PrimaryButton} from "../../common/components/PrimaryButton";
@@ -28,6 +38,7 @@ const carouselData: {header: string; body: string; image: ImageURISource}[] = [
 
 export const Onboarding: NavigationFunctionComponent = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
+  const dimensions = useWindowDimensions();
 
   const carouselItem = useCallback(({item}) => {
     return (
@@ -45,8 +56,8 @@ export const Onboarding: NavigationFunctionComponent = () => {
         containerCustomStyle={styles.carousel}
         data={carouselData}
         renderItem={carouselItem}
-        sliderWidth={windowWidth}
-        itemWidth={windowWidth}
+        sliderWidth={dimensions.width}
+        itemWidth={dimensions.width}
         onSnapToItem={setActiveSlide}
       />
       <View style={styles.bottomContainer}>
