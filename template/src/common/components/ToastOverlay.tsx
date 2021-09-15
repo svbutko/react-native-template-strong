@@ -45,7 +45,7 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
     if (constants != null) {
       if (location == "top") {
         return {
-          top: constants.topBarHeight + constants.statusBarHeight + CommonSizes.spacing.medium,
+          top: isIos ? constants.topBarHeight + constants.statusBarHeight + CommonSizes.spacing.medium : 0,
         } as ViewStyle;
       } else {
         return {
