@@ -10,7 +10,7 @@ export class PhoneUrl extends BaseUrlOpener {
     if (this.phone == null) {
       return null;
     } else {
-      return isIos ? "telprompt:" + this.phone : "tel:";
+      return (isIos ? "telprompt:" : "tel:") + this.phone;
     }
   }
 }
