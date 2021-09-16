@@ -54,7 +54,7 @@ export function setOnboardingRoot() {
   });
 }
 
-export function setTabsRoot() {
+export function setTabsRoot(callback?: () => void) {
   Navigation.setRoot({
     root: {
       bottomTabs: {
@@ -117,5 +117,5 @@ export function setTabsRoot() {
         ],
       },
     },
-  });
+  }).then(callback);
 }

@@ -1,7 +1,7 @@
 import React, {FC, memo} from "react";
 import {StyleSheet, View, ViewStyle} from "react-native";
 import {platformNativeColor} from "../../../common/helpers/colorHelpers";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../../core/theme/colors";
+import {PlatformColorsAndroid} from "../../../core/theme/colors";
 import {CommonSizes} from "../../../core/theme/commonSizes";
 
 interface IProps {
@@ -36,17 +36,18 @@ const commonIcon: ViewStyle = {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: CommonSizes.spacing.large,
+    paddingVertical: CommonSizes.spacing.mediumPlus,
   } as ViewStyle,
   activeIcon: {
     ...commonIcon,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.primary),
   } as ViewStyle,
   inactiveIcon: {
     ...commonIcon,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.highlight),
+    backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.highlight),
   } as ViewStyle,
 });

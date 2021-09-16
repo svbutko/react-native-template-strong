@@ -6,7 +6,6 @@ import {Main} from "../modules/main/Main";
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
 import {reduxProvider} from "../core/store/store";
-import {Onboarding} from "../modules/onboarding/Onboarding";
 import {Platform} from "react-native";
 import {getStorybookUI} from "@storybook/react-native";
 import {localization} from "../common/localization/localization";
@@ -15,6 +14,7 @@ import {isAndroid} from "../core/theme/commonConsts";
 import {platformMixedColor, platformNativeColor} from "../common/helpers/colorHelpers";
 import {ToastOverlay} from "../common/components/ToastOverlay";
 import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
+import {Onboarding} from "../modules/onboarding";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
