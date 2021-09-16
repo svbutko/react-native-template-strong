@@ -94,6 +94,7 @@
     "metro-react-native-babel-preset": "0.66.2",
     "patch-package": "6.4.7",
     "prettier": "2.4.1",
+    "react-addons-test-utils": "15.6.2",
     "react-native-bundle-visualizer": "3.0.0",
     "react-native-codegen": "0.0.7",
     "react-native-config-node": "0.0.3",
@@ -103,27 +104,6 @@
     "react-test-renderer": "17.0.2",
     "ts-jest": "27.0.5",
     "typescript": "4.4.3"
-  },
-  "jest": {
-    "preset": "react-native",
-    "testPathIgnorePatterns": [
-      "node_modules"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-      "\\.(ts|tsx)$": "ts-jest"
-    },
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.jest.json"
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
   },
   "husky": {
     "hooks": {
