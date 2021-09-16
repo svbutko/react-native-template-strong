@@ -30,7 +30,8 @@
     "tests:watch": "jest --watchAll",
     "eslint:run": "eslint --ext=jsx,ts,tsx",
     "eslint:fix": "eslint --fix --ext=jsx,ts,tsx .",
-    "generate-image-resources": "img-res-gen --dir=resources/images --out=src/common/ImageResources.g.ts --ts"
+    "generate-image-resources": "img-res-gen --dir=resources/images --out=src/common/ImageResources.g.ts --ts",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-native-community/async-storage": "1.12.1",
