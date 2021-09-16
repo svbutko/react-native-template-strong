@@ -17,7 +17,6 @@ import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme
 import {isIos} from "../../core/theme/commonConsts";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {CommonStyles} from "../../core/theme/commonStyles";
-import {Fonts} from "../../core/theme/fonts";
 import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
 
 interface IProps extends TextInputProps {
@@ -246,7 +245,7 @@ const styles = StyleSheet.create({
   } as TextStyle,
   hint: {
     ...CommonStyles.normalText,
-    fontFamily: Fonts.thin,
+    fontWeight: "200",
     fontSize: CommonSizes.font.small,
     lineHeight: CommonSizes.lineHeight.small,
     paddingTop: CommonSizes.spacing.extraSmall,
