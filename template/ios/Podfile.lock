@@ -314,10 +314,10 @@ PODS:
     - React-Core
     - React-Core/DevSupport
     - React-RCTNetwork
-  - RNFastImage (8.5.1):
+  - RNFastImage (8.5.5):
     - React-Core
-    - SDWebImage (~> 5.8)
-    - SDWebImageWebPCoder (~> 0.6.1)
+    - SDWebImage (~> 5.11.1)
+    - SDWebImageWebPCoder (~> 0.8.4)
   - RNGestureHandler (1.10.3):
     - React-Core
   - RNImageCropPicker (0.36.2):
@@ -334,9 +334,9 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
-  - SDWebImageWebPCoder (0.6.1):
+  - SDWebImageWebPCoder (0.8.4):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.7)
+    - SDWebImage/Core (~> 5.10)
   - TOCropViewController (2.6.0)
   - Yoga (1.14.0)
 
@@ -530,12 +530,12 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNDateTimePicker: 7658208086d86d09e1627b5c34ba0cf237c60140
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
-  RNFastImage: 67e3a90ac686815bc4b29fa655037c4b73a58e52
+  RNFastImage: a68c2ad0cc3f7fdacf8dc4e3dbdba2aaadc312b6
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNImageCropPicker: 35a3ceb837446fa11547704709bb22b5fac6d584
   RNPermissions: 7043bacbf928eae25808275cfe73799b8f618911
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
+  SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   Yoga: aa0cb45287ebe1004c02a13f279c55a95f1572f4
 
