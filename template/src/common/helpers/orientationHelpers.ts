@@ -1,16 +1,19 @@
 import Orientation, {OrientationType} from "react-native-orientation-locker";
 import Device from "react-native-device-detection";
 
-export function getCurrentOrientation(): OrientationType {
-  let result: OrientationType = Orientation.getInitialOrientation();
+export function getCurrentOrientation(forceOnPhone?: boolean): OrientationType {
+  if (!Device.isPhone || forceOnPhone) {
+    let result = Orientation.getInitialOrientation();
+    Orientation.getOrientation((orientation) => {
+      if (orientation != null) {
+        result = orientation;
+      }
+    });
 
-  Orientation.getOrientation((orientation) => {
-    if (orientation != null) {
-      result = orientation;
-    }
-  });
-
-  return result;
+    return result;
+  } else {
+    return "PORTRAIT" as OrientationType;
+  }
 }
 
 export function setDefaultOrientation(): void {
