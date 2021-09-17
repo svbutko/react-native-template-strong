@@ -1,17 +1,13 @@
 import {ActivityIndicator, Text, View} from "react-native";
-import React, {FC} from "react";
+import React from "react";
 import {localization} from "../localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
 import {platformNativeColor} from "../helpers/colorHelpers";
 
-interface IProps {
-  testID?: string;
-}
-
-export const LoadingComponent: FC<IProps> = ({testID}) => {
+export const LoadingComponent = () => {
   return (
-    <View testID={testID} style={CommonStyles.flexCenter}>
+    <View style={CommonStyles.flexCenter}>
       <ActivityIndicator
         animating={true}
         color={platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primary)}
