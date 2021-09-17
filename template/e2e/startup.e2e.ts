@@ -11,6 +11,6 @@ describe("Startup", () => {
   });
 
   it("Should show tabs", async () => {
-    await expect(element(by.id("MainPageID"))).toBeVisible();
+    await expect(element(by.id("MainPageID"))).toExist();
   });
 });
