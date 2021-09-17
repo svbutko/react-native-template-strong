@@ -1,3 +1,5 @@
 resources/
 index.js
 stories.ts
+__mocks__
+coverage/

@@ -55,7 +55,13 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
         <View>{carouselData.map(renderClauseItem)}</View>
       </View>
       <View style={styles.bottomContainer}>
-        <PrimaryButton style={styles.button} type={ButtonType.solid} label={localization.common.continue} onPress={onContinuePress} />
+        <PrimaryButton
+          testID={"OnboardingButtonID"}
+          style={styles.button}
+          type={ButtonType.solid}
+          label={localization.common.continue}
+          onPress={onContinuePress}
+        />
       </View>
     </SafeAreaView>
   );

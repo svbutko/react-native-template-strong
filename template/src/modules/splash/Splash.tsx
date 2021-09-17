@@ -19,5 +19,5 @@ export const Splash: NavigationFunctionComponent = () => {
     }
   }, [isOnboardingVisited]);
 
-  return <LoadingComponent />;
+  return <LoadingComponent testID={"SplashID"} />;
 };

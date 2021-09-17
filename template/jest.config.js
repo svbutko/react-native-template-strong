@@ -2,7 +2,7 @@ module.exports = {
   preset: "react-native",
   globals: {
     "ts-jest": {
-      tsconfig: "tsconfig.spec.json",
+      tsconfig: "tsconfig.json",
     },
   },
   transform: {

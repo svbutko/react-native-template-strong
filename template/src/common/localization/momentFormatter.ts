@@ -50,7 +50,7 @@ export function dateFromUnknown(obj: string | Date | null | number | undefined):
   return new Date(obj);
 }
 
-export function dateFromFormat(date: Date | number | null | undefined | string, format: string): string {
+export function dateFromFormat(date: Date | number | null | undefined | string, format: DateFormat): string {
   let result = "";
 
   const formattedDate: Date | null = dateFromUnknown(date);

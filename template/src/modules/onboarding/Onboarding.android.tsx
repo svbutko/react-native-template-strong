@@ -85,7 +85,12 @@ export const Onboarding: NavigationFunctionComponent = () => {
       />
       <View style={styles.bottomContainer}>
         <View style={styles.buttonContainer}>
-          <PrimaryButton type={ButtonType.solid} label={localization.common.continue} onPress={onContinuePress} />
+          <PrimaryButton
+            testID={"OnboardingButtonID"}
+            type={ButtonType.solid}
+            label={localization.common.continue}
+            onPress={onContinuePress}
+          />
         </View>
         <OnboardingPagination activeIndex={activeSlide} totalItems={carouselData.length} />
         <View style={CommonStyles.flex1} />

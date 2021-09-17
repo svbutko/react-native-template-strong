@@ -21,6 +21,8 @@
     "resolveJsonModule": true,
   },
   "include": [
+    "__tests__/**/*",
+    "e2e/**/*",
     "src/**/*",
     "storybook/**/*"
   ],
@@ -34,6 +36,7 @@
     "ios",
     "android",
     "tools",
-    "patches"
+    "patches",
+    "coverage",
   ]
 }
