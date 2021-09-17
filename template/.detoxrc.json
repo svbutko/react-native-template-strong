@@ -5,11 +5,17 @@
   "apps": {
     "ios": {
       "type": "ios.app",
-      "binaryPath": "../ios/build/Build/Products/Release-iphonesimulator/example.app"
+      "binaryPath": "./ios/build/Build/Products/Release-iphonesimulator/example.app"
     },
-    "android": {
+    "android.debug": {
       "type": "android.apk",
-      "binaryPath": "../android/app/build/outputs/apk/release/app-release.apk"
+      "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd .."
+    },
+    "android.release": {
+      "type": "android.apk",
+      "binaryPath": "android/app/build/outputs/apk/releaseE2E/app-releaseE2E.apk",
+      "build": "cd android && ./gradlew assembleReleaseE2E assembleAndroidTest -DtestBuildType=releaseE2E && cd .."
     }
   },
   "devices": {
@@ -22,7 +28,7 @@
     "emulator": {
       "type": "android.emulator",
       "device": {
-        "avdName": "Pixel_3a_API_30_x86"
+        "avdName": "Pixel_5_API_30"
       }
     }
   },
@@ -31,9 +37,13 @@
       "device": "simulator",
       "app": "ios"
     },
-    "android": {
+    "android.emu.debug": {
       "device": "emulator",
-      "app": "android"
+      "app": "android.debug"
+    },
+    "android.emu.release": {
+      "device": "emulator",
+      "app": "android.release"
     }
   }
 }
