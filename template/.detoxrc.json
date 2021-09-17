@@ -3,9 +3,15 @@
   "runnerConfig": "e2e/config.json",
   "skipLegacyWorkersInjection": true,
   "apps": {
-    "ios": {
+    "ios.debug": {
       "type": "ios.app",
-      "binaryPath": "./ios/build/Build/Products/Release-iphonesimulator/example.app"
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/helloworld.app",
+      "build": "set -o pipefail && xcodebuild -workspace ios/HelloWorld.xcworkspace -UseNewBuildSystem=YES -scheme HelloWorld -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -quiet"
+    },
+    "ios.release": {
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/helloworld.app",
+      "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/HelloWorld.xcworkspace -UseNewBuildSystem=YES -scheme HelloWorld -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet"
     },
     "android.debug": {
       "type": "android.apk",
@@ -33,9 +39,13 @@
     }
   },
   "configurations": {
-    "ios": {
+    "ios.emu.debug": {
       "device": "simulator",
-      "app": "ios"
+      "app": "ios.debug"
+    },
+    "ios.emu.release": {
+      "device": "simulator",
+      "app": "ios.release"
     },
     "android.emu.debug": {
       "device": "emulator",
