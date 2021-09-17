@@ -14,7 +14,8 @@ import {isAndroid} from "../core/theme/commonConsts";
 import {platformMixedColor, platformNativeColor} from "../common/helpers/colorHelpers";
 import {ToastOverlay} from "../common/components/ToastOverlay";
 import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
-import {Onboarding} from "../modules/onboarding";
+// @ts-ignore This is the way to deal with this kind of component
+import {Onboarding} from "../modules/onboarding/Onboarding";
 
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: null,
