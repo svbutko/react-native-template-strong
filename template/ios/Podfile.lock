@@ -238,7 +238,7 @@ PODS:
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
   - React-jsinspector (0.65.1)
-  - react-native-blob-util (0.13.14):
+  - react-native-blob-util (0.13.15):
     - React-Core
   - react-native-config (1.4.4):
     - react-native-config/App (= 1.4.4)
@@ -547,7 +547,7 @@ SPEC CHECKSUMS:
   React-jsi: 12913c841713a15f64eabf5c9ad98592c0ec5940
   React-jsiexecutor: 43f2542aed3c26e42175b339f8d37fe3dd683765
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
-  react-native-blob-util: 7eb03208f59ea891498634746d236bc1085d1c4f
+  react-native-blob-util: ada1b76f16afaa56f3389d22f3d823d76c1f2b32
   react-native-config: 72d948053a442779b3178fddd571e37f118ef606
   react-native-in-app-review: 00a66a085c61dbd4474041dc14e7bfee81a86130
   react-native-netinfo: 92e6e4476eb8bf6fc2d7c0a6ca0a1406f663d73a
