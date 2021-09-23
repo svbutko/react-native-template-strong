@@ -1,7 +1,6 @@
 import {ErrorRepresentationType, IErrorResult} from "../../types";
 import {localization} from "../localization/localization";
 import {showToast} from "../../navigation/helpers/showToast";
-import {ImageResources} from "../ImageResources.g";
 import {unwrapResult} from "@reduxjs/toolkit";
 import {Alert} from "react-native";
 
@@ -18,7 +17,6 @@ export function handlePromiseResult(promiseAction: Promise<any>, successMessage?
     .then(() => {
       showToast({
         text: successMessage || localization.common.dataSuccessfullyUpdated,
-        icon: ImageResources.check,
       });
       successAction && successAction();
     })
@@ -38,7 +36,6 @@ export function handleErrorPostProcessing(error: IErrorResult, setError?: (error
     case ErrorRepresentationType.toast:
       showToast({
         text: error.message,
-        icon: ImageResources.warning,
       });
       break;
     default:
