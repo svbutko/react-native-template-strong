@@ -68,34 +68,15 @@ export enum PlatformColorsIOS {
 }
 
 export enum PlatformColorsAndroid {
-  primary = "?attr/colorPrimary",
-  secondary = "?attr/colorSecondary",
-  primarySurface = "?attr/colorPrimarySurface",
-  surface = "?attr/colorSurface",
-
-  primaryVariant = "?attr/colorPrimaryVariant",
-  secondaryVariant = "?attr/colorSecondaryVariant",
-
-  onPrimary = "?attr/colorOnPrimary",
-  onSecondary = "?attr/colorOnSecondary",
-  onSurface = "?attr/colorOnSurface",
-  onError = "?attr/colorOnError",
-  onBackground = "?attr/colorOnBackground",
-
-  background = "?android:attr/colorBackground",
-
-  textPrimary = "?android:attr/textColorPrimary",
-  textSecondary = "?android:attr/textColorSecondary",
-
-  normal = "?attr/colorControlNormal",
-  activated = "?attr/colorControlActivated",
-  highlight = "?attr/colorControlHighlight",
-  error = "?attr/colorError",
-
-  holoPurple = "@android:color/holo_purple",
-  holoGreenLight = "@android:color/holo_green_light",
-  holoGreenDark = "@android:color/holo_green_dark",
-  darkerGray = "@android:color/darker_gray",
-  holoBlueLight = "@android:color/holo_blue_light",
-  holoBlueDark = "@android:color/holo_blue_dark",
+  primary = "@color/primary",
+  primaryDark = "@color/primaryDark",
+  primaryLight = "@color/primaryLight",
+  background = "@color/background",
+  primaryText = "@color/primaryText",
+  primaryTextOpacity = "@color/primaryTextOpacity",
+  secondaryText = "@color/secondaryText",
+  onPrimaryText = "@color/onPrimaryText",
+  onPrimaryTextOpacity = "@color/onPrimaryTextOpacity",
+  divider = "@color/divider",
+  navigation = "@color/navigation",
 }

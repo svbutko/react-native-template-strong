@@ -50,6 +50,6 @@ export const CommonStyles = StyleSheet.create({
     fontFamily: Fonts.system,
     fontSize: CommonSizes.font.medium,
     lineHeight: CommonSizes.lineHeight.medium,
-    color: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.onBackground),
+    color: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primaryText),
   } as TextStyle,
 });

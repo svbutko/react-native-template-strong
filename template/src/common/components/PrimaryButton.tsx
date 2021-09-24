@@ -102,7 +102,7 @@ function mergeStylesWithDisabled(styles: IStyles, disabled?: boolean | null, out
         ...styles,
         button: {
           ...styles.button,
-          backgroundColor: platformMixedColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.highlight),
+          backgroundColor: platformMixedColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.divider),
           borderColor: outline ? platformMixedColor(PlatformColorsIOS.tertiarySystemFill) : styles.button.borderColor,
           elevation: 0,
         } as ViewStyle,
@@ -112,7 +112,7 @@ function mergeStylesWithDisabled(styles: IStyles, disabled?: boolean | null, out
         } as ImageStyle,
         label: {
           ...styles.label,
-          color: platformMixedColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.highlight),
+          color: platformMixedColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.secondaryText),
         } as TextStyle,
       }
     : styles;

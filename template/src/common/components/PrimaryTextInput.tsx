@@ -265,7 +265,7 @@ PrimaryTextInput.defaultProps = {
   disableFullscreenUI: true,
   enablesReturnKeyAutomatically: true,
   underlineColorAndroid: Colors.transparent,
-  placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.highlight),
+  placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.secondaryText),
   editable: true,
   clearButtonMode: "while-editing",
 };

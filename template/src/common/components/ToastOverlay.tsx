@@ -140,7 +140,7 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
 const styles = StyleSheet.create({
   container: {
     ...CommonStyles.shadow,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.onBackground),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.background),
     alignSelf: "center",
     width: minWindowDimension - CommonSizes.spacing.large,
     padding: CommonSizes.spacing.medium,
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   text: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.background),
+    color: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.primaryText),
     flex: 1,
   } as TextStyle,
 });

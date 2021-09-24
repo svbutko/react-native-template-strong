@@ -1,7 +1,7 @@
 import React, {FC, memo, useMemo} from "react";
 import {StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, PlatformColorsIOS} from "../../core/theme/colors";
-import {platformMixedColor} from "../helpers/colorHelpers";
+import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
 
 interface IProps {
   isSelected: boolean;
@@ -35,7 +35,7 @@ const commonInnerCircle: ViewStyle = {
 const styles = StyleSheet.create({
   outerCircle: {
     ...commonOuterCircle,
-    borderColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.gray),
+    borderColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.black),
   } as ViewStyle,
   outerCircleSelected: {
     ...commonOuterCircle,
@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   innerCircle: {
     ...commonInnerCircle,
-    backgroundColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
   } as ViewStyle,
 });

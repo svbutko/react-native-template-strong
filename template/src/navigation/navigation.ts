@@ -9,9 +9,9 @@ import {reduxProvider} from "../core/store/store";
 import {Platform} from "react-native";
 import {getStorybookUI} from "@storybook/react-native";
 import {localization} from "../common/localization/localization";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme/colors";
+import {PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme/colors";
 import {isAndroid} from "../core/theme/commonConsts";
-import {platformMixedColor, platformNativeColor} from "../common/helpers/colorHelpers";
+import {platformNativeColor} from "../common/helpers/colorHelpers";
 import {ToastOverlay} from "../common/components/ToastOverlay";
 import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
 // @ts-ignore This is the way to deal with this kind of component
@@ -39,16 +39,10 @@ export function setDefaultOptions() {
       drawBehind: !isAndroid,
       background: {
         translucent: true,
-        color: {
-          light: platformMixedColor(undefined, Colors.gray),
-          dark: platformMixedColor(undefined, Colors.black),
-        },
+        color: platformNativeColor(undefined, PlatformColorsAndroid.navigation),
       },
       title: {
-        color: {
-          light: platformMixedColor(undefined, Colors.black),
-          dark: platformMixedColor(undefined, Colors.white),
-        },
+        color: platformNativeColor(undefined, PlatformColorsAndroid.onPrimaryText),
       },
       largeTitle: {
         visible: false,
@@ -75,40 +69,23 @@ export function setDefaultOptions() {
       animateTabSelection: true,
       preferLargeIcons: false,
       tabsAttachMode: "together",
-      backgroundColor: {
-        light: platformMixedColor(undefined, Colors.gray),
-        dark: platformMixedColor(undefined, Colors.black),
-      },
+      backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.navigation),
       ...Platform.select({
         android: {
           translucent: false,
           borderWidth: 1,
-          borderColor: {
-            light: Colors.gray,
-            dark: undefined,
-          },
+          borderColor: platformNativeColor(undefined, PlatformColorsAndroid.divider),
         },
       }),
     },
     bottomTab: {
-      selectedTextColor: {
-        light: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
-        dark: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.white),
-      },
-      selectedIconColor: {
-        light: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
-        dark: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.white),
-      },
-      textColor: {
-        light: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
-        dark: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
-      },
-      iconColor: {
-        light: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
-        dark: platformMixedColor(PlatformColorsIOS.secondaryLabel, Colors.darkGray),
-      },
+      selectedTextColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryText),
+      selectedIconColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.onPrimaryText),
+      textColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
+      iconColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
     },
     statusBar: {
+      backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.primaryDark),
       visible: true,
     },
   });

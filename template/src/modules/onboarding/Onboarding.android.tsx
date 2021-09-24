@@ -132,7 +132,7 @@ const initialStyles = StyleSheet.create({
     letterSpacing: CommonSizes.letterSpacing.smallPlus,
     alignSelf: "center",
     textAlign: "center",
-    color: platformNativeColor(undefined, PlatformColorsAndroid.darkerGray),
+    color: platformNativeColor(undefined, PlatformColorsAndroid.secondaryText),
   } as TextStyle,
   bottomContainer: {
     alignItems: "center",

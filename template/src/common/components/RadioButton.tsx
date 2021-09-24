@@ -4,8 +4,8 @@ import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {CommonStyles} from "../../core/theme/commonStyles";
-import {Colors, PlatformColorsIOS} from "../../core/theme/colors";
-import {platformMixedColor} from "../helpers/colorHelpers";
+import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
+import {platformNativeColor} from "../helpers/colorHelpers";
 
 interface IIconComponentProps {
   isSelected: boolean;
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
   } as TextStyle,
   labelDisabled: {
     ...commonLabel,
-    color: platformMixedColor(PlatformColorsIOS.systemFill, Colors.black),
+    color: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.secondaryText),
   } as TextStyle,
 });
