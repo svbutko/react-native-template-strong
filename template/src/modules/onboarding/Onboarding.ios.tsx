@@ -1,7 +1,6 @@
 import React, {useCallback} from "react";
-import {Image, ImageStyle, SafeAreaView, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
+import {PlatformColor, SafeAreaView, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
 import {Navigation, NavigationFunctionComponent} from "react-native-navigation";
-import {IllustrationsResources} from "../../common/ImageResources.g";
 import {ButtonType, IOnboardingData} from "../../types";
 import {localization} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
@@ -12,30 +11,38 @@ import {platformNativeColor} from "../../common/helpers/colorHelpers";
 import {PlatformColorsIOS} from "../../core/theme/colors";
 import {moderateScale} from "react-native-size-matters";
 import {isTablet} from "../../core/theme/commonConsts";
+import {SFSymbol} from "react-native-sfsymbols";
+import {SFSymbols} from "../../../resources/symbols/SFSymbols";
 
 const carouselData: IOnboardingData[] = [
   {
     header: localization.onboarding.firstHeader,
     body: localization.onboarding.firstBody,
-    image: IllustrationsResources.onboarding_first,
+    icon: SFSymbols["hands.sparkles.fill"],
   },
   {
     header: localization.onboarding.secondHeader,
     body: localization.onboarding.secondBody,
-    image: IllustrationsResources.onboarding_second,
+    icon: SFSymbols["books.vertical.fill"],
   },
   {
     header: localization.onboarding.thirdHeader,
     body: localization.onboarding.thirdBody,
-    image: IllustrationsResources.onboarding_second,
+    icon: SFSymbols["star.fill"],
   },
 ];
 
 export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
-  const renderClauseItem = useCallback((value, index) => {
+  const renderClauseItem = useCallback((value: IOnboardingData, index) => {
     return (
       <View key={index} style={styles.clauseContainer}>
-        <Image source={value.image} style={styles.clauseIcon} />
+        <SFSymbol
+          name={value.icon as SFSymbols}
+          size={moderateScale(32)}
+          resizeMode={"contain"}
+          color={PlatformColor(PlatformColorsIOS.systemBlue)}
+          style={styles.clauseIcon}
+        />
         <View style={styles.clauseTextContainer}>
           <Text style={styles.clauseHeader}>{value.header}</Text>
           <Text style={styles.clauseBody}>{value.body}</Text>
@@ -91,9 +98,8 @@ const styles = StyleSheet.create({
   clauseIcon: {
     width: moderateScale(32),
     height: moderateScale(32),
-    resizeMode: "contain",
     alignSelf: "center",
-  } as ImageStyle,
+  } as ViewStyle,
   clauseTextContainer: {
     flex: 1,
     flexDirection: "column",

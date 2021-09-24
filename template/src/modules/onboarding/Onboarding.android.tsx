@@ -1,5 +1,16 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {Image, ImageStyle, SafeAreaView, StyleSheet, Text, TextStyle, useWindowDimensions, View, ViewStyle} from "react-native";
+import {
+  Image,
+  ImageStyle,
+  ImageURISource,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextStyle,
+  useWindowDimensions,
+  View,
+  ViewStyle,
+} from "react-native";
 import Carousel from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {OnboardingPagination} from "./components/OnboardingPagination";
@@ -21,17 +32,17 @@ const carouselData: IOnboardingData[] = [
   {
     header: localization.onboarding.firstHeader,
     body: localization.onboarding.firstBody,
-    image: IllustrationsResources.onboarding_first,
+    icon: IllustrationsResources.onboarding_first,
   },
   {
     header: localization.onboarding.secondHeader,
     body: localization.onboarding.secondBody,
-    image: IllustrationsResources.onboarding_second,
+    icon: IllustrationsResources.onboarding_second,
   },
   {
     header: localization.onboarding.thirdHeader,
     body: localization.onboarding.thirdBody,
-    image: IllustrationsResources.onboarding_second,
+    icon: IllustrationsResources.onboarding_second,
   },
 ];
 
@@ -51,10 +62,10 @@ export const Onboarding: NavigationFunctionComponent = () => {
   }, [orientation]);
 
   const carouselItem = useCallback(
-    ({item}) => {
+    ({item}: {item: IOnboardingData}) => {
       return (
         <View style={styles.itemContainer}>
-          <Image source={item.image} style={styles.illustration} />
+          <Image source={item.icon as ImageURISource} style={styles.illustration} />
           <View style={styles.itemTextContainer}>
             <Text style={styles.header}>{item.header}</Text>
             <Text style={styles.body} numberOfLines={3}>
