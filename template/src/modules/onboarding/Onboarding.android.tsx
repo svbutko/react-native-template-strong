@@ -56,7 +56,7 @@ export const Onboarding: NavigationFunctionComponent = () => {
       return (
         <View style={styles.itemContainer}>
           <View style={styles.illustration}>
-            <Icon name={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary) as any} />
+            <Icon name={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary)} />
           </View>
           <View style={styles.itemTextContainer}>
             <Text style={styles.header}>{item.header}</Text>
