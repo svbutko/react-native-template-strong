@@ -10,7 +10,7 @@ export const Splash: NavigationFunctionComponent = () => {
   const isOnboardingVisited = useAppSelector((state) => state.system.isOnboardingVisited);
 
   useEffect(() => {
-    if (false) {
+    if (isOnboardingVisited) {
       setTabsRoot();
     } else if (isIos) {
       setTabsRoot(showOnboarding);
