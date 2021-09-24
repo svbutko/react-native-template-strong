@@ -1,20 +1,8 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {
-  Image,
-  ImageStyle,
-  ImageURISource,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextStyle,
-  useWindowDimensions,
-  View,
-  ViewStyle,
-} from "react-native";
+import {PlatformColor, SafeAreaView, StyleSheet, Text, TextStyle, useWindowDimensions, View, ViewStyle} from "react-native";
 import Carousel from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {OnboardingPagination} from "./components/OnboardingPagination";
-import {IllustrationsResources} from "../../common/ImageResources.g";
 import {ButtonType, IOnboardingData} from "../../types";
 import {localization} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
@@ -27,22 +15,24 @@ import {PlatformColorsAndroid} from "../../core/theme/colors";
 import {isTablet} from "../../core/theme/commonConsts";
 import {OrientationType, useOrientationChange} from "react-native-orientation-locker";
 import {getCurrentOrientation} from "../../common/helpers/orientationHelpers";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import {moderateScale} from "react-native-size-matters";
 
 const carouselData: IOnboardingData[] = [
   {
     header: localization.onboarding.firstHeader,
     body: localization.onboarding.firstBody,
-    icon: IllustrationsResources.onboarding_first,
+    icon: "thumb-up",
   },
   {
     header: localization.onboarding.secondHeader,
     body: localization.onboarding.secondBody,
-    icon: IllustrationsResources.onboarding_second,
+    icon: "description",
   },
   {
     header: localization.onboarding.thirdHeader,
     body: localization.onboarding.thirdBody,
-    icon: IllustrationsResources.onboarding_second,
+    icon: "star-rate",
   },
 ];
 
@@ -65,7 +55,9 @@ export const Onboarding: NavigationFunctionComponent = () => {
     ({item}: {item: IOnboardingData}) => {
       return (
         <View style={styles.itemContainer}>
-          <Image source={item.icon as ImageURISource} style={styles.illustration} />
+          <View style={styles.illustration}>
+            <Icon name={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary) as any} />
+          </View>
           <View style={styles.itemTextContainer}>
             <Text style={styles.header}>{item.header}</Text>
             <Text style={styles.body} numberOfLines={3}>
@@ -117,8 +109,9 @@ const initialStyles = StyleSheet.create({
   } as ViewStyle,
   illustration: {
     alignSelf: "center",
-    resizeMode: "contain",
-  } as ImageStyle,
+    alignItems: "center",
+    justifyContent: "center",
+  } as TextStyle,
   itemTextContainer: {
     flex: 1,
   } as ViewStyle,
@@ -164,7 +157,7 @@ const portraitStyles = StyleSheet.create({
     ...initialStyles.illustration,
     height: "50%",
     width: "100%",
-  } as ImageStyle,
+  } as TextStyle,
   // eslint-disable-next-line react-native/no-unused-styles
   itemTextContainer: {
     ...initialStyles.itemTextContainer,
@@ -202,7 +195,7 @@ const landscapeStyles = StyleSheet.create({
     ...initialStyles.illustration,
     height: "100%",
     width: "50%",
-  } as ImageStyle,
+  } as TextStyle,
   // eslint-disable-next-line react-native/no-unused-styles
   itemTextContainer: {
     ...initialStyles.itemTextContainer,

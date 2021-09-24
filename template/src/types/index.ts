@@ -1,4 +1,4 @@
-import {ImageURISource, PressableProps, ViewStyle} from "react-native";
+import {PressableProps, ViewStyle} from "react-native";
 import {RehydrateAction} from "redux-persist";
 import {RootState} from "../core/store/rootReducer";
 import {TextInputMaskOptionProp, TextInputMaskTypeProp} from "react-native-masked-text";
@@ -12,7 +12,7 @@ export interface INavigationPage {
 export interface IOnboardingData {
   header: string;
   body: string;
-  icon: SFSymbols | ImageURISource;
+  icon: SFSymbols | string;
 }
 
 export enum LoadState {

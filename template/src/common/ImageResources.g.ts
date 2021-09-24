@@ -7,12 +7,7 @@ import {ImageURISource} from "react-native";
  * !!! DO NOT EDIT !!!
  * For more information check the documentation:
  * https://github.com/svbutko/react-native-image-resource-generator
- */
-
-export class IllustrationsResources {
-  static readonly onboarding_first: ImageURISource = require("../../resources/images/illustrations/onboarding_first.png");
-  static readonly onboarding_second: ImageURISource = require("../../resources/images/illustrations/onboarding_second.png");
-}
+*/
 
 export class ImageResources {
   static readonly camera: ImageURISource = require("../../resources/images/camera.png");
