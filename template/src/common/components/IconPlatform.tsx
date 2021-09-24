@@ -13,7 +13,7 @@ interface IProps extends Omit<IconProps, "name" | "color">, Omit<SFSymbolProps, 
   style?: TextStyle | ViewStyle;
 }
 
-export const ImagePlatform: FC<IProps> = memo(({iosName, androidName, ...props}) => {
+export const IconPlatform: FC<IProps> = memo(({iosName, androidName, ...props}) => {
   if (isIos) {
     return <SFSymbol {...props} name={iosName} />;
   } else {
