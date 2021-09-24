@@ -85,7 +85,7 @@ export function setDefaultOptions() {
       iconColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
     },
     statusBar: {
-      backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.primaryDark),
+      backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.statusbar),
       visible: true,
     },
   });

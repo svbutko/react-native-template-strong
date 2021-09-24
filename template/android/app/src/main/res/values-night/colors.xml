@@ -11,5 +11,6 @@
     <item name="onPrimaryTextOpacity" type="color">#CCFFFFFF</item>
     <item name="divider" type="color">#BDBDBD</item>
     <item name="navigation" type="color">#1F1F1F</item>
+    <item name="statusbar" type="color">#000000</item>
 </resources>
 

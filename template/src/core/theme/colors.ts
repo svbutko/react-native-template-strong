@@ -79,4 +79,5 @@ export enum PlatformColorsAndroid {
   onPrimaryTextOpacity = "@color/onPrimaryTextOpacity",
   divider = "@color/divider",
   navigation = "@color/navigation",
+  statusbar = "@color/statusbar",
 }
