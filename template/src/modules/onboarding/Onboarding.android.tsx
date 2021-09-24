@@ -15,8 +15,8 @@ import {PlatformColorsAndroid} from "../../core/theme/colors";
 import {isTablet} from "../../core/theme/commonConsts";
 import {OrientationType, useOrientationChange} from "react-native-orientation-locker";
 import {getCurrentOrientation} from "../../common/helpers/orientationHelpers";
-import Icon from "react-native-vector-icons/MaterialIcons";
 import {moderateScale} from "react-native-size-matters";
+import {IconPlatform} from "../../common/components/IconPlatform";
 
 const carouselData: IOnboardingData[] = [
   {
@@ -56,7 +56,7 @@ export const Onboarding: NavigationFunctionComponent = () => {
       return (
         <View style={styles.itemContainer}>
           <View style={styles.illustration}>
-            <Icon name={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary)} />
+            <IconPlatform androidName={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary)} />
           </View>
           <View style={styles.itemTextContainer}>
             <Text style={styles.header}>{item.header}</Text>

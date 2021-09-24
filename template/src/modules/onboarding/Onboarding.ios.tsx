@@ -11,8 +11,8 @@ import {platformNativeColor} from "../../common/helpers/colorHelpers";
 import {PlatformColorsIOS} from "../../core/theme/colors";
 import {moderateScale} from "react-native-size-matters";
 import {isTablet} from "../../core/theme/commonConsts";
-import {SFSymbol} from "react-native-sfsymbols";
 import {SFSymbols} from "../../../resources/symbols/SFSymbols";
+import {IconPlatform} from "../../common/components/IconPlatform";
 
 const carouselData: IOnboardingData[] = [
   {
@@ -36,8 +36,8 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
   const renderClauseItem = useCallback((value: IOnboardingData, index) => {
     return (
       <View key={index} style={styles.clauseContainer}>
-        <SFSymbol
-          name={value.icon as SFSymbols}
+        <IconPlatform
+          iosName={value.icon as SFSymbols}
           size={moderateScale(32)}
           resizeMode={"contain"}
           color={PlatformColor(PlatformColorsIOS.systemBlue)}
