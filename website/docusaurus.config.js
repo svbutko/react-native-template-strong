@@ -24,7 +24,7 @@ module.exports = {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Tutorial",
+          label: "Docs",
         },
         {
           href: "https://github.com/svbutko/react-native-template-strong",
@@ -40,7 +40,7 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
+              label: "Getting started",
               to: "/docs/intro",
             },
           ],
