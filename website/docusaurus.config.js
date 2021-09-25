@@ -26,7 +26,6 @@ module.exports = {
           position: "left",
           label: "Tutorial",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/svbutko/react-native-template-strong",
           label: "GitHub",
@@ -63,10 +62,6 @@ module.exports = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
               label: "GitHub",
               href: "https://github.com/svbutko/react-native-template-strong",
             },
@@ -87,11 +82,6 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/svbutko/react-native-template-strong/master/website/",
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            "https://github.com/svbutko/react-native-template-strong/master/website/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
