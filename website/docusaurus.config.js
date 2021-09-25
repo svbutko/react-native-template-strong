@@ -3,20 +3,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import("@docusaurus/types").DocusaurusConfig} */
 module.exports = {
-  title: "My Site",
+  title: "React Native Template Strong",
   tagline: "Dinosaurs are cool",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "svbutko",
+  projectName: "React Native Template Strong",
   themeConfig: {
     navbar: {
-      title: "My Site",
+      title: "React Native Template Strong",
       logo: {
-        alt: "My Site Logo",
+        alt: "stronglogo",
         src: "img/logo.svg",
       },
       items: [
@@ -28,7 +28,7 @@ module.exports = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/svbutko/react-native-template-strong",
           label: "GitHub",
           position: "right",
         },
@@ -50,16 +50,12 @@ module.exports = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Discussions",
+              href: "https://github.com/svbutko/react-native-template-strong/discussions",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              label: "Issues",
+              href: "https://github.com/svbutko/react-native-template-strong/issues",
             },
           ],
         },
@@ -72,12 +68,12 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/svbutko/react-native-template-strong",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Sergei Butko (@svbutko). Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -90,14 +86,12 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl: "https://github.com/facebook/docusaurus/edit/main/website/",
+          editUrl: "https://github.com/svbutko/react-native-template-strong/master/website/",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/edit/main/website/blog/",
+            "https://github.com/svbutko/react-native-template-strong/master/website/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
