@@ -82,7 +82,7 @@
     "@storybook/react-native": "5.3.25",
     "@types/faker": "5.5.8",
     "@types/jest": "27.0.2",
-    "@types/lodash": "4.14.173",
+    "@types/lodash": "4.14.174",
     "@types/react": "17.0.24",
     "@types/react-native": "0.65.1",
     "@types/react-native-snap-carousel": "3.8.4",
