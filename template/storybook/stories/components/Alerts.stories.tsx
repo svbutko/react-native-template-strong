@@ -14,6 +14,7 @@ export const AlertsStories: FC = () => {
         options: ["Cancel", "Action 1", "Action 2"],
         cancelButtonIndex: 0,
         destructiveButtonIndex: 3,
+        message: "Action Sheet Message",
       },
       (optionIndex) => {
         console.warn(`Option ${optionIndex} was pressed`);
