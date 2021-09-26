@@ -16,32 +16,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    title: 'Strong set of dependencies',
+    image: '/img/home_feature_one.png',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Build primarily with <b>React Native Navigation, Redux Toolkit and TypeScript</b>.
+          And other day-to-day useful dependencies.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
+    title: 'More than just a template',
+    image: '/img/home_feature_two.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        With the keep it simple, stupid and test driven development approaches
+          and documentation set makes it easy to use and learn.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    image: '/img/undraw_docusaurus_react.svg',
+    title: 'Together we are stronger',
+    image: '/img/home_feature_three.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          New feature? Bug or issue?
+          Participate in the development to make this template better for you and others.
       </>
     ),
   },
