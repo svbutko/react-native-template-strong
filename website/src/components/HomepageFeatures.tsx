@@ -30,8 +30,7 @@ const FeatureList: FeatureItem[] = [
     image: '/img/home_feature_two.svg',
     description: (
       <>
-        With the keep it simple, stupid and test driven development approaches
-          and documentation set makes it easy to use and learn.
+        Keep it simple stupid, test driven development, documentation and guides make it easy to use.
       </>
     ),
   },
@@ -40,7 +39,7 @@ const FeatureList: FeatureItem[] = [
     image: '/img/home_feature_three.svg',
     description: (
       <>
-          New feature? Bug or issue?
+          New feature, bug or issue?
           Participate in the development to make this template better for you and others.
       </>
     ),
