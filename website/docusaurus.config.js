@@ -11,7 +11,7 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "svbutko",
-  projectName: "React Native Template Strong",
+  projectName: "react-native-template-strong",
   themeConfig: {
     navbar: {
       title: "React Native Template Strong",
@@ -25,6 +25,11 @@ module.exports = {
           docId: "intro",
           position: "left",
           label: "Docs",
+        },
+        {
+          to: "faq",
+          position: "left",
+          label: "FAQ",
         },
         {
           href: "https://github.com/svbutko/react-native-template-strong",
