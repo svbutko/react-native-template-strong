@@ -48,6 +48,11 @@ Statistics to provide detailed numbers: [statcounter](https://gs.statcounter.com
 No, it doesn't, but I have plans to work with macOS, Windows and tvOS.
 At this moment it works with iOS, iPadOS, Android and can work with Android TV (not tested).
 
+## Why NPM and not Yarn?
+NPM updates regularly and improves in terms of speed and quality, while Yarn has different versions with major differences.
+
+
+
 
 
 
