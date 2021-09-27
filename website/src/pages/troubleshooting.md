@@ -4,8 +4,13 @@ title: Troubleshooting
 
 # Troubleshooting
 
+## Error: Command failed: yarn install
+The project uses `npm` as package manager, and you're trying to use `Yarn`, 
+It is advised not to mix package managers in order to avoid resolution inconsistencies caused by unsynchronized lock files.
+Simply run `npm install` and use `npm` version >= 6.14.13.
+
 ## ESLint: Error: Cannot read config file: .../.eslintrc.js
-Try to update `ESLint` and `NPM` versions
+Try to update `ESLint` and `npm` versions
 
 ## npm ERR! command failed npm ERR! command sh -c husky install
 [Husky](https://github.com/typicode/husky) tries to initialize itself using `prepare` script from `package.json`
