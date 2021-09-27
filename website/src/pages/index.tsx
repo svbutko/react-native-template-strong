@@ -28,11 +28,11 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
-      description={"Home"}
+      title={"Welcome"}
+      description={"Quick, opinionated, documented and strong beginning for your next project"}
+      image={"img/logo.svg"}
     >
       <HomepageHeader />
       <main>
