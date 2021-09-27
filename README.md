@@ -4,9 +4,7 @@
     React Native Template Strong
 </h1>
 
-<p align="center">
-    Quick, opinionated, documented and strong beginning for your next project.
-</p>
+Quick, opinionated, documented and strong beginning for your next project.
 
 Build primarily with 
 - [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) 
