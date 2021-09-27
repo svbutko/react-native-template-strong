@@ -18,7 +18,10 @@
     "uikit",
     "strong",
     "template",
-    "boilerplate"
+    "boilerplate",
+    "starter",
+    "redux-toolkit",
+    "localization",
   ],
   "author": "Sergei Butko (https://twitter.com/@svbutko)",
   "license": "MIT",
