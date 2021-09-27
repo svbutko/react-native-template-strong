@@ -22,23 +22,28 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "intro",
-          position: "left",
+          docId: "getting-started",
+          position: "right",
           label: "Docs",
         },
         {
           to: "mission",
-          position: "left",
+          position: "right",
           label: "Mission",
         },
         {
           to: "showcase",
-          position: "left",
+          position: "right",
           label: "Showcase",
         },
         {
+          to: "troubleshooting",
+          position: "right",
+          label: "Troubleshooting",
+        },
+        {
           to: "faq",
-          position: "left",
+          position: "right",
           label: "FAQ",
         },
         {
@@ -56,7 +61,15 @@ module.exports = {
           items: [
             {
               label: "Getting started",
-              to: "/docs/intro",
+              to: "/docs/getting-started",
+            },
+            {
+              label: "Troubleshooting",
+              to: "troubleshooting",
+            },
+            {
+              label: "FAQ",
+              to: "faq",
             },
           ],
         },
@@ -77,8 +90,16 @@ module.exports = {
           title: "More",
           items: [
             {
-              label: "GitHub",
+              label: "Project Github",
               href: "https://github.com/svbutko/react-native-template-strong",
+            },
+            {
+              label: "My Github",
+              href: "https://github.com/svbutko",
+            },
+            {
+              label: "My Twitter",
+              href: "https://twitter.com/svbutko",
             },
           ],
         },
@@ -95,6 +116,7 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
+          showLastUpdateTime: true,
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/svbutko/react-native-template-strong/master/website/",
         },

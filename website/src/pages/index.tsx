@@ -17,7 +17,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro"
+            to="/docs/getting-started"
           >
             Get started
           </Link>
@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={siteConfig.title}
-      description={"React Native Template Strong"}
+      description={"Home"}
     >
       <HomepageHeader />
       <main>
