@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
     <Layout
       title={"Welcome"}
       description={"Quick, opinionated, documented and strong beginning for your next project"}
-      image={"img/logo.svg"}
+      image={"img/strong.png"}
     >
       <HomepageHeader />
       <main>
