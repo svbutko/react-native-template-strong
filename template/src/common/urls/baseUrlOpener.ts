@@ -1,5 +1,4 @@
 import {Linking} from "react-native";
-import {ignorePromise} from "../utils/ignorePromise";
 
 export abstract class BaseUrlOpener {
   protected constructor() {
@@ -12,7 +11,7 @@ export abstract class BaseUrlOpener {
       return;
     }
 
-    ignorePromise(this.tryOpenUrl(url));
+    this.tryOpenUrl(url);
   }
 
   async open(): Promise<void> {
@@ -25,7 +24,7 @@ export abstract class BaseUrlOpener {
   }
 
   protected async tryOpenUrl(url: string): Promise<void> {
-    ignorePromise(Linking.openURL(url));
+    Linking.openURL(url);
   }
 
   protected abstract generateUrl(): string | null;
