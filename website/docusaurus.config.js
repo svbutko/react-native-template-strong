@@ -16,7 +16,7 @@ module.exports = {
     navbar: {
       title: "React Native Template Strong",
       logo: {
-        alt: "stronglogo",
+        alt: "strong-logo",
         src: "img/logo.svg",
       },
       items: [
@@ -25,6 +25,11 @@ module.exports = {
           docId: "intro",
           position: "left",
           label: "Docs",
+        },
+        {
+          to: "showcase",
+          position: "left",
+          label: "Showcase",
         },
         {
           to: "faq",
