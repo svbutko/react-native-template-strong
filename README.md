@@ -7,6 +7,7 @@
 Quick, opinionated, documented and strong beginning for your next project.
 
 Build primarily with 
+- [React Native](https://reactnative.dev)
 - [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) 
 - [Redux Toolkit](https://redux-toolkit.js.org)
 - [TypeScript](https://www.typescriptlang.org) 
