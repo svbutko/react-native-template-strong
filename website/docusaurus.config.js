@@ -7,6 +7,7 @@ module.exports = {
   tagline: "Quick, opinionated, documented and strong beginning for your next project",
   url: "https://svbutko.github.io/",
   baseUrl: "/",
+  trailingSlash: undefined,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
