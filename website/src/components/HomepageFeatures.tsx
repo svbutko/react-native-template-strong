@@ -17,7 +17,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Strong set of dependencies',
-    image: '/img/home_feature_one.png',
+    image: 'img/home_feature_one.png',
     description: (
       <>
         Build primarily with <b>React Native Navigation, Redux Toolkit and TypeScript</b>.
@@ -27,7 +27,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'More than just a template',
-    image: '/img/home_feature_two.svg',
+    image: 'img/home_feature_two.svg',
     description: (
       <>
         Keep it simple stupid, test driven development, documentation and guides make it easy to use.
@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Together we are stronger',
-    image: '/img/home_feature_three.svg',
+    image: 'img/home_feature_three.svg',
     description: (
       <>
           New feature, bug or issue?
