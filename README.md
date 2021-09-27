@@ -2,6 +2,8 @@
     <img src="./website/static/img/strong.png" alt="strong"/>
     <br/>
     React Native Template Strong
+    <br/>
+    🚧 WORK IN PROGRESS 🚧
 </h1>
 
 Quick, opinionated, documented and strong beginning for your next project.
