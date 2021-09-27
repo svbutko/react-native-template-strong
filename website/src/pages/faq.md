@@ -51,6 +51,12 @@ At this moment it works with iOS, iPadOS, Android and can work with Android TV (
 ## Why NPM and not Yarn?
 NPM updates regularly and improves in terms of speed and quality, while Yarn has different versions with major differences.
 
+## Why there's no UI library?
+There are lots of UI libraries out there and there are different opinions/likings, so you can install the one you like.
+I, personally don't like the idea of using UI libraries since it's harder to update them,
+and sometimes they are hard to modify to one's likings, as for me, it makes more sense to create UI components from the ground.
+
+
 
 
 
