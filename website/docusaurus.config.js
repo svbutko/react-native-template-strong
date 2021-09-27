@@ -5,7 +5,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 module.exports = {
   title: "React Native Template Strong",
   tagline: "Quick, opinionated, documented and strong beginning for your next project",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://svbutko.github.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
