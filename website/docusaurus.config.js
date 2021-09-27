@@ -27,6 +27,11 @@ module.exports = {
           label: "Docs",
         },
         {
+          to: "mission",
+          position: "left",
+          label: "Mission",
+        },
+        {
           to: "showcase",
           position: "left",
           label: "Showcase",
