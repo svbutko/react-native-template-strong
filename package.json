@@ -21,7 +21,7 @@
     "boilerplate",
     "starter",
     "redux-toolkit",
-    "localization",
+    "localization"
   ],
   "author": "Sergei Butko (https://twitter.com/@svbutko)",
   "license": "MIT",
