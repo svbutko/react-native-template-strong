@@ -6,7 +6,9 @@
     🚧 WORK IN PROGRESS 🚧
 </h1>
 
-Quick, opinionated, documented and strong beginning for your next project.
+<p align="center">
+    Quick, opinionated, documented and strong beginning for your next project.
+</p>
 
 # [Check out docs to get started](https://svbutko.github.io/react-native-template-strong/)
 
