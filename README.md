@@ -36,7 +36,7 @@ Includes next components:
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.2.2`
+- [Jest](https://github.com/facebook/jest) `27.2.3`
 - [Detox](https://github.com/wix/Detox) `18.21.0`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
