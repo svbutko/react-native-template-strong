@@ -4,6 +4,13 @@ import {RootState} from "../core/store/rootReducer";
 import {TextInputMaskOptionProp, TextInputMaskTypeProp} from "react-native-masked-text";
 import {SFSymbols} from "../../resources/symbols/SFSymbols";
 
+export enum AppEnvironment {
+  development = "development",
+  test = "test",
+  staging = "staging",
+  production = "production",
+}
+
 export interface INavigationPage {
   id: string;
   name: string;
