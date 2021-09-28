@@ -9,7 +9,7 @@
 
 ## Checklist 
 
-- [ ] I read [Contributing Guidelines](./CONTRIBUTING.md)
+- [ ] I read [Contributing Guidelines](../CONTRIBUTING.md)
 - [ ] I checked proposed changes on my own repository
 - [ ] I tested proposed changes on iOS
 - [ ] I tested proposed changes on Android
