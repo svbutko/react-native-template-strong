@@ -8,6 +8,8 @@
 
 Quick, opinionated, documented and strong beginning for your next project.
 
+# [Check out docs to get started](https://svbutko.github.io/react-native-template-strong/)
+
 Build primarily with 
 - [React Native](https://reactnative.dev) `0.65.1`
 - [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.21.0`
@@ -44,5 +46,3 @@ Code quality covered with:
 - [Lint staged](https://github.com/okonet/lint-staged) `11.1.2`
 
 And many other day-to-day useful dependencies.
-
-## [Check out docs to get started](https://svbutko.github.io/react-native-template-strong/)
