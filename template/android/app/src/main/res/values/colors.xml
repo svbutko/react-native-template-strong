@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="primary" type="color">#03A9F4</item>
-    <item name="primaryDark" type="color">#0288D1</item>
+    <item name="primary" type="color">#61DAFB</item>
+    <item name="primaryDark" type="color">#2596BE</item>
     <item name="primaryLight" type="color">#B3E5FC</item>
     <item name="background" type="color">#FFFFFF</item>
     <item name="primaryText" type="color">#212121</item>
@@ -10,6 +10,6 @@
     <item name="onPrimaryText" type="color">#FFFFFF</item>
     <item name="onPrimaryTextOpacity" type="color">#CCFFFFFF</item>
     <item name="divider" type="color">#BDBDBD</item>
-    <item name="navigation" type="color">#03A9F4</item>
+    <item name="navigation" type="color">#61DAFB</item>
     <item name="statusbar" type="color">#0288D1</item>
 </resources>

@@ -3,6 +3,8 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/statusbar</item>
         <item name="colorAccent">@color/primary</item>
     </style>
 </resources>
