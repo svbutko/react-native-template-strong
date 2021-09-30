@@ -25,7 +25,7 @@ Includes next components:
 - [Permissions](https://github.com/zoontek/react-native-permissions) `3.0.5`,
 - [Config](https://github.com/luggit/react-native-config) `1.4.4`,
 - [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`,
-- [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.3`
+- [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.4`
 - [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
 - [Vector icons](https://github.com/oblador/react-native-vector-icons) `8.1.0`
 - [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.1.0`
@@ -36,8 +36,8 @@ Includes next components:
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.2.3`
-- [Detox](https://github.com/wix/Detox) `18.21.0`
+- [Jest](https://github.com/facebook/jest) `27.2.4`
+- [Detox](https://github.com/wix/Detox) `18.22.0`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
 Code quality covered with:
