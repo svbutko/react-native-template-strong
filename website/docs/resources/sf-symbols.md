@@ -55,10 +55,10 @@ You can use it directly like so:
 />
 ```
 
-But it will be shown only on iOS and there which is not desired.
+But it will be shown only on iOS, which is not desired.
 
 To work with both iOS and Android, there's [IconPlatform](../components/icon-platform.md) component,
-which shows SF Symbols on iOS and Material icons on Android, it works next way:
+which shows SF Symbols on iOS and Material Icons on Android, it works next way:
 
 ```typescript jsx
 <IconPlatform 
