@@ -49,6 +49,6 @@ To use it you can simply call it like this:
 To add your custom fonts you need to do the following:
 - Place your `.ttf` or `.otf` font/s in `resources/fonts` folder
 - Run `react-native link`, it will add your fonts to native resources folders
-- Add your font inside `fonts.ts` as a constant
+- Add your font inside `Fonts`
 - Rebuild your application
 - Use your newly added fonts
