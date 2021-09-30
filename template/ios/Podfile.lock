@@ -238,7 +238,7 @@ PODS:
     - React-jsi (= 0.65.1)
     - React-perflogger (= 0.65.1)
   - React-jsinspector (0.65.1)
-  - react-native-blob-util (0.13.15):
+  - react-native-blob-util (0.13.16):
     - React-Core
   - react-native-config (1.4.4):
     - react-native-config/App (= 1.4.4)
@@ -341,12 +341,12 @@ PODS:
     - SDWebImageWebPCoder (~> 0.8.4)
   - RNGestureHandler (1.10.3):
     - React-Core
-  - RNImageCropPicker (0.36.3):
+  - RNImageCropPicker (0.36.4):
     - React-Core
     - React-RCTImage
-    - RNImageCropPicker/QBImagePickerController (= 0.36.3)
+    - RNImageCropPicker/QBImagePickerController (= 0.36.4)
     - TOCropViewController
-  - RNImageCropPicker/QBImagePickerController (0.36.3):
+  - RNImageCropPicker/QBImagePickerController (0.36.4):
     - React-Core
     - React-RCTImage
     - TOCropViewController
@@ -547,7 +547,7 @@ SPEC CHECKSUMS:
   React-jsi: 12913c841713a15f64eabf5c9ad98592c0ec5940
   React-jsiexecutor: 43f2542aed3c26e42175b339f8d37fe3dd683765
   React-jsinspector: 41e58e5b8e3e0bf061fdf725b03f2144014a8fb0
-  react-native-blob-util: ada1b76f16afaa56f3389d22f3d823d76c1f2b32
+  react-native-blob-util: 6e75bea8ffce35c4009c0e519cd0a96432a93e2b
   react-native-config: 72d948053a442779b3178fddd571e37f118ef606
   react-native-in-app-review: 00a66a085c61dbd4474041dc14e7bfee81a86130
   react-native-netinfo: 92e6e4476eb8bf6fc2d7c0a6ca0a1406f663d73a
@@ -572,7 +572,7 @@ SPEC CHECKSUMS:
   RNDevMenu: fd325b5554b61fe7f48d9205a3877cf5ee88cd7c
   RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNImageCropPicker: 97289cd94fb01ab79db4e5c92938be4d0d63415d
+  RNImageCropPicker: 73891a709e6fd8a47d32104d942757971f220aee
   RNPermissions: 7043bacbf928eae25808275cfe73799b8f618911
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
