@@ -2,9 +2,6 @@
 sidebar_position: 1
 title: Getting started
 ---
-
-# Getting started
-
 ## Before you start
 
 If you are new to React Native, it would be better to learn a bit about it first by
