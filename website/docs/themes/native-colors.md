@@ -198,8 +198,8 @@ const styles = StyleSheet.create({
     topBar: {
       background: {
         color: {
-          light: PlatformColor(PlatformColorsAndroid.navigation),
-          darK: PlatformColor(PlatformColorsAndroid.navigation),
+          light: PlatformColor(PlatformColorsIOS.systemBackground),
+          darK: PlatformColor(PlatformColorsIOS.systemBackground),
         },
       },
     }
