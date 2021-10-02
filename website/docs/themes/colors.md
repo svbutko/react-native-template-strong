@@ -22,6 +22,8 @@ You can add here simple colors shared by both platforms and which will look the 
 
 You can use this colors next way:
 
+1) In styles:
+
 ```typescript
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +31,51 @@ const styles = StyleSheet.create({
   } as ViewStyle,
 });
 ```
+
+2) In navigation:
+
+```typescript
+    topBar: {
+      background: {
+        color: Colors.black,
+      },
+      title: {
+        color: Colors.white,
+      },
+    }
+```
+
+You can also assign different colors depending on platform using [platformLocalColor](../helpers/color-helpers.md):
+
+```typescript
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: platformLocalColor(Colors.black, Colors.red),
+  } as ViewStyle,
+});
+```
+
+In navigation, you can also set this colors to `dark` and `light` themes:
+
+```typescript
+    topBar: {
+      background: {
+        color: {
+          light: Colors.white,
+          dark: Colors.black,
+        },
+      },
+      title: {
+        color: {
+          light: Colors.black,
+          dark: Colors.white,
+        },
+      },
+    }
+```
+
+But it's not preferred, continue reading next to understand why
+
 You probably noticed that there are two more enums in `colors.ts`, these are native colors, they work with `dark` and `light` themes.
 
 Follow to the next page to see how to use and add them.
