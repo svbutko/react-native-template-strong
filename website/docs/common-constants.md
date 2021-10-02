@@ -7,7 +7,7 @@ they are being created once and stored and exported from [commonConstants.ts](ht
 
 ### Platform dependant
 
-rather than always importing `Device` or `Platform` and checking whether it's iOS or Android or some versions, 
+Rather than always importing `Device` or `Platform` and checking whether it's iOS or Android or some versions, 
 it's easier to have this checks
 
 - `isIos`

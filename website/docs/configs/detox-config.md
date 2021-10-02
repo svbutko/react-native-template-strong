@@ -1,4 +1,5 @@
 ---
 sidebar_position: 7
-title: Jest config
+title: Detox config
 ---
+Detox config is configured to work with TypeScript.
