@@ -12,7 +12,7 @@ export class HttpUrl extends BaseUrlOpener {
       if (this.httpUrl.startsWith("http")) {
         return this.httpUrl;
       } else {
-        return "http://" + this.httpUrl;
+        return "https://" + this.httpUrl;
       }
     }
   }

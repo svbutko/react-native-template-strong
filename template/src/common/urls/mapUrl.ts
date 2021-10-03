@@ -7,13 +7,10 @@ export class MapUrl extends BaseUrlOpener {
   }
 
   protected generateUrl(): string | null {
-    let url: string;
     if (isIos) {
-      url = `http://maps.apple.com/?q=${encodeURIComponent(this.address)}&sll=${this.latitude},${this.longitude}`;
+      return `https://maps.apple.com/?q=${encodeURIComponent(this.address)}&sll=${this.latitude},${this.longitude}`;
     } else {
-      url = `geo:${this.latitude}, ${this.longitude}`;
+      return `geo:${this.latitude}, ${this.longitude}`;
     }
-
-    return url;
   }
 }
