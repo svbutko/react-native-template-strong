@@ -4,7 +4,9 @@ title: newState
 ---
 Used primarily for merging redux state objects.
 
-Where first parameter is your current or initial state, and second is your changes.
+First parameter is your current or initial state, and second is your changes to this state.
+
+Result will be new merged object.
 
 Example usage from `systemSlice.ts`:
 
