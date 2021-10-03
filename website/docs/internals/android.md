@@ -20,6 +20,16 @@ Next versions are being used:
 - androidXCore - `1.6.0`
 - ndkVersion - `23.0.7599858`
 
+## Gradle
+
+- Gradle version is set to `7.2`
+- com.android.tools.build:gradle - `7.0.2`
+
+Don't forget to install `JDK 11` because Gradle starts working only from this version.
+
+To do it follow [the next guide](../../troubleshooting#android-gradle-plugin-requires-java-11-to-run-you-are-currently-using-java-18)
+
+
 ## Network security config
 There's a network security config which defines next addresses to be allowed:
 - localhost
