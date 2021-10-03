@@ -21,4 +21,13 @@ and to do so it needs to have a git repository, check how to work with Husky or 
 If you have `NVM` installed then there's a minor conflict which can be solved next way:
 `nvm unalias default`
 
+## Android Gradle plugin requires Java 11 to run. You are currently using Java 1.8
+Update your JDK version, run following command in terminal
+
+On macOS:
+`brew install --cask adoptopenjdk/openjdk/adoptopenjdk11`
+
+On Windows:
+`choco install -y nodejs.install openjdk11`
+
 Can't find an answer to your issue? Feel free to [create an issue](https://github.com/svbutko/react-native-template-strong/issues/new/choose)
