@@ -31,5 +31,5 @@ const styles = StyleSheet.create({
   description: {
     ...CommonStyles.normalText,
     textAlign: "center",
-  },
+  } as TextStyle,
 });
