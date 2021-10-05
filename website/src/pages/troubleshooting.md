@@ -30,4 +30,5 @@ On macOS:
 On Windows:
 `choco install -y nodejs.install openjdk11`
 
+## Can't find your issue?
 Can't find an answer to your issue? Feel free to [create an issue](https://github.com/svbutko/react-native-template-strong/issues/new/choose)
