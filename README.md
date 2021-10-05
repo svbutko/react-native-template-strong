@@ -14,8 +14,8 @@
 
 Build primarily with 
 - [React Native](https://reactnative.dev) `0.66.0`
-- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.21.0`
-- [Redux Toolkit](https://redux-toolkit.js.org) `1.6.1`
+- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.22.0`
+- [Redux Toolkit](https://redux-toolkit.js.org) `1.6.2`
 - [TypeScript](https://www.typescriptlang.org) `4.4.3`
 
 Includes next components:
@@ -28,7 +28,7 @@ Includes next components:
 - [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.4`
 - [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
 - [Vector icons](https://github.com/oblador/react-native-vector-icons) `8.1.0`
-- [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.1.0`
+- [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.2.0`
 - [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `3.2.2`
 - [Size matters](https://github.com/nirsky/react-native-size-matters) `0.4.0`
 - [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
@@ -37,7 +37,7 @@ Includes next components:
 
 Testing made with:
 - [Jest](https://github.com/facebook/jest) `27.2.4`
-- [Detox](https://github.com/wix/Detox) `18.22.0`
+- [Detox](https://github.com/wix/Detox) `18.22.1`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
 Code quality covered with:
@@ -45,6 +45,6 @@ Code quality covered with:
 - [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `1.0.2`
 - [Husky](https://github.com/typicode/husky) `7.0.2`
 - [Prettier](https://github.com/prettier/prettier) `2.4.1`
-- [Lint staged](https://github.com/okonet/lint-staged) `11.1.2`
+- [Lint staged](https://github.com/okonet/lint-staged) `11.2.0`
 
 And many other day-to-day useful dependencies.
