@@ -14,7 +14,7 @@
 
 Build primarily with 
 - [React Native](https://reactnative.dev) `0.66.0`
-- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.22.0`
+- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.22.1`
 - [Redux Toolkit](https://redux-toolkit.js.org) `1.6.2`
 - [TypeScript](https://www.typescriptlang.org) `4.4.3`
 
