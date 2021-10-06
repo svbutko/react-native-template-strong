@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Colors
 ---
+## Content
 
 All your colors are stored in `/src/core/theme/colors.ts` as a simple enum:
 
