@@ -2,18 +2,19 @@
 sidebar_position: 3
 title: SF Symbols
 ---
+## Content
 
 The preferable way to show icons on iOS is to use [SF Symbols](https://developer.apple.com/sf-symbols/).
 
-### Browsing icons
+## Browsing icons
 
 All icons are stored as enum with names in `/resources/symbols/sfSymbols`. It contains mostly all the 3 100 icons.
 
 To take a look at them without using them you can open [SF Symbols App](https://developer.apple.com/sf-symbols/) on macOS.
 
-### Using icons in navigation
+## Using icons in navigation
 
-#### BottomTab
+### BottomTab
 
 `react-native-navigation` currently supports SF Symbols as icon in `bottomTab`:
 
@@ -28,7 +29,7 @@ Main.options = {
 
 It also applies same effect properties as `Icon` ones, like `selectedIconColor` or `iconColor`, see more properties [here](https://wix.github.io/react-native-navigation/api/options-bottomTab#iconwidth).
 
-#### BackButton
+### BackButton
 
 SF Symbol can also be applied directly as `topBar`'s `backButton` like so:
 ```typescript jsx
@@ -41,7 +42,7 @@ Main.options = {
 };
 ```
 
-### Using icons as components
+## Using icons as components
 
 Usage of SF Symbols as components made possible by [react-native-sfsymbols](https://github.com/birkir/react-native-sfsymbols).
 

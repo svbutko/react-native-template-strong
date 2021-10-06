@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Native colors
 ---
+## Content
 
 Native colors are used to work with `dark` and `light` themes of your application.
 

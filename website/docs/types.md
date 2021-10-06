@@ -2,7 +2,7 @@
 sidebar_position: 19
 title: Types
 ---
-### Own types, interfaces and enums
+## Own types, interfaces and enums
 
 There are many types, interfaces and enums which are being used in this template, they are all included in [types/index.ts](https://github.com/svbutko/react-native-template-strong/blob/main/template/src/types/index.ts).
 
@@ -26,7 +26,7 @@ To briefly describe what each currently existed interface/type/enum does:
 - `ITextInputMask` - interface which is used for creation of input masks
 
 
-### Dependency types
+## Dependency types
 
 If you'd like to change or add types for dependencies from `node_modules` 
 then you can check the already existing [react-native-config.d.ts](https://github.com/svbutko/react-native-template-strong/blob/main/template/src/types/react-native-config.d.ts)

@@ -2,12 +2,12 @@
 sidebar_position: 2
 title: Images
 ---
-### Before adding images
+## Before adding images
 
 There are [SF Symbols](./sf-symbols.md) and [Material Vector Icons](./vector-icons.md) included in this project, 
 maybe will suit your needs better rather than adding more resources.
 
-### Adding images
+## Adding images
 
 To add images, simply put your images into `/resources/images` folder (you can add sub-folders inside there)
 
@@ -38,7 +38,7 @@ export class ImageResources {
 }
 ```
 
-### Accessing images
+## Accessing images
 
 To access the images which you added, simply call them the next way:
 

@@ -3,9 +3,9 @@ sidebar_position: 20
 title: Patches
 ---
 
-Work with patches made possible by [patch-package](https://github.com/ds300/patch-package).
+## Content
 
-### Contents
+Work with patches made possible by [patch-package](https://github.com/ds300/patch-package).
 
 Sometimes it's needed to make changes in packages from `node_modules`.
 
@@ -17,7 +17,7 @@ or even worse, dependency is not maintained anymore.
 
 To handle this situation the best possible way is to make a local patch.
 
-### Usage
+## Usage
 
 First make changes to the files of a particular package in your `node_modules` folder, then run
 
