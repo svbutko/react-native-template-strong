@@ -4,9 +4,7 @@ title: Default options
 ---
 
 ## Content
-[Default options](https://wix.github.io/react-native-navigation/api/options-api#setdefaultoptions)
-
-Default options are being set in `src/navigation/navigation.ts`:
+[Default options](https://wix.github.io/react-native-navigation/api/options-api#setdefaultoptions) are being set in `src/navigation/navigation.ts`:
 
 ```typescript
 export function setDefaultOptions() {
