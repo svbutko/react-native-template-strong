@@ -4,7 +4,7 @@ title: Environments
 ---
 Work with environments made possible by [react-native-config](https://github.com/luggit/react-native-config).
 
-### Contents
+## Content
 
 The application has 4 primitive environments:
 - `.env` - Development
@@ -17,7 +17,7 @@ Each has a set of predefined values:
 - `ENVIRONMENT` - current selected environment
 - `IGNORE_NET_INFO` - ignore `NetInfo` or not (useful while in development)
 
-### Usage
+## Usage
 
 To use environment variables you simply need to import `Config` and use your parameters, like so:
 
@@ -27,13 +27,13 @@ import Config from "react-native-config";
 Config.ENVIRONMENT;
 ```
 
-### Change environment
+## Change environment
 
 By default, `.env` (development) is selected environment, 
 to change that you need to run one of the [scripts](../docs/dependencies#environment-specific) from `package.json` 
 and rebuild your app.
 
-### Add more parameters
+## Add more parameters
 
 To add more parameters, first you have to add them in types:
 - Open [react-native-config.d.ts](https://github.com/svbutko/react-native-template-strong/blob/main/template/src/types/react-native-config.d.ts)

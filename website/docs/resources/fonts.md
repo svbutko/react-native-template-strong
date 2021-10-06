@@ -2,10 +2,12 @@
 sidebar_position: 1
 title: Fonts
 ---
+## Content
+
 Currently, there is only a single font which is used, and it's `system`.
 It's a system font which is used on device.
 
-### Accessing fonts
+## Accessing fonts
 
 To access a font in your code, you need to use `fonts.ts`:
 
@@ -44,7 +46,7 @@ To use it you can simply call it like this:
       </Text>
 ```
 
-### Adding fonts
+## Adding fonts
 
 To add your custom fonts you need to do the following:
 - Place your `.ttf` or `.otf` font/s in `resources/fonts` folder
