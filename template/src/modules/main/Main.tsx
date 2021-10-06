@@ -13,9 +13,6 @@ Main.options = {
     largeTitle: {
       visible: true,
     },
-    searchBar: {
-      visible: true,
-    },
     title: {
       text: localization.pages.main,
     },

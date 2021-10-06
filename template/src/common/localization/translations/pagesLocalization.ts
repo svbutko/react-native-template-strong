@@ -1,8 +1,8 @@
 export const pagesLocalization = {
   en: {
     main: "Main",
-    demo: "Demo",
-    more: "More",
+    search: "Search",
+    settings: "Settings",
     selectDate: "Select date",
     storybook: "Storybook",
   },

@@ -27,12 +27,12 @@ export const Pages = {
     id: "MAIN_SCREEN",
     name: "MainScreen",
   },
-  demo: {
-    id: "DEMO_SCREEN",
-    name: "DemoScreen",
+  search: {
+    id: "SEARCH_SCREEN",
+    name: "SearchScreen",
   },
-  more: {
-    id: "MORE_SCREEN",
-    name: "MoreScreen",
+  settings: {
+    id: "SETTINGS_SCREEN",
+    name: "SettingsScreen",
   },
 };
