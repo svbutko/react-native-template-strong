@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Before starting
+title: Core idea
 ---
 
 ## Content
