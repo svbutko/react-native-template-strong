@@ -1,7 +1,10 @@
 import {Pages} from "./pages";
-import {Navigation} from "react-native-navigation";
+import {Navigation, OptionsBottomTab} from "react-native-navigation";
 import {Tabs} from "./tabs";
 import {localization} from "../common/localization/localization";
+import {Platform} from "react-native";
+import {SFSymbols} from "../../resources/symbols/SFSymbols";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export function setStorybookRoot() {
   Navigation.setRoot({
@@ -74,6 +77,15 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.main,
+                  ...Platform.select({
+                    ios: {
+                      sfSymbol: SFSymbols["house"],
+                      sfSelectedSymbol: SFSymbols["house.fill"],
+                    } as OptionsBottomTab,
+                    android: {
+                      icon: Icon.getImageSourceSync("home"),
+                    } as OptionsBottomTab,
+                  }),
                 },
               },
             },
@@ -92,6 +104,15 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.search,
+                  ...Platform.select({
+                    ios: {
+                      sfSymbol: SFSymbols["magnifyingglass"],
+                      sfSelectedSymbol: SFSymbols["magnifyingglass"],
+                    } as OptionsBottomTab,
+                    android: {
+                      icon: Icon.getImageSourceSync("search"),
+                    } as OptionsBottomTab,
+                  }),
                 },
               },
             },
@@ -110,6 +131,15 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.settings,
+                  ...Platform.select({
+                    ios: {
+                      sfSymbol: SFSymbols["gearshape"],
+                      sfSelectedSymbol: SFSymbols["gearshape.fill"],
+                    } as OptionsBottomTab,
+                    android: {
+                      icon: Icon.getImageSourceSync("settings"),
+                    } as OptionsBottomTab,
+                  }),
                 },
               },
             },
