@@ -6,9 +6,9 @@ title: Overlays and modals
 
 Overlays and modals are being added the same way as pages.
 
-## Pre made components
+## Pre-made components
 
-There are a couple of pre made modals and overlays, they are located in `src/navigation/helpers`.
+There are a couple of pre-made modals and overlays, they are located in `src/navigation/helpers`.
 
 - `showToast` - shows custom-made toast with supplied parameters
 - `showStorybook` - shows StoryBook while in debug (you can access it from dev menu by shaking your device)
