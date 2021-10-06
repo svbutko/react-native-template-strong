@@ -4,20 +4,20 @@ import React from "react";
 import {localization} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
 
-export const Demo: NavigationFunctionComponent = (): JSX.Element => {
+export const Search: NavigationFunctionComponent = (): JSX.Element => {
   return <ScrollView contentInsetAdjustmentBehavior={"automatic"} style={CommonStyles.flex1} />;
 };
 
-Demo.options = {
+Search.options = {
   topBar: {
     largeTitle: {
       visible: true,
     },
     searchBar: {
-      visible: false,
+      visible: true,
     },
     title: {
-      text: localization.pages.demo,
+      text: localization.pages.search,
     },
   },
 };

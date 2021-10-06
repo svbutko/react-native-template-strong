@@ -84,14 +84,14 @@ export function setTabsRoot(callback?: () => void) {
               children: [
                 {
                   component: {
-                    id: Pages.demo.id,
-                    name: Pages.demo.name,
+                    id: Pages.search.id,
+                    name: Pages.search.name,
                   },
                 },
               ],
               options: {
                 bottomTab: {
-                  text: localization.pages.demo,
+                  text: localization.pages.search,
                 },
               },
             },
@@ -102,14 +102,14 @@ export function setTabsRoot(callback?: () => void) {
               children: [
                 {
                   component: {
-                    id: Pages.more.id,
-                    name: Pages.more.name,
+                    id: Pages.settings.id,
+                    name: Pages.settings.name,
                   },
                 },
               ],
               options: {
                 bottomTab: {
-                  text: localization.pages.more,
+                  text: localization.pages.settings,
                 },
               },
             },
