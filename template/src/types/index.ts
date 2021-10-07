@@ -45,11 +45,6 @@ export enum ButtonType {
   outlineNegative = "outlineNegative",
 }
 
-export interface IReduxMeta<T> {
-  requestId: string;
-  arg: T;
-}
-
 export interface IListState<T> {
   data: T[];
   loadState: LoadState;

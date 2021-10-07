@@ -17,7 +17,6 @@ To briefly describe what each currently existed interface/type/enum does:
 - `TouchablePlatformProps` - copy of `PressableProps` with slight changes of `style`
 - `ButtonType` - enum of [PrimaryButton](../docs/components/primary-button.md) type representation;
 - `ISize` - enum of possible sizes for your style constants [commonSizes](https://github.com/svbutko/react-native-template-strong/blob/main/template/src/core/theme/commonSizes.ts)
-- `IReduxMeta` - meta interface of redux's payload, see [slice](../docs/redux/slice.md) for more info
 - `IListState` - simple interface to store necessary list data, mostly used with [FlatListWrapper](../docs/components/flat-list-wrapper.md)
 - `ISection` - same as `IListState` but for [SectionListWrapper](../docs/components/section-list-wrapper.md)
 - `RehydrateAppAction` - interface for rehydrated params (our redux root state) which comes when `rehydrate` occurs
