@@ -4,24 +4,21 @@ import {showToast} from "../../navigation/helpers/showToast";
 import {unwrapResult} from "@reduxjs/toolkit";
 import {Alert} from "react-native";
 
-export function processError(error: Error): IErrorResult {
-  return {
-    message: localization.errors.unknownErrorHasOccurred,
-    visualRepresentation: ErrorRepresentationType.toast,
-  };
-}
-
-export function handlePromiseResult(promiseAction: Promise<any>, successMessage?: string, successAction?: () => void) {
+export function handlePromiseResult(
+  promiseAction: Promise<any>,
+  successMessage?: string,
+  successAction?: () => void,
+  processError?: (error: Error) => IErrorResult,
+  setError?: (errorMessage: string) => void,
+) {
   promiseAction
     .then(unwrapResult)
     .then(() => {
-      showToast({
-        text: successMessage || localization.common.dataSuccessfullyUpdated,
-      });
+      successMessage && showToast({text: successMessage});
       successAction && successAction();
     })
     .catch((handledError: Error) => {
-      handleErrorPostProcessing(processError(handledError));
+      processError && handleErrorPostProcessing(processError(handledError), setError);
     });
 }
 
