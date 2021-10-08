@@ -3,6 +3,8 @@ sidebar_position: 3
 title: Onboarding
 ---
 
+## Content
+
 This screen is used in order to demonstrate users your app's features.
 
 The onboarding process is a user’s first impression of your app, and when designed correctly, increases the likelihood of successful adoption.
