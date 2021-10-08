@@ -62,7 +62,7 @@ For debug:
 For release:
 `npm run e2e:ios-release`
 
-### Android:
+### Android
 
 For debug:
 `npm run e2e:build-android-debug`
