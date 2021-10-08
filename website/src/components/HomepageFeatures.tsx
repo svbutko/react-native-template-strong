@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
     image: 'img/home_feature_two.svg',
     description: (
       <>
-        Keep it simple stupid, test driven development, documentation and guides make it easy to use.
+        Keep it simple stupid, test and component driven development, documentation and guides make it easy to use.
       </>
     ),
   },
