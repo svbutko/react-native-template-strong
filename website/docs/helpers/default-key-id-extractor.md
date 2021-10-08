@@ -23,4 +23,3 @@ SectionListWrapper.defaultProps = {
 | Name            | Type           | Required       | Default value  | Description
 |:----------------|:---------------|:---------------|:---------------|:---------------------------    
 | item           | T extends {id: string or number}         | -           | -              | Item which has `id` and will be used as key
-```
