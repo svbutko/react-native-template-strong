@@ -5,6 +5,8 @@
   "scripts": {
     "postinstall": "patch-package",
     "postversion": "react-native-version",
+    "open:xcode": "open ios/HelloWorld.xcworkspace",
+    "open:android-studio": "studio android",
     "ts": "tsc -p .",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start-reset-cache": "node node_modules/react-native/local-cli/cli.js start -- --reset-cache",
