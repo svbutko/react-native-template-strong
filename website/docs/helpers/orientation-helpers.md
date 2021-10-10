@@ -15,7 +15,7 @@ Gets initial orientation of device. For smartphones (with `forceOnPhone` equals 
 #### Params
 | Name            | Type           | Required       | Default value  | Description
 |:----------------|:---------------|:---------------|:---------------|:---------------------------    
-| forceOnPhone           | `Boolean`         | False           | Undefined              | Returns initial device orientation
+| forceOnPhone           | `Boolean`         | False           | Undefined              | Returns initial device orientation for smartphones too
 
 #### Usage example
 
