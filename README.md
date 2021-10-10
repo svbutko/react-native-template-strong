@@ -3,7 +3,6 @@
     <br/>
     React Native Template Strong
     <br/>
-    🚧 WORK IN PROGRESS 🚧
 </h1>
 
 <p align="center">
