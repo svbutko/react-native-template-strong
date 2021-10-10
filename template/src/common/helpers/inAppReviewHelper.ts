@@ -1,6 +1,6 @@
 import InAppReview from "react-native-in-app-review";
 
-export function showInAppReview(successAction?: () => void, failAction?: () => void) {
+export function showInAppReview(successAction?: () => void, failAction?: (error: Error) => void, onReviewNotAvailable?: () => void) {
   if (InAppReview.isAvailable()) {
     InAppReview.RequestInAppReview()
       .then((hasFlowFinishedSuccessfully) => {
@@ -18,9 +18,10 @@ export function showInAppReview(successAction?: () => void, failAction?: () => v
         }
       })
       .catch((error) => {
-        failAction?.();
+        failAction?.(error);
       });
   } else {
     console.error("Review is not available for this device/account");
+    onReviewNotAvailable?.();
   }
 }
