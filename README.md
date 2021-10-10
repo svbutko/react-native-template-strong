@@ -10,6 +10,12 @@
     Quick, opinionated, documented and strong beginning for your next project.
 </p>
 
+[![npm-version](https://img.shields.io/npm/v/react-native-template-strong)](https://www.npmjs.com/package/react-native-template-strong)
+[![npm-downloads](https://img.shields.io/npm/dt/react-native-template-strong)](https://www.npmjs.com/package/react-native-template-strong)
+
+[![GitHub Followers](https://img.shields.io/github/followers/svbutko?label=Follow%20%40svbutko&style=social)](https://github.com/svbutko)
+[![Twitter Follow](https://img.shields.io/twitter/follow/svbutko?label=Follow%20%40svbutko&style=social)](https://twitter.com/svbutko)
+
 <a href="https://www.buymeacoffee.com/svbutko"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=svbutko&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"></a>
 
 # [Check out docs to get started](https://svbutko.github.io/react-native-template-strong/)
