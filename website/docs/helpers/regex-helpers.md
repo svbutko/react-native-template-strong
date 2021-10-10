@@ -18,5 +18,5 @@ Checks whether supplied string follows email format or not.
 #### Usage example
 
 ```typescript jsx
-isEmail("test@domain.com")
+isEmail("test@domain.com");
 ```
