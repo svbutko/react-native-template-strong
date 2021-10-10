@@ -36,15 +36,15 @@ Includes next components:
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.2.4`
+- [Jest](https://github.com/facebook/jest) `27.2.5`
 - [Detox](https://github.com/wix/Detox) `18.22.1`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
 Code quality covered with:
-- [ESLint](https://github.com/eslint/eslint) `7.32.0`
+- [ESLint](https://github.com/eslint/eslint) `8.0.0`
 - [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `1.0.2`
 - [Husky](https://github.com/typicode/husky) `7.0.2`
 - [Prettier](https://github.com/prettier/prettier) `2.4.1`
-- [Lint staged](https://github.com/okonet/lint-staged) `11.2.0`
+- [Lint staged](https://github.com/okonet/lint-staged) `11.2.2`
 
 And many other day-to-day useful dependencies.
