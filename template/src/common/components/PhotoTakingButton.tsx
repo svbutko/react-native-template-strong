@@ -8,7 +8,7 @@ import {platformMixedColor} from "../helpers/colorHelpers";
 
 interface IProps {
   onPress?: () => void;
-  icon?: ImageURISource | CropperImage;
+  icon?: ImageURISource;
   backgroundImage?: ImageURISource | CropperImage | null;
   style?: ViewStyle;
   iconStyle?: ImageStyle;
