@@ -33,7 +33,6 @@ export const FlatListWrapper: FC<IProps> = ({loadState, tryAgain, error, ...prop
     return (
       <FlatList
         contentContainerStyle={styles.contentContainer}
-        ItemSeparatorComponent={Separator}
         {...props}
         refreshing={refreshing}
         ListEmptyComponent={ListEmptyComponent}
@@ -46,6 +45,7 @@ FlatListWrapper.defaultProps = {
   keyExtractor: defaultKeyIdExtractor,
   ListEmptyComponent: <EmptyView title={localization.empty.noData} description={localization.empty.checkThisPageLater} />,
   onEndReachedThreshold: 1,
+  ItemSeparatorComponent: Separator,
 };
 
 const styles = StyleSheet.create({
