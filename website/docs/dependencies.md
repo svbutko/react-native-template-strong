@@ -55,6 +55,10 @@ Most of the needed scripts are here to help with your development process withou
 - `start` - starts Metro bundler
 - `start-reset-cache` - starts Metro bundler with resetting cache
 
+### Project openers
+- `open:xcode` - opens Xcode with workspace project
+- `open:android-studio` - opens Android Studio with Android project
+
 ### Android specific
 - `android:run` - compiles and runs your application on Android devices or emulators WITHOUT starting Metro
 - `android:run+start` - compiles and runs your application on Android devices or emulators AND if successful starts Metro
