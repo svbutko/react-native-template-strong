@@ -27,7 +27,7 @@ Uses [react-native-image-crop-picker](https://github.com/ivpusic/react-native-im
 | disabled        | `boolean`         | False          | Undefined       | Is button disabled
 
 
-## Example
+## Usage example
 
 ```typescript jsx
     const [photo, setPhoto] = useState<ImageURISource | null>(null);

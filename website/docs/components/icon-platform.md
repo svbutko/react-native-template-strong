@@ -16,7 +16,7 @@ Extends `IconProps` of `react-native-vector-icons/Icon` and `SFSymbolProps` of `
 | color        | `ColorValue`         | False          | Undefined       | Color of icon
 | style        | `TextStyle or ViewStyle`         | False          | Undefined       | Style of icon
 
-## Example
+## Usage example
 
 ```typescript jsx
         <IconPlatform
