@@ -5,7 +5,7 @@ title: TouchablePlatform
 
 ## Content
 Platform-friendly touchable button which relies on `Pressable`.
-Used in `PrimaryButton`
+Used in `PrimaryButton` and `RadioButton`.
 
 ## Params
 Extends `PressableProps` and additionally adds next properties
