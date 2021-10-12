@@ -20,9 +20,9 @@ Includes next components:
 - [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `3.5.2`
 - [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.1.7`
 - [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.3.1`
-- [Permissions](https://github.com/zoontek/react-native-permissions) `3.0.5`,
-- [Config](https://github.com/luggit/react-native-config) `1.4.4`,
-- [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`,
+- [Permissions](https://github.com/zoontek/react-native-permissions) `3.0.5`
+- [Config](https://github.com/luggit/react-native-config) `1.4.4`
+- [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`
 - [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.4`
 - [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
 - [Vector icons](https://github.com/oblador/react-native-vector-icons) `8.1.0`
@@ -54,6 +54,10 @@ Most of the needed scripts are here to help with your development process withou
 ### React Native specific
 - `start` - starts Metro bundler
 - `start-reset-cache` - starts Metro bundler with resetting cache
+
+### Project openers
+- `open:xcode` - opens Xcode with workspace project
+- `open:android-studio` - opens Android Studio with Android project
 
 ### Android specific
 - `android:run` - compiles and runs your application on Android devices or emulators WITHOUT starting Metro

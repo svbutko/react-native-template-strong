@@ -34,7 +34,6 @@ export const SectionListWrapper: FC<IProps> = ({loadState, tryAgain, error, ...p
     return (
       <SectionList
         contentContainerStyle={styles.contentContainer}
-        ItemSeparatorComponent={Separator}
         removeClippedSubviews={isAndroid}
         {...props}
         refreshing={refreshing}
@@ -48,6 +47,7 @@ SectionListWrapper.defaultProps = {
   keyExtractor: defaultKeyIdExtractor,
   ListEmptyComponent: <EmptyView title={localization.empty.noData} description={localization.empty.checkThisPageLater} />,
   onEndReachedThreshold: 1,
+  ItemSeparatorComponent: Separator,
 };
 
 const styles = StyleSheet.create({

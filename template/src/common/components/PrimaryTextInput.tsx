@@ -1,16 +1,5 @@
 import React, {FC, memo, MutableRefObject, Ref, useCallback, useMemo, useState} from "react";
-import {
-  ImageURISource,
-  Platform,
-  StyleSheet,
-  Text,
-  TextInput,
-  TextInputProps,
-  TextStyle,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-} from "react-native";
+import {Platform, StyleSheet, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
 import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
@@ -24,7 +13,6 @@ interface IProps extends TextInputProps {
   inputRef?: Ref<any>;
   containerStyle?: ViewStyle;
   label?: string;
-  iconRight?: ImageURISource;
   error?: string | null;
   hint?: string;
   mask?: ITextInputMask;
@@ -45,21 +33,7 @@ interface IProps extends TextInputProps {
 }
 
 export const PrimaryTextInput: FC<IProps> = memo(
-  ({
-    label,
-    iconRight,
-    error,
-    hint,
-    containerStyle,
-    mask,
-    inputRef,
-    nextInputFocusRef,
-    onTouchStart,
-    onFocus,
-    onBlur,
-    onSubmitEditing,
-    ...props
-  }) => {
+  ({label, error, hint, containerStyle, mask, inputRef, nextInputFocusRef, onTouchStart, onFocus, onBlur, onSubmitEditing, ...props}) => {
     const [isFocused, setFocused] = useState<boolean>(false);
 
     const onLocalFocus = useCallback(

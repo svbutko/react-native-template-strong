@@ -17,6 +17,10 @@ export const Separator: FC<IProps> = ({isFull}) => {
   return <View style={containerStyle} />;
 };
 
+Separator.defaultProps = {
+  isFull: true,
+};
+
 const styles = StyleSheet.create({
   container: {
     height: hairlineWidth,

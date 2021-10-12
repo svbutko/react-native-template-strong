@@ -31,5 +31,5 @@ Here you will see a brief description of each folder, to learn more about what a
   - modules
   - navigation - pages, roots, tabs, default navigation options
     - helpers - navigation actions, different overlay and modals helpers (e.g. `showDatePicker`)
-  - types
+  - types - common types and types of dependencies which are not present
 - storybook - contains storybook stories

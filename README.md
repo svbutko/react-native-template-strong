@@ -3,12 +3,19 @@
     <br/>
     React Native Template Strong
     <br/>
-    🚧 WORK IN PROGRESS 🚧
 </h1>
 
 <p align="center">
     Quick, opinionated, documented and strong beginning for your next project.
 </p>
+
+[![npm-version](https://img.shields.io/npm/v/react-native-template-strong)](https://www.npmjs.com/package/react-native-template-strong)
+[![npm-downloads](https://img.shields.io/npm/dt/react-native-template-strong)](https://www.npmjs.com/package/react-native-template-strong)
+
+[![GitHub Followers](https://img.shields.io/github/followers/svbutko?label=Follow%20%40svbutko&style=social)](https://github.com/svbutko)
+[![Twitter Follow](https://img.shields.io/twitter/follow/svbutko?label=Follow%20%40svbutko&style=social)](https://twitter.com/svbutko)
+
+<a href="https://www.buymeacoffee.com/svbutko"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=svbutko&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"></a>
 
 # [Check out docs to get started](https://svbutko.github.io/react-native-template-strong/)
 
@@ -22,9 +29,9 @@ Includes next components:
 - [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `3.5.2`
 - [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.1.7`
 - [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.3.1`
-- [Permissions](https://github.com/zoontek/react-native-permissions) `3.0.5`,
-- [Config](https://github.com/luggit/react-native-config) `1.4.4`,
-- [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`,
+- [Permissions](https://github.com/zoontek/react-native-permissions) `3.0.5`
+- [Config](https://github.com/luggit/react-native-config) `1.4.4`
+- [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`
 - [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.4`
 - [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
 - [Vector icons](https://github.com/oblador/react-native-vector-icons) `8.1.0`
