@@ -1,8 +1,17 @@
-import {PressableProps, ViewStyle} from "react-native";
+import {ColorValue, PressableProps, TextStyle, ViewStyle} from "react-native";
 import {RehydrateAction} from "redux-persist";
 import {RootState} from "../core/store/rootReducer";
 import {TextInputMaskOptionProp, TextInputMaskTypeProp} from "react-native-masked-text";
 import {SFSymbols} from "../../resources/symbols/SFSymbols";
+import {IconProps} from "react-native-vector-icons/Icon";
+import {SFSymbolProps} from "react-native-sfsymbols";
+
+export interface IIconPlatformProps extends Omit<IconProps, "name" | "color">, Omit<SFSymbolProps, "name"> {
+  iosName?: SFSymbols;
+  androidName?: string;
+  color?: ColorValue;
+  style?: TextStyle | ViewStyle;
+}
 
 export enum AppEnvironment {
   development = "development",

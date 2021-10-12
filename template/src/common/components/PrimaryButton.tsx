@@ -2,83 +2,93 @@ import React, {FC, memo, useMemo} from "react";
 import {
   ActivityIndicator,
   Image,
-  ImageProps,
   ImageStyle,
   ImageURISource,
   Platform,
+  StyleProp,
   StyleSheet,
   Text,
   TextStyle,
   ViewStyle,
 } from "react-native";
-import {ButtonType, TouchablePlatformProps} from "../../types";
+import {ButtonType, IIconPlatformProps, TouchablePlatformProps} from "../../types";
 import {TouchablePlatform} from "./TouchablePlatform";
 import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
 import {isAndroid, isIos} from "../../core/theme/commonConsts";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {CommonStyles} from "../../core/theme/commonStyles";
 import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
+import {IconPlatform} from "./IconPlatform";
 
 interface IProps extends TouchablePlatformProps {
   label: string;
   type: ButtonType;
   rounded?: boolean;
   icon?: ImageURISource;
-  iconStyle?: ImageStyle;
+  iconStyle?: StyleProp<ImageStyle>;
+  platformIconProps: IIconPlatformProps;
   labelStyle?: TextStyle;
   isLoading?: boolean;
 }
 
-export const PrimaryButton: FC<IProps> = memo(({label, icon, iconStyle, type, rounded, labelStyle, style, isLoading, ...props}) => {
-  const styles = useMemo(() => {
-    return getStyles(type, rounded, props.disabled);
-  }, [type, rounded, props.disabled]);
+export const PrimaryButton: FC<IProps> = memo(
+  ({label, icon, iconStyle, type, rounded, labelStyle, style, isLoading, platformIconProps, ...props}) => {
+    const styles = useMemo(() => {
+      return getStyles(type, rounded, props.disabled);
+    }, [type, rounded, props.disabled]);
 
-  const highlightColor = useMemo(() => {
-    switch (type) {
-      case ButtonType.solid:
-        return platformMixedColor(PlatformColorsIOS.systemFill, Colors.white);
-      case ButtonType.outline:
-        return platformMixedColor(undefined, Colors.black);
-      case ButtonType.borderless:
-        return platformMixedColor(undefined, Colors.black);
-      case ButtonType.outlineNegative:
-        return platformMixedColor(undefined, Colors.red);
-      default:
-        return undefined;
-    }
-  }, [type]);
+    const highlightColor = useMemo(() => {
+      switch (type) {
+        case ButtonType.solid:
+          return platformMixedColor(PlatformColorsIOS.systemFill, Colors.white);
+        case ButtonType.outline:
+          return platformMixedColor(undefined, Colors.black);
+        case ButtonType.borderless:
+          return platformMixedColor(undefined, Colors.black);
+        case ButtonType.outlineNegative:
+          return platformMixedColor(undefined, Colors.red);
+        default:
+          return undefined;
+      }
+    }, [type]);
 
-  const content = useMemo(() => {
-    if (isLoading) {
-      return (
-        <ActivityIndicator
-          animating={true}
-          color={platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primary)}
-          size={"small"}
-        />
-      );
-    } else {
-      return (
-        <>
-          <ButtonIcon source={icon} style={[styles.icon, iconStyle]} />
-          <Text style={[styles.label, labelStyle]} numberOfLines={1}>
-            {isAndroid ? label.toUpperCase() : label}
-          </Text>
-        </>
-      );
-    }
-  }, [icon, iconStyle, isLoading, label, labelStyle, styles.icon, styles.label]);
+    const content = useMemo(() => {
+      if (isLoading) {
+        return (
+          <ActivityIndicator
+            animating={true}
+            color={platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primary)}
+            size={"small"}
+          />
+        );
+      } else {
+        return (
+          <>
+            <ButtonIcon icon={icon} iconStyle={[styles.icon, iconStyle]} platformIconProps={platformIconProps} />
+            <Text style={[styles.label, labelStyle]} numberOfLines={1}>
+              {isAndroid ? label.toUpperCase() : label}
+            </Text>
+          </>
+        );
+      }
+    }, [icon, iconStyle, isLoading, label, labelStyle, styles.icon, styles.label]);
 
-  return (
-    <TouchablePlatform style={[styles.button, style] as any} highlightColor={highlightColor} {...props}>
-      {content}
-    </TouchablePlatform>
-  );
-});
+    return (
+      <TouchablePlatform style={[styles.button, style] as any} highlightColor={highlightColor} {...props}>
+        {content}
+      </TouchablePlatform>
+    );
+  },
+);
 
-const ButtonIcon: FC<Partial<ImageProps>> = memo((props) => {
-  return props.source != null ? <Image {...props} source={props.source} /> : null;
+const ButtonIcon: FC<Pick<IProps, "icon" | "iconStyle" | "platformIconProps">> = memo((props) => {
+  if (props.icon != null) {
+    return <Image source={props.icon} style={props.iconStyle} />;
+  } else if (props.platformIconProps != null) {
+    return <IconPlatform {...props.platformIconProps} />;
+  } else {
+    return null;
+  }
 });
 
 function getStyles(type: ButtonType, rounded?: boolean, disabled?: boolean | null): IStyles {
