@@ -30,7 +30,7 @@ Includes next components:
 - [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `3.2.2`
 - [Size matters](https://github.com/nirsky/react-native-size-matters) `0.4.0`
 - [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
-- [DateJS](https://github.com/moment/moment/) `1.10.7`
+- [DayJS](https://github.com/iamkun/dayjs/) `1.10.7`
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
 
 Testing made with:
