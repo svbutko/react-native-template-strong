@@ -21,7 +21,15 @@ Radio button component.
 ## Usage example
 
 ```typescript jsx
-<RadioButton id={"0"} label={"Selected"} isSelected={true} onPress={onPress} />
-<RadioButton id={"1"} label={"Unselected"} isSelected={false} onPress={onPress} />
-<RadioButton id={"2"} label={"Selected disabled"} isSelected={true} onPress={onPress} disabled={true} />
+const [isSelected, setSelected] = useState<boolean>(false);
+
+const onPress = useCallback((id, nextSelection) => {
+    setSelected(nextSelection);
+}, []);
+
+return (
+    <ScrollView style={CommonStyles.flexPlatformBackground} contentContainerStyle={CommonStyles.flexColumnCenterStretch}>
+        <RadioButton id={"0"} label={"Radio button label"} isSelected={isSelected} onPress={onPress} />
+    </ScrollView>
+);
 ```
