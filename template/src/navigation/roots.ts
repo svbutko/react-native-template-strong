@@ -3,7 +3,7 @@ import {Navigation} from "react-native-navigation";
 import {Tabs} from "./tabs";
 import {localization} from "../common/localization/localization";
 import {SFSymbols} from "../../resources/symbols/SFSymbols";
-import {getPlatformNavigationIcon} from "./helpers/navigationIconHelpers";
+import {getPlatformTabsIcon} from "./helpers/navigationIconHelpers";
 
 export function setStorybookRoot() {
   Navigation.setRoot({
@@ -76,7 +76,7 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.main,
-                  ...getPlatformNavigationIcon(SFSymbols["house"], SFSymbols["house.fill"], "home"),
+                  ...getPlatformTabsIcon(SFSymbols["house"], SFSymbols["house.fill"], "home"),
                 },
               },
             },
@@ -95,7 +95,7 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.search,
-                  ...getPlatformNavigationIcon(SFSymbols["magnifyingglass"], SFSymbols["magnifyingglass"], "search"),
+                  ...getPlatformTabsIcon(SFSymbols["magnifyingglass"], SFSymbols["magnifyingglass"], "search"),
                 },
               },
             },
@@ -114,7 +114,7 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.settings,
-                  ...getPlatformNavigationIcon(SFSymbols["gearshape"], SFSymbols["gearshape.fill"], "settings"),
+                  ...getPlatformTabsIcon(SFSymbols["gearshape"], SFSymbols["gearshape.fill"], "settings"),
                 },
               },
             },
