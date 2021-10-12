@@ -3,7 +3,7 @@ import {SFSymbols} from "../../../resources/symbols/SFSymbols";
 import {isIos} from "../../core/theme/commonConsts";
 import {Colors, PlatformColorsAndroid} from "../../core/theme/colors";
 
-export function getPlatformNavigationIcon(
+export function getPlatformTabsIcon(
   sfSymbol?: SFSymbols,
   sfSelectedSymbol?: SFSymbols,
   androidIcon?: string,
