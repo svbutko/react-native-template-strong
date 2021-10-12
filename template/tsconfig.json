@@ -17,7 +17,7 @@
     "preserveConstEnums": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
   },
   "include": [
