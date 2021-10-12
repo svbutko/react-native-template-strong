@@ -40,10 +40,10 @@ Testing made with:
 
 Code quality covered with:
 - [ESLint](https://github.com/eslint/eslint) `8.0.0`
-- [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `1.0.2`
+- [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `2.0.0`
 - [Husky](https://github.com/typicode/husky) `7.0.2`
 - [Prettier](https://github.com/prettier/prettier) `2.4.1`
-- [Lint staged](https://github.com/okonet/lint-staged) `11.2.2`
+- [Lint staged](https://github.com/okonet/lint-staged) `11.2.3`
 
 It also includes other small or utility components.
 
