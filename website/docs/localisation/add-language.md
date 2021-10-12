@@ -9,7 +9,7 @@ To add a new language you have to do some changes in native iOS and Android code
 
 And it goes without saying you have to add language in `localization` itself and add translation for each string already defined in other languages.
 
-There also should be added imports of translations for `intl` and `moment` to show correct strings and formats.
+There also should be added imports of translations for `intl` and `dayjs` to show correct strings and formats.
 
 As an example, I will add Russian language.
 
@@ -45,13 +45,13 @@ export const emptyLocalization = {
 
 If you miss a string in some langauge, it will be seen as error in place where you are using this string.
 
-## Add imports for moment
+## Add imports for dayjs
 
-Open `/src/common/localization/momentFormatter.ts` and the top of this file you will see already an import of English language:
+Open `/src/common/localization/dateFormatter.ts` and the top of this file you will see already an import of English language:
 
 ```typescript
 // eslint-disable-next-line import/no-unassigned-import
-import "moment/locale/en-gb"
+import "dayjs/locale/en";
 ```
 
 It has ESLint disable rule because unassigned imports aren't welcome.
@@ -60,9 +60,9 @@ Add your language import here and add the disable rule comment too:
 
 ```typescript
 // eslint-disable-next-line import/no-unassigned-import
-import "moment/locale/en-gb";
+import "dayjs/locale/en";
 // eslint-disable-next-line import/no-unassigned-import
-import "moment/locale/ru";
+import "dayjs/locale/ru";
 ```
 
 ## Add imports for intl
@@ -74,7 +74,7 @@ Open `/src/common/localization/intlFormatter.ts` and the top of this file you wi
 import "intl/locale-data/jsonp/en";
 ```
 
-Add your language the same way you did with `moment`:
+Add your language the same way you did with `dayjs`:
 
 ```typescript
 // eslint-disable-next-line import/no-unassigned-import
