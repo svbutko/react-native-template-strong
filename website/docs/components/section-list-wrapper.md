@@ -7,7 +7,7 @@ title: SectionListWrapper
 Wrapper around `SectionList` which operates based on provided `LoadState` and shows appropriate data.
 
 ## Params
-Extends `SectionListProps` and additionally adds nex properties
+Extends `SectionListProps` and additionally adds next properties
 
 | Name            | Type           | Required       | Default value  | Description
 |:----------------|:---------------|:---------------|:---------------|:---------------------------    

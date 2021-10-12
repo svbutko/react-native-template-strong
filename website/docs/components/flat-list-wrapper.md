@@ -7,7 +7,7 @@ title: FlatListWrapper
 Wrapper around `FlatList` which operates based on provided `LoadState` and shows appropriate data.
 
 ## Params
-Extends `FlatListProps` and additionally adds nex properties
+Extends `FlatListProps` and additionally adds next properties
 
 | Name            | Type           | Required       | Default value  | Description
 |:----------------|:---------------|:---------------|:---------------|:---------------------------    
