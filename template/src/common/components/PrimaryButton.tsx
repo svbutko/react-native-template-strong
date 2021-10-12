@@ -26,7 +26,7 @@ interface IProps extends TouchablePlatformProps {
   rounded?: boolean;
   icon?: ImageURISource;
   iconStyle?: StyleProp<ImageStyle>;
-  platformIconProps: IIconPlatformProps;
+  platformIconProps?: IIconPlatformProps;
   labelStyle?: TextStyle;
   isLoading?: boolean;
 }
