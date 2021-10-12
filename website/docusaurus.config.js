@@ -14,6 +14,11 @@ module.exports = {
   organizationName: "svbutko",
   projectName: "react-native-template-strong",
   themeConfig: {
+    algolia: {
+      apiKey: 'YOUR_API_KEY',
+      indexName: 'YOUR_INDEX_NAME',
+      contextualSearch: true,
+    },
     navbar: {
       title: "React Native Template Strong",
       logo: {
