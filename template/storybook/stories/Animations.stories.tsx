@@ -4,4 +4,4 @@ import {AnimationsStories} from "./components/Animations.stories";
 
 const AnimationsAndInteractionStories = storiesOf("Animations", module);
 
-AnimationsAndInteractionStories.add("Alerts", () => <AnimationsStories />);
+AnimationsAndInteractionStories.add("Animations", () => <AnimationsStories />);
