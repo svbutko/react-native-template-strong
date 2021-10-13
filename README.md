@@ -41,6 +41,7 @@ Includes next components:
 - [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
 - [DayJS](https://github.com/iamkun/dayjs/) `1.10.7`
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
+- [Share](https://github.com/react-native-share/react-native-share) `7.1.2`
 
 Testing made with:
 - [Jest](https://github.com/facebook/jest) `27.2.5`

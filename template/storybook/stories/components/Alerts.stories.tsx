@@ -5,6 +5,8 @@ import {CommonStyles} from "../../../src/core/theme/commonStyles";
 import {PrimaryButton} from "../../../src/common/components/PrimaryButton";
 import {Separator} from "../../../src/common/components/Separator";
 import {showActionSheet, showAlert, showCommonDialog} from "../../../src/common/helpers/dialogsHelpers";
+import {showShareDialog, showShareSocialDialog} from "../../../src/common/helpers/shareHelpers";
+import Share from "react-native-share";
 
 export const AlertsStories: FC = () => {
   const onShowActionSheetPress = useCallback(() => {
@@ -47,6 +49,38 @@ export const AlertsStories: FC = () => {
     });
   }, []);
 
+  const onShowShareDialogPress = useCallback(async () => {
+    await showShareDialog(
+      {
+        showAppsToView: true,
+        message: "Test message to share",
+      },
+      (result) => {
+        console.warn("Share result: ", result);
+      },
+      (error) => {
+        console.error("Share error: ", error);
+      },
+    );
+  }, []);
+
+  const onShowShareSocialDialogPress = useCallback(async () => {
+    await showShareSocialDialog(
+      {
+        social: Share.Social.TWITTER,
+        title: "Share via",
+        message: "Twitter test message from template",
+        url: "",
+      },
+      (result) => {
+        console.warn("Share result: ", result);
+      },
+      (error) => {
+        console.error("Share error: ", error);
+      },
+    );
+  }, []);
+
   return (
     <ScrollView style={CommonStyles.flexPlatformBackground} contentContainerStyle={CommonStyles.flexColumnCenterStretch}>
       <PrimaryButton type={ButtonType.solid} label={"Show action sheet (iOS)"} onPress={onShowActionSheetPress} />
@@ -54,6 +88,10 @@ export const AlertsStories: FC = () => {
       <PrimaryButton type={ButtonType.solid} label={"Show alert"} onPress={onShowAlertPress} />
       <Separator />
       <PrimaryButton type={ButtonType.solid} label={"Show common dialog"} onPress={onShowCommonDialogPress} />
+      <Separator />
+      <PrimaryButton type={ButtonType.solid} label={"Show share dialog"} onPress={onShowShareDialogPress} />
+      <Separator />
+      <PrimaryButton type={ButtonType.solid} label={"Show share social dialog (Twitter)"} onPress={onShowShareSocialDialogPress} />
     </ScrollView>
   );
 };
