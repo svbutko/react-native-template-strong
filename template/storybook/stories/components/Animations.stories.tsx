@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 2,
     backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
-    marginBottom: 40,
+    marginVertical: 40,
   } as ViewStyle,
 });
