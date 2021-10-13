@@ -15,6 +15,10 @@ import org.wonday.orientation.OrientationActivityLifecycle;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.facebook.react.bridge.JSIModulePackage;
+import com.swmansion.reanimated.ReanimatedJSIModulePackage;
+
+
 public class MainApplication extends NavigationApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -42,6 +46,11 @@ public class MainApplication extends NavigationApplication {
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
+  }
+
+  @Override
+  protected JSIModulePackage getJSIModulePackage() {
+    return new ReanimatedJSIModulePackage();
   }
 
   @Override
