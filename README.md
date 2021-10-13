@@ -42,6 +42,7 @@ Includes next components:
 - [DayJS](https://github.com/iamkun/dayjs/) `1.10.7`
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
 - [Share](https://github.com/react-native-share/react-native-share) `7.1.2`
+- [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.3.0-beta.2`
 
 Testing made with:
 - [Jest](https://github.com/facebook/jest) `27.2.5`
