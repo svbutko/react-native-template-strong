@@ -1,6 +1,6 @@
 import {Linking} from "react-native";
 import Share, {ShareOptions} from "react-native-share";
-import {ShareOpenResult, ShareSingleOptions} from "react-native-share/lib/typescript/types";
+import {ShareOpenResult, ShareSingleOptions, ShareSingleResult} from "react-native-share/lib/typescript/types";
 import {isAndroid, isIos} from "../../core/theme/commonConsts";
 
 export async function showShareDialog(
@@ -18,7 +18,7 @@ export async function showShareDialog(
 
 export async function showShareSocialDialog(
   options: ShareSingleOptions,
-  completedCallback?: (result: ShareOpenResult) => void,
+  completedCallback?: (result: ShareSingleResult) => void,
   errorCallback?: (error: Error | unknown) => void,
 ) {
   try {
