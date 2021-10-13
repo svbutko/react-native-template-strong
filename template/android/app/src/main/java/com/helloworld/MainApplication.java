@@ -24,6 +24,11 @@ public class MainApplication extends NavigationApplication {
   private final ReactNativeHost mReactNativeHost =
       new NavigationReactNativeHost(this) {
         @Override
+        protected JSIModulePackage getJSIModulePackage() {
+          return new ReanimatedJSIModulePackage();
+        }
+
+        @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
         }
@@ -46,11 +51,6 @@ public class MainApplication extends NavigationApplication {
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
-  }
-
-  @Override
-  protected JSIModulePackage getJSIModulePackage() {
-    return new ReanimatedJSIModulePackage();
   }
 
   @Override
