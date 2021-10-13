@@ -4,7 +4,7 @@ import {errorsLocalization} from "./translations/errorsLocalization";
 import {emptyLocalization} from "./translations/emptyLocalization";
 import {pagesLocalization} from "./translations/pagesLocalization";
 import {onboardingLocalization} from "./translations/onboardingLocalization";
-import {setMomentLocale} from "./momentFormatter";
+import {setDateLocale} from "./dateFormatter";
 
 export enum Languages {
   en = "en",
@@ -41,5 +41,5 @@ export function setLanguage(language?: Languages): void {
     }
   }
 
-  setMomentLocale(localizationLanguage);
+  setDateLocale(localizationLanguage);
 }

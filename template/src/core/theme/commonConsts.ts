@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 import {Dimensions, PixelRatio, Platform, StatusBar, StyleSheet} from "react-native";
 import Device from "react-native-device-detection";
 
@@ -26,5 +26,5 @@ export const pixelRatio = PixelRatio.get();
 export const maxWindowDimension = Math.max(windowWidth, windowHeight);
 export const minWindowDimension = Math.min(windowHeight, windowWidth);
 
-export const minimalLegalAge = moment().subtract(16, "years").toDate();
-export const maximalAge = moment().subtract(100, "years").toDate();
+export const minimalLegalAge = dayjs().subtract(16, "years").toDate();
+export const maximalAge = dayjs().subtract(100, "years").toDate();
