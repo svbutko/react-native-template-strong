@@ -51,5 +51,5 @@ const androidRippleConfig: PressableAndroidRippleConfig = {
 };
 
 TouchablePlatform.defaultProps = {
-  highlightColor: platformNativeColor(PlatformColorsIOS.quaternarySystemFill, PlatformColorsAndroid.primaryLight),
+  highlightColor: platformNativeColor(PlatformColorsIOS.secondarySystemFill, PlatformColorsAndroid.primaryLight),
 };
