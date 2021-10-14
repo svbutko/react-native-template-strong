@@ -8,6 +8,10 @@ export const CommonStyles = StyleSheet.create({
   flex1: {
     flex: 1,
   } as ViewStyle,
+  flex1Padding: {
+    flex: 1,
+    paddingHorizontal: CommonSizes.spacing.medium,
+  } as ViewStyle,
   flexCenter: {
     flex: 1,
     alignItems: "center",
@@ -21,7 +25,7 @@ export const CommonStyles = StyleSheet.create({
   } as ViewStyle,
   flexPlatformBackground: {
     flex: 1,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.background),
+    backgroundColor: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.background),
   } as ViewStyle,
   rowCenter: {
     flexDirection: "row",
