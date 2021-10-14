@@ -34,15 +34,15 @@ export const CommonStyles = StyleSheet.create({
   shadow: {
     ...Platform.select({
       ios: {
-        shadowOffset: {height: 3, width: 0},
-        shadowOpacity: 0.16,
-        shadowRadius: 6,
-      },
+        shadowOffset: {height: 4, width: 0},
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+      } as ViewStyle,
       android: {
         elevation: 4,
-      },
+      } as ViewStyle,
     }),
-  },
+  } as ViewStyle,
   iPhoneXFooter: {
     height: 20,
   } as ViewStyle,
