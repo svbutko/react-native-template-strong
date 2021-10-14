@@ -3,12 +3,12 @@ export const Tabs = {
     id: "MAIN_TAB",
     name: "MainTab",
   },
-  demo: {
-    id: "DEMO_TAB",
-    name: "DemoTab",
+  search: {
+    id: "SEARCH_TAB",
+    name: "SearchTab",
   },
-  more: {
-    id: "MORE_TAB",
-    name: "MoreTab",
+  settings: {
+    id: "SETTINGS_TAB",
+    name: "SettingsTab",
   },
 };

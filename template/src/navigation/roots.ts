@@ -83,7 +83,7 @@ export function setTabsRoot(callback?: () => void) {
           },
           {
             stack: {
-              id: Tabs.demo.id,
+              id: Tabs.search.id,
               children: [
                 {
                   component: {
@@ -102,7 +102,7 @@ export function setTabsRoot(callback?: () => void) {
           },
           {
             stack: {
-              id: Tabs.more.id,
+              id: Tabs.settings.id,
               children: [
                 {
                   component: {
