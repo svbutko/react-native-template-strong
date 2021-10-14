@@ -31,14 +31,14 @@ export function setDefaultOptions() {
       },
     },
     layout: {
-      componentBackgroundColor: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.background),
+      componentBackgroundColor: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.background),
     },
     topBar: {
       animate: true,
       drawBehind: !isAndroid,
       background: {
         translucent: true,
-        color: platformNativeColor(undefined, PlatformColorsAndroid.navigation),
+        color: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.navigation),
       },
       title: {
         color: platformNativeColor(undefined, PlatformColorsAndroid.onPrimaryText),
@@ -49,6 +49,10 @@ export function setDefaultOptions() {
       scrollEdgeAppearance: {
         active: true,
         noBorder: true,
+        background: {
+          translucent: true,
+          color: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.navigation),
+        },
       },
       searchBar: {
         visible: false,
@@ -68,7 +72,7 @@ export function setDefaultOptions() {
       animateTabSelection: true,
       preferLargeIcons: false,
       tabsAttachMode: "together",
-      backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.navigation),
+      backgroundColor: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.navigation),
       ...Platform.select({
         android: {
           translucent: false,
