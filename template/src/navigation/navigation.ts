@@ -78,7 +78,7 @@ export function setDefaultOptions() {
       }),
     },
     bottomTab: {
-      selectedTextColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryText),
+      selectedTextColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.onPrimaryText),
       selectedIconColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.onPrimaryText),
       textColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
       iconColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
