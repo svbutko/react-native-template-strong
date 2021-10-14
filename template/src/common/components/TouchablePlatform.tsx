@@ -13,7 +13,7 @@ import {platformNativeColor} from "../helpers/colorHelpers";
 
 interface IProps extends PressableProps {
   style?: ViewStyle | ViewStyle[];
-  highlightColor?: string | OpaqueColorValue;
+  highlightColor?: string | null | OpaqueColorValue;
 }
 
 export const TouchablePlatform: FC<IProps> = memo(({children, highlightColor, ...props}) => {
