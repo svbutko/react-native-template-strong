@@ -13,7 +13,7 @@ import {platformNativeColor} from "../helpers/colorHelpers";
 
 interface IProps extends PressableProps {
   style?: ViewStyle | ViewStyle[];
-  highlightColor?: string | OpaqueColorValue;
+  highlightColor?: string | null | OpaqueColorValue;
 }
 
 export const TouchablePlatform: FC<IProps> = memo(({children, highlightColor, ...props}) => {
@@ -51,5 +51,5 @@ const androidRippleConfig: PressableAndroidRippleConfig = {
 };
 
 TouchablePlatform.defaultProps = {
-  highlightColor: platformNativeColor(PlatformColorsIOS.quaternarySystemFill, PlatformColorsAndroid.primaryLight),
+  highlightColor: platformNativeColor(PlatformColorsIOS.secondarySystemFill, PlatformColorsAndroid.primaryLight),
 };

@@ -11,8 +11,8 @@ Every dependency is provided with types or in case if there are no types it impl
 The versions are updating manually and regularly with new releases.
 
 Build primarily with
-- [React Native](https://reactnative.dev) `0.66.0`
-- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.22.1`
+- [React Native](https://reactnative.dev) `0.66.1`
+- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.23.1`
 - [Redux Toolkit](https://redux-toolkit.js.org) `1.6.2`
 - [TypeScript](https://www.typescriptlang.org) `4.4.3`
 
@@ -27,19 +27,21 @@ Includes next components:
 - [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
 - [Vector icons](https://github.com/oblador/react-native-vector-icons) `8.1.0`
 - [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.2.0`
-- [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `3.2.2`
+- [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `3.2.3`
 - [Size matters](https://github.com/nirsky/react-native-size-matters) `0.4.0`
 - [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
-- [Moment](https://github.com/moment/moment/) `2.29.1`
+- [DayJS](https://github.com/iamkun/dayjs/) `1.10.7`
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
+- [Share](https://github.com/react-native-share/react-native-share) `7.1.2`
+- [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.3.0-beta.2`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.2.5`
-- [Detox](https://github.com/wix/Detox) `18.22.1`
+- [Jest](https://github.com/facebook/jest) `27.0.6`
+- [Detox](https://github.com/wix/Detox) `18.22.2`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
 Code quality covered with:
-- [ESLint](https://github.com/eslint/eslint) `8.0.0`
+- [ESLint](https://github.com/eslint/eslint) `8.0.1`
 - [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `2.0.0`
 - [Husky](https://github.com/typicode/husky) `7.0.2`
 - [Prettier](https://github.com/prettier/prettier) `2.4.1`

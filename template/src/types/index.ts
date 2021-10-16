@@ -6,6 +6,15 @@ import {SFSymbols} from "../../resources/symbols/SFSymbols";
 import {IconProps} from "react-native-vector-icons/Icon";
 import {SFSymbolProps} from "react-native-sfsymbols";
 
+export interface ICalendarSpec {
+  sameDay: string;
+  nextDay: string;
+  lastDay: string;
+  nextWeek: string;
+  lastWeek: string;
+  sameElse: string;
+}
+
 export interface IIconPlatformProps extends Omit<IconProps, "name" | "color">, Omit<SFSymbolProps, "name"> {
   iosName?: SFSymbols;
   androidName?: string;

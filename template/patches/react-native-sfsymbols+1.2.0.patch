@@ -1,0 +1,294 @@
+diff --git a/node_modules/react-native-sfsymbols/lib/index.d.ts b/node_modules/react-native-sfsymbols/lib/index.d.ts
+index 983b632..791785c 100644
+--- a/node_modules/react-native-sfsymbols/lib/index.d.ts
++++ b/node_modules/react-native-sfsymbols/lib/index.d.ts
+@@ -1,4 +1,4 @@
+-import { PureComponent } from "react";
++import * as React from "react";
+ import { StyleProp, ViewStyle, ColorValue } from "react-native";
+ export declare enum SFSymbolWeight {
+     ULTRALIGHT = "ultralight",
+@@ -28,6 +28,6 @@ export interface SFSymbolProps {
+     scale?: SymbolScale;
+     multicolor?: boolean;
+ }
+-export declare class SFSymbol extends PureComponent<SFSymbolProps> {
++export declare class SFSymbol extends React.PureComponent<SFSymbolProps> {
+     render(): JSX.Element;
+ }
+diff --git a/node_modules/react-native-sfsymbols/lib/index.ios.d.ts b/node_modules/react-native-sfsymbols/lib/index.ios.d.ts
+deleted file mode 100644
+index 3c0d51f..0000000
+--- a/node_modules/react-native-sfsymbols/lib/index.ios.d.ts
++++ /dev/null
+@@ -1,29 +0,0 @@
+-import React from "react";
+-import { StyleProp, ViewStyle } from "react-native";
+-export declare enum SFSymbolWeight {
+-  ULTRALIGHT = "ultralight",
+-  LIGHT = "light",
+-  THIN = "thin",
+-  REGULAR = "regular",
+-  MEDIUM = "medium",
+-  SEMIBOLD = "semibold",
+-  BOLD = "bold",
+-  HEAVY = "heavy",
+-}
+-export declare enum SFSymbolScale {
+-  SMALL = "small",
+-  MEDIUM = "medium",
+-  LARGE = "large",
+-}
+-interface SFSymbolProps {
+-  name: string;
+-  color?: string;
+-  style?: StyleProp<ViewStyle>;
+-  weight?: SFSymbolWeight;
+-  scale?: SFSymbolScale;
+-  multicolor?: boolean;
+-}
+-export declare class SFSymbol extends React.Component<SFSymbolProps> {
+-  render(): JSX.Element;
+-}
+-export {};
+diff --git a/node_modules/react-native-sfsymbols/lib/index.ios.js b/node_modules/react-native-sfsymbols/lib/index.ios.js
+deleted file mode 100644
+index 42b0dce..0000000
+--- a/node_modules/react-native-sfsymbols/lib/index.ios.js
++++ /dev/null
+@@ -1,108 +0,0 @@
+-"use strict";
+-var __extends =
+-  (this && this.__extends) ||
+-  (function () {
+-    var extendStatics = function (d, b) {
+-      extendStatics =
+-        Object.setPrototypeOf ||
+-        ({ __proto__: [] } instanceof Array &&
+-          function (d, b) {
+-            d.__proto__ = b;
+-          }) ||
+-        function (d, b) {
+-          for (var p in b)
+-            if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+-        };
+-      return extendStatics(d, b);
+-    };
+-    return function (d, b) {
+-      extendStatics(d, b);
+-      function __() {
+-        this.constructor = d;
+-      }
+-      d.prototype =
+-        b === null
+-          ? Object.create(b)
+-          : ((__.prototype = b.prototype), new __());
+-    };
+-  })();
+-var __assign =
+-  (this && this.__assign) ||
+-  function () {
+-    __assign =
+-      Object.assign ||
+-      function (t) {
+-        for (var s, i = 1, n = arguments.length; i < n; i++) {
+-          s = arguments[i];
+-          for (var p in s)
+-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+-        }
+-        return t;
+-      };
+-    return __assign.apply(this, arguments);
+-  };
+-var __rest =
+-  (this && this.__rest) ||
+-  function (s, e) {
+-    var t = {};
+-    for (var p in s)
+-      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+-        t[p] = s[p];
+-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+-        if (
+-          e.indexOf(p[i]) < 0 &&
+-          Object.prototype.propertyIsEnumerable.call(s, p[i])
+-        )
+-          t[p[i]] = s[p[i]];
+-      }
+-    return t;
+-  };
+-var __importDefault =
+-  (this && this.__importDefault) ||
+-  function (mod) {
+-    return mod && mod.__esModule ? mod : { default: mod };
+-  };
+-Object.defineProperty(exports, "__esModule", { value: true });
+-exports.SFSymbol = exports.SFSymbolScale = exports.SFSymbolWeight = void 0;
+-var react_1 = __importDefault(require("react"));
+-var react_native_1 = require("react-native");
+-var SFSymbolWeight;
+-(function (SFSymbolWeight) {
+-  SFSymbolWeight["ULTRALIGHT"] = "ultralight";
+-  SFSymbolWeight["LIGHT"] = "light";
+-  SFSymbolWeight["THIN"] = "thin";
+-  SFSymbolWeight["REGULAR"] = "regular";
+-  SFSymbolWeight["MEDIUM"] = "medium";
+-  SFSymbolWeight["SEMIBOLD"] = "semibold";
+-  SFSymbolWeight["BOLD"] = "bold";
+-  SFSymbolWeight["HEAVY"] = "heavy";
+-})((SFSymbolWeight = exports.SFSymbolWeight || (exports.SFSymbolWeight = {})));
+-var SFSymbolScale;
+-(function (SFSymbolScale) {
+-  SFSymbolScale["SMALL"] = "small";
+-  SFSymbolScale["MEDIUM"] = "medium";
+-  SFSymbolScale["LARGE"] = "large";
+-})((SFSymbolScale = exports.SFSymbolScale || (exports.SFSymbolScale = {})));
+-var RNSFSymbol = react_native_1.requireNativeComponent("RNSfsymbols");
+-var SFSymbol = /** @class */ (function (_super) {
+-  __extends(SFSymbol, _super);
+-  function SFSymbol() {
+-    return (_super !== null && _super.apply(this, arguments)) || this;
+-  }
+-  SFSymbol.prototype.render = function () {
+-    var _a = this.props,
+-      name = _a.name,
+-      color = _a.color,
+-      props = __rest(_a, ["name", "color"]);
+-    return react_1.default.createElement(
+-      RNSFSymbol,
+-      __assign({}, props, {
+-        systemName: name,
+-        color: react_native_1.processColor(color),
+-      })
+-    );
+-  };
+-  return SFSymbol;
+-})(react_1.default.Component);
+-exports.SFSymbol = SFSymbol;
+diff --git a/node_modules/react-native-sfsymbols/lib/index.js b/node_modules/react-native-sfsymbols/lib/index.js
+index fad672d..48c34d8 100644
+--- a/node_modules/react-native-sfsymbols/lib/index.js
++++ b/node_modules/react-native-sfsymbols/lib/index.js
+@@ -20,7 +20,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.SFSymbol = exports.SFSymbolScale = exports.SFSymbolWeight = void 0;
+-const react_1 = __importStar(require("react"));
++const React = __importStar(require("react"));
+ const react_native_1 = require("react-native");
+ var SFSymbolWeight;
+ (function (SFSymbolWeight) {
+@@ -40,7 +40,7 @@ var SFSymbolScale;
+     SFSymbolScale["LARGE"] = "large";
+ })(SFSymbolScale = exports.SFSymbolScale || (exports.SFSymbolScale = {}));
+ const RNSFSymbol = react_native_1.requireNativeComponent("RNSfsymbols");
+-class SFSymbol extends react_1.PureComponent {
++class SFSymbol extends React.PureComponent {
+     render() {
+         const { name, color, resizeMode, ...props } = this.props;
+         const defaultResizeMode = !resizeMode && props.size ? "center" : "scale-aspect-fit";
+diff --git a/node_modules/react-native-sfsymbols/lib/index.js.map b/node_modules/react-native-sfsymbols/lib/index.js.map
+index 0bd3344..15aba6c 100644
+--- a/node_modules/react-native-sfsymbols/lib/index.js.map
++++ b/node_modules/react-native-sfsymbols/lib/index.js.map
+@@ -1 +1 @@
+-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.tsx"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;AAAA,+CAA6C;AAE7C,+CAOsB;AAEtB,IAAY,cASX;AATD,WAAY,cAAc;IACxB,2CAAyB,CAAA;IACzB,iCAAe,CAAA;IACf,+BAAa,CAAA;IACb,qCAAmB,CAAA;IACnB,mCAAiB,CAAA;IACjB,uCAAqB,CAAA;IACrB,+BAAa,CAAA;IACb,iCAAe,CAAA;AACjB,CAAC,EATW,cAAc,GAAd,sBAAc,KAAd,sBAAc,QASzB;AAED,IAAY,aAIX;AAJD,WAAY,aAAa;IACvB,gCAAe,CAAA;IACf,kCAAiB,CAAA;IACjB,gCAAe,CAAA;AACjB,CAAC,EAJW,aAAa,GAAb,qBAAa,KAAb,qBAAa,QAIxB;AAgDD,MAAM,UAAU,GAAG,qCAAsB,CAAsB,aAAa,CAAC,CAAC;AAE9E,MAAa,QAAS,SAAQ,qBAA4B;IACxD,MAAM;QACJ,MAAM,EAAE,IAAI,EAAE,KAAK,EAAE,UAAU,EAAE,GAAG,KAAK,EAAE,GAAG,IAAI,CAAC,KAAK,CAAC;QACzD,MAAM,iBAAiB,GACrB,CAAC,UAAU,IAAI,KAAK,CAAC,IAAI,CAAC,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,kBAAkB,CAAC;QAE5D,OAAO,CACL,CAAC,UAAU,CACT,IAAI,KAAK,CAAC,CACV,UAAU,CAAC,CAAC,UAAU,IAAI,iBAAiB,CAAC,CAC5C,UAAU,CAAC,CAAC,IAAI,CAAC,CACjB,SAAS,CAAC,CAAC,2BAAY,CAAC,KAAK,CAAC,CAAC,EAC/B,CACH,CAAC;IACJ,CAAC;CACF;AAfD,4BAeC"}
+\ No newline at end of file
++{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.tsx"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;AAAA,6CAA+B;AAE/B,+CAOsB;AAEtB,IAAY,cASX;AATD,WAAY,cAAc;IACxB,2CAAyB,CAAA;IACzB,iCAAe,CAAA;IACf,+BAAa,CAAA;IACb,qCAAmB,CAAA;IACnB,mCAAiB,CAAA;IACjB,uCAAqB,CAAA;IACrB,+BAAa,CAAA;IACb,iCAAe,CAAA;AACjB,CAAC,EATW,cAAc,GAAd,sBAAc,KAAd,sBAAc,QASzB;AAED,IAAY,aAIX;AAJD,WAAY,aAAa;IACvB,gCAAe,CAAA;IACf,kCAAiB,CAAA;IACjB,gCAAe,CAAA;AACjB,CAAC,EAJW,aAAa,GAAb,qBAAa,KAAb,qBAAa,QAIxB;AAgDD,MAAM,UAAU,GAAG,qCAAsB,CAAsB,aAAa,CAAC,CAAC;AAE9E,MAAa,QAAS,SAAQ,KAAK,CAAC,aAA4B;IAC9D,MAAM;QACJ,MAAM,EAAE,IAAI,EAAE,KAAK,EAAE,UAAU,EAAE,GAAG,KAAK,EAAE,GAAG,IAAI,CAAC,KAAK,CAAC;QACzD,MAAM,iBAAiB,GACrB,CAAC,UAAU,IAAI,KAAK,CAAC,IAAI,CAAC,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,kBAAkB,CAAC;QAE5D,OAAO,CACL,CAAC,UAAU,CACT,IAAI,KAAK,CAAC,CACV,UAAU,CAAC,CAAC,UAAU,IAAI,iBAAiB,CAAC,CAC5C,UAAU,CAAC,CAAC,IAAI,CAAC,CACjB,SAAS,CAAC,CAAC,2BAAY,CAAC,KAAK,CAAC,CAAC,EAC/B,CACH,CAAC;IACJ,CAAC;CACF;AAfD,4BAeC"}
+diff --git a/node_modules/react-native-sfsymbols/src/index.tsx b/node_modules/react-native-sfsymbols/src/index.tsx
+index 2e6e06a..46e7e9e 100644
+--- a/node_modules/react-native-sfsymbols/src/index.tsx
++++ b/node_modules/react-native-sfsymbols/src/index.tsx
+@@ -1,4 +1,4 @@
+-import React, { PureComponent } from "react";
++import * as React from "react";
+ 
+ import {
+   requireNativeComponent,
+@@ -27,34 +27,34 @@ export enum SFSymbolScale {
+ }
+ 
+ export type SymbolWeight =
+-  | "ultralight"
+-  | "light"
+-  | "thin"
+-  | "regular"
+-  | "medium"
+-  | "semibold"
+-  | "bold"
+-  | "heavy";
++    | "ultralight"
++    | "light"
++    | "thin"
++    | "regular"
++    | "medium"
++    | "semibold"
++    | "bold"
++    | "heavy";
+ 
+ export type SymbolScale = "small" | "medium" | "large";
+ 
+ export type SymbolResizeMode =
+-  | "scale-to-fill"
+-  | "scale-aspect-fit"
+-  | "scale-aspect-fill"
+-  | "redraw"
+-  | "center"
+-  | "top"
+-  | "bottom"
+-  | "left"
+-  | "right"
+-  | "top-left"
+-  | "top-right"
+-  | "bottom-left"
+-  | "bottom-right"
+-  | "cover"
+-  | "contain"
+-  | "stretch";
++    | "scale-to-fill"
++    | "scale-aspect-fit"
++    | "scale-aspect-fill"
++    | "redraw"
++    | "center"
++    | "top"
++    | "bottom"
++    | "left"
++    | "right"
++    | "top-left"
++    | "top-right"
++    | "bottom-left"
++    | "bottom-right"
++    | "cover"
++    | "contain"
++    | "stretch";
+ 
+ export interface SFSymbolProps {
+   name: string;
+@@ -74,19 +74,19 @@ type NativeSFSymbolProps = Omit<SFSymbolProps, "color" | "name"> & {
+ 
+ const RNSFSymbol = requireNativeComponent<NativeSFSymbolProps>("RNSfsymbols");
+ 
+-export class SFSymbol extends PureComponent<SFSymbolProps> {
++export class SFSymbol extends React.PureComponent<SFSymbolProps> {
+   render() {
+     const { name, color, resizeMode, ...props } = this.props;
+     const defaultResizeMode =
+-      !resizeMode && props.size ? "center" : "scale-aspect-fit";
++        !resizeMode && props.size ? "center" : "scale-aspect-fit";
+ 
+     return (
+-      <RNSFSymbol
+-        {...props}
+-        resizeMode={resizeMode ?? defaultResizeMode}
+-        systemName={name}
+-        iconColor={processColor(color)}
+-      />
++        <RNSFSymbol
++            {...props}
++            resizeMode={resizeMode ?? defaultResizeMode}
++            systemName={name}
++            iconColor={processColor(color)}
++        />
+     );
+   }
+ }

@@ -12,11 +12,6 @@ There are several reasons:
 - RAM consumption is less significant (especially on old devices)
 - No need to include lots of additional dependencies to achieve the platform-like screens
 
-## Why use moment?
-Yes it's not going to be updated, but it already has everything needed for the development purposes 
-and different use cases unlike other alternatives, with which one has to install additional dependencies 
-and combine them or even create own helpers.
-
 ## Why react-native-localization and not i18n?
 My primary reason is how i18n handles translation strings in combination with TypeScript.
 I can set a string in one language and abandon other languages, or I can use non-existent translation string,

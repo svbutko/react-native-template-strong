@@ -1,6 +1,6 @@
 {
   "name": "react-native-template-strong",
-  "version": "0.16.0-alpha",
+  "version": "1.2.0",
   "description": "React Native Strong Template made with react-native-navigation, TypeScript and Redux",
   "files": [
     "template",

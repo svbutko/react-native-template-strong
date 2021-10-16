@@ -1,6 +1,9 @@
-import moment, {CalendarSpec} from "moment";
+import dayjs from "dayjs";
 // eslint-disable-next-line import/no-unassigned-import
-import "moment/locale/en-gb";
+import "dayjs/locale/en";
+import calendar from "dayjs/plugin/calendar";
+import {ICalendarSpec} from "../../types";
+dayjs.extend(calendar);
 
 export enum DateFormat {
   dayMonthShortYear = "DD.MM.YYYY",
@@ -22,7 +25,7 @@ export enum DateFormat {
   yearMonthDay = "YYYY.MM.DD",
 }
 
-const calendarFormat: CalendarSpec = {
+const calendarFormat: ICalendarSpec = {
   sameDay: "[Today]",
   nextDay: "[Tomorrow]",
   lastDay: "[Yesterday]",
@@ -55,7 +58,7 @@ export function dateFromFormat(date: Date | number | null | undefined | string, 
 
   const formattedDate: Date | null = dateFromUnknown(date);
   if (formattedDate) {
-    result = moment(formattedDate).format(format);
+    result = dayjs(formattedDate).format(format);
   }
 
   return result;
@@ -66,23 +69,23 @@ export function calendarDate(date: Date | null | number | undefined | string, wi
 
   const formattedDate: Date | null = dateFromUnknown(date);
   if (formattedDate) {
-    result = withFormat ? moment(formattedDate).calendar(null, calendarFormat) : moment(formattedDate).calendar();
+    result = withFormat ? dayjs(formattedDate).calendar(null, calendarFormat) : dayjs(formattedDate).calendar();
   }
 
   return result;
 }
 
-export function setMomentLocale(locale?: string): void {
-  moment.locale(locale);
+export function setDateLocale(locale?: string): void {
+  dayjs.locale(locale);
 }
 
 export function getUnixDate(date: Date | null | number | undefined | string): number {
-  return moment(date).unix() * 1000;
+  return dayjs(date).unix() * 1000;
 }
 
 export function getInitialDate(date: Date | null | number | undefined | string, defaultDate?: Date): Date {
   if (date != null) {
-    return moment(date).toDate();
+    return dayjs(date).toDate();
   } else {
     return defaultDate || new Date();
   }

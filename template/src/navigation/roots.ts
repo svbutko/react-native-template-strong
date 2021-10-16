@@ -1,10 +1,9 @@
 import {Pages} from "./pages";
-import {Navigation, OptionsBottomTab} from "react-native-navigation";
+import {Navigation} from "react-native-navigation";
 import {Tabs} from "./tabs";
 import {localization} from "../common/localization/localization";
-import {Platform} from "react-native";
 import {SFSymbols} from "../../resources/symbols/SFSymbols";
-import Icon from "react-native-vector-icons/MaterialIcons";
+import {getPlatformTabsIcon} from "./helpers/navigationIconHelpers";
 
 export function setStorybookRoot() {
   Navigation.setRoot({
@@ -77,22 +76,14 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.main,
-                  ...Platform.select({
-                    ios: {
-                      sfSymbol: SFSymbols["house"],
-                      sfSelectedSymbol: SFSymbols["house.fill"],
-                    } as OptionsBottomTab,
-                    android: {
-                      icon: Icon.getImageSourceSync("home"),
-                    } as OptionsBottomTab,
-                  }),
+                  ...getPlatformTabsIcon(SFSymbols["house"], SFSymbols["house.fill"], "home"),
                 },
               },
             },
           },
           {
             stack: {
-              id: Tabs.demo.id,
+              id: Tabs.search.id,
               children: [
                 {
                   component: {
@@ -104,22 +95,14 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.search,
-                  ...Platform.select({
-                    ios: {
-                      sfSymbol: SFSymbols["magnifyingglass"],
-                      sfSelectedSymbol: SFSymbols["magnifyingglass"],
-                    } as OptionsBottomTab,
-                    android: {
-                      icon: Icon.getImageSourceSync("search"),
-                    } as OptionsBottomTab,
-                  }),
+                  ...getPlatformTabsIcon(SFSymbols["magnifyingglass"], SFSymbols["magnifyingglass"], "search"),
                 },
               },
             },
           },
           {
             stack: {
-              id: Tabs.more.id,
+              id: Tabs.settings.id,
               children: [
                 {
                   component: {
@@ -131,15 +114,7 @@ export function setTabsRoot(callback?: () => void) {
               options: {
                 bottomTab: {
                   text: localization.pages.settings,
-                  ...Platform.select({
-                    ios: {
-                      sfSymbol: SFSymbols["gearshape"],
-                      sfSelectedSymbol: SFSymbols["gearshape.fill"],
-                    } as OptionsBottomTab,
-                    android: {
-                      icon: Icon.getImageSourceSync("settings"),
-                    } as OptionsBottomTab,
-                  }),
+                  ...getPlatformTabsIcon(SFSymbols["gearshape"], SFSymbols["gearshape.fill"], "settings"),
                 },
               },
             },

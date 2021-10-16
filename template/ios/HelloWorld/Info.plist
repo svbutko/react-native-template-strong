@@ -60,5 +60,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>tg</string>
+        <string>whatsapp</string>
+        <string>fb</string>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+        <string>instagram</string>
+        <string>twitter</string>
+        <string>mailto</string>
+    </array>
 </dict>
 </plist>
