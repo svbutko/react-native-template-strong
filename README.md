@@ -20,8 +20,8 @@
 # [Check out docs to get started](https://svbutko.github.io/react-native-template-strong/)
 
 Build primarily with 
-- [React Native](https://reactnative.dev) `0.66.0`
-- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.23.0`
+- [React Native](https://reactnative.dev) `0.66.1`
+- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.23.1`
 - [Redux Toolkit](https://redux-toolkit.js.org) `1.6.2`
 - [TypeScript](https://www.typescriptlang.org) `4.4.3`
 
@@ -45,12 +45,12 @@ Includes next components:
 - [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.3.0-beta.2`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.2.5`
-- [Detox](https://github.com/wix/Detox) `18.22.1`
+- [Jest](https://github.com/facebook/jest) `27.0.6`
+- [Detox](https://github.com/wix/Detox) `18.22.2`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
 Code quality covered with:
-- [ESLint](https://github.com/eslint/eslint) `8.0.0`
+- [ESLint](https://github.com/eslint/eslint) `8.0.1`
 - [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `1.0.2`
 - [Husky](https://github.com/typicode/husky) `7.0.2`
 - [Prettier](https://github.com/prettier/prettier) `2.4.1`
