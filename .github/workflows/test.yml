@@ -1,0 +1,31 @@
+name: Test
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Node
+        run: |
+          npm install -g react-native-cli
+          npm install -g detox-cli
+      - name: Install Detox
+        run: |
+          brew tap wix/brew
+          brew install applesimutils
+      - name: Install NPM Dependencies
+        run: npm i --f
+      - name: Unit Tests
+        run: npm run tests
+      - name: Install Pod Dependencies
+        run: cd ./ios && pod install && cd ..
+      - name: iOS Detox Build
+        run: npm run e2e:build-ios-debug
+      - name: iOS Detox Test
+        run: npm run e2e:ios-debug
+      - name: Android Detox Build
+        run: npm run e2e:build-android-debug
+      - name: Android Detox Test
+        run: npm run e2e:android-debug
