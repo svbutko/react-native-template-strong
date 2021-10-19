@@ -16,7 +16,7 @@ jobs:
           brew tap wix/brew
           brew install applesimutils
       - name: Install NPM Dependencies
-        run: npm i --f
+        run: cd template && npm i --f
       - name: Unit Tests
         run: npm run tests
       - name: Install Pod Dependencies
