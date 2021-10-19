@@ -55,6 +55,7 @@
     "@react-native-community/async-storage": "1.12.1",
     "@react-native-community/datetimepicker": "3.5.2",
     "@react-native-community/netinfo": "6.0.2",
+    "@react-native-menu/menu": "0.5.1",
     "@reduxjs/toolkit": "1.6.2",
     "dayjs": "1.10.7",
     "intl": "1.2.5",
