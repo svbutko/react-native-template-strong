@@ -1,9 +1,9 @@
-name: Test
+name: Build
 on: [push]
 
 jobs:
   build:
-    name: Test
+    name: Build
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v1
@@ -19,12 +19,6 @@ jobs:
         run: cd template && npm i --f
       - name: Unit Tests
         run: cd template && npm run tests
-      - name: Install Pod Dependencies
-        run: cd template && cd ./ios && pod install && cd ..
-      - name: iOS Detox Build
-        run: cd template && npm run e2e:build-ios-debug
-      - name: iOS Detox Test
-        run: cd template && npm run e2e:ios-debug
       - name: Android Detox Build
         run: cd template && npm run e2e:build-android-debug
       - name: Android Detox Test
