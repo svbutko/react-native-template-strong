@@ -14,13 +14,13 @@ Build primarily with
 - [React Native](https://reactnative.dev) `0.66.1`
 - [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.23.1`
 - [Redux Toolkit](https://redux-toolkit.js.org) `1.6.2`
-- [TypeScript](https://www.typescriptlang.org) `4.4.3`
+- [TypeScript](https://www.typescriptlang.org) `4.4.4`
 
 Includes next components:
 - [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `3.5.2`
 - [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.1.7`
 - [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.3.1`
-- [Permissions](https://github.com/zoontek/react-native-permissions) `3.0.5`
+- [Permissions](https://github.com/zoontek/react-native-permissions) `3.1.0`
 - [Config](https://github.com/luggit/react-native-config) `1.4.4`
 - [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`
 - [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.4`
@@ -32,11 +32,12 @@ Includes next components:
 - [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
 - [DayJS](https://github.com/iamkun/dayjs/) `1.10.7`
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
-- [Share](https://github.com/react-native-share/react-native-share) `7.1.2`
-- [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.3.0-beta.2`
+- [Share](https://github.com/react-native-share/react-native-share) `7.2.0`
+- [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.3.0-beta.3`
+- [Menu](https://github.com/react-native-menu/menu) `0.5.1`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.0.6`
+- [Jest](https://github.com/facebook/jest) `27.3.1`
 - [Detox](https://github.com/wix/Detox) `18.22.2`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
