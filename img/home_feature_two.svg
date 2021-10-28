@@ -1,0 +1,20 @@
+<svg id="ac356da0-b129-4ca5-aecc-4700531dd101" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="1129" height="663" viewBox="0 0 1129 663">
+    <title>docu_tree</title>
+    <circle cx="321" cy="321" r="321" fill="#f2f2f2"/>
+    <ellipse cx="559" cy="635.49998" rx="514" ry="27.50002" fill="#3f3d56"/>
+    <ellipse cx="558" cy="627" rx="460" ry="22" opacity="0.2"/>
+    <rect x="131" y="152.5" width="840" height="50" fill="#3f3d56"/>
+    <path d="M166.5,727.3299A21.67009,21.67009,0,0,0,188.1701,749H984.8299A21.67009,21.67009,0,0,0,1006.5,727.3299V296h-840Z" transform="translate(-35.5 -118.5)" fill="#3f3d56"/>
+    <path d="M984.8299,236H188.1701A21.67009,21.67009,0,0,0,166.5,257.6701V296h840V257.6701A21.67009,21.67009,0,0,0,984.8299,236Z" transform="translate(-35.5 -118.5)" fill="#3f3d56"/>
+    <path d="M984.8299,236H188.1701A21.67009,21.67009,0,0,0,166.5,257.6701V296h840V257.6701A21.67009,21.67009,0,0,0,984.8299,236Z" transform="translate(-35.5 -118.5)" opacity="0.2"/>
+    <circle cx="181" cy="147.5" r="13" fill="#FF605C"/>
+    <circle cx="217" cy="147.5" r="13" fill="#FFBF44"/>
+    <circle cx="253" cy="147.5" r="13" fill="#00CA4E"/>
+    <rect x="168" y="213.5" width="337" height="386" rx="5.33505" fill="#142B34"/>
+    <rect x="603" y="272.5" width="284" height="22" rx="5.47638" fill="#2596BE"/>
+    <rect x="537" y="352.5" width="416" height="15" rx="5.47638" fill="#2596BE"/>
+    <rect x="537" y="396.5" width="416" height="15" rx="5.47638" fill="#2596BE"/>
+    <rect x="537" y="440.5" width="416" height="15" rx="5.47638" fill="#2596BE"/>
+    <rect x="537" y="484.5" width="416" height="15" rx="5.47638" fill="#2596BE"/>
+    <rect x="865" y="552.5" width="88" height="26" rx="7.02756" fill="#61DAFB"/>
+</svg>
