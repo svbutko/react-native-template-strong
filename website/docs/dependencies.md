@@ -21,32 +21,32 @@ Includes next components:
 - [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.1.7`
 - [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.3.1`
 - [Permissions](https://github.com/zoontek/react-native-permissions) `3.1.0`
-- [Config](https://github.com/luggit/react-native-config) `1.4.4`
+- [Config](https://github.com/luggit/react-native-config) `1.4.5`
 - [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`
 - [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.36.4`
 - [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
-- [Vector icons](https://github.com/oblador/react-native-vector-icons) `8.1.0`
+- [Vector icons](https://github.com/oblador/react-native-vector-icons) `9.0.0`
 - [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.2.0`
 - [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `3.2.3`
 - [Size matters](https://github.com/nirsky/react-native-size-matters) `0.4.0`
 - [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
 - [DayJS](https://github.com/iamkun/dayjs/) `1.10.7`
-- [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.2`
-- [Share](https://github.com/react-native-share/react-native-share) `7.2.0`
+- [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `6.0.4`
+- [Share](https://github.com/react-native-share/react-native-share) `7.2.1`
 - [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.3.0-beta.3`
 - [Menu](https://github.com/react-native-menu/menu) `0.5.1`
 
 Testing made with:
 - [Jest](https://github.com/facebook/jest) `27.3.1`
-- [Detox](https://github.com/wix/Detox) `18.22.2`
+- [Detox](https://github.com/wix/Detox) `18.23.1`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
 
 Code quality covered with:
-- [ESLint](https://github.com/eslint/eslint) `8.0.1`
+- [ESLint](https://github.com/eslint/eslint) `8.1.0`
 - [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `2.0.0`
-- [Husky](https://github.com/typicode/husky) `7.0.2`
+- [Husky](https://github.com/typicode/husky) `7.0.4`
 - [Prettier](https://github.com/prettier/prettier) `2.4.1`
-- [Lint staged](https://github.com/okonet/lint-staged) `11.2.3`
+- [Lint staged](https://github.com/okonet/lint-staged) `11.2.6`
 
 It also includes other small or utility components.
 
