@@ -26,7 +26,6 @@ src
 │       │   CompanyOffers.tsx
 │       │   companyOffersSlice.ts
 │       │   companyOffersState.ts
-│       │   companyOffersSlice.ts
 │       └───components
 │           │   CompanyOfferItem.tsx
 │           │   CompanyOffersHeader.tsx
