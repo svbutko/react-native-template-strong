@@ -61,7 +61,7 @@
     "intl": "1.2.5",
     "lodash": "4.17.21",
     "react": "17.0.2",
-    "react-native": "0.66.4",
+    "react-native": "0.67.1",
     "react-native-config": "1.4.5",
     "react-native-device-detection": "0.2.1",
     "react-native-fast-image": "8.5.11",
