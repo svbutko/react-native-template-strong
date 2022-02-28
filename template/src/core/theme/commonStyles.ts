@@ -1,8 +1,7 @@
 import {Platform, StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {Fonts} from "./fonts";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "./colors";
 import {CommonSizes} from "./commonSizes";
-import {platformNativeColor} from "../../common/helpers/colorHelpers";
+import {Colors} from "~/core/theme/colors";
 
 export const CommonStyles = StyleSheet.create({
   flex1: {
@@ -25,7 +24,7 @@ export const CommonStyles = StyleSheet.create({
   } as ViewStyle,
   flexPlatformBackground: {
     flex: 1,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.background),
+    backgroundColor: Colors.white,
   } as ViewStyle,
   rowCenter: {
     flexDirection: "row",
@@ -54,6 +53,6 @@ export const CommonStyles = StyleSheet.create({
     fontFamily: Fonts.system,
     fontSize: CommonSizes.font.medium,
     lineHeight: CommonSizes.lineHeight.medium,
-    color: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primaryText),
+    color: Colors.black,
   } as TextStyle,
 });

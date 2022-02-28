@@ -1,7 +1,7 @@
 import React, {FC, memo} from "react";
-import {Platform, PlatformColor, StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme/colors";
-import {isIos, maxWindowDimension, minWindowDimension} from "../../src/core/theme/commonConsts";
+import {Platform, StyleSheet, View, ViewStyle} from "react-native";
+import {Colors} from "~/core/theme/colors";
+import {maxWindowDimension, minWindowDimension} from "~/core/theme/commonConsts";
 import {DescriptionText} from "./DescriptionText";
 
 interface IProps {
@@ -9,13 +9,11 @@ interface IProps {
   isPlatformColor: boolean;
 }
 
-export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) => {
+export const ColorPaletteListItem: FC<IProps> = memo(({color}) => {
   const colorStyle = StyleSheet.flatten([
     styles.colorContainer,
     {
-      backgroundColor: isPlatformColor
-        ? PlatformColor(((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[color])
-        : (Colors as any)[color],
+      backgroundColor: (Colors as any)[color],
     },
   ]) as ViewStyle;
 
@@ -39,7 +37,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         borderWidth: 1,
-        borderColor: PlatformColor(PlatformColorsIOS.separator),
+        borderColor: Colors.black,
       },
       android: {
         elevation: 2,

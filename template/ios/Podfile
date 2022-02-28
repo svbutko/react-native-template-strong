@@ -16,6 +16,8 @@ target 'HelloWorld' do
     :hermes_enabled => true
   )
 
+  pod 'RNLocalize', :path => '../node_modules/react-native-localize'
+
   target 'HelloWorldTests' do
     inherit! :complete
     # Pods for testing

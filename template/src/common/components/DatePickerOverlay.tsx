@@ -2,15 +2,14 @@ import React, {useCallback, useMemo, useState} from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import {Platform, SafeAreaView, StyleSheet, View, ViewStyle} from "react-native";
 import {Navigation, NavigationFunctionComponent, OptionsTopBarButton} from "react-native-navigation";
-import {ButtonType} from "../../types";
 import {useNavigationButtonPress} from "react-native-navigation-hooks";
-import {PrimaryButton} from "./PrimaryButton";
-import {getLanguage, localization} from "../localization/localization";
-import {isAndroid, isIos} from "../../core/theme/commonConsts";
-import {Fonts} from "../../core/theme/fonts";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {Colors} from "../../core/theme/colors";
-import {CommonSizes} from "../../core/theme/commonSizes";
+import {ButtonType, PrimaryButton} from "./PrimaryButton";
+import {i18next} from "~/common/localization/localization";
+import {isAndroid, isIos} from "~/core/theme/commonConsts";
+import {Fonts} from "~/core/theme/fonts";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {Colors} from "~/core/theme/colors";
+import {CommonSizes} from "~/core/theme/commonSizes";
 
 export interface IDatePickerProps {
   value: Date;
@@ -25,7 +24,7 @@ const doneButtonId = "doneButton";
 
 const rightButton: OptionsTopBarButton = {
   id: doneButtonId,
-  text: localization.common.done,
+  text: i18next.t("common.done"),
   fontFamily: Fonts.system,
   enabled: true,
 };
@@ -34,7 +33,7 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
   const [date, setDate] = useState<Date>(value);
 
   const onSetDate = useCallback(
-    (event, selectedDate) => {
+    (event: Event, selectedDate?: Date | undefined) => {
       if (isAndroid) {
         if (selectedDate == null) {
           Navigation.dismissOverlay(componentId);
@@ -43,7 +42,7 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
           Navigation.dismissOverlay(componentId);
         }
       } else {
-        setDate(selectedDate);
+        selectedDate && setDate(selectedDate);
       }
     },
     [componentId, onDateChange],
@@ -55,7 +54,7 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
   }, [onDateChange, componentId, date]);
 
   const locale = useMemo(() => {
-    return getLanguage();
+    return i18next.language;
   }, []);
 
   useNavigationButtonPress(changeDate, {componentId, buttonId: doneButtonId});
@@ -72,7 +71,7 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
           maximumDate={maxDate}
           locale={locale}
         />
-        {isIos && <PrimaryButton label={localization.common.select} type={ButtonType.solid} onPress={changeDate} />}
+        {isIos && <PrimaryButton labelKey={"common.select"} type={ButtonType.solid} onPress={changeDate}/>}
       </View>
     </SafeAreaView>
   );

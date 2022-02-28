@@ -1,12 +1,21 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
-import {ActivityIndicator, Animated, Image, ImageStyle, ImageURISource, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
+import {
+  ActivityIndicator,
+  Animated,
+  Image,
+  ImageStyle,
+  ImageURISource,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
 import {Navigation, NavigationConstants, NavigationFunctionComponent} from "react-native-navigation";
 import {useNavigationComponentDidAppear} from "react-native-navigation-hooks";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {isIos, minWindowDimension} from "../../core/theme/commonConsts";
-import {platformNativeColor} from "../helpers/colorHelpers";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {Colors} from "~/core/theme/colors";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {isIos, minWindowDimension} from "~/core/theme/commonConsts";
+import {Brand} from "~/infrastructure";
 
 export interface IToastNavProps {
   text: string;
@@ -18,14 +27,14 @@ export interface IToastNavProps {
 }
 
 export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
-  componentId,
-  text,
-  textStyle,
-  icon,
-  iconStyle,
-  loading,
-  location,
-}) => {
+                                                                            componentId,
+                                                                            text,
+                                                                            textStyle,
+                                                                            icon,
+                                                                            iconStyle,
+                                                                            loading,
+                                                                            location,
+                                                                          }) => {
   const [constants, setConstants] = useState<NavigationConstants | undefined>(undefined);
   const animatedValue = useRef(new Animated.Value(0)).current;
 
@@ -91,13 +100,13 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
 
   const renderIconOrLoading = useMemo(() => {
     if (icon != null) {
-      return <Image style={[styles.icon, iconStyle]} source={icon} defaultSource={icon} />;
+      return <Image style={[styles.icon, iconStyle]} source={icon} defaultSource={icon}/>;
     } else if (loading) {
       return (
         <ActivityIndicator
           style={styles.loading}
           animating={true}
-          color={platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.primary)}
+          color={Colors.black}
           size={"small"}
         />
       );
@@ -127,9 +136,9 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
         ]}
       >
         {renderIconOrLoading}
-        <Text style={[styles.text, textStyle]} numberOfLines={3}>
+        <Brand.H4 style={[styles.text, textStyle]} numberOfLines={3}>
           {text}
-        </Text>
+        </Brand.H4>
       </Animated.View>
     );
   } else {
@@ -140,7 +149,7 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
 const styles = StyleSheet.create({
   container: {
     ...CommonStyles.shadow,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.background),
+    backgroundColor: Colors.blue,
     alignSelf: "center",
     width: minWindowDimension - CommonSizes.spacing.large,
     padding: CommonSizes.spacing.medium,
@@ -159,8 +168,6 @@ const styles = StyleSheet.create({
     marginRight: CommonSizes.spacing.extraSmall,
   } as ViewStyle,
   text: {
-    ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.primaryText),
     flex: 1,
   } as TextStyle,
 });

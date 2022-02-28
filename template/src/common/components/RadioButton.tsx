@@ -1,11 +1,10 @@
 import React, {FC, FunctionComponent, memo, useCallback, useMemo} from "react";
-import {StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
+import {StyleSheet, TextStyle, ViewStyle} from "react-native";
 import {RadioIcon} from "./RadioIcon";
 import {TouchablePlatform} from "./TouchablePlatform";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {platformNativeColor} from "../helpers/colorHelpers";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {Colors} from "~/core/theme/colors";
+import {Brand} from "~/infrastructure/typography";
 
 interface IIconComponentProps {
   isSelected: boolean;
@@ -30,22 +29,16 @@ export const RadioButton: FC<IProps> = memo(({isSelected, label, onPress, disabl
 
   return (
     <TouchablePlatform style={styles.container} onPress={onButtonPress} disabled={disabled}>
-      {IconComponent && <IconComponent disabled={disabled} isSelected={isSelected} />}
-      <Text style={labelStyle} numberOfLines={1}>
+      {IconComponent && <IconComponent disabled={disabled} isSelected={isSelected}/>}
+      <Brand.H4 style={labelStyle} numberOfLines={1}>
         {label}
-      </Text>
+      </Brand.H4>
     </TouchablePlatform>
   );
 });
 
 RadioButton.defaultProps = {
   IconComponent: RadioIcon,
-};
-
-const commonLabel: TextStyle = {
-  ...CommonStyles.normalText,
-  flex: 1,
-  paddingLeft: CommonSizes.spacing.extraSmall,
 };
 
 const styles = StyleSheet.create({
@@ -55,10 +48,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   } as ViewStyle,
   label: {
-    ...commonLabel,
+    flex: 1,
+    paddingLeft: CommonSizes.spacing.extraSmall,
   } as TextStyle,
   labelDisabled: {
-    ...commonLabel,
-    color: platformNativeColor(PlatformColorsIOS.systemFill, PlatformColorsAndroid.secondaryText),
+    flex: 1,
+    paddingLeft: CommonSizes.spacing.extraSmall,
+    color: Colors.gray,
   } as TextStyle,
 });

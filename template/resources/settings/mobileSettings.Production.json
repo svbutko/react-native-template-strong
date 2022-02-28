@@ -1,0 +1,15 @@
+{
+  "appName": "MC",
+  "environment": "Production",
+  "serverUrl": "https://maxmodal.com",
+  "showVersion": false,
+  "devOptions": {
+    "allowChangeEnvironment": false,
+    "disableReduxLogger": true,
+    "reduxLoggerWhiteList": [
+      ""
+    ],
+    "purgeStateOnStart": false
+  },
+  "loggerUrl": "http://production.logs.maxmodal.com"
+}

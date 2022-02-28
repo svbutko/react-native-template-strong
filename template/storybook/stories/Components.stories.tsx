@@ -6,29 +6,32 @@ import {PrimaryTextInputStories} from "./components/PrimaryTextInput.stories";
 import {RadioButtonStories} from "./components/RadioButton.stories";
 import {PhotoTakingButtonStories} from "./components/PhotoTakingButton.stories";
 import {EmptyViewStories} from "./components/EmptyView.stories";
-import {LoadingComponent} from "../../src/common/components/LoadingComponent";
-import {TryAgain} from "../../src/common/components/TryAgain";
+import {LoadingComponent} from "~/common/components/LoadingComponent";
+import {TryAgain} from "~/common/components/TryAgain";
+import {LoadState} from "~/types";
 
 const ComponentsStories = storiesOf("Components", module);
 
 ComponentsStories.addDecorator(withKnobs);
 
-ComponentsStories.add("PrimaryButton", () => <PrimaryButtonStories />);
+ComponentsStories.add("PrimaryButton", () => <PrimaryButtonStories/>);
 
-ComponentsStories.add("PrimaryTextInput", () => <PrimaryTextInputStories />);
+ComponentsStories.add("PrimaryTextInput", () => <PrimaryTextInputStories/>);
 
-ComponentsStories.add("RadioButton", () => <RadioButtonStories />);
+ComponentsStories.add("RadioButton", () => <RadioButtonStories/>);
 
-ComponentsStories.add("PhotoTakingButton", () => <PhotoTakingButtonStories />);
+ComponentsStories.add("PhotoTakingButton", () => <PhotoTakingButtonStories/>);
 
-ComponentsStories.add("EmptyView", () => <EmptyViewStories />);
+ComponentsStories.add("EmptyView", () => <EmptyViewStories/>);
 
-ComponentsStories.add("LoadingComponent", () => <LoadingComponent />);
+ComponentsStories.add("LoadingComponent", () => <LoadingComponent/>);
 
 ComponentsStories.add("TryAgain", () => (
   <TryAgain
     onPress={() => {
       console.log("pressed");
     }}
+    errorText={null}
+    loadState={LoadState.error}
   />
 ));

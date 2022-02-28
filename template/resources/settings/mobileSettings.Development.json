@@ -1,0 +1,10 @@
+{
+  "environment": "Development",
+  "showVersion": true,
+  "serverUrl": "http://dev.mc.dextechnology.com",
+  "loggerUrl": "http://dev.logs.dextechnology.com:9821",
+  "devOptions": {
+    "allowChangeEnvironment": true,
+    "showAnalyticsDebugLogs": false
+  }
+}

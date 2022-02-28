@@ -2,7 +2,7 @@ import NetInfo, {NetInfoState, NetInfoSubscription} from "@react-native-communit
 import {showAlert} from "./dialogsHelpers";
 import {Linking} from "react-native";
 import Config from "react-native-config";
-import {localization} from "../localization/localization";
+import {i18next} from "~/common/localization/localization";
 
 let netInfoUnsubscribe: undefined | NetInfoSubscription;
 let hasDialogBeenShown: boolean = false;
@@ -10,14 +10,14 @@ let hasDialogBeenShown: boolean = false;
 function listenerCallback(state: NetInfoState) {
   if (state.isInternetReachable === false && !hasDialogBeenShown) {
     hasDialogBeenShown = true;
-    showAlert(localization.errors.mobileDataIsTurnedOff, localization.errors.turnOnMobileData, [
+    showAlert(i18next.t("errors.mobileDataIsTurnedOff"), i18next.t("errors.turnOnMobileData"), [
       {
-        text: localization.common.settings,
+        text: i18next.t("common.settings"),
         onPress: Linking.openSettings,
         style: "default",
       },
       {
-        text: localization.common.ok.toUpperCase(),
+        text: i18next.t("common.ok").toUpperCase(),
         style: "default",
       },
     ]);

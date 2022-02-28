@@ -1,45 +1,47 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {PlatformColor, SafeAreaView, StyleSheet, Text, TextStyle, useWindowDimensions, View, ViewStyle} from "react-native";
+import {SafeAreaView, StyleSheet, TextStyle, useWindowDimensions, View, ViewStyle} from "react-native";
 import Carousel from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {OnboardingPagination} from "./components/OnboardingPagination";
-import {ButtonType, IOnboardingData} from "../../types";
-import {localization} from "../../common/localization/localization";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {Fonts} from "../../core/theme/fonts";
-import {PrimaryButton} from "../../common/components/PrimaryButton";
-import {setTabsRoot} from "../../navigation/roots";
-import {platformNativeColor} from "../../common/helpers/colorHelpers";
-import {PlatformColorsAndroid} from "../../core/theme/colors";
-import {isTablet} from "../../core/theme/commonConsts";
+import {IOnboardingData} from "~/types";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {ButtonType, PrimaryButton} from "~/common/components/PrimaryButton";
+import {setTabsRoot} from "~/navigation/roots";
+import {isTablet} from "~/core/theme/commonConsts";
 import {OrientationType, useOrientationChange} from "react-native-orientation-locker";
-import {getCurrentOrientation} from "../../common/helpers/orientationHelpers";
+import {getCurrentOrientation} from "~/common/helpers/orientationHelpers";
 import {moderateScale} from "react-native-size-matters";
-import {IconPlatform} from "../../common/components/IconPlatform";
+import {IconPlatform} from "~/common/components/IconPlatform";
+import {useTranslation} from "react-i18next";
+import {Colors} from "~/core/theme/colors";
+import {Brand} from "~/infrastructure";
 
-const carouselData: IOnboardingData[] = [
-  {
-    header: localization.onboarding.firstHeader,
-    body: localization.onboarding.firstBody,
-    icon: "thumb-up",
-  },
-  {
-    header: localization.onboarding.secondHeader,
-    body: localization.onboarding.secondBody,
-    icon: "description",
-  },
-  {
-    header: localization.onboarding.thirdHeader,
-    body: localization.onboarding.thirdBody,
-    icon: "star-rate",
-  },
-];
 
 export const Onboarding: NavigationFunctionComponent = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [orientation, setOrientation] = useState<OrientationType>(() => getCurrentOrientation());
   const dimensions = useWindowDimensions();
+
+  const {t} = useTranslation();
+
+  const carouselData: IOnboardingData[] = useMemo(() => ([
+    {
+      header: t("onboarding.firstHeader"),
+      body: t("onboarding.firstBody"),
+      icon: "thumb-up",
+    },
+    {
+      header: t("onboarding.secondHeader"),
+      body: t("onboarding.secondBody"),
+      icon: "description",
+    },
+    {
+      header: t("onboarding.thirdHeader"),
+      body: t("onboarding.thirdBody"),
+      icon: "star-rate",
+    },
+  ]), [t]);
 
   useOrientationChange((changedOrientation) => {
     if (isTablet) {
@@ -56,13 +58,14 @@ export const Onboarding: NavigationFunctionComponent = () => {
       return (
         <View style={styles.itemContainer}>
           <View style={styles.illustration}>
-            <IconPlatform androidName={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary)} />
+            <IconPlatform androidName={item.icon} size={moderateScale(120)}
+                          color={Colors.black}/>
           </View>
           <View style={styles.itemTextContainer}>
-            <Text style={styles.header}>{item.header}</Text>
-            <Text style={styles.body} numberOfLines={3}>
+            <Brand.H4 style={styles.header}>{item.header}</Brand.H4>
+            <Brand.H5 style={styles.body} numberOfLines={3}>
               {item.body}
-            </Text>
+            </Brand.H5>
           </View>
         </View>
       );
@@ -91,12 +94,12 @@ export const Onboarding: NavigationFunctionComponent = () => {
           <PrimaryButton
             testID={"OnboardingButtonID"}
             type={ButtonType.solid}
-            label={localization.common.continue}
+            labelKey={"common.continue"}
             onPress={onContinuePress}
           />
         </View>
-        <OnboardingPagination activeIndex={activeSlide} totalItems={carouselData.length} />
-        <View style={CommonStyles.flex1} />
+        <OnboardingPagination activeIndex={activeSlide} totalItems={carouselData.length}/>
+        <View style={CommonStyles.flex1}/>
       </View>
     </SafeAreaView>
   );
@@ -116,8 +119,8 @@ const initialStyles = StyleSheet.create({
     flex: 1,
   } as ViewStyle,
   header: {
-    ...CommonStyles.normalText,
-    fontFamily: Fonts.system,
+    // ...CommonStyles.normalText,
+    // fontFamily: Fonts.system,
     fontWeight: "bold",
     fontSize: CommonSizes.font.large,
     lineHeight: CommonSizes.lineHeight.large,
@@ -126,13 +129,11 @@ const initialStyles = StyleSheet.create({
     textAlign: "center",
   } as TextStyle,
   body: {
-    ...CommonStyles.normalText,
-    fontSize: CommonSizes.font.smallPlus,
     lineHeight: CommonSizes.lineHeight.smallPlus,
     letterSpacing: CommonSizes.letterSpacing.smallPlus,
     alignSelf: "center",
     textAlign: "center",
-    color: platformNativeColor(undefined, PlatformColorsAndroid.secondaryText),
+    color: Colors.darkGray,
   } as TextStyle,
   bottomContainer: {
     alignItems: "center",

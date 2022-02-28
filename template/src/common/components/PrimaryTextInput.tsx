@@ -1,14 +1,27 @@
 import React, {FC, memo, MutableRefObject, Ref, useCallback, useMemo, useState} from "react";
-import {Platform, StyleSheet, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {ITextInputMask} from "../../types";
+import {
+  NativeSyntheticEvent,
+  Platform,
+  StyleSheet,
+  TextInput,
+  TextInputFocusEventData,
+  TextInputProps,
+  TextInputSubmitEditingEventData,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
+import {ITextInputMask} from "~/types";
 import {TextInputMask} from "react-native-masked-text";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {isIos} from "../../core/theme/commonConsts";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
+import {Colors} from "~/core/theme/colors";
+import {isIos} from "~/core/theme/commonConsts";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {Brand} from "~/infrastructure/typography";
 
 interface IProps extends TextInputProps {
+  nextInputFocusRefGetter?: () => MutableRefObject<any>;
   nextInputFocusRef?: MutableRefObject<any>;
   inputRef?: Ref<any>;
   containerStyle?: ViewStyle;
@@ -16,6 +29,7 @@ interface IProps extends TextInputProps {
   error?: string | null;
   hint?: string;
   mask?: ITextInputMask;
+  isPassword?: boolean;
   autoComplete?:
     | "off"
     | "username"
@@ -37,7 +51,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
     const [isFocused, setFocused] = useState<boolean>(false);
 
     const onLocalFocus = useCallback(
-      (e) => {
+      (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
         setFocused(true);
         onFocus && onFocus(e);
       },
@@ -45,7 +59,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
     );
 
     const onLocalBlur = useCallback(
-      (e) => {
+      (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
         setFocused(false);
         onBlur && onBlur(e);
       },
@@ -57,7 +71,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
     }, [isFocused, error, props.editable, onTouchStart]);
 
     const onLocalSubmitEditing = useCallback(
-      (e) => {
+      (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => {
         onSubmitEditing && onSubmitEditing(e);
         nextInputFocusRef && nextInputFocusRef.current && nextInputFocusRef.current.focus();
       },
@@ -70,14 +84,14 @@ export const PrimaryTextInput: FC<IProps> = memo(
 
     return (
       <View style={[styles.container, containerStyle]}>
-        <Label text={label} />
+        <Label text={label}/>
         <TouchableOpacity style={inputContainerStyle} onPress={onTouchStart} disabled={!onTouchStart}>
           {mask != null ? (
             <TextInputMask
               type={mask.type}
               options={mask.options}
               includeRawValueInChangeText={true}
-              selectionColor={platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary)}
+              selectionColor={Colors.blue}
               disableFullscreenUI={true}
               {...props}
               pointerEvents={pointerEvents}
@@ -90,7 +104,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
           ) : (
             <TextInput
               disableFullscreenUI={true}
-              selectionColor={platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary)}
+              selectionColor={Colors.blue}
               {...props}
               pointerEvents={pointerEvents}
               ref={inputRef}
@@ -101,7 +115,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
             />
           )}
         </TouchableOpacity>
-        <BottomText error={error} hint={hint} />
+        <BottomText error={error} hint={hint}/>
       </View>
     );
   },
@@ -110,9 +124,9 @@ export const PrimaryTextInput: FC<IProps> = memo(
 const Label: FC<{text?: string}> = memo(({text}) => {
   if (text != null) {
     return (
-      <Text style={styles.label} numberOfLines={1}>
+      <Brand.H4 style={styles.label} numberOfLines={1}>
         {text}
-      </Text>
+      </Brand.H4>
     );
   } else {
     return null;
@@ -121,9 +135,9 @@ const Label: FC<{text?: string}> = memo(({text}) => {
 
 const BottomText: FC<{error?: string | null; hint?: string}> = memo(({error, hint}) => {
   if (error != null) {
-    return <Text style={styles.error}>{error}</Text>;
+    return <Brand.H5 style={styles.error}>{error}</Brand.H5>;
   } else if (hint != null) {
-    return <Text style={styles.hint}>{hint}</Text>;
+    return <Brand.H5 style={styles.hint}>{hint}</Brand.H5>;
   } else {
     return null;
   }
@@ -155,7 +169,7 @@ const commonInputContainer: TextStyle = {
   ...Platform.select({
     ios: {
       borderRadius: CommonSizes.borderRadius.medium,
-      backgroundColor: platformNativeColor(PlatformColorsIOS.systemFill),
+      backgroundColor: Colors.white,
     } as TextStyle,
     android: {
       borderRadius: CommonSizes.borderRadius.extraSmall,
@@ -174,60 +188,36 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlignVertical: "center",
     paddingLeft: CommonSizes.spacing.medium,
-    ...Platform.select({
-      android: {
-        paddingRight: CommonSizes.spacing.medium,
-      },
-    }),
+    paddingRight: CommonSizes.spacing.medium,
   } as TextStyle,
   inputContainer: {
     ...commonInputContainer,
-    ...Platform.select({
-      ios: {
-        paddingRight: CommonSizes.spacing.medium,
-      },
-    }),
+    paddingRight: CommonSizes.spacing.medium,
   } as TextStyle,
   errorInputContainer: {
     ...commonInputContainer,
-    ...Platform.select({
-      android: {
-        borderColor: Colors.red,
-      },
-    }),
+    borderColor: Colors.red,
   } as TextStyle,
   disabledInputContainer: {
     ...commonInputContainer,
-    ...Platform.select({
-      android: {
-        backgroundColor: Colors.gray,
-        borderColor: Colors.gray,
-      },
-    }),
+    backgroundColor: Colors.white,
+    borderColor: Colors.gray,
   } as TextStyle,
   focusedInputContainer: {
     ...commonInputContainer,
-    ...Platform.select({
-      android: {
-        borderColor: Colors.darkGray,
-      },
-    }),
+    borderColor: Colors.darkGray,
   } as TextStyle,
   label: {
-    ...CommonStyles.normalText,
     paddingBottom: CommonSizes.spacing.extraSmall,
   } as TextStyle,
   hint: {
-    ...CommonStyles.normalText,
     fontWeight: "200",
-    fontSize: CommonSizes.font.small,
     lineHeight: CommonSizes.lineHeight.small,
     paddingTop: CommonSizes.spacing.extraSmall,
+    color: Colors.gray,
   } as TextStyle,
   error: {
-    ...CommonStyles.normalText,
-    color: platformMixedColor(PlatformColorsIOS.systemRed, Colors.red),
-    fontSize: CommonSizes.font.small,
+    color: Colors.red,
     lineHeight: CommonSizes.lineHeight.small,
     paddingTop: CommonSizes.spacing.extraSmall,
   } as TextStyle,
@@ -239,7 +229,7 @@ PrimaryTextInput.defaultProps = {
   disableFullscreenUI: true,
   enablesReturnKeyAutomatically: true,
   underlineColorAndroid: Colors.transparent,
-  placeholderTextColor: platformNativeColor(PlatformColorsIOS.placeholderText, PlatformColorsAndroid.secondaryText),
+  placeholderTextColor: Colors.gray,
   editable: true,
   clearButtonMode: "while-editing",
 };

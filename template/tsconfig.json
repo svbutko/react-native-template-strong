@@ -19,6 +19,10 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
   },
   "include": [
     "__tests__/**/*",
@@ -37,6 +41,6 @@
     "android",
     "tools",
     "patches",
-    "coverage",
+    "coverage"
   ]
 }

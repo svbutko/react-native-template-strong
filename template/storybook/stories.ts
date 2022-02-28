@@ -5,7 +5,6 @@ if (__DEV__) {
   require("./stories/Components.stories");
   require("./stories/ModalsOverlays.stories");
   require("./stories/Alerts.stories");
-  require("./stories/Animations.stories");
 }
 
 export {};

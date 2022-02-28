@@ -1,7 +1,6 @@
 import React, {FC, memo, useMemo} from "react";
 import {StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
+import {Colors} from "~/core/theme/colors";
 
 interface IProps {
   isSelected: boolean;
@@ -10,10 +9,14 @@ interface IProps {
 
 export const RadioIcon: FC<IProps> = memo(({isSelected, disabled}) => {
   const outerCircleStyle = useMemo(() => {
-    return disabled ? styles.outerCircle : isSelected ? styles.outerCircleSelected : styles.outerCircle;
+    return disabled ? styles.outerCircleDisabled : isSelected ? styles.outerCircleSelected : styles.outerCircle;
   }, [isSelected, disabled]);
 
-  return <View style={outerCircleStyle}>{isSelected && <View style={styles.innerCircle} />}</View>;
+  const innerCircleStyle = useMemo(() => {
+    return disabled ? styles.innerCircleDisabled : styles.innerCircle;
+  }, [disabled]);
+
+  return <View style={outerCircleStyle}>{isSelected && <View style={innerCircleStyle}/>}</View>;
 });
 
 const commonOuterCircle: ViewStyle = {
@@ -35,14 +38,22 @@ const commonInnerCircle: ViewStyle = {
 const styles = StyleSheet.create({
   outerCircle: {
     ...commonOuterCircle,
-    borderColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.black),
+    borderColor: Colors.black,
+  } as ViewStyle,
+  outerCircleDisabled: {
+    ...commonOuterCircle,
+    borderColor: Colors.gray,
   } as ViewStyle,
   outerCircleSelected: {
     ...commonOuterCircle,
-    borderColor: platformMixedColor(PlatformColorsIOS.systemBlue, Colors.black),
+    borderColor: Colors.black,
   } as ViewStyle,
   innerCircle: {
     ...commonInnerCircle,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    backgroundColor: Colors.black,
+  } as ViewStyle,
+  innerCircleDisabled: {
+    ...commonInnerCircle,
+    backgroundColor: Colors.gray,
   } as ViewStyle,
 });

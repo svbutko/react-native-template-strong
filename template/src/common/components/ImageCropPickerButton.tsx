@@ -3,7 +3,7 @@ import ImagePicker, {Image as CropperImage, Options} from "react-native-image-cr
 import {ImageStyle, ImageURISource, ViewStyle} from "react-native";
 import {ImageResources} from "../ImageResources.g";
 import {PhotoTakingButton} from "./PhotoTakingButton";
-import {localization} from "../localization/localization";
+import {i18next} from "~/common/localization/localization";
 import {showActionSheet} from "../helpers/dialogsHelpers";
 
 interface IProps {
@@ -41,15 +41,15 @@ export const ImageCropPickerButton: FC<IProps> = memo(
     }, [onImagePicked, onPickerError]);
 
     const onPress = useCallback(() => {
-      const options = [localization.common.cancel, localization.common.chooseFromLibrary, localization.common.takePhoto];
+      const options = [i18next.t("common.cancel"), i18next.t("common.chooseFromLibrary"), i18next.t("common.takePhoto")];
 
       if (image != null) {
-        options.push(localization.common.delete);
+        options.push(i18next.t("common.delete"));
       }
 
       showActionSheet(
         {
-          title: localization.common.selectPhoto,
+          title: i18next.t("common.selectPhoto"),
           options: options,
           cancelButtonIndex: 0,
           destructiveButtonIndex: 3,

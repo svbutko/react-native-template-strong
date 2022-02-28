@@ -1,6 +1,6 @@
-import {isAndroid, isIos} from "../../core/theme/commonConsts";
+import {isAndroid, isIos} from "~/core/theme/commonConsts";
 import {ActionSheetIOS, ActionSheetIOSOptions, Alert, AlertButton, AlertOptions} from "react-native";
-import {localization} from "../localization/localization";
+import {i18next} from "~/common/localization/localization";
 
 export function showActionSheet(options: ActionSheetIOSOptions, onOptionSelected: (optionIndex: number) => void) {
   if (isIos) {
@@ -30,12 +30,12 @@ export function showCommonDialog(title: string, message: string, onAcceptPress: 
     message,
     [
       {
-        text: localization.common.yes,
+        text: i18next.t("common.yes"),
         onPress: onAcceptPress,
         style: "default",
       },
       {
-        text: localization.common.no,
+        text: i18next.t("common.no"),
         style: "default",
       },
     ],

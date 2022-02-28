@@ -1,4 +1,4 @@
-import {ITextInputMask} from "../../types";
+import {ITextInputMask} from "~/types";
 import {validationConstants} from "../validations/validationConstants";
 
 export class InputMask {
@@ -6,7 +6,7 @@ export class InputMask {
     type: "custom",
     options: {
       mask: "+99 999 999 99999",
-      getRawValue: function (value: string): any {
+      getRawValue: function(value: string): any {
         const result = value.replace(/\D+/g, "");
 
         return "+" + result;

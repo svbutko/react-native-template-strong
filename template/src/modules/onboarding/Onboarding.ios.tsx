@@ -1,51 +1,52 @@
-import React, {useCallback} from "react";
-import {PlatformColor, SafeAreaView, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
+import React, {useCallback, useMemo} from "react";
+import {SafeAreaView, StyleSheet, TextStyle, View, ViewStyle} from "react-native";
 import {Navigation, NavigationFunctionComponent} from "react-native-navigation";
-import {ButtonType, IOnboardingData} from "../../types";
-import {localization} from "../../common/localization/localization";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {Fonts} from "../../core/theme/fonts";
-import {PrimaryButton} from "../../common/components/PrimaryButton";
-import {platformNativeColor} from "../../common/helpers/colorHelpers";
-import {PlatformColorsIOS} from "../../core/theme/colors";
+import {IOnboardingData} from "~/types";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {ButtonType, PrimaryButton} from "~/common/components/PrimaryButton";
 import {moderateScale} from "react-native-size-matters";
-import {isTablet} from "../../core/theme/commonConsts";
+import {isTablet} from "~/core/theme/commonConsts";
 import {SFSymbols} from "../../../resources/symbols/SFSymbols";
-import {IconPlatform} from "../../common/components/IconPlatform";
-
-const carouselData: IOnboardingData[] = [
-  {
-    header: localization.onboarding.firstHeader,
-    body: localization.onboarding.firstBody,
-    icon: SFSymbols["hands.sparkles.fill"],
-  },
-  {
-    header: localization.onboarding.secondHeader,
-    body: localization.onboarding.secondBody,
-    icon: SFSymbols["books.vertical.fill"],
-  },
-  {
-    header: localization.onboarding.thirdHeader,
-    body: localization.onboarding.thirdBody,
-    icon: SFSymbols["star.fill"],
-  },
-];
+import {IconPlatform} from "~/common/components/IconPlatform";
+import {useTranslation} from "react-i18next";
+import {Colors} from "~/core/theme/colors";
+import {Brand} from "~/infrastructure/typography";
 
 export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
-  const renderClauseItem = useCallback((value: IOnboardingData, index) => {
+  const {t} = useTranslation();
+
+  const carouselData: IOnboardingData[] = useMemo(() => ([
+    {
+      header: t("onboarding.firstHeader"),
+      body: t("onboarding.firstBody"),
+      icon: SFSymbols["hands.sparkles.fill"],
+    },
+    {
+      header: t("onboarding.secondHeader"),
+      body: t("onboarding.secondBody"),
+      icon: SFSymbols["books.vertical.fill"],
+    },
+    {
+      header: t("onboarding.thirdHeader"),
+      body: t("onboarding.thirdBody"),
+      icon: SFSymbols["star.fill"],
+    },
+  ]), [t]);
+
+  const renderClauseItem = useCallback((value: IOnboardingData, index: number) => {
     return (
       <View key={index} style={styles.clauseContainer}>
         <IconPlatform
           iosName={value.icon as SFSymbols}
           size={moderateScale(32)}
           resizeMode={"contain"}
-          color={PlatformColor(PlatformColorsIOS.systemBlue)}
+          color={Colors.black}
           style={styles.clauseIcon}
         />
         <View style={styles.clauseTextContainer}>
-          <Text style={styles.clauseHeader}>{value.header}</Text>
-          <Text style={styles.clauseBody}>{value.body}</Text>
+          <Brand.H4 style={styles.clauseHeader}>{value.header}</Brand.H4>
+          <Brand.H4>{value.body}</Brand.H4>
         </View>
       </View>
     );
@@ -58,7 +59,7 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
   return (
     <SafeAreaView style={CommonStyles.flex1}>
       <View style={styles.topContainer}>
-        <Text style={styles.welcomeText}>{localization.onboarding.welcomeToApp}</Text>
+        <Brand.H1 style={styles.welcomeText} labelKey={"onboarding.welcomeToApp"}/>
         <View>{carouselData.map(renderClauseItem)}</View>
       </View>
       <View style={styles.bottomContainer}>
@@ -66,7 +67,7 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
           testID={"OnboardingButtonID"}
           style={styles.button}
           type={ButtonType.solid}
-          label={localization.common.continue}
+          labelKey={"common.continue"}
           onPress={onContinuePress}
         />
       </View>
@@ -81,12 +82,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: moderateScale(CommonSizes.spacing.large),
   } as ViewStyle,
   welcomeText: {
-    fontFamily: Fonts.system,
     fontWeight: "bold",
     fontSize: CommonSizes.font.extraLarge,
     lineHeight: CommonSizes.lineHeight.extraLarge,
     letterSpacing: CommonSizes.letterSpacing.extraLarge,
-    color: platformNativeColor(PlatformColorsIOS.label, undefined),
     paddingBottom: moderateScale(CommonSizes.spacing.extraLarge, 0.5),
     alignSelf: "center",
     textAlign: "center",
@@ -108,12 +107,7 @@ const styles = StyleSheet.create({
     paddingLeft: moderateScale(CommonSizes.spacing.medium),
   } as ViewStyle,
   clauseHeader: {
-    ...CommonStyles.normalText,
     fontWeight: "600",
-  } as TextStyle,
-  clauseBody: {
-    ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.secondaryLabel, undefined),
   } as TextStyle,
   bottomContainer: {
     alignItems: isTablet ? "center" : undefined,

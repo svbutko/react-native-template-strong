@@ -1,7 +1,7 @@
 import React, {FC, useCallback, useState} from "react";
 import {ImageURISource, ScrollView} from "react-native";
-import {ImageCropPickerButton} from "../../../src/common/components/ImageCropPickerButton";
-import {CommonStyles} from "../../../src/core/theme/commonStyles";
+import {ImageCropPickerButton} from "~/common/components/ImageCropPickerButton";
+import {CommonStyles} from "~/core/theme/commonStyles";
 
 export const PhotoTakingButtonStories: FC = () => {
   const [photo, setPhoto] = useState<ImageURISource | null>(null);
@@ -11,7 +11,7 @@ export const PhotoTakingButtonStories: FC = () => {
   }, [setPhoto]);
 
   const onImagePicked = useCallback(
-    (nextImage) => {
+    (nextImage: {path: string}) => {
       setPhoto({uri: nextImage.path});
     },
     [setPhoto],

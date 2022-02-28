@@ -1,16 +1,16 @@
 import React, {FC, memo, useCallback} from "react";
 import {FlatList} from "react-native";
 import {FontListItem} from "./FontListItem";
-import {CommonStyles} from "../../src/core/theme/commonStyles";
-import {Fonts} from "../../src/core/theme/fonts";
-import {Separator} from "../../src/common/components/Separator";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {Fonts} from "~/core/theme/fonts";
+import {Separator} from "~/common/components/Separator";
 
 export const FontsList: FC = memo(() => {
-  const renderItem = useCallback(({item}) => {
-    return <FontListItem key={item} font={item} />;
+  const renderItem = useCallback(({item}: {item: string}) => {
+    return <FontListItem key={item} font={item}/>;
   }, []);
 
-  const keyExtractor = useCallback((item) => {
+  const keyExtractor = useCallback((item: string) => {
     return item;
   }, []);
 

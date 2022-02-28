@@ -7,8 +7,11 @@ import {ImageURISource} from "react-native";
  * !!! DO NOT EDIT !!!
  * For more information check the documentation:
  * https://github.com/svbutko/react-native-image-resource-generator
-*/
+ */
 
 export class ImageResources {
+  static readonly arrow_left: ImageURISource = require("../../resources/images/arrow_left.png");
+  static readonly avatar: ImageURISource = require("../../resources/images/avatar.png");
   static readonly camera: ImageURISource = require("../../resources/images/camera.png");
+  static readonly menu: ImageURISource = require("../../resources/images/menu.png");
 }

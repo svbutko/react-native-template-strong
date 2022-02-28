@@ -7,9 +7,8 @@ import {
   PressableStateCallbackType,
   ViewStyle,
 } from "react-native";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {isAndroid} from "../../core/theme/commonConsts";
-import {platformNativeColor} from "../helpers/colorHelpers";
+import {Colors} from "~/core/theme/colors";
+import {isAndroid} from "~/core/theme/commonConsts";
 
 interface IProps extends PressableProps {
   style?: ViewStyle | ViewStyle[];
@@ -51,5 +50,5 @@ const androidRippleConfig: PressableAndroidRippleConfig = {
 };
 
 TouchablePlatform.defaultProps = {
-  highlightColor: platformNativeColor(PlatformColorsIOS.secondarySystemFill, PlatformColorsAndroid.primaryLight),
+  highlightColor: Colors.green,
 };

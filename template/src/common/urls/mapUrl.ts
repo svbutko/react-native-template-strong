@@ -1,4 +1,4 @@
-import {isIos} from "../../core/theme/commonConsts";
+import {isIos} from "~/core/theme/commonConsts";
 import {BaseUrlOpener} from "./baseUrlOpener";
 
 export class MapUrl extends BaseUrlOpener {

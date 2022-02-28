@@ -1,0 +1,9 @@
+{
+  "environment": "Test",
+  "showVersion": true,
+  "serverUrl": "http://test.maxmodal.com",
+  "loggerUrl": "http://test.logs.dextechnology.com:9821",
+  "devOptions": {
+    "allowChangeEnvironment": true
+  }
+}

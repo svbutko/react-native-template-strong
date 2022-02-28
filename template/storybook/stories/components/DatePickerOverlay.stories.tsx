@@ -1,12 +1,11 @@
 import React, {FC, useCallback, useState} from "react";
 import {ScrollView} from "react-native";
 import {DescriptionText} from "../../components/DescriptionText";
-import {ButtonType} from "../../../src/types";
-import {DateFormat, dateFromFormat} from "../../../src/common/localization/dateFormatter";
-import {showDatePicker} from "../../../src/navigation/helpers/showDatePicker";
-import {CommonStyles} from "../../../src/core/theme/commonStyles";
-import {PrimaryButton} from "../../../src/common/components/PrimaryButton";
-import {Separator} from "../../../src/common/components/Separator";
+import {DateFormat, dateFromFormat} from "~/common/localization/momentFormatter";
+import {showDatePicker} from "~/services/navigationService/showDatePicker";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {ButtonType, PrimaryButton} from "../../../src/common/components/PrimaryButton";
+import {Separator} from "~/common/components/Separator";
 import dayjs from "dayjs";
 
 export const DatePickerOverlayStories: FC = () => {
@@ -30,9 +29,9 @@ export const DatePickerOverlayStories: FC = () => {
 
   return (
     <ScrollView style={CommonStyles.flexPlatformBackground} contentContainerStyle={CommonStyles.flexColumnCenterStretch}>
-      <PrimaryButton type={ButtonType.solid} label={"Select date"} onPress={onPress} />
+      <PrimaryButton type={ButtonType.solid} text={"Select date"} onPress={onPress} />
       <Separator />
-      <PrimaryButton type={ButtonType.solid} label={"Select date (min, max)"} onPress={onPressMinMax} />
+      <PrimaryButton type={ButtonType.solid} text={"Select date (min, max)"} onPress={onPressMinMax} />
       <DescriptionText>{dateFromFormat(selectedDate, DateFormat.yearDateTime)}</DescriptionText>
     </ScrollView>
   );

@@ -1,31 +1,40 @@
 import React, {FC, memo} from "react";
-import {StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {platformNativeColor} from "../helpers/colorHelpers";
-import {localization} from "../localization/localization";
+import {StyleSheet, TextStyle, View, ViewStyle} from "react-native";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {i18next} from "~/common/localization/localization";
+import {Brand} from "~/infrastructure";
+import {LoadState} from "~/types";
+import {LoadingComponent} from "./LoadingComponent";
+import {Colors} from "~/core/theme/colors";
+import {ButtonType, PrimaryButton} from "~/common/components/PrimaryButton";
 
 interface IProps {
   onPress?: () => void;
   errorText?: string | null;
+  loadState: LoadState;
 }
 
-export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
+export const TryAgain: FC<IProps> = memo(({onPress, errorText, loadState}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{errorText}</Text>
-      {onPress != null && (
-        <TouchableOpacity onPress={onPress}>
-          <Text style={styles.description}>{localization.errors.tryAgain}</Text>
-        </TouchableOpacity>
+      <Brand.H4 style={styles.title}>{errorText}</Brand.H4>
+      {onPress != null ? (
+        <PrimaryButton
+          isLoading={loadState != LoadState.error}
+          labelKey={"errors.tryAgain"}
+          onPress={onPress}
+          type={ButtonType.outline}
+        />
+      ) : (
+        <LoadingComponent containerStyle={styles.loader}/>
       )}
     </View>
   );
 });
 
 TryAgain.defaultProps = {
-  errorText: localization.errors.unknownErrorHasOccurred,
+  errorText: i18next.t("errors.unknownErrorHasOccurred"),
 };
 
 const styles = StyleSheet.create({
@@ -34,14 +43,16 @@ const styles = StyleSheet.create({
     padding: CommonSizes.spacing.medium,
   } as ViewStyle,
   title: {
-    ...CommonStyles.normalText,
     textAlign: "center",
     marginBottom: CommonSizes.spacing.extraSmall,
   } as TextStyle,
   description: {
-    ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
     textAlign: "center",
     textDecorationLine: "underline",
   } as TextStyle,
+  loader: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: "center",
+    backgroundColor: Colors.black,
+  },
 });

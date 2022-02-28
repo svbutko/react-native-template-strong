@@ -1,7 +1,7 @@
 import React from "react";
 import {storiesOf} from "@storybook/react-native";
 import {ImagesList} from "../components/ImagesList";
-import {ImageResources} from "../../src/common/ImageResources.g";
+import {ImageResources} from "~/common/ImageResources.g";
 
 const ResourcesStories = storiesOf("Resources", module);
 

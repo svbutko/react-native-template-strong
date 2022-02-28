@@ -16,18 +16,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import com.facebook.react.bridge.JSIModulePackage;
-import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 
 
 public class MainApplication extends NavigationApplication {
 
   private final ReactNativeHost mReactNativeHost =
       new NavigationReactNativeHost(this) {
-        @Override
-        protected JSIModulePackage getJSIModulePackage() {
-          return new ReanimatedJSIModulePackage();
-        }
-
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;

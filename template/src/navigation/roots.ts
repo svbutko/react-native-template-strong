@@ -1,9 +1,9 @@
 import {Pages} from "./pages";
 import {Navigation} from "react-native-navigation";
 import {Tabs} from "./tabs";
-import {localization} from "../common/localization/localization";
+import {i18next} from "~/common/localization/localization";
 import {SFSymbols} from "../../resources/symbols/SFSymbols";
-import {getPlatformTabsIcon} from "./helpers/navigationIconHelpers";
+import {getPlatformTabsIcon} from "~/services/navigationService/navigationIconHelpers";
 
 export function setStorybookRoot() {
   Navigation.setRoot({
@@ -15,7 +15,7 @@ export function setStorybookRoot() {
           topBar: {
             visible: true,
             title: {
-              text: localization.pages.storybook,
+              text: i18next.t("pages.storybook"),
             },
           },
         },
@@ -75,7 +75,7 @@ export function setTabsRoot(callback?: () => void) {
               ],
               options: {
                 bottomTab: {
-                  text: localization.pages.main,
+                  text: i18next.t("pages.main"),
                   ...getPlatformTabsIcon(SFSymbols["house"], SFSymbols["house.fill"], "home"),
                 },
               },
@@ -94,7 +94,7 @@ export function setTabsRoot(callback?: () => void) {
               ],
               options: {
                 bottomTab: {
-                  text: localization.pages.search,
+                  text: i18next.t("pages.search"),
                   ...getPlatformTabsIcon(SFSymbols["magnifyingglass"], SFSymbols["magnifyingglass"], "search"),
                 },
               },
@@ -113,7 +113,7 @@ export function setTabsRoot(callback?: () => void) {
               ],
               options: {
                 bottomTab: {
-                  text: localization.pages.settings,
+                  text: i18next.t("pages.settings"),
                   ...getPlatformTabsIcon(SFSymbols["gearshape"], SFSymbols["gearshape.fill"], "settings"),
                 },
               },

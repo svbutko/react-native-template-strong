@@ -1,6 +1,6 @@
 import {ColorValue, PressableProps, TextStyle, ViewStyle} from "react-native";
 import {RehydrateAction} from "redux-persist";
-import {RootState} from "../core/store/rootReducer";
+import {RootState} from "~/core/store/rootReducer";
 import {TextInputMaskOptionProp, TextInputMaskTypeProp} from "react-native-masked-text";
 import {SFSymbols} from "../../resources/symbols/SFSymbols";
 import {IconProps} from "react-native-vector-icons/Icon";

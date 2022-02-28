@@ -1,14 +1,17 @@
 import {Navigation} from "react-native-navigation";
 import {setInitialRoot} from "./navigation/roots";
-import {setLanguage} from "./common/localization/localization";
-import {registerComponents, setDefaultOptions} from "./navigation/navigation";
 import {setDefaultOrientation} from "./common/helpers/orientationHelpers";
+import {configureTypography} from "./startup/configureTypography";
+import {configureLogger} from "~/startup/configureLogger";
+import {registerComponents} from "./navigation/componentsRegistration";
+import {setDefaultOptions} from "./navigation/defaults";
 
 export function initializeApp() {
-  setLanguage();
   setDefaultOrientation();
   registerComponents();
   setDefaultOptions();
+  configureTypography();
+  configureLogger();
   Navigation.events().registerAppLaunchedListener(async () => {
     Navigation.dismissAllModals();
     setInitialRoot();

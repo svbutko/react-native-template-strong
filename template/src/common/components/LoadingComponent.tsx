@@ -1,21 +1,22 @@
-import {ActivityIndicator, Text, View} from "react-native";
+import {ActivityIndicator, StyleProp, View, ViewStyle} from "react-native";
 import React from "react";
-import {localization} from "../localization/localization";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {platformNativeColor} from "../helpers/colorHelpers";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {Colors} from "~/core/theme/colors";
+import {Brand} from "~/infrastructure/typography";
 
-export const LoadingComponent = () => {
+interface IProps {
+  containerStyle?: StyleProp<ViewStyle>;
+}
+
+export const LoadingComponent = ({containerStyle}: IProps) => {
   return (
-    <View style={CommonStyles.flexCenter}>
+    <View style={containerStyle || CommonStyles.flexCenter}>
       <ActivityIndicator
         animating={true}
-        color={platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.primary)}
+        color={Colors.black}
         size={"small"}
       />
-      <Text style={CommonStyles.normalText} numberOfLines={1}>
-        {localization.common.loading}
-      </Text>
+      <Brand.H4 numberOfLines={1} labelKey={"common.loading"}/>
     </View>
   );
 };

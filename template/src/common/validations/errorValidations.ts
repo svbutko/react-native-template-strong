@@ -1,6 +1,6 @@
 import {ErrorRepresentationType, IErrorResult} from "../../types";
-import {localization} from "../localization/localization";
-import {showToast} from "../../navigation/helpers/showToast";
+import {i18next} from "~/common/localization/localization";
+import {showToast} from "~/services/navigationService/showToast";
 import {unwrapResult} from "@reduxjs/toolkit";
 import {Alert} from "react-native";
 
@@ -25,7 +25,7 @@ export function handlePromiseResult(
 export function handleErrorPostProcessing(error: IErrorResult, setError?: (errorMessage: string) => void) {
   switch (error.visualRepresentation) {
     case ErrorRepresentationType.alert:
-      Alert.alert(localization.errors.error, error.message);
+      Alert.alert(i18next.t("errors.error"), error.message);
       break;
     case ErrorRepresentationType.input:
       setError && setError(error.message);

@@ -1,4 +1,4 @@
-import {LoadState} from "../../types";
+import {LoadState} from "~/types";
 import {DEFAULT_PAGE_SIZE} from "../helpers/calculatePage";
 
 export function commonListFulfilledHandler<T>(loadState: LoadState, payloadList: T[], storedList: T[]) {

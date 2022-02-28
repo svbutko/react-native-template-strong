@@ -1,0 +1,42 @@
+diff --git a/node_modules/react-native-device-detection/index.js b/node_modules/react-native-device-detection/index.js
+index ccf62a4..d197271 100644
+--- a/node_modules/react-native-device-detection/index.js
++++ b/node_modules/react-native-device-detection/index.js
+@@ -6,6 +6,24 @@ import React, {
+ 
+ const windowSize = Dimensions.get('window');
+ 
++const iSizes = [
++  [375, 812], //iPhone X	2017
++  [375, 812], //iPhone XS	2018
++  [414, 896], //iPhone XS Max	2018
++  [414, 896], //iPhone XR	2018
++  [414, 896], //iPhone 11	2019
++  [375, 812], //iPhone 11 Pro	2019
++  [414, 896], //iPhone 11 Pro Max	2019
++  [360, 780], //iPhone 12 mini	2020
++  [390, 844], //iPhone 12	2020
++  [390, 844], //iPhone 12 Pro	2020
++  [428, 926], //iPhone 12 Pro Max	2020
++  [375, 812], //iPhone 13 mini	2021
++  [390, 844], //iPhone 13	2021
++  [390, 844], //iPhone 13 Pro	2021
++  [428, 926], //iPhone 13 Pro Max	2021
++];
++
+ class DetectDeviceService {
+   constructor() {
+     this.pixelDensity = PixelRatio.get();
+@@ -46,10 +64,8 @@ class DetectDeviceService {
+ 	 if( Platform.OS === 'ios' &&
+       !Platform.isPad &&
+       !Platform.isTVOS &&
+-      (
+-        (windowSize.height === 812 || windowSize.width === 812) || // iPhone X and iPhone XS
+-        (windowSize.height === 896 || windowSize.width === 896) // iPhone XS Max and XR
+-      )) {
++      iSizes.some(([x, y]) => x == windowSize.height && y == windowSize.width || y == windowSize.height && x == windowSize.width)
++      ) {
+ 	 	this.isIphoneX = true;
+ 	 } else {
+ 	 	this.isIphoneX = false;

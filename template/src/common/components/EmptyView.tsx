@@ -1,7 +1,8 @@
 import React, {FC, memo} from "react";
-import {StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {CommonStyles} from "../../core/theme/commonStyles";
+import {StyleSheet, View, ViewStyle} from "react-native";
+import {CommonSizes} from "~/core/theme/commonSizes";
+import {CommonStyles} from "~/core/theme/commonStyles";
+import {Brand} from "~/infrastructure/typography";
 
 interface IProps {
   title: string;
@@ -11,8 +12,8 @@ interface IProps {
 export const EmptyView: FC<IProps> = memo(({title, description}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.description}>{description}</Text>
+      <Brand.H4>{title}</Brand.H4>
+      <Brand.H4>{description}</Brand.H4>
     </View>
   );
 });
@@ -22,14 +23,4 @@ const styles = StyleSheet.create({
     ...CommonStyles.flexCenter,
     padding: CommonSizes.spacing.medium,
   } as ViewStyle,
-  title: {
-    ...CommonStyles.normalText,
-    fontWeight: "600",
-    textAlign: "center",
-    marginBottom: CommonSizes.spacing.extraSmall,
-  } as TextStyle,
-  description: {
-    ...CommonStyles.normalText,
-    textAlign: "center",
-  } as TextStyle,
 });

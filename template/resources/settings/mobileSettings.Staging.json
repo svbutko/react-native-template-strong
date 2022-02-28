@@ -1,0 +1,9 @@
+{
+  "environment": "Staging",
+  "showVersion": true,
+  "serverUrl": "http://stage.mc.dextechnology.com",
+  "loggerUrl": "http://staging.logs.dextechnology.com:9821",
+  "devOptions": {
+    "allowChangeEnvironment": false
+  }
+}
