@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export const ImagesList: FC<IProps> = memo(({data}) => {
-  const renderItem = useCallback(({item}) => {
+  const renderItem = useCallback(({item}: {item: [string, ImageURISource]}) => {
     return (
       <Fragment>
         <Image source={item[1]} style={styles.icon} />
@@ -18,7 +18,7 @@ export const ImagesList: FC<IProps> = memo(({data}) => {
     );
   }, []);
 
-  const keyExtractor = useCallback((item) => {
+  const keyExtractor = useCallback((item: [string, ImageURISource]) => {
     return item[0];
   }, []);
 

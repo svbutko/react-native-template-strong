@@ -2,7 +2,7 @@ import React, {FC, useCallback, useState} from "react";
 import {ScrollView} from "react-native";
 import {DescriptionText} from "../../components/DescriptionText";
 import {ButtonType} from "../../../src/types";
-import {DateFormat, dateFromFormat} from "../../../src/common/localization/dateFormatter";
+import {DateFormat, dateFromFormat} from "../../../src/common/localization/momentFormatter";
 import {showDatePicker} from "../../../src/navigation/helpers/showDatePicker";
 import {CommonStyles} from "../../../src/core/theme/commonStyles";
 import {PrimaryButton} from "../../../src/common/components/PrimaryButton";

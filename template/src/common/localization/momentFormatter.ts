@@ -1,9 +1,7 @@
-import dayjs from "dayjs";
-// eslint-disable-next-line import/no-unassigned-import
-import "dayjs/locale/en";
-import calendar from "dayjs/plugin/calendar";
-import {ICalendarSpec} from "../../types";
-dayjs.extend(calendar);
+/* eslint-disable import/no-unassigned-import */
+import moment, {CalendarSpec} from "moment";
+import "moment/locale/en-gb";
+import 'moment/locale/ru';
 
 export enum DateFormat {
   dayMonthShortYear = "DD.MM.YYYY",
@@ -25,7 +23,7 @@ export enum DateFormat {
   yearMonthDay = "YYYY.MM.DD",
 }
 
-const calendarFormat: ICalendarSpec = {
+const calendarFormat: CalendarSpec = {
   sameDay: "[Today]",
   nextDay: "[Tomorrow]",
   lastDay: "[Yesterday]",
@@ -58,7 +56,7 @@ export function dateFromFormat(date: Date | number | null | undefined | string, 
 
   const formattedDate: Date | null = dateFromUnknown(date);
   if (formattedDate) {
-    result = dayjs(formattedDate).format(format);
+    result = moment(formattedDate).format(format);
   }
 
   return result;
@@ -69,23 +67,23 @@ export function calendarDate(date: Date | null | number | undefined | string, wi
 
   const formattedDate: Date | null = dateFromUnknown(date);
   if (formattedDate) {
-    result = withFormat ? dayjs(formattedDate).calendar(null, calendarFormat) : dayjs(formattedDate).calendar();
+    result = withFormat ? moment(formattedDate).calendar(null, calendarFormat) : moment(formattedDate).calendar();
   }
 
   return result;
 }
 
-export function setDateLocale(locale?: string): void {
-  dayjs.locale(locale);
+export function setMomentLocale(locale?: string): void {
+  moment.locale(locale);
 }
 
 export function getUnixDate(date: Date | null | number | undefined | string): number {
-  return dayjs(date).unix() * 1000;
+  return moment(date).unix() * 1000;
 }
 
 export function getInitialDate(date: Date | null | number | undefined | string, defaultDate?: Date): Date {
   if (date != null) {
-    return dayjs(date).toDate();
+    return moment(date).toDate();
   } else {
     return defaultDate || new Date();
   }

@@ -1,6 +1,6 @@
 import {ActivityIndicator, Text, View} from "react-native";
 import React from "react";
-import {localization} from "../localization/localization";
+import {i18next} from "../localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
 import {platformNativeColor} from "../helpers/colorHelpers";
@@ -14,7 +14,7 @@ export const LoadingComponent = () => {
         size={"small"}
       />
       <Text style={CommonStyles.normalText} numberOfLines={1}>
-        {localization.common.loading}
+        {i18next.t("common.loading")}
       </Text>
     </View>
   );

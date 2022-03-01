@@ -1,4 +1,4 @@
-import {getInterfaceLanguage, getLanguage, Languages, setLanguage} from "../src/common/localization/localization";
+import {getInterfaceLanguage, getLanguage, setLanguage} from "../src/common/localization/localization";
 
 jest.mock("react-native-localization");
 
@@ -17,7 +17,7 @@ describe("Localization", () => {
   });
 
   test("Set language: EN", () => {
-    setLanguage(Languages.en);
+    setLanguage({languageTag: "ru", isRTL: false, name: "Русский"});
     expect(getLanguage()).toBe("en");
   });
 });

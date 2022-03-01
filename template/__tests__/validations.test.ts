@@ -1,5 +1,5 @@
 import {phoneValidations} from "../src/common/validations/authValidations";
-import {localization} from "../src/common/localization/localization";
+import {i18next} from "../src/common/localization/localization";
 import {datesValidation, emptyValidation} from "../src/common/validations/commonValidations";
 import {emailValidations, fullNameValidations} from "../src/common/validations/profileValidations";
 
@@ -9,7 +9,7 @@ describe("Validations", () => {
   describe("commonValidations", () => {
     describe("emptyValidation", () => {
       test("Empty", () => {
-        expect(emptyValidation("")).toBe(localization.errors.thisFieldIsRequired);
+        expect(emptyValidation("")).toBe(i18next.t("errors.thisFieldIsRequired"));
       });
 
       test("Not empty", () => {
@@ -20,7 +20,12 @@ describe("Validations", () => {
     describe("datesValidation", () => {
       test("Now, Now, From", () => {
         const now = new Date();
-        expect(datesValidation(now, now, "from", "to", "from")).toBe(localization.errors.datesCantBeEqual("from", "to"));
+        expect(datesValidation(now, now, "from", "to", "from")).toBe(i18next.t("errors.datesCantBeEqual", {
+          fromField: "from",
+          toField: "to"
+        })
+      )
+        ;
       });
 
       test("Not empty", () => {
@@ -32,11 +37,11 @@ describe("Validations", () => {
   describe("authValidations", () => {
     describe("phoneValidations", () => {
       test("Empty", () => {
-        expect(phoneValidations("")).toBe(localization.errors.thisFieldIsRequired);
+        expect(phoneValidations("")).toBe(i18next.t("errors.thisFieldIsRequired"));
       });
 
       test("Short: 12345", () => {
-        expect(phoneValidations("12345")).toBe(localization.errors.invalidPhoneNumber);
+        expect(phoneValidations("12345")).toBe(i18next.t("errors.invalidPhoneNumber"));
       });
 
       test("Long: 12345678910112345678", () => {
@@ -52,11 +57,11 @@ describe("Validations", () => {
   describe("profileValidations", () => {
     describe("emailValidations", () => {
       test("Empty", () => {
-        expect(emailValidations("")).toBe(localization.errors.thisFieldIsRequired);
+        expect(emailValidations("")).toBe(i18next.t("errors.thisFieldIsRequired"));
       });
 
       test("Invalid email: A@b@c@domain.com", () => {
-        expect(emailValidations("A@b@c@domain.com")).toBe(localization.errors.invalidEmail);
+        expect(emailValidations("A@b@c@domain.com")).toBe(i18next.t("errors.invalidEmail"));
       });
 
       test("Valid email: test@domain.com", () => {
@@ -68,15 +73,15 @@ describe("Validations", () => {
   describe("fullNameValidations", () => {
     describe("emailValidations", () => {
       test("Empty", () => {
-        expect(fullNameValidations("")).toBe(localization.errors.thisFieldIsRequired);
+        expect(fullNameValidations("")).toBe(i18next.t("errors.thisFieldIsRequired"));
       });
 
       test("Short name: a", () => {
-        expect(fullNameValidations("a")).toBe(localization.errors.invalidFullName);
+        expect(fullNameValidations("a")).toBe(i18next.t("errors.invalidFullName"));
       });
 
       test("Short name with spaces: a", () => {
-        expect(fullNameValidations("       a         ")).toBe(localization.errors.invalidFullName);
+        expect(fullNameValidations("       a         ")).toBe(i18next.t("errors.invalidFullName"));
       });
 
       test("Valid name: Alex", () => {

@@ -12,13 +12,13 @@ interface IProps {
 
 export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
   const renderItem = useCallback(
-    ({item}) => {
+    ({item}: {item: string}) => {
       return <ColorPaletteListItem key={item} color={item} isPlatformColor={isPlatformColors} />;
     },
     [isPlatformColors],
   );
 
-  const keyExtractor = useCallback((item) => {
+  const keyExtractor = useCallback((item: string) => {
     return item;
   }, []);
 

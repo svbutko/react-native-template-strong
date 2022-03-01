@@ -6,11 +6,11 @@ import {Fonts} from "../../src/core/theme/fonts";
 import {Separator} from "../../src/common/components/Separator";
 
 export const FontsList: FC = memo(() => {
-  const renderItem = useCallback(({item}) => {
+  const renderItem = useCallback(({item}: {item: string}) => {
     return <FontListItem key={item} font={item} />;
   }, []);
 
-  const keyExtractor = useCallback((item) => {
+  const keyExtractor = useCallback((item: string) => {
     return item;
   }, []);
 

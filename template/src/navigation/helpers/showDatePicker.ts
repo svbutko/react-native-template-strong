@@ -2,7 +2,7 @@ import {IDatePickerProps} from "../../common/components/DatePickerOverlay";
 import {Pages} from "../pages";
 import {Layout, Navigation} from "react-native-navigation";
 import {isIos} from "../../core/theme/commonConsts";
-import {localization} from "../../common/localization/localization";
+import {i18next} from "../../common/localization/localization";
 
 export function showDatePicker(params: IDatePickerProps) {
   const data: Layout<IDatePickerProps> = {
@@ -13,7 +13,7 @@ export function showDatePicker(params: IDatePickerProps) {
       options: {
         topBar: {
           title: {
-            text: localization.pages.selectDate,
+            text: i18next.t("pages.selectDate"),
           },
         },
       },

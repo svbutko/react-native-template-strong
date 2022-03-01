@@ -1,10 +1,18 @@
 import React, {useCallback, useMemo, useState} from "react";
-import {PlatformColor, SafeAreaView, StyleSheet, Text, TextStyle, useWindowDimensions, View, ViewStyle} from "react-native";
+import {
+  PlatformColor,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextStyle,
+  useWindowDimensions,
+  View,
+  ViewStyle
+} from "react-native";
 import Carousel from "react-native-snap-carousel";
 import {NavigationFunctionComponent} from "react-native-navigation";
 import {OnboardingPagination} from "./components/OnboardingPagination";
 import {ButtonType, IOnboardingData} from "../../types";
-import {localization} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {Fonts} from "../../core/theme/fonts";
@@ -17,29 +25,32 @@ import {OrientationType, useOrientationChange} from "react-native-orientation-lo
 import {getCurrentOrientation} from "../../common/helpers/orientationHelpers";
 import {moderateScale} from "react-native-size-matters";
 import {IconPlatform} from "../../common/components/IconPlatform";
-
-const carouselData: IOnboardingData[] = [
-  {
-    header: localization.onboarding.firstHeader,
-    body: localization.onboarding.firstBody,
-    icon: "thumb-up",
-  },
-  {
-    header: localization.onboarding.secondHeader,
-    body: localization.onboarding.secondBody,
-    icon: "description",
-  },
-  {
-    header: localization.onboarding.thirdHeader,
-    body: localization.onboarding.thirdBody,
-    icon: "star-rate",
-  },
-];
+import {useTranslation} from "react-i18next";
 
 export const Onboarding: NavigationFunctionComponent = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [orientation, setOrientation] = useState<OrientationType>(() => getCurrentOrientation());
   const dimensions = useWindowDimensions();
+
+  const {t} = useTranslation();
+
+  const carouselData: IOnboardingData[] = useMemo(() => ([
+    {
+      header: t("onboarding.firstHeader"),
+      body: t("onboarding.firstBody"),
+      icon: "thumb-up",
+    },
+    {
+      header: t("onboarding.secondHeader"),
+      body: t("onboarding.secondBody"),
+      icon: "description",
+    },
+    {
+      header: t("onboarding.thirdHeader"),
+      body: t("onboarding.thirdBody"),
+      icon: "star-rate",
+    },
+  ]), [t]);
 
   useOrientationChange((changedOrientation) => {
     if (isTablet) {
@@ -52,22 +63,23 @@ export const Onboarding: NavigationFunctionComponent = () => {
   }, [orientation]);
 
   const carouselItem = useCallback(
-    ({item}: {item: IOnboardingData}) => {
-      return (
-        <View style={styles.itemContainer}>
-          <View style={styles.illustration}>
-            <IconPlatform androidName={item.icon} size={moderateScale(120)} color={PlatformColor(PlatformColorsAndroid.primary)} />
-          </View>
-          <View style={styles.itemTextContainer}>
-            <Text style={styles.header}>{item.header}</Text>
-            <Text style={styles.body} numberOfLines={3}>
-              {item.body}
-            </Text>
-          </View>
-        </View>
-      );
-    },
-    [styles],
+      ({item}: { item: IOnboardingData }) => {
+        return (
+            <View style={styles.itemContainer}>
+              <View style={styles.illustration}>
+                <IconPlatform androidName={item.icon} size={moderateScale(120)}
+                              color={PlatformColor(PlatformColorsAndroid.primary)}/>
+              </View>
+              <View style={styles.itemTextContainer}>
+                <Text style={styles.header}>{item.header}</Text>
+                <Text style={styles.body} numberOfLines={3}>
+                  {item.body}
+                </Text>
+              </View>
+            </View>
+        );
+      },
+      [styles],
   );
 
   const onContinuePress = useCallback(() => {
@@ -75,30 +87,30 @@ export const Onboarding: NavigationFunctionComponent = () => {
   }, []);
 
   return (
-    <SafeAreaView style={CommonStyles.flex1}>
-      <Carousel
-        data={carouselData}
-        renderItem={carouselItem}
-        sliderWidth={dimensions.width}
-        itemWidth={dimensions.width}
-        onSnapToItem={setActiveSlide}
-        inactiveSlideScale={1}
-        inactiveSlideOpacity={1}
-        removeClippedSubviews={false}
-      />
-      <View style={styles.bottomContainer}>
-        <View style={styles.buttonContainer}>
-          <PrimaryButton
-            testID={"OnboardingButtonID"}
-            type={ButtonType.solid}
-            label={localization.common.continue}
-            onPress={onContinuePress}
-          />
+      <SafeAreaView style={CommonStyles.flex1}>
+        <Carousel
+            data={carouselData}
+            renderItem={carouselItem}
+            sliderWidth={dimensions.width}
+            itemWidth={dimensions.width}
+            onSnapToItem={setActiveSlide}
+            inactiveSlideScale={1}
+            inactiveSlideOpacity={1}
+            removeClippedSubviews={false}
+        />
+        <View style={styles.bottomContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton
+                testID={"OnboardingButtonID"}
+                type={ButtonType.solid}
+                label={t("common.continue")}
+                onPress={onContinuePress}
+            />
+          </View>
+          <OnboardingPagination activeIndex={activeSlide} totalItems={carouselData.length}/>
+          <View style={CommonStyles.flex1}/>
         </View>
-        <OnboardingPagination activeIndex={activeSlide} totalItems={carouselData.length} />
-        <View style={CommonStyles.flex1} />
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
   );
 };
 

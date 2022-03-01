@@ -1,20 +1,30 @@
 import {NavigationFunctionComponent} from "react-native-navigation";
-import {ScrollView} from "react-native";
+import {ScrollView, Text} from "react-native";
 import React from "react";
-import {localization} from "../../common/localization/localization";
+import {i18next} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
+import {Colors} from "../../core/theme/colors";
+import {useTranslation} from "react-i18next";
 
 export const Main: NavigationFunctionComponent = (): JSX.Element => {
-  return <ScrollView testID={"MainPageID"} contentInsetAdjustmentBehavior={"automatic"} style={CommonStyles.flex1} />;
+  const {t} = useTranslation();
+
+  return <ScrollView testID={"MainPageID"} contentInsetAdjustmentBehavior={"automatic"} style={CommonStyles.flex1}>
+    <Text>
+      {t("pages.main")}
+    </Text>
+  </ScrollView>;
 };
 
-Main.options = {
+Main.options = () => ({
   topBar: {
     largeTitle: {
       visible: true,
     },
     title: {
-      text: localization.pages.main,
+      text: i18next.t("pages.main"),
+      color: Colors.white
     },
+    backButton: {visible: true}
   },
-};
+});

@@ -4,7 +4,7 @@ import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors"
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {CommonStyles} from "../../core/theme/commonStyles";
 import {platformNativeColor} from "../helpers/colorHelpers";
-import {localization} from "../localization/localization";
+import {i18next} from "../localization/localization";
 
 interface IProps {
   onPress?: () => void;
@@ -17,7 +17,7 @@ export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
       <Text style={styles.title}>{errorText}</Text>
       {onPress != null && (
         <TouchableOpacity onPress={onPress}>
-          <Text style={styles.description}>{localization.errors.tryAgain}</Text>
+          <Text style={styles.description}>{i18next.t("errors.tryAgain")}</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -25,7 +25,7 @@ export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
 });
 
 TryAgain.defaultProps = {
-  errorText: localization.errors.unknownErrorHasOccurred,
+  errorText: i18next.t("errors.unknownErrorHasOccurred"),
 };
 
 const styles = StyleSheet.create({

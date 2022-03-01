@@ -5,8 +5,7 @@ import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 import {Splash} from "../modules/splash/Splash";
 import {reduxProvider} from "../core/store/store";
 import {Platform} from "react-native";
-import {getStorybookUI} from "@storybook/react-native";
-import {localization} from "../common/localization/localization";
+import {i18next} from "../common/localization/localization";
 import {PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme/colors";
 import {isAndroid} from "../core/theme/commonConsts";
 import {platformNativeColor} from "../common/helpers/colorHelpers";
@@ -15,10 +14,6 @@ import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
 import {Onboarding} from "../modules/onboarding/Onboarding";
 import {Search} from "../modules/search/Search";
 import {Settings} from "../modules/settings/Settings";
-
-const StorybookUIRoot = getStorybookUI({
-  asyncStorage: null,
-});
 
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
@@ -62,7 +57,7 @@ export function setDefaultOptions() {
       },
       hideNavBarOnFocusSearchBar: true,
       searchBarHiddenWhenScrolling: true,
-      searchBarPlaceholder: localization.common.search,
+      searchBarPlaceholder: i18next.t("common.search"),
       noBorder: false,
     },
     bottomTabs: {
@@ -96,6 +91,11 @@ export function setDefaultOptions() {
 
 export function registerComponents() {
   if (__DEV__) {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const {getStorybookUI} = require("@storybook/react-native");
+    const StorybookUIRoot = getStorybookUI({
+      asyncStorage: null,
+    });
     Navigation.registerComponent(Pages.storybook.name, () => StorybookUIRoot);
   }
   Navigation.registerComponent(

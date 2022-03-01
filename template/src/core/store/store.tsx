@@ -5,6 +5,7 @@ import {rootReducer, RootState} from "./rootReducer";
 import {Provider, TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {PersistGate} from "redux-persist/integration/react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { setLanguage } from "../../common/localization/localization";
 
 const persistConfig: PersistConfig<RootState> = {
   key: "root",
@@ -33,7 +34,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const reduxProvider = (Component: any) => (props: any) => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={null} persistor={persistor} onBeforeLift={setLanguage}>
         <Component {...props} />
       </PersistGate>
     </Provider>

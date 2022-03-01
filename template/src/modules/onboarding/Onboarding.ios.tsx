@@ -1,8 +1,7 @@
-import React, {useCallback} from "react";
+import React, {useCallback, useMemo} from "react";
 import {PlatformColor, SafeAreaView, StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
 import {Navigation, NavigationFunctionComponent} from "react-native-navigation";
 import {ButtonType, IOnboardingData} from "../../types";
-import {localization} from "../../common/localization/localization";
 import {CommonStyles} from "../../core/theme/commonStyles";
 import {CommonSizes} from "../../core/theme/commonSizes";
 import {Fonts} from "../../core/theme/fonts";
@@ -13,27 +12,31 @@ import {moderateScale} from "react-native-size-matters";
 import {isTablet} from "../../core/theme/commonConsts";
 import {SFSymbols} from "../../../resources/symbols/SFSymbols";
 import {IconPlatform} from "../../common/components/IconPlatform";
-
-const carouselData: IOnboardingData[] = [
-  {
-    header: localization.onboarding.firstHeader,
-    body: localization.onboarding.firstBody,
-    icon: SFSymbols["hands.sparkles.fill"],
-  },
-  {
-    header: localization.onboarding.secondHeader,
-    body: localization.onboarding.secondBody,
-    icon: SFSymbols["books.vertical.fill"],
-  },
-  {
-    header: localization.onboarding.thirdHeader,
-    body: localization.onboarding.thirdBody,
-    icon: SFSymbols["star.fill"],
-  },
-];
+import {useTranslation} from "react-i18next";
 
 export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
-  const renderClauseItem = useCallback((value: IOnboardingData, index) => {
+  const {t} = useTranslation();
+
+  const carouselData: IOnboardingData[] = useMemo(() => ([
+    {
+      header: t("onboarding.firstHeader"),
+      body: t("onboarding.firstBody"),
+      icon: SFSymbols["hands.sparkles.fill"],
+    },
+    {
+      header: t("onboarding.secondHeader"),
+      body: t("onboarding.secondBody"),
+      icon: SFSymbols["books.vertical.fill"],
+    },
+    {
+      header: t("onboarding.thirdHeader"),
+      body: t("onboarding.thirdBody"),
+      icon: SFSymbols["star.fill"],
+    },
+  ]), [t]);
+
+
+  const renderClauseItem = useCallback((value: IOnboardingData, index: number) => {
     return (
       <View key={index} style={styles.clauseContainer}>
         <IconPlatform
@@ -58,7 +61,7 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
   return (
     <SafeAreaView style={CommonStyles.flex1}>
       <View style={styles.topContainer}>
-        <Text style={styles.welcomeText}>{localization.onboarding.welcomeToApp}</Text>
+        <Text style={styles.welcomeText}>{t("onboarding.welcomeToApp")}</Text>
         <View>{carouselData.map(renderClauseItem)}</View>
       </View>
       <View style={styles.bottomContainer}>
@@ -66,7 +69,7 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
           testID={"OnboardingButtonID"}
           style={styles.button}
           type={ButtonType.solid}
-          label={localization.common.continue}
+          label={t("common.continue")}
           onPress={onContinuePress}
         />
       </View>

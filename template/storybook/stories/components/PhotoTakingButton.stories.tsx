@@ -11,7 +11,7 @@ export const PhotoTakingButtonStories: FC = () => {
   }, [setPhoto]);
 
   const onImagePicked = useCallback(
-    (nextImage) => {
+    (nextImage: {path: string}) => {
       setPhoto({uri: nextImage.path});
     },
     [setPhoto],

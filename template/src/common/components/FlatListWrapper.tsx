@@ -5,7 +5,7 @@ import {TryAgain} from "./TryAgain";
 import {Separator} from "./Separator";
 import {EmptyView} from "./EmptyView";
 import {LoadingComponent} from "./LoadingComponent";
-import {localization} from "../localization/localization";
+import {i18next} from "../localization/localization";
 import {defaultKeyIdExtractor} from "../helpers/defaultKeyIdExtractor";
 
 interface IProps extends FlatListProps<any> {
@@ -17,7 +17,7 @@ interface IProps extends FlatListProps<any> {
 export const FlatListWrapper: FC<IProps> = ({loadState, tryAgain, error, ...props}) => {
   const ListEmptyComponent = useMemo(() => {
     if (loadState == LoadState.error) {
-      return <TryAgain onPress={tryAgain} errorText={error || localization.errors.listErrorTitle} />;
+      return <TryAgain onPress={tryAgain} errorText={error || i18next.t("errors.listErrorTitle")}/>;
     } else {
       return props.ListEmptyComponent;
     }
@@ -28,7 +28,7 @@ export const FlatListWrapper: FC<IProps> = ({loadState, tryAgain, error, ...prop
   }, [loadState]);
 
   if (loadState == LoadState.firstLoad) {
-    return <LoadingComponent />;
+    return <LoadingComponent/>;
   } else {
     return (
       <FlatList
@@ -43,7 +43,8 @@ export const FlatListWrapper: FC<IProps> = ({loadState, tryAgain, error, ...prop
 
 FlatListWrapper.defaultProps = {
   keyExtractor: defaultKeyIdExtractor,
-  ListEmptyComponent: <EmptyView title={localization.empty.noData} description={localization.empty.checkThisPageLater} />,
+  ListEmptyComponent: <EmptyView title={i18next.t("empty.noData")}
+                                 description={i18next.t("empty.checkThisPageLater")}/>,
   onEndReachedThreshold: 1,
   ItemSeparatorComponent: Separator,
 };

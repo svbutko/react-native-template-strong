@@ -1,5 +1,6 @@
 import React, {FC, memo, MutableRefObject, Ref, useCallback, useMemo, useState} from "react";
-import {Platform, StyleSheet, Text, TextInput, TextInputProps, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
+import {NativeSyntheticEvent, Platform, StyleSheet, Text, TextInput, TextInputFocusEventData, TextInputProps,
+  TextInputSubmitEditingEventData, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
 import {ITextInputMask} from "../../types";
 import {TextInputMask} from "react-native-masked-text";
 import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
@@ -37,7 +38,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
     const [isFocused, setFocused] = useState<boolean>(false);
 
     const onLocalFocus = useCallback(
-      (e) => {
+      (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
         setFocused(true);
         onFocus && onFocus(e);
       },
@@ -45,7 +46,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
     );
 
     const onLocalBlur = useCallback(
-      (e) => {
+      (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
         setFocused(false);
         onBlur && onBlur(e);
       },
@@ -57,7 +58,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
     }, [isFocused, error, props.editable, onTouchStart]);
 
     const onLocalSubmitEditing = useCallback(
-      (e) => {
+      (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => {
         onSubmitEditing && onSubmitEditing(e);
         nextInputFocusRef && nextInputFocusRef.current && nextInputFocusRef.current.focus();
       },

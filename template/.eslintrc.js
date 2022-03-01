@@ -11,6 +11,15 @@ module.exports = {
     },
     ignorePatterns: [],
     extends: [
-        "react-strong"
+        "react-strong",
     ],
+    settings: {
+        "import/resolver": {
+            "babel-plugin-root-import": {
+                "rootPathPrefix": "~",
+                "rootPathSuffix": "src"
+            }
+        },
+        "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    },
 };
