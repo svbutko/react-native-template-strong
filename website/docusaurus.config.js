@@ -15,7 +15,8 @@ module.exports = {
   projectName: "react-native-template-strong",
   themeConfig: {
     algolia: {
-      apiKey: '3bedd97b2d9da08babd7baad394ee76a',
+      appId: 'XO9GJZJMTW',
+      apiKey: 'd9b09790edab8cc6a9a4a727c0e5c059',
       indexName: 'react-native-template-strong',
     },
     navbar: {
