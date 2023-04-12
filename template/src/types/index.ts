@@ -1,10 +1,9 @@
-import {ColorValue, PressableProps, TextStyle, ViewStyle} from "react-native";
-import {RehydrateAction} from "redux-persist";
-import {RootState} from "../core/store/rootReducer";
-import {TextInputMaskOptionProp, TextInputMaskTypeProp} from "react-native-masked-text";
-import {SFSymbols} from "../../resources/symbols/SFSymbols";
-import {IconProps} from "react-native-vector-icons/Icon";
-import {SFSymbolProps} from "react-native-sfsymbols";
+import {ColorValue, PressableProps, TextStyle, ViewStyle} from 'react-native';
+import {RehydrateAction} from 'redux-persist';
+import {RootState} from '../core/store/rootReducer';
+import {SFSymbols} from '../../resources/symbols/SFSymbols';
+import {IconProps} from 'react-native-vector-icons/Icon';
+import {SFSymbolProps} from 'react-native-sfsymbols';
 
 export interface ICalendarSpec {
   sameDay: string;
@@ -15,7 +14,9 @@ export interface ICalendarSpec {
   sameElse: string;
 }
 
-export interface IIconPlatformProps extends Omit<IconProps, "name" | "color">, Omit<SFSymbolProps, "name"> {
+export interface IIconPlatformProps
+  extends Omit<IconProps, 'name' | 'color'>,
+    Omit<SFSymbolProps, 'name'> {
   iosName?: SFSymbols;
   androidName?: string;
   color?: ColorValue;
@@ -23,10 +24,10 @@ export interface IIconPlatformProps extends Omit<IconProps, "name" | "color">, O
 }
 
 export enum AppEnvironment {
-  development = "development",
-  test = "test",
-  staging = "staging",
-  production = "production",
+  development = 'development',
+  test = 'test',
+  staging = 'staging',
+  production = 'production',
 }
 
 export interface INavigationPage {
@@ -41,26 +42,26 @@ export interface IOnboardingData {
 }
 
 export enum LoadState {
-  needLoad = "needLoad",
-  idle = "idle",
-  error = "error",
-  allIsLoaded = "allIsLoaded",
+  needLoad = 'needLoad',
+  idle = 'idle',
+  error = 'error',
+  allIsLoaded = 'allIsLoaded',
 
-  firstLoad = "firstLoad",
-  pullToRefresh = "pullToRefresh",
-  refreshing = "refreshing",
-  loadingMore = "loadingMore",
+  firstLoad = 'firstLoad',
+  pullToRefresh = 'pullToRefresh',
+  refreshing = 'refreshing',
+  loadingMore = 'loadingMore',
 }
 
-export interface TouchablePlatformProps extends Omit<PressableProps, "style"> {
+export interface TouchablePlatformProps extends Omit<PressableProps, 'style'> {
   style?: ViewStyle;
 }
 
 export enum ButtonType {
-  solid = "solid",
-  borderless = "borderless",
-  outline = "outline",
-  outlineNegative = "outlineNegative",
+  solid = 'solid',
+  borderless = 'borderless',
+  outline = 'outline',
+  outlineNegative = 'outlineNegative',
 }
 
 export interface IListState<T> {
@@ -80,20 +81,14 @@ export interface RehydrateAppAction extends RehydrateAction {
 }
 
 export enum ErrorRepresentationType {
-  input = "input",
-  toast = "toast",
-  alert = "alert",
+  input = 'input',
+  toast = 'toast',
+  alert = 'alert',
 }
 
 export interface IErrorResult {
   message: string;
   visualRepresentation: ErrorRepresentationType;
-}
-
-export interface ITextInputMask {
-  type: TextInputMaskTypeProp;
-  options?: TextInputMaskOptionProp;
-  maxLength?: number;
 }
 
 export interface ISize {
