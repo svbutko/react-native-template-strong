@@ -2,6 +2,7 @@ import React, {FC, useCallback, useState} from "react";
 import {ImageURISource, ScrollView} from "react-native";
 import {ImageCropPickerButton} from "../../../src/common/components/ImageCropPickerButton";
 import {CommonStyles} from "../../../src/core/theme/commonStyles";
+import {Image as CropperImage} from "react-native-image-crop-picker";
 
 export const PhotoTakingButtonStories: FC = () => {
   const [photo, setPhoto] = useState<ImageURISource | null>(null);
@@ -11,7 +12,7 @@ export const PhotoTakingButtonStories: FC = () => {
   }, [setPhoto]);
 
   const onImagePicked = useCallback(
-    (nextImage) => {
+    (nextImage: CropperImage) => {
       setPhoto({uri: nextImage.path});
     },
     [setPhoto],
