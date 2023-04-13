@@ -1,5 +1,5 @@
 import React, {FC, memo, useCallback, useMemo} from "react";
-import {FlatList} from "react-native";
+import {FlatList, ListRenderItem} from "react-native";
 import {ColorPaletteListItem} from "./ColorPaletteListItem";
 import {CommonStyles} from "../../src/core/theme/commonStyles";
 import {isIos} from "../../src/core/theme/commonConsts";
@@ -11,14 +11,14 @@ interface IProps {
 }
 
 export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
-  const renderItem = useCallback(
+  const renderItem = useCallback<ListRenderItem<string>>(
     ({item}) => {
       return <ColorPaletteListItem key={item} color={item} isPlatformColor={isPlatformColors} />;
     },
     [isPlatformColors],
   );
 
-  const keyExtractor = useCallback((item) => {
+  const keyExtractor = useCallback((item: string) => {
     return item;
   }, []);
 
