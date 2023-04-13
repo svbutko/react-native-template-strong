@@ -22,6 +22,8 @@
     "android:bundle-visualizer": "react-native-bundle-visualizer --platform android",
     "ios:run": "node node_modules/react-native/local-cli/cli.js run-ios --no-packager",
     "ios:bundle-visualizer": "react-native-bundle-visualizer --platform ios",
+    "ios:bundle-install": "bundle install",
+    "ios:bundle-pod-install": "bundle exec pod install",
     "check-dependencies-updates": "npm outdated",
     "check-pods-updates": "cd ios && pod outdated",
     "environment:development-nix": "ENVFILE=.env",
