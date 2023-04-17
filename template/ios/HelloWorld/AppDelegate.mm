@@ -2,6 +2,7 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <ReactNativeNavigation/ReactNativeNavigation.h>
+#import <React/RCTI18nUtil.h>
 #import "Orientation.h"
 
 @implementation AppDelegate
@@ -13,9 +14,12 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
 
+  if (!self.bridge) {
+    self.bridge = [self createBridgeWithDelegate:self launchOptions:launchOptions];
+  }
   
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  [ReactNativeNavigation bootstrapWithBridge:bridge];
+  [ReactNativeNavigation bootstrapWithBridge:self.bridge];
+  [[RCTI18nUtil sharedInstance] allowRTL:YES];
 
   return YES;
 }
