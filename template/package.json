@@ -66,7 +66,7 @@
     "intl": "1.2.5",
     "lodash": "4.17.21",
     "react": "18.2.0",
-    "react-native": "0.71.6",
+    "react-native": "0.72.0-rc.1",
     "react-native-config": "1.5.0",
     "react-native-device-info": "10.6.0",
     "react-native-gesture-handler": "2.9.0",
@@ -91,6 +91,7 @@
     "@babel/core": "7.21.4",
     "@babel/preset-env": "7.21.4",
     "@babel/runtime": "7.21.0",
+    "@react-native/metro-config": "0.73.0",
     "@storybook/addon-actions": "6.5.16",
     "@storybook/addon-controls": "6.5.16",
     "@storybook/addon-essentials": "6.5.16",
@@ -98,7 +99,6 @@
     "@storybook/addon-knobs": "6.4.0",
     "@storybook/addon-ondevice-actions": "6.5.3",
     "@storybook/addon-ondevice-knobs": "6.5.3",
-    "@storybook/addon-ondevice-backgrounds": "6.5.3",
     "@storybook/addon-ondevice-controls": "6.5.3",
     "@storybook/addon-ondevice-notes": "6.5.3",
     "@storybook/core-common": "6.5.16",
@@ -106,6 +106,7 @@
     "@types/intl": "1.2.0",
     "@types/jest": "29.5.0",
     "@types/lodash": "4.14.194",
+    "@types/metro-config": "0.76.2",
     "@types/react": "18.0.35",
     "@types/react-redux": "7.1.25",
     "@types/react-test-renderer": "18.0.0",
@@ -141,6 +142,7 @@
     "preset": "react-native"
   },
   "engines": {
+    "node": ">=16",
     "npm": ">= 6.14.18",
     "yarn": "Please use npm >= 6.14.18"
   },

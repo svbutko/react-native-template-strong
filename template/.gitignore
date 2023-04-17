@@ -71,7 +71,7 @@ buck-out/
 
 # Jest
 .jest/
-coverage/
+/coverage
 
 # Local environment
 .env.local
