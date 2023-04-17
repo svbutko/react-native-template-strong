@@ -5,6 +5,10 @@ if (__DEV__) {
   const {configure} = require('@storybook/react-native');
   require('@storybook/addon-ondevice-knobs/register');
   require('@storybook/addon-ondevice-actions/register');
+  require('@storybook/addon-ondevice-controls/register');
+  require('@storybook/addon-ondevice-notes/register');
+  require('@storybook/addon-ondevice-backgrounds/register');
+
   configure(() => {
     require('./storybook/stories.ts');
   }, module);
