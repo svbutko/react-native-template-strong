@@ -1,12 +1,24 @@
-import {useCallback, useEffect, useRef, useState} from "react";
-import {datesValidation} from "../commonValidations";
+import {useCallback, useEffect, useRef, useState} from 'react';
+import {datesValidation} from '../commonValidations';
 
-export function useDatesError(fromDate: Date, toDate: Date, fromLabel: string, toLabel: string, currentField: "from" | "to") {
+export function useDatesError(
+  fromDate: Date,
+  toDate: Date,
+  fromLabel: string,
+  toLabel: string,
+  currentField: 'from' | 'to',
+) {
   const [error, setError] = useState<string | null>(null);
   const didMountRef = useRef(false);
 
   const recheckValue = useCallback(() => {
-    const result = datesValidation(fromDate, toDate, fromLabel, toLabel, currentField);
+    const result = datesValidation(
+      fromDate,
+      toDate,
+      fromLabel,
+      toLabel,
+      currentField,
+    );
     setError(result);
 
     return result;

@@ -1,7 +1,7 @@
-import {useCallback} from "react";
-import {useAppDispatch} from "../../core/store/store";
-import {LoadState} from "../../types";
-import {AsyncThunk} from "@reduxjs/toolkit";
+import {useCallback} from 'react';
+import {useAppDispatch} from '../../core/store/store';
+import {LoadState} from '../../types';
+import {AsyncThunk} from '@reduxjs/toolkit';
 
 interface IResultActions {
   loadMore: () => void;
@@ -9,7 +9,10 @@ interface IResultActions {
   pullToRefresh: () => void;
 }
 
-export function useFlatListActions(request: AsyncThunk<any, any, any>, loadState: LoadState): IResultActions {
+export function useFlatListActions(
+  request: AsyncThunk<any, any, any>,
+  loadState: LoadState,
+): IResultActions {
   const dispatch = useAppDispatch();
 
   const loadMore = useCallback(() => {

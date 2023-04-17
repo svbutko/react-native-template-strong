@@ -1,37 +1,57 @@
-import React, {FC, memo} from "react";
-import {Platform, PlatformColor, StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme/colors";
-import {isIos, maxWindowDimension, minWindowDimension} from "../../src/core/theme/commonConsts";
-import {DescriptionText} from "./DescriptionText";
+import React, {FC, memo} from 'react';
+import {
+  Platform,
+  PlatformColor,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
+import {
+  Colors,
+  PlatformColorsAndroid,
+  PlatformColorsIOS,
+} from '../../src/core/theme/colors';
+import {
+  isIos,
+  maxWindowDimension,
+  minWindowDimension,
+} from '../../src/core/theme/commonConsts';
+import {DescriptionText} from './DescriptionText';
 
 interface IProps {
   color: string;
   isPlatformColor: boolean;
 }
 
-export const ColorPaletteListItem: FC<IProps> = memo(({color, isPlatformColor}) => {
-  const colorStyle = StyleSheet.flatten([
-    styles.colorContainer,
-    {
-      backgroundColor: isPlatformColor
-        ? PlatformColor(((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[color])
-        : (Colors as any)[color],
-    },
-  ]) as ViewStyle;
+export const ColorPaletteListItem: FC<IProps> = memo(
+  ({color, isPlatformColor}) => {
+    const colorStyle = StyleSheet.flatten([
+      styles.colorContainer,
+      {
+        backgroundColor: isPlatformColor
+          ? PlatformColor(
+              ((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[
+                color
+              ],
+            )
+          : (Colors as any)[color],
+      },
+    ]) as ViewStyle;
 
-  return (
-    <View style={styles.container}>
-      <View style={colorStyle} />
-      <DescriptionText>{color}</DescriptionText>
-    </View>
-  );
-});
+    return (
+      <View style={styles.container}>
+        <View style={colorStyle} />
+        <DescriptionText>{color}</DescriptionText>
+      </View>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   } as ViewStyle,
   colorContainer: {
     width: minWindowDimension - 50,

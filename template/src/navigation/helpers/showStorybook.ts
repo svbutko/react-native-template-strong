@@ -1,6 +1,6 @@
-import {Pages} from "../pages";
-import {Navigation} from "react-native-navigation";
-import {localization} from "../../common/localization/localization";
+import {Pages} from '../pages';
+import {Navigation} from 'react-native-navigation';
+import {localization} from '../../common/localization/localization';
 
 export function showStorybook() {
   Navigation.showModal({

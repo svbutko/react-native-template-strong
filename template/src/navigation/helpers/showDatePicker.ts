@@ -1,8 +1,8 @@
-import {IDatePickerProps} from "../../common/components/DatePickerOverlay";
-import {Pages} from "../pages";
-import {Layout, Navigation} from "react-native-navigation";
-import {isIos} from "../../core/theme/commonConsts";
-import {localization} from "../../common/localization/localization";
+import {IDatePickerProps} from '../../common/components/DatePickerOverlay';
+import {Pages} from '../pages';
+import {Layout, Navigation} from 'react-native-navigation';
+import {isIos} from '../../core/theme/commonConsts';
+import {localization} from '../../common/localization/localization';
 
 export function showDatePicker(params: IDatePickerProps) {
   const data: Layout<IDatePickerProps> = {

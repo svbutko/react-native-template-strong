@@ -1,8 +1,15 @@
-import React, {FC, Fragment, memo, useCallback} from "react";
-import {FlatList, Image, ImageStyle, ImageURISource, ListRenderItem, StyleSheet} from "react-native";
-import {DescriptionText} from "./DescriptionText";
-import {CommonStyles} from "../../src/core/theme/commonStyles";
-import {Separator} from "../../src/common/components/Separator";
+import React, {FC, Fragment, memo, useCallback} from 'react';
+import {
+  FlatList,
+  Image,
+  ImageStyle,
+  ImageURISource,
+  ListRenderItem,
+  StyleSheet,
+} from 'react-native';
+import {DescriptionText} from './DescriptionText';
+import {CommonStyles} from '../../src/core/theme/commonStyles';
+import {Separator} from '../../src/common/components/Separator';
 
 interface IProps {
   data: DataItem[];
@@ -37,6 +44,6 @@ type DataItem = [string, ImageURISource];
 
 const styles = StyleSheet.create({
   icon: {
-    alignSelf: "center",
+    alignSelf: 'center',
   } as ImageStyle,
 });

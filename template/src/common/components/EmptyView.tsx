@@ -1,7 +1,7 @@
-import React, {FC, memo} from "react";
-import {StyleSheet, Text, TextStyle, View, ViewStyle} from "react-native";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {CommonStyles} from "../../core/theme/commonStyles";
+import React, {FC, memo} from 'react';
+import {StyleSheet, Text, TextStyle, View, ViewStyle} from 'react-native';
+import {CommonSizes} from '../../core/theme/commonSizes';
+import {CommonStyles} from '../../core/theme/commonStyles';
 
 interface IProps {
   title: string;
@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   title: {
     ...CommonStyles.normalText,
-    fontWeight: "600",
-    textAlign: "center",
+    fontWeight: '600',
+    textAlign: 'center',
     marginBottom: CommonSizes.spacing.extraSmall,
   } as TextStyle,
   description: {
     ...CommonStyles.normalText,
-    textAlign: "center",
+    textAlign: 'center',
   } as TextStyle,
 });

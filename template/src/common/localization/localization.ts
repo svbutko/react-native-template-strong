@@ -1,13 +1,13 @@
-import LocalizedStrings from "react-native-localization";
-import {commonLocalization} from "./translations/commonLocalization";
-import {errorsLocalization} from "./translations/errorsLocalization";
-import {emptyLocalization} from "./translations/emptyLocalization";
-import {pagesLocalization} from "./translations/pagesLocalization";
-import {onboardingLocalization} from "./translations/onboardingLocalization";
-import {setDateLocale} from "./dateFormatter";
+import LocalizedStrings from 'react-native-localization';
+import {commonLocalization} from './translations/commonLocalization';
+import {errorsLocalization} from './translations/errorsLocalization';
+import {emptyLocalization} from './translations/emptyLocalization';
+import {pagesLocalization} from './translations/pagesLocalization';
+import {onboardingLocalization} from './translations/onboardingLocalization';
+import {setDateLocale} from './dateFormatter';
 
 export enum Languages {
-  en = "en",
+  en = 'en',
 }
 
 export const localization = {

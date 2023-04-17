@@ -1,10 +1,14 @@
-import React, {FC, memo, useCallback, useMemo} from "react";
-import {FlatList, ListRenderItem} from "react-native";
-import {ColorPaletteListItem} from "./ColorPaletteListItem";
-import {CommonStyles} from "../../src/core/theme/commonStyles";
-import {isIos} from "../../src/core/theme/commonConsts";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../src/core/theme/colors";
-import {Separator} from "../../src/common/components/Separator";
+import React, {FC, memo, useCallback, useMemo} from 'react';
+import {FlatList, ListRenderItem} from 'react-native';
+import {ColorPaletteListItem} from './ColorPaletteListItem';
+import {CommonStyles} from '../../src/core/theme/commonStyles';
+import {isIos} from '../../src/core/theme/commonConsts';
+import {
+  Colors,
+  PlatformColorsAndroid,
+  PlatformColorsIOS,
+} from '../../src/core/theme/colors';
+import {Separator} from '../../src/common/components/Separator';
 
 interface IProps {
   isPlatformColors: boolean;
@@ -13,7 +17,13 @@ interface IProps {
 export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
   const renderItem = useCallback<ListRenderItem<string>>(
     ({item}) => {
-      return <ColorPaletteListItem key={item} color={item} isPlatformColor={isPlatformColors} />;
+      return (
+        <ColorPaletteListItem
+          key={item}
+          color={item}
+          isPlatformColor={isPlatformColors}
+        />
+      );
     },
     [isPlatformColors],
   );
@@ -22,7 +32,10 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
     return item;
   }, []);
 
-  const data = useMemo(() => (isPlatformColors ? platformPalette : colorPalette), [isPlatformColors]);
+  const data = useMemo(
+    () => (isPlatformColors ? platformPalette : colorPalette),
+    [isPlatformColors],
+  );
 
   return (
     <FlatList
@@ -35,5 +48,7 @@ export const ColorPaletteList: FC<IProps> = memo(({isPlatformColors}) => {
   );
 });
 
-const platformPalette: string[] = Object.keys(isIos ? PlatformColorsIOS : PlatformColorsAndroid);
+const platformPalette: string[] = Object.keys(
+  isIos ? PlatformColorsIOS : PlatformColorsAndroid,
+);
 const colorPalette: string[] = Object.keys(Colors);

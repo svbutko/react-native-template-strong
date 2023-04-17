@@ -52,6 +52,7 @@
     "eslint:fix": "eslint --fix --ext=jsx,ts,tsx .",
     "generate-image-resources": "img-res-gen --dir=resources/images --out=src/common/ImageResources.g.ts --ts",
     "prepare": "husky install",
+    "prettier": "prettier 'src/**/*.ts'",
     "setup-permissions": "npx react-native setup-ios-permissions"
   },
   "dependencies": {

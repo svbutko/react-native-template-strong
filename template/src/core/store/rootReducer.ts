@@ -1,5 +1,5 @@
-import {combineReducers} from "@reduxjs/toolkit";
-import {SystemReducer} from "./system/systemSlice";
+import {combineReducers} from '@reduxjs/toolkit';
+import {SystemReducer} from './system/systemSlice';
 
 export const rootReducer = combineReducers({
   system: SystemReducer,

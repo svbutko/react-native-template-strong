@@ -1,4 +1,4 @@
-import {BaseUrlOpener} from "./baseUrlOpener";
+import {BaseUrlOpener} from './baseUrlOpener';
 
 export class EmailUrl extends BaseUrlOpener {
   constructor(private email: string | null) {
@@ -10,8 +10,8 @@ export class EmailUrl extends BaseUrlOpener {
       return null;
     } else {
       let url = this.email;
-      if (!url.startsWith("mailto")) {
-        url = "mailto://" + url;
+      if (!url.startsWith('mailto')) {
+        url = 'mailto://' + url;
       }
 
       return url;

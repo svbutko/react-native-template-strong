@@ -1,12 +1,30 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
-import {ActivityIndicator, Animated, Image, ImageStyle, ImageURISource, StyleSheet, Text, TextStyle, ViewStyle} from "react-native";
-import {Navigation, NavigationConstants, NavigationFunctionComponent} from "react-native-navigation";
-import {useNavigationComponentDidAppear} from "react-native-navigation-hooks";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {isIos, minWindowDimension} from "../../core/theme/commonConsts";
-import {platformNativeColor} from "../helpers/colorHelpers";
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {
+  ActivityIndicator,
+  Animated,
+  Image,
+  ImageStyle,
+  ImageURISource,
+  StyleSheet,
+  Text,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
+import {
+  Navigation,
+  NavigationConstants,
+  NavigationFunctionComponent,
+} from 'react-native-navigation';
+import {useNavigationComponentDidAppear} from 'react-native-navigation-hooks';
+import {CommonSizes} from '../../core/theme/commonSizes';
+import {
+  Colors,
+  PlatformColorsAndroid,
+  PlatformColorsIOS,
+} from '../../core/theme/colors';
+import {CommonStyles} from '../../core/theme/commonStyles';
+import {isIos, minWindowDimension} from '../../core/theme/commonConsts';
+import {platformNativeColor} from '../helpers/colorHelpers';
 
 export interface IToastNavProps {
   text: string;
@@ -14,7 +32,7 @@ export interface IToastNavProps {
   icon?: ImageURISource;
   iconStyle?: ImageStyle;
   loading?: boolean;
-  location?: "bottom" | "top";
+  location?: 'bottom' | 'top';
 }
 
 export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
@@ -26,11 +44,13 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
   loading,
   location,
 }) => {
-  const [constants, setConstants] = useState<NavigationConstants | undefined>(undefined);
+  const [constants, setConstants] = useState<NavigationConstants | undefined>(
+    undefined,
+  );
   const animatedValue = useRef(new Animated.Value(0)).current;
 
   const isTopLocation = useMemo(() => {
-    return location == "top";
+    return location == 'top';
   }, [location]);
 
   useNavigationComponentDidAppear(
@@ -43,14 +63,18 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
 
   const containerStyle = useMemo(() => {
     if (constants != null) {
-      if (location == "top") {
+      if (location == 'top') {
         return {
-          top: isIos ? constants.topBarHeight + constants.statusBarHeight + CommonSizes.spacing.medium : 0,
+          top: isIos
+            ? constants.topBarHeight +
+              constants.statusBarHeight +
+              CommonSizes.spacing.medium
+            : 0,
         } as ViewStyle;
       } else {
         return {
           bottom: constants.bottomTabsHeight + CommonSizes.spacing.medium,
-          position: "absolute",
+          position: 'absolute',
         } as ViewStyle;
       }
     } else {
@@ -91,14 +115,23 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
 
   const renderIconOrLoading = useMemo(() => {
     if (icon != null) {
-      return <Image style={[styles.icon, iconStyle]} source={icon} defaultSource={icon} />;
+      return (
+        <Image
+          style={[styles.icon, iconStyle]}
+          source={icon}
+          defaultSource={icon}
+        />
+      );
     } else if (loading) {
       return (
         <ActivityIndicator
           style={styles.loading}
           animating={true}
-          color={platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.primary)}
-          size={"small"}
+          color={platformNativeColor(
+            PlatformColorsIOS.systemBackground,
+            PlatformColorsAndroid.primary,
+          )}
+          size={'small'}
         />
       );
     } else {
@@ -118,8 +151,10 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
               {
                 translateY: animatedValue.interpolate({
                   inputRange: [0, 1],
-                  outputRange: isTopLocation ? [-CommonSizes.spacing.medium, 0] : [CommonSizes.spacing.medium, 0],
-                  extrapolate: "clamp",
+                  outputRange: isTopLocation
+                    ? [-CommonSizes.spacing.medium, 0]
+                    : [CommonSizes.spacing.medium, 0],
+                  extrapolate: 'clamp',
                 }),
               },
             ],
@@ -140,19 +175,22 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
 const styles = StyleSheet.create({
   container: {
     ...CommonStyles.shadow,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.label, PlatformColorsAndroid.background),
-    alignSelf: "center",
+    backgroundColor: platformNativeColor(
+      PlatformColorsIOS.label,
+      PlatformColorsAndroid.background,
+    ),
+    alignSelf: 'center',
     width: minWindowDimension - CommonSizes.spacing.large,
     padding: CommonSizes.spacing.medium,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
     borderRadius: CommonSizes.borderRadius.medium,
   } as ViewStyle,
   icon: {
     width: 14,
     height: 14,
-    resizeMode: "contain",
+    resizeMode: 'contain',
     marginRight: CommonSizes.spacing.extraSmall,
   } as ImageStyle,
   loading: {
@@ -160,14 +198,17 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   text: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemBackground, PlatformColorsAndroid.primaryText),
+    color: platformNativeColor(
+      PlatformColorsIOS.systemBackground,
+      PlatformColorsAndroid.primaryText,
+    ),
     flex: 1,
   } as TextStyle,
 });
 
 ToastOverlay.defaultProps = {
   loading: false,
-  location: isIos ? "top" : "bottom",
+  location: isIos ? 'top' : 'bottom',
 };
 
 ToastOverlay.options = {

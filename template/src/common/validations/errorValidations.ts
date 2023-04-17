@@ -1,8 +1,8 @@
-import {ErrorRepresentationType, IErrorResult} from "../../types";
-import {localization} from "../localization/localization";
-import {showToast} from "../../navigation/helpers/showToast";
-import {unwrapResult} from "@reduxjs/toolkit";
-import {Alert} from "react-native";
+import {ErrorRepresentationType, IErrorResult} from '../../types';
+import {localization} from '../localization/localization';
+import {showToast} from '../../navigation/helpers/showToast';
+import {unwrapResult} from '@reduxjs/toolkit';
+import {Alert} from 'react-native';
 
 export function handlePromiseResult(
   promiseAction: Promise<any>,
@@ -18,11 +18,15 @@ export function handlePromiseResult(
       successAction && successAction();
     })
     .catch((handledError: Error) => {
-      processError && handleErrorPostProcessing(processError(handledError), setError);
+      processError &&
+        handleErrorPostProcessing(processError(handledError), setError);
     });
 }
 
-export function handleErrorPostProcessing(error: IErrorResult, setError?: (errorMessage: string) => void) {
+export function handleErrorPostProcessing(
+  error: IErrorResult,
+  setError?: (errorMessage: string) => void,
+) {
   switch (error.visualRepresentation) {
     case ErrorRepresentationType.alert:
       Alert.alert(localization.errors.error, error.message);
@@ -36,14 +40,18 @@ export function handleErrorPostProcessing(error: IErrorResult, setError?: (error
       });
       break;
     default:
-      throw new Error(`Unknown error representation type: ${error.visualRepresentation}`);
+      throw new Error(
+        `Unknown error representation type: ${error.visualRepresentation}`,
+      );
   }
 }
 
-export function recheckAllValidations(recheckFunctions: (() => string | null)[]): boolean {
+export function recheckAllValidations(
+  recheckFunctions: (() => string | null)[],
+): boolean {
   let isNull: boolean = true;
 
-  recheckFunctions.forEach((recheckFunc) => {
+  recheckFunctions.forEach(recheckFunc => {
     const result = recheckFunc() == null;
     if (!result) {
       isNull = false;

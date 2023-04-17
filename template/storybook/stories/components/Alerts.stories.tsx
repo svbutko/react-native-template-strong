@@ -1,51 +1,58 @@
-import React, {FC, useCallback} from "react";
-import {ScrollView} from "react-native";
-import {ButtonType} from "../../../src/types";
-import {CommonStyles} from "../../../src/core/theme/commonStyles";
-import {PrimaryButton} from "../../../src/common/components/PrimaryButton";
-import {Separator} from "../../../src/common/components/Separator";
-import {showActionSheet, showAlert, showCommonDialog} from "../../../src/common/helpers/dialogsHelpers";
-import {showShareDialog, showShareSocialDialog} from "../../../src/common/helpers/shareHelpers";
-import Share from "react-native-share";
+import React, {FC, useCallback} from 'react';
+import {ScrollView} from 'react-native';
+import {ButtonType} from '../../../src/types';
+import {CommonStyles} from '../../../src/core/theme/commonStyles';
+import {PrimaryButton} from '../../../src/common/components/PrimaryButton';
+import {Separator} from '../../../src/common/components/Separator';
+import {
+  showActionSheet,
+  showAlert,
+  showCommonDialog,
+} from '../../../src/common/helpers/dialogsHelpers';
+import {
+  showShareDialog,
+  showShareSocialDialog,
+} from '../../../src/common/helpers/shareHelpers';
+import Share from 'react-native-share';
 
 export const AlertsStories: FC = () => {
   const onShowActionSheetPress = useCallback(() => {
     showActionSheet(
       {
-        title: "Action Sheet Title",
-        options: ["Cancel", "Action 1", "Action 2"],
+        title: 'Action Sheet Title',
+        options: ['Cancel', 'Action 1', 'Action 2'],
         cancelButtonIndex: 0,
         destructiveButtonIndex: 3,
-        message: "Action Sheet Message",
+        message: 'Action Sheet Message',
       },
-      (optionIndex) => {
+      optionIndex => {
         console.warn(`Option ${optionIndex} was pressed`);
       },
     );
   }, []);
 
   const onShowAlertPress = useCallback(() => {
-    showAlert("Title", "Message", [
+    showAlert('Title', 'Message', [
       {
-        text: "Action 1",
+        text: 'Action 1',
         onPress: () => {
-          console.warn("Action 1 was pressed");
+          console.warn('Action 1 was pressed');
         },
-        style: "default",
+        style: 'default',
       },
       {
-        text: "Action 2",
+        text: 'Action 2',
         onPress: () => {
-          console.warn("Action 2 was pressed");
+          console.warn('Action 2 was pressed');
         },
-        style: "destructive",
+        style: 'destructive',
       },
     ]);
   }, []);
 
   const onShowCommonDialogPress = useCallback(() => {
-    showCommonDialog("Title", "Message", () => {
-      console.warn("You pressed Yes");
+    showCommonDialog('Title', 'Message', () => {
+      console.warn('You pressed Yes');
     });
   }, []);
 
@@ -53,13 +60,13 @@ export const AlertsStories: FC = () => {
     await showShareDialog(
       {
         showAppsToView: true,
-        message: "Test message to share",
+        message: 'Test message to share',
       },
-      (result) => {
-        console.warn("Share result: ", result);
+      result => {
+        console.warn('Share result: ', result);
       },
-      (error) => {
-        console.error("Share error: ", error);
+      error => {
+        console.error('Share error: ', error);
       },
     );
   }, []);
@@ -68,30 +75,53 @@ export const AlertsStories: FC = () => {
     await showShareSocialDialog(
       {
         social: Share.Social.TWITTER,
-        title: "Share via",
-        message: "Twitter test message from template",
-        url: "",
+        title: 'Share via',
+        message: 'Twitter test message from template',
+        url: '',
       },
-      (result) => {
-        console.warn("Share result: ", result);
+      result => {
+        console.warn('Share result: ', result);
       },
-      (error) => {
-        console.error("Share error: ", error);
+      error => {
+        console.error('Share error: ', error);
       },
     );
   }, []);
 
   return (
-    <ScrollView style={CommonStyles.flexPlatformBackground} contentContainerStyle={CommonStyles.flexColumnCenterStretch}>
-      <PrimaryButton type={ButtonType.solid} label={"Show action sheet (iOS)"} onPress={onShowActionSheetPress} />
+    <ScrollView
+      style={CommonStyles.flexPlatformBackground}
+      contentContainerStyle={CommonStyles.flexColumnCenterStretch}
+    >
+      <PrimaryButton
+        type={ButtonType.solid}
+        label={'Show action sheet (iOS)'}
+        onPress={onShowActionSheetPress}
+      />
       <Separator />
-      <PrimaryButton type={ButtonType.solid} label={"Show alert"} onPress={onShowAlertPress} />
+      <PrimaryButton
+        type={ButtonType.solid}
+        label={'Show alert'}
+        onPress={onShowAlertPress}
+      />
       <Separator />
-      <PrimaryButton type={ButtonType.solid} label={"Show common dialog"} onPress={onShowCommonDialogPress} />
+      <PrimaryButton
+        type={ButtonType.solid}
+        label={'Show common dialog'}
+        onPress={onShowCommonDialogPress}
+      />
       <Separator />
-      <PrimaryButton type={ButtonType.solid} label={"Show share dialog"} onPress={onShowShareDialogPress} />
+      <PrimaryButton
+        type={ButtonType.solid}
+        label={'Show share dialog'}
+        onPress={onShowShareDialogPress}
+      />
       <Separator />
-      <PrimaryButton type={ButtonType.solid} label={"Show share social dialog (Twitter)"} onPress={onShowShareSocialDialogPress} />
+      <PrimaryButton
+        type={ButtonType.solid}
+        label={'Show share social dialog (Twitter)'}
+        onPress={onShowShareSocialDialogPress}
+      />
     </ScrollView>
   );
 };

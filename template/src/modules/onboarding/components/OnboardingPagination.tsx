@@ -1,23 +1,30 @@
-import React, {FC, memo} from "react";
-import {StyleSheet, View, ViewStyle} from "react-native";
-import {platformNativeColor} from "../../../common/helpers/colorHelpers";
-import {PlatformColorsAndroid} from "../../../core/theme/colors";
-import {CommonSizes} from "../../../core/theme/commonSizes";
+import React, {FC, memo} from 'react';
+import {StyleSheet, View, ViewStyle} from 'react-native';
+import {platformNativeColor} from '../../../common/helpers/colorHelpers';
+import {PlatformColorsAndroid} from '../../../core/theme/colors';
+import {CommonSizes} from '../../../core/theme/commonSizes';
 
 interface IProps {
   totalItems: number;
   activeIndex: number;
 }
 
-export const OnboardingPagination: FC<IProps> = memo(({activeIndex, totalItems}) => {
-  const dots = [];
+export const OnboardingPagination: FC<IProps> = memo(
+  ({activeIndex, totalItems}) => {
+    const dots = [];
 
-  for (let i = 0; i < totalItems; i++) {
-    dots.push(<View key={i} style={activeIndex == i ? styles.activeIcon : styles.inactiveIcon} />);
-  }
+    for (let i = 0; i < totalItems; i++) {
+      dots.push(
+        <View
+          key={i}
+          style={activeIndex == i ? styles.activeIcon : styles.inactiveIcon}
+        />,
+      );
+    }
 
-  return <View style={styles.container}>{dots}</View>;
-});
+    return <View style={styles.container}>{dots}</View>;
+  },
+);
 
 /**
  * Border radius is set this way in order to avoid error on Android
@@ -37,17 +44,23 @@ const commonIcon: ViewStyle = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingVertical: CommonSizes.spacing.mediumPlus,
   } as ViewStyle,
   activeIcon: {
     ...commonIcon,
-    backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.primary),
+    backgroundColor: platformNativeColor(
+      undefined,
+      PlatformColorsAndroid.primary,
+    ),
   } as ViewStyle,
   inactiveIcon: {
     ...commonIcon,
-    backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.secondaryText),
+    backgroundColor: platformNativeColor(
+      undefined,
+      PlatformColorsAndroid.secondaryText,
+    ),
   } as ViewStyle,
 });

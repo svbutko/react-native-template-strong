@@ -1,10 +1,13 @@
-import React, {FC, memo, useCallback} from "react";
-import ImagePicker, {Image as CropperImage, Options} from "react-native-image-crop-picker";
-import {ImageStyle, ImageURISource, ViewStyle} from "react-native";
-import {ImageResources} from "../ImageResources.g";
-import {PhotoTakingButton} from "./PhotoTakingButton";
-import {localization} from "../localization/localization";
-import {showActionSheet} from "../helpers/dialogsHelpers";
+import React, {FC, memo, useCallback} from 'react';
+import ImagePicker, {
+  Image as CropperImage,
+  Options,
+} from 'react-native-image-crop-picker';
+import {ImageStyle, ImageURISource, ViewStyle} from 'react-native';
+import {ImageResources} from '../ImageResources.g';
+import {PhotoTakingButton} from './PhotoTakingButton';
+import {localization} from '../localization/localization';
+import {showActionSheet} from '../helpers/dialogsHelpers';
 
 interface IProps {
   onImagePicked: (image: CropperImage) => void;
@@ -19,29 +22,43 @@ interface IProps {
 }
 
 export const ImageCropPickerButton: FC<IProps> = memo(
-  ({onPickerError, onImagePicked, onRemoveImage, image, icon, style, iconStyle, imageStyle, disabled}) => {
+  ({
+    onPickerError,
+    onImagePicked,
+    onRemoveImage,
+    image,
+    icon,
+    style,
+    iconStyle,
+    imageStyle,
+    disabled,
+  }) => {
     const openGallery = useCallback(() => {
       ImagePicker.openPicker(pickerOptions)
-        .then((imageResult) => {
+        .then(imageResult => {
           onImagePicked(imageResult);
         })
-        .catch((error) => {
+        .catch(error => {
           onPickerError && onPickerError(error);
         });
     }, [onImagePicked, onPickerError]);
 
     const openCamera = useCallback(() => {
       ImagePicker.openCamera(pickerOptions)
-        .then((imageResult) => {
+        .then(imageResult => {
           onImagePicked(imageResult);
         })
-        .catch((error) => {
+        .catch(error => {
           onPickerError && onPickerError(error);
         });
     }, [onImagePicked, onPickerError]);
 
     const onPress = useCallback(() => {
-      const options = [localization.common.cancel, localization.common.chooseFromLibrary, localization.common.takePhoto];
+      const options = [
+        localization.common.cancel,
+        localization.common.chooseFromLibrary,
+        localization.common.takePhoto,
+      ];
 
       if (image != null) {
         options.push(localization.common.delete);
@@ -54,7 +71,7 @@ export const ImageCropPickerButton: FC<IProps> = memo(
           cancelButtonIndex: 0,
           destructiveButtonIndex: 3,
         },
-        (optionIndex) => {
+        optionIndex => {
           if (optionIndex == 1) {
             openGallery();
           } else if (optionIndex == 2) {
@@ -90,6 +107,6 @@ const pickerOptions: Options = {
   cropping: true,
   compressImageQuality: 0.5,
   multiple: false,
-  mediaType: "photo",
+  mediaType: 'photo',
   includeBase64: true,
 };

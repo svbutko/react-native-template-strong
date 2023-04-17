@@ -1,7 +1,11 @@
-import {Linking} from "react-native";
-import Share, {ShareOptions} from "react-native-share";
-import {ShareOpenResult, ShareSingleOptions, ShareSingleResult} from "react-native-share/lib/typescript/types";
-import {isAndroid, isIos} from "../../core/theme/commonConsts";
+import {Linking} from 'react-native';
+import Share, {ShareOptions} from 'react-native-share';
+import {
+  ShareOpenResult,
+  ShareSingleOptions,
+  ShareSingleResult,
+} from 'react-native-share/lib/typescript/types';
+import {isAndroid, isIos} from '../../core/theme/commonConsts';
 
 export async function showShareDialog(
   options: ShareOptions,
@@ -29,12 +33,15 @@ export async function showShareSocialDialog(
   }
 }
 
-export async function isPackageInstalled(androidPackageName?: string, iosUrl?: string): Promise<boolean> {
+export async function isPackageInstalled(
+  androidPackageName?: string,
+  iosUrl?: string,
+): Promise<boolean> {
   if (isAndroid && androidPackageName) {
     return (await Share.isPackageInstalled(androidPackageName)).isInstalled;
   } else if (isIos && iosUrl) {
     return Linking.canOpenURL(iosUrl);
   } else {
-    throw new Error("No arguments were given or the platform is not supported");
+    throw new Error('No arguments were given or the platform is not supported');
   }
 }

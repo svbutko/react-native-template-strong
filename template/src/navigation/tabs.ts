@@ -1,14 +1,14 @@
 export const Tabs = {
   main: {
-    id: "MAIN_TAB",
-    name: "MainTab",
+    id: 'MAIN_TAB',
+    name: 'MainTab',
   },
   search: {
-    id: "SEARCH_TAB",
-    name: "SearchTab",
+    id: 'SEARCH_TAB',
+    name: 'SearchTab',
   },
   settings: {
-    id: "SETTINGS_TAB",
-    name: "SettingsTab",
+    id: 'SETTINGS_TAB',
+    name: 'SettingsTab',
   },
 };

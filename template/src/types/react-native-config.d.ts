@@ -1,6 +1,6 @@
-import {AppEnvironment} from "./index";
+import {AppEnvironment} from './index';
 
-declare module "react-native-config" {
+declare module 'react-native-config' {
   interface EnvironmentVariables {
     API_URL: string;
     ENVIRONMENT: AppEnvironment;

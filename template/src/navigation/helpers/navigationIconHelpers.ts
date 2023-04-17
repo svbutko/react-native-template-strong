@@ -1,7 +1,7 @@
-import Icon from "react-native-vector-icons/MaterialIcons";
-import {SFSymbols} from "../../../resources/symbols/SFSymbols";
-import {isIos} from "../../core/theme/commonConsts";
-import {Colors, PlatformColorsAndroid} from "../../core/theme/colors";
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import {SFSymbols} from '../../../resources/symbols/SFSymbols';
+import {isIos} from '../../core/theme/commonConsts';
+import {Colors, PlatformColorsAndroid} from '../../core/theme/colors';
 
 export function getPlatformTabsIcon(
   sfSymbol?: SFSymbols,
