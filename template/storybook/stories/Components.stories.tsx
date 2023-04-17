@@ -28,7 +28,7 @@ ComponentsStories.add("LoadingComponent", () => <LoadingComponent />);
 ComponentsStories.add("TryAgain", () => (
   <TryAgain
     onPress={() => {
-      console.log("pressed");
+      console.warn("pressed");
     }}
   />
 ));
