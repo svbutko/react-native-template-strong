@@ -22,10 +22,9 @@
     "android:bundle-visualizer": "react-native-bundle-visualizer --platform android",
     "ios:run": "node node_modules/react-native/local-cli/cli.js run-ios --no-packager",
     "ios:bundle-visualizer": "react-native-bundle-visualizer --platform ios",
-    "ios:bundle-install": "bundle install",
-    "ios:bundle-pod-install": "bundle exec pod install",
-    "check-dependencies-updates": "npm outdated",
-    "check-pods-updates": "cd ios && pod outdated",
+    "ios:bundle-install": "cd ios && bundle install",
+    "ios:bundle-pod-install": "cd ios && bundle exec pod install",
+    "ios:bundle-check-pods-updates": "cd ios && bundle exec pod outdated",
     "environment:development-nix": "ENVFILE=.env",
     "environment:test-nix": "ENVFILE=.env.test",
     "environment:staging-nix": "ENVFILE=.env.staging",
@@ -53,7 +52,8 @@
     "generate-image-resources": "img-res-gen --dir=resources/images --out=src/common/ImageResources.g.ts --ts",
     "prepare": "husky install",
     "prettier": "prettier 'src/**/*.ts'",
-    "setup-permissions": "npx react-native setup-ios-permissions"
+    "setup-permissions": "npx react-native setup-ios-permissions",
+    "check-dependencies-updates": "npm outdated"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.18.1",
