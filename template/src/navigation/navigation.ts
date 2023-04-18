@@ -5,7 +5,6 @@ import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
 import {Splash} from '../modules/splash/Splash';
 import {reduxProvider} from '../core/store/store';
 import {Platform} from 'react-native';
-import {getStorybookUI} from '@storybook/react-native';
 import {localization} from '../common/localization/localization';
 import {PlatformColorsAndroid, PlatformColorsIOS} from '../core/theme/colors';
 import {isAndroid} from '../core/theme/commonConsts';
@@ -15,9 +14,7 @@ import {DatePickerOverlay} from '../common/components/DatePickerOverlay';
 import {Onboarding} from '../modules/onboarding/Onboarding';
 import {Search} from '../modules/search/Search';
 import {Settings} from '../modules/settings/Settings';
-
-const StorybookUIRoot = getStorybookUI({});
-
+import {StorybookUIRoot} from '../../.storybook/Storybook';
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
     animations: {
