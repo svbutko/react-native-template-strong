@@ -142,9 +142,6 @@
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
   },
-  "jest": {
-    "preset": "react-native"
-  },
   "engines": {
     "node": ">=16",
     "npm": ">= 6.14.18",
