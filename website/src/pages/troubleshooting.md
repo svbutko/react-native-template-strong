@@ -4,6 +4,10 @@ title: Troubleshooting
 
 # Troubleshooting
 
+## npm ERR! Could not resolve dependency
+Some dependencies might have incorrect peer versions of other dependencies and NPM throws the error, in order to ignore it run
+`npm install --force`
+
 ## Error: Command failed: yarn install
 The project uses `npm` as package manager, and you're trying to use `Yarn`, 
 It is advised not to mix package managers in order to avoid resolution inconsistencies caused by unsynchronized lock files.
