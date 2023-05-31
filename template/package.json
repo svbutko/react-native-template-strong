@@ -87,7 +87,7 @@
     "react-native-size-matters": "0.4.0",
     "react-native-sfsymbols": "1.2.1",
     "react-native-vector-icons": "9.2.0",
-    "react-redux": "8.0.5",
+    "react-redux": "8.0.7",
     "redux-persist": "6.0.0"
   },
   "devDependencies": {
