@@ -11,8 +11,8 @@ Every dependency is provided with types or in case if there are no types it impl
 The versions are updating manually and regularly with new releases.
 
 Build primarily with
-- [React Native](https://reactnative.dev) `0.67.4`
-- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.26.0`
+- [React Native](https://reactnative.dev) `0.72.0`
+- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.33.1`
 - [Redux Toolkit](https://redux-toolkit.js.org) `1.8.0`
 - [TypeScript](https://www.typescriptlang.org) `4.6.3`
 

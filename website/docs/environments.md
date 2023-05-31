@@ -7,7 +7,8 @@ Work with environments made possible by [react-native-config](https://github.com
 ## Content
 
 The application has 4 primitive environments:
-- `.env` - Development
+- `.env` - Common
+- `.env.dev` - Development
 - `.env.test` - Test
 - `.env.staging` - Staging
 - `.env.production` - Production
