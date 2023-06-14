@@ -1,0 +1,20 @@
+diff --git a/node_modules/react-native-size-matters/lib/extend/scaling-utils.extend.js b/node_modules/react-native-size-matters/lib/extend/scaling-utils.extend.js
+index f8edcb9..e22ee67 100644
+--- a/node_modules/react-native-size-matters/lib/extend/scaling-utils.extend.js
++++ b/node_modules/react-native-size-matters/lib/extend/scaling-utils.extend.js
+@@ -1,12 +1,12 @@
+ import { Dimensions } from 'react-native';
+-import { SIZE_MATTERS_BASE_WIDTH, SIZE_MATTERS_BASE_HEIGHT } from '@env';
++import Config from 'react-native-config';
+ 
+ const { width, height } = Dimensions.get('window');
+ const [shortDimension, longDimension] = width < height ? [width, height] : [height, width];
+ 
+ //Default guideline sizes are based on standard ~5" screen mobile device
+-const guidelineBaseWidth = SIZE_MATTERS_BASE_WIDTH || 350;
+-const guidelineBaseHeight = SIZE_MATTERS_BASE_HEIGHT || 680;
++const guidelineBaseWidth = Config.SIZE_MATTERS_BASE_WIDTH || 350;
++const guidelineBaseHeight = Config.SIZE_MATTERS_BASE_HEIGHT || 680;
+ 
+ export const scale = size => shortDimension / guidelineBaseWidth * size;
+ export const verticalScale = size => longDimension / guidelineBaseHeight * size;
