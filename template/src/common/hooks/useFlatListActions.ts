@@ -1,7 +1,7 @@
 import {useCallback} from 'react';
-import {useAppDispatch} from '../../core/store/store';
 import {LoadState} from '../../types';
 import {AsyncThunk} from '@reduxjs/toolkit';
+import {useAppDispatch} from '../../core/store/reduxHelpers';
 
 interface IResultActions {
   loadMore: () => void;
