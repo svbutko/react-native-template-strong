@@ -27,10 +27,10 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.1",
     "@tsconfig/docusaurus": "1.0.7",
-    "@types/react": "17.0.59",
+    "@types/react": "17.0.62",
     "@types/react-helmet": "6.1.6",
     "@types/react-router-dom": "5.3.3",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   },
   "browserslist": {
     "production": [
