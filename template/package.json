@@ -83,11 +83,11 @@
     "react-native-permissions": "3.8.0",
     "react-native-reanimated": "3.3.0",
     "react-native-reanimated-carousel": "3.4.0",
-    "react-native-share": "8.2.2",
+    "react-native-share": "9.0.1",
     "react-native-size-matters": "0.4.0",
     "react-native-sfsymbols": "1.2.1",
     "react-native-vector-icons": "9.2.0",
-    "react-redux": "8.1.0",
+    "react-redux": "8.1.1",
     "redux-persist": "6.0.0"
   },
   "devDependencies": {
@@ -137,7 +137,7 @@
     "react-native-config-node": "0.0.3",
     "react-native-dev-menu": "4.1.1",
     "react-native-image-resource-generator": "1.0.2",
-    "react-native-safe-area-context": "4.5.3",
+    "react-native-safe-area-context": "4.6.0",
     "react-native-version": "4.0.0",
     "react-test-renderer": "18.2.0",
     "typescript": "5.1.3"
