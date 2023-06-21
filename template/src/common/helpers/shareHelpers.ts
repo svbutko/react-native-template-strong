@@ -1,11 +1,11 @@
 import {Linking} from 'react-native';
 import Share, {ShareOptions} from 'react-native-share';
+import {isAndroid, isIos} from '../../core/theme/commonConsts';
 import {
   ShareOpenResult,
   ShareSingleOptions,
   ShareSingleResult,
-} from 'react-native-share/lib/typescript/types';
-import {isAndroid, isIos} from '../../core/theme/commonConsts';
+} from 'react-native-share/lib/typescript/src/types';
 
 export async function showShareDialog(
   options: ShareOptions,
