@@ -1,4 +1,4 @@
-import {ISize} from "../../types";
+import {ISize} from '../../types';
 
 export const CommonSizes = {
   font: {

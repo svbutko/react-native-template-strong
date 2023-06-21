@@ -38,11 +38,6 @@ module.exports = {
           label: "Mission",
         },
         {
-          to: "showcase",
-          position: "right",
-          label: "Showcase",
-        },
-        {
           to: "troubleshooting",
           position: "right",
           label: "Troubleshooting",

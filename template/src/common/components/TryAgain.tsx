@@ -1,10 +1,20 @@
-import React, {FC, memo} from "react";
-import {StyleSheet, Text, TextStyle, TouchableOpacity, View, ViewStyle} from "react-native";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {CommonSizes} from "../../core/theme/commonSizes";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {platformNativeColor} from "../helpers/colorHelpers";
-import {localization} from "../localization/localization";
+import React, {FC, memo} from 'react';
+import {
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from 'react-native';
+import {
+  PlatformColorsAndroid,
+  PlatformColorsIOS,
+} from '../../core/theme/colors';
+import {CommonSizes} from '../../core/theme/commonSizes';
+import {CommonStyles} from '../../core/theme/commonStyles';
+import {platformNativeColor} from '../helpers/colorHelpers';
+import {localization} from '../localization/localization';
 
 interface IProps {
   onPress?: () => void;
@@ -35,13 +45,16 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   title: {
     ...CommonStyles.normalText,
-    textAlign: "center",
+    textAlign: 'center',
     marginBottom: CommonSizes.spacing.extraSmall,
   } as TextStyle,
   description: {
     ...CommonStyles.normalText,
-    color: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
-    textAlign: "center",
-    textDecorationLine: "underline",
+    color: platformNativeColor(
+      PlatformColorsIOS.systemBlue,
+      PlatformColorsAndroid.primary,
+    ),
+    textAlign: 'center',
+    textDecorationLine: 'underline',
   } as TextStyle,
 });

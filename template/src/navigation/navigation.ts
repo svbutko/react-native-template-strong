@@ -1,25 +1,20 @@
-import {Navigation} from "react-native-navigation";
-import {Pages} from "./pages";
-import {Main} from "../modules/main/Main";
-import {gestureHandlerRootHOC} from "react-native-gesture-handler";
-import {Splash} from "../modules/splash/Splash";
-import {reduxProvider} from "../core/store/store";
-import {Platform} from "react-native";
-import {getStorybookUI} from "@storybook/react-native";
-import {localization} from "../common/localization/localization";
-import {PlatformColorsAndroid, PlatformColorsIOS} from "../core/theme/colors";
-import {isAndroid} from "../core/theme/commonConsts";
-import {platformNativeColor} from "../common/helpers/colorHelpers";
-import {ToastOverlay} from "../common/components/ToastOverlay";
-import {DatePickerOverlay} from "../common/components/DatePickerOverlay";
-import {Onboarding} from "../modules/onboarding/Onboarding";
-import {Search} from "../modules/search/Search";
-import {Settings} from "../modules/settings/Settings";
-
-const StorybookUIRoot = getStorybookUI({
-  asyncStorage: null,
-});
-
+import {Navigation} from 'react-native-navigation';
+import {Pages} from './pages';
+import {Main} from '../modules/main/Main';
+import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
+import {Splash} from '../modules/splash/Splash';
+import {reduxProvider} from '../core/store/store';
+import {Platform} from 'react-native';
+import {localization} from '../common/localization/localization';
+import {PlatformColorsAndroid, PlatformColorsIOS} from '../core/theme/colors';
+import {isAndroid} from '../core/theme/commonConsts';
+import {platformNativeColor} from '../common/helpers/colorHelpers';
+import {ToastOverlay} from '../common/components/ToastOverlay';
+import {DatePickerOverlay} from '../common/components/DatePickerOverlay';
+import {Onboarding} from '../modules/onboarding/Onboarding';
+import {Search} from '../modules/search/Search';
+import {Settings} from '../modules/settings/Settings';
+import {StorybookUIRoot} from '../../.storybook/Storybook';
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
     animations: {
@@ -31,17 +26,26 @@ export function setDefaultOptions() {
       },
     },
     layout: {
-      componentBackgroundColor: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.background),
+      componentBackgroundColor: platformNativeColor(
+        PlatformColorsIOS.secondarySystemBackground,
+        PlatformColorsAndroid.background,
+      ),
     },
     topBar: {
       animate: true,
       drawBehind: !isAndroid,
       background: {
         translucent: true,
-        color: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.navigation),
+        color: platformNativeColor(
+          PlatformColorsIOS.secondarySystemBackground,
+          PlatformColorsAndroid.navigation,
+        ),
       },
       title: {
-        color: platformNativeColor(undefined, PlatformColorsAndroid.onPrimaryText),
+        color: platformNativeColor(
+          undefined,
+          PlatformColorsAndroid.onPrimaryText,
+        ),
       },
       largeTitle: {
         visible: false,
@@ -51,7 +55,10 @@ export function setDefaultOptions() {
         noBorder: true,
         background: {
           translucent: true,
-          color: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.navigation),
+          color: platformNativeColor(
+            PlatformColorsIOS.secondarySystemBackground,
+            PlatformColorsAndroid.navigation,
+          ),
         },
       },
       searchBar: {
@@ -71,24 +78,45 @@ export function setDefaultOptions() {
       translucent: true,
       animateTabSelection: true,
       preferLargeIcons: false,
-      tabsAttachMode: "together",
-      backgroundColor: platformNativeColor(PlatformColorsIOS.secondarySystemBackground, PlatformColorsAndroid.navigation),
+      tabsAttachMode: 'together',
+      backgroundColor: platformNativeColor(
+        PlatformColorsIOS.secondarySystemBackground,
+        PlatformColorsAndroid.navigation,
+      ),
       ...Platform.select({
         android: {
           translucent: false,
           borderWidth: 1,
-          borderColor: platformNativeColor(undefined, PlatformColorsAndroid.divider),
+          borderColor: platformNativeColor(
+            undefined,
+            PlatformColorsAndroid.divider,
+          ),
         },
       }),
     },
     bottomTab: {
-      selectedTextColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.onPrimaryText),
-      selectedIconColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.onPrimaryText),
-      textColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
-      iconColor: platformNativeColor(PlatformColorsIOS.secondaryLabel, PlatformColorsAndroid.onPrimaryTextOpacity),
+      selectedTextColor: platformNativeColor(
+        PlatformColorsIOS.systemBlue,
+        PlatformColorsAndroid.onPrimaryText,
+      ),
+      selectedIconColor: platformNativeColor(
+        PlatformColorsIOS.systemBlue,
+        PlatformColorsAndroid.onPrimaryText,
+      ),
+      textColor: platformNativeColor(
+        PlatformColorsIOS.secondaryLabel,
+        PlatformColorsAndroid.onPrimaryTextOpacity,
+      ),
+      iconColor: platformNativeColor(
+        PlatformColorsIOS.secondaryLabel,
+        PlatformColorsAndroid.onPrimaryTextOpacity,
+      ),
     },
     statusBar: {
-      backgroundColor: platformNativeColor(undefined, PlatformColorsAndroid.statusbar),
+      backgroundColor: platformNativeColor(
+        undefined,
+        PlatformColorsAndroid.statusbar,
+      ),
       visible: true,
     },
   });

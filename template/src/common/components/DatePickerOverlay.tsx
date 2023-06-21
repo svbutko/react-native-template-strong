@@ -1,16 +1,28 @@
-import React, {useCallback, useMemo, useState} from "react";
-import DateTimePicker from "@react-native-community/datetimepicker";
-import {Platform, SafeAreaView, StyleSheet, View, ViewStyle} from "react-native";
-import {Navigation, NavigationFunctionComponent, OptionsTopBarButton} from "react-native-navigation";
-import {ButtonType} from "../../types";
-import {useNavigationButtonPress} from "react-native-navigation-hooks";
-import {PrimaryButton} from "./PrimaryButton";
-import {getLanguage, localization} from "../localization/localization";
-import {isAndroid, isIos} from "../../core/theme/commonConsts";
-import {Fonts} from "../../core/theme/fonts";
-import {CommonStyles} from "../../core/theme/commonStyles";
-import {Colors} from "../../core/theme/colors";
-import {CommonSizes} from "../../core/theme/commonSizes";
+import React, {useCallback, useMemo, useState} from 'react';
+import DateTimePicker, {
+  DateTimePickerEvent,
+} from '@react-native-community/datetimepicker';
+import {
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
+import {
+  Navigation,
+  NavigationFunctionComponent,
+  OptionsTopBarButton,
+} from 'react-native-navigation';
+import {ButtonType} from '../../types';
+import {useNavigationButtonPress} from 'react-native-navigation-hooks';
+import {PrimaryButton} from './PrimaryButton';
+import {getLanguage, localization} from '../localization/localization';
+import {isAndroid, isIos} from '../../core/theme/commonConsts';
+import {Fonts} from '../../core/theme/fonts';
+import {CommonStyles} from '../../core/theme/commonStyles';
+import {Colors} from '../../core/theme/colors';
+import {CommonSizes} from '../../core/theme/commonSizes';
 
 export interface IDatePickerProps {
   value: Date;
@@ -19,9 +31,9 @@ export interface IDatePickerProps {
   onDateChange?: (date: Date) => void;
 }
 
-const displayMode = isIos ? "inline" : "default";
+const displayMode = isIos ? 'inline' : 'default';
 
-const doneButtonId = "doneButton";
+const doneButtonId = 'doneButton';
 
 const rightButton: OptionsTopBarButton = {
   id: doneButtonId,
@@ -30,11 +42,13 @@ const rightButton: OptionsTopBarButton = {
   enabled: true,
 };
 
-export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = ({componentId, maxDate, minDate, onDateChange, value}) => {
+export const DatePickerOverlay: NavigationFunctionComponent<
+  IDatePickerProps
+> = ({componentId, maxDate, minDate, onDateChange, value}) => {
   const [date, setDate] = useState<Date>(value);
 
   const onSetDate = useCallback(
-    (event, selectedDate) => {
+    (event: DateTimePickerEvent, selectedDate?: Date) => {
       if (isAndroid) {
         if (selectedDate == null) {
           Navigation.dismissOverlay(componentId);
@@ -42,7 +56,7 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
           onDateChange && onDateChange(selectedDate);
           Navigation.dismissOverlay(componentId);
         }
-      } else {
+      } else if (selectedDate != null) {
         setDate(selectedDate);
       }
     },
@@ -65,14 +79,20 @@ export const DatePickerOverlay: NavigationFunctionComponent<IDatePickerProps> = 
       <View style={styles.container}>
         <DateTimePicker
           value={date}
-          mode={"date"}
+          mode={'date'}
           display={displayMode}
           onChange={onSetDate}
           minimumDate={minDate}
           maximumDate={maxDate}
           locale={locale}
         />
-        {isIos && <PrimaryButton label={localization.common.select} type={ButtonType.solid} onPress={changeDate} />}
+        {isIos && (
+          <PrimaryButton
+            label={localization.common.select}
+            type={ButtonType.solid}
+            onPress={changeDate}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
@@ -101,7 +121,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         flex: 1,
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         paddingHorizontal: CommonSizes.spacing.medium,
         paddingVertical: CommonSizes.spacing.large,
       } as ViewStyle,

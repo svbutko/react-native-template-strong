@@ -1,7 +1,11 @@
-import React, {FC, memo, useMemo} from "react";
-import {StyleSheet, View, ViewStyle} from "react-native";
-import {Colors, PlatformColorsAndroid, PlatformColorsIOS} from "../../core/theme/colors";
-import {platformMixedColor, platformNativeColor} from "../helpers/colorHelpers";
+import React, {FC, memo, useMemo} from 'react';
+import {StyleSheet, View, ViewStyle} from 'react-native';
+import {
+  Colors,
+  PlatformColorsAndroid,
+  PlatformColorsIOS,
+} from '../../core/theme/colors';
+import {platformMixedColor, platformNativeColor} from '../helpers/colorHelpers';
 
 interface IProps {
   isSelected: boolean;
@@ -10,10 +14,18 @@ interface IProps {
 
 export const RadioIcon: FC<IProps> = memo(({isSelected, disabled}) => {
   const outerCircleStyle = useMemo(() => {
-    return disabled ? styles.outerCircle : isSelected ? styles.outerCircleSelected : styles.outerCircle;
+    return disabled
+      ? styles.outerCircle
+      : isSelected
+      ? styles.outerCircleSelected
+      : styles.outerCircle;
   }, [isSelected, disabled]);
 
-  return <View style={outerCircleStyle}>{isSelected && <View style={styles.innerCircle} />}</View>;
+  return (
+    <View style={outerCircleStyle}>
+      {isSelected && <View style={styles.innerCircle} />}
+    </View>
+  );
 });
 
 const commonOuterCircle: ViewStyle = {
@@ -21,8 +33,8 @@ const commonOuterCircle: ViewStyle = {
   height: 16,
   borderRadius: 8,
   borderWidth: 2,
-  justifyContent: "center",
-  alignItems: "center",
+  justifyContent: 'center',
+  alignItems: 'center',
   backgroundColor: Colors.transparent,
 };
 
@@ -43,6 +55,9 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   innerCircle: {
     ...commonInnerCircle,
-    backgroundColor: platformNativeColor(PlatformColorsIOS.systemBlue, PlatformColorsAndroid.primary),
+    backgroundColor: platformNativeColor(
+      PlatformColorsIOS.systemBlue,
+      PlatformColorsAndroid.primary,
+    ),
   } as ViewStyle,
 });

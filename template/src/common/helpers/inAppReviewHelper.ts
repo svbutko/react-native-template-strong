@@ -1,9 +1,13 @@
-import InAppReview from "react-native-in-app-review";
+import InAppReview from 'react-native-in-app-review';
 
-export function showInAppReview(successAction?: () => void, failAction?: (error: Error) => void, onReviewNotAvailable?: () => void) {
+export function showInAppReview(
+  successAction?: () => void,
+  failAction?: (error: Error) => void,
+  onReviewNotAvailable?: () => void,
+) {
   if (InAppReview.isAvailable()) {
     InAppReview.RequestInAppReview()
-      .then((hasFlowFinishedSuccessfully) => {
+      .then(hasFlowFinishedSuccessfully => {
         // for Android:
         // The flow has finished. The API does not indicate whether the user
         // reviewed or not, or even whether the review dialog was shown. Thus, no
@@ -17,11 +21,11 @@ export function showInAppReview(successAction?: () => void, failAction?: (error:
           successAction?.();
         }
       })
-      .catch((error) => {
+      .catch(error => {
         failAction?.(error);
       });
   } else {
-    console.error("Review is not available for this device/account");
+    console.error('Review is not available for this device/account');
     onReviewNotAvailable?.();
   }
 }

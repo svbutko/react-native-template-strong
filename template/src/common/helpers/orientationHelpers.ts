@@ -1,10 +1,10 @@
-import Orientation, {OrientationType} from "react-native-orientation-locker";
-import Device from "react-native-device-detection";
+import Orientation, {OrientationType} from 'react-native-orientation-locker';
+import {isTablet} from '../../core/theme/commonConsts';
 
 export function getCurrentOrientation(forceOnPhone?: boolean): OrientationType {
-  if (!Device.isPhone || forceOnPhone) {
+  if (isTablet || forceOnPhone) {
     let result = Orientation.getInitialOrientation();
-    Orientation.getOrientation((orientation) => {
+    Orientation.getOrientation(orientation => {
       if (orientation != null) {
         result = orientation;
       }
@@ -12,14 +12,14 @@ export function getCurrentOrientation(forceOnPhone?: boolean): OrientationType {
 
     return result;
   } else {
-    return "PORTRAIT" as OrientationType;
+    return 'PORTRAIT' as OrientationType;
   }
 }
 
 export function setDefaultOrientation(): void {
-  if (Device.isPhone) {
-    Orientation.lockToPortrait();
-  } else {
+  if (isTablet) {
     Orientation.unlockAllOrientations();
+  } else {
+    Orientation.lockToPortrait();
   }
 }

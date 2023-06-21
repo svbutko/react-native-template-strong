@@ -1,6 +1,9 @@
 export const DEFAULT_PAGE_SIZE = 20;
 
-export function calculatePage(count: number, pageSize: number = DEFAULT_PAGE_SIZE): number {
+export function calculatePage(
+  count: number,
+  pageSize: number = DEFAULT_PAGE_SIZE,
+): number {
   if (count < 0) {
     throw new Error("Count can't be negative");
   }

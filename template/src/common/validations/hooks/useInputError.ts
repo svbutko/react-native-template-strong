@@ -1,6 +1,9 @@
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from 'react';
 
-export function useInputError(checkValue: string, checkFunction: (valueToCheck: string) => string | null) {
+export function useInputError(
+  checkValue: string,
+  checkFunction: (valueToCheck: string) => string | null,
+) {
   const [error, setError] = useState<string | null>(null);
   const didMountRef = useRef(false);
 

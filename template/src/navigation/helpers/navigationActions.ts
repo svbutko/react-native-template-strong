@@ -1,7 +1,12 @@
-import {Navigation, Options} from "react-native-navigation";
-import {INavigationPage} from "../../types";
+import {Navigation, Options} from 'react-native-navigation';
+import {INavigationPage} from '../../types';
 
-export function navigateToPage<T>(page: INavigationPage, componentId: string, passProps?: T, options?: Options) {
+export function navigateToPage<T>(
+  page: INavigationPage,
+  componentId: string,
+  passProps?: T,
+  options?: Options,
+) {
   Navigation.push(componentId, {
     component: {
       name: page.name,
@@ -12,7 +17,12 @@ export function navigateToPage<T>(page: INavigationPage, componentId: string, pa
   });
 }
 
-export function navigateWithoutTabs<T>(page: INavigationPage, componentId: string, passProps?: T, options?: Options) {
+export function navigateWithoutTabs<T>(
+  page: INavigationPage,
+  componentId: string,
+  passProps?: T,
+  options?: Options,
+) {
   Navigation.push(componentId, {
     component: {
       name: page.name,
