@@ -13,7 +13,7 @@ import {
   showShareDialog,
   showShareSocialDialog,
 } from '../../../src/common/helpers/shareHelpers';
-import Share from 'react-native-share';
+import {Social} from 'react-native-share';
 
 export const AlertsStories: FC = () => {
   const onShowActionSheetPress = useCallback(() => {
@@ -74,7 +74,7 @@ export const AlertsStories: FC = () => {
   const onShowShareSocialDialogPress = useCallback(async () => {
     await showShareSocialDialog(
       {
-        social: Share.Social.TWITTER,
+        social: Social.Twitter,
         title: 'Share via',
         message: 'Twitter test message from template',
         url: '',
