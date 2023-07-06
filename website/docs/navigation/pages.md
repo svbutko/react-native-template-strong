@@ -50,7 +50,9 @@ export const Pages = {
 
 Pages are defined as the object which contains page names as parameters which are objects with `name` and `id`.
 
-Here besides pages itself you add modals, overlays and other components which will be registered in navigation (i.e. `Navigation.registerComponent`).
+Here besides pages itself you add modals, overlays and other components which will be registered in navigation (i.e. `registerNavigationComponent`).
+
+`registerNavigationComponent` - shorthand function to simplify registration of a page.
 
 Such examples are `toast` and `datePicker` properties of `Pages`.
 
@@ -64,37 +66,29 @@ All the pages are being registered in `src/navigation/navigation.ts`'s `register
 
 ```typescript
 export function registerComponents() {
-  if (__DEV__) {
-    Navigation.registerComponent(Pages.storybook.name, () => StorybookUIRoot);
-  }
-  Navigation.registerComponent(
-    Pages.splash.name,
-    () => gestureHandlerRootHOC(reduxProvider(Splash)),
-    () => Splash,
-  );
-  Navigation.registerComponent(Pages.onboarding.name, () => Onboarding);
-  Navigation.registerComponent(Pages.main.name, () => Main);
-  Navigation.registerComponent(Pages.search.name, () => Search);
-  Navigation.registerComponent(Pages.settings.name, () => Settings);
-  Navigation.registerComponent(Pages.toast.name, () => ToastOverlay);
-  Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);
+    if (__DEV__) {
+        registerNavigationComponent(Pages.storybook, StorybookUIRoot);
+    }
+    registerNavigationComponent(Pages.splash, Splash, true);
+    registerNavigationComponent(Pages.onboarding, Onboarding);
+    registerNavigationComponent(Pages.main, Main);
+    registerNavigationComponent(Pages.search, Search);
+    registerNavigationComponent(Pages.settings, Settings);
+    registerNavigationComponent(Pages.toast, ToastOverlay);
+    registerNavigationComponent(Pages.datePicker, DatePickerOverlay);
 }
 ```
 
 If your page or component is going to be a simple component which won't be communication with `redux` then you can simply register it the next way:
 
 ```typescript
-  Navigation.registerComponent(Pages.yourPage.name, () => YourPage);
+  registerNavigationComponent(Pages.yourPage, YourPage);
 ```
 
-Otherwise, it should be wrapped with `gestureHandlerRootHOC` and `reduxProvider` like so:
+Otherwise, add a third parameter with `true`:
 
 ```typescript
-  Navigation.registerComponent(
-    Pages.splash.name,
-    () => gestureHandlerRootHOC(reduxProvider(Splash)),
-    () => Splash,
-  );
+  registerNavigationComponent(Pages.yourPage, YourPage, true);
 ```
 
 The communication with `redux` and usage will be explained later.

@@ -74,8 +74,8 @@ export const Onboarding: NavigationFunctionComponent = () => {
           <View style={styles.illustration}>
             <IconPlatform
               androidName={item.icon}
-              size={moderateScale(120)}
-              color={PlatformColor(PlatformColorsAndroid.primary)}
+              size={iconSize}
+              color={iconColor}
             />
           </View>
           <View style={styles.itemTextContainer}>
@@ -97,6 +97,7 @@ export const Onboarding: NavigationFunctionComponent = () => {
   return (
     <SafeAreaView style={CommonStyles.flex1}>
       <Carousel
+        style={CommonStyles.flex1}
         data={carouselData}
         renderItem={carouselItem}
         onSnapToItem={setActiveSlide}
@@ -121,6 +122,9 @@ export const Onboarding: NavigationFunctionComponent = () => {
     </SafeAreaView>
   );
 };
+
+const iconSize = moderateScale(120);
+const iconColor = PlatformColor(PlatformColorsAndroid.primary);
 
 const initialStyles = StyleSheet.create({
   itemContainer: {
