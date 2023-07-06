@@ -13,7 +13,7 @@ make sure you have [environment ready to work with](https://reactnative.dev/docs
 ## Usage
 
 ```sh
-npx react-native init MyApp --template react-native-template-strong --npm
+npx --force react-native init MyApp --template react-native-template-strong --npm
 ```
 
 ## After usage
