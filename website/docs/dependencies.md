@@ -11,42 +11,41 @@ Every dependency is provided with types or in case if there are no types it impl
 The versions are updating manually and regularly with new releases.
 
 Build primarily with
-- [React Native](https://reactnative.dev) `0.72.0`
-- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.33.1`
-- [Redux Toolkit](https://redux-toolkit.js.org) `1.8.0`
-- [TypeScript](https://www.typescriptlang.org) `4.6.3`
+- [React Native](https://reactnative.dev) `0.72.1`
+- [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.34.0`
+- [Redux Toolkit](https://redux-toolkit.js.org) `1.9.5`
+- [TypeScript](https://www.typescriptlang.org) `5.1.6`
 
 Includes next components:
-- [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `6.1.0`
-- [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.3.1`
-- [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.4.0`
-- [Permissions](https://github.com/zoontek/react-native-permissions) `3.3.1`
-- [Config](https://github.com/luggit/react-native-config) `1.4.5`
-- [Fast image](https://github.com/DylanVann/react-native-fast-image) `8.5.11`
-- [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.37.3`
-- [Snap carousel](https://github.com/meliorence/react-native-snap-carousel) `3.9.1`
-- [Vector icons](https://github.com/oblador/react-native-vector-icons) `9.1.0`
-- [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.2.0`
-- [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `3.3.2`
+- [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `7.3.0`
+- [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.3.2`
+- [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.5.0`
+- [Permissions](https://github.com/zoontek/react-native-permissions) `3.8.3`
+- [Config](https://github.com/luggit/react-native-config) `1.5.1`
+- [Image crop picker](https://github.com/ivpusic/react-native-image-crop-picker) `0.40.0`
+- [Reanimated carousel](https://github.com/dohooo/react-native-reanimated-carousel) `3.4.0`
+- [Vector icons](https://github.com/oblador/react-native-vector-icons) `9.2.0`
+- [SF Symbols](https://github.com/birkir/react-native-sfsymbols) `1.2.1`
+- [In-app review](https://github.com/MinaSamir11/react-native-in-app-review) `4.3.3`
 - [Size matters](https://github.com/nirsky/react-native-size-matters) `0.4.0`
-- [Masked text](https://github.com/benhurott/react-native-masked-text) `1.13.0`
-- [DayJS](https://github.com/iamkun/dayjs/) `1.11.0`
-- [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `8.2.0`
-- [Share](https://github.com/react-native-share/react-native-share) `7.3.7`
-- [Reanimated](https://github.com/software-mansion/react-native-reanimated) `2.5.0`
-- [Menu](https://github.com/react-native-menu/menu) `0.5.2`
+- [Mask input](https://github.com/CaioQuirinoMedeiros/react-native-mask-input) `1.2.3`
+- [DayJS](https://github.com/iamkun/dayjs/) `1.11.9`
+- [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `9.4.1`
+- [Share](https://github.com/react-native-share/react-native-share) `9.2.0`
+- [Reanimated](https://github.com/software-mansion/react-native-reanimated) `3.3.0`
+- [Menu](https://github.com/react-native-menu/menu) `0.8.0`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `27.5.1`
-- [Detox](https://github.com/wix/Detox) `19.5.7`
-- [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `5.3.25`
+- [Jest](https://github.com/facebook/jest) `29.6.0`
+- [Detox](https://github.com/wix/Detox) `20.11.0`
+- [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `6.5.4`
 
 Code quality covered with:
-- [ESLint](https://github.com/eslint/eslint) `8.12.0`
-- [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `2.0.2`
-- [Husky](https://github.com/typicode/husky) `7.0.4`
-- [Prettier](https://github.com/prettier/prettier) `2.6.1`
-- [Lint staged](https://github.com/okonet/lint-staged) `12.3.7`
+- [ESLint](https://github.com/eslint/eslint) `8.44.0`
+- [ESLint Config React Strong](https://github.com/svbutko/eslint-config-react-strong) `2.1.0`
+- [Husky](https://github.com/typicode/husky) `8.0.3`
+- [Prettier](https://github.com/prettier/prettier) `3.0.0`
+- [Lint staged](https://github.com/okonet/lint-staged) `13.2.3`
 
 It also includes other small or utility components.
 
@@ -77,6 +76,10 @@ Most of the needed scripts are here to help with your development process withou
 ### iOS specific
 - `ios:run` - compiles and runs your application on iOS devices or emulators WITHOUT starting Metro
 - `ios:bundle-visualizer` - visualizes contents of iOS bundle (total, components, packages size)
+- `ios:bundle-install` - installs `vendor` bundle
+- `ios:bundle-pod-install` - install pods
+- `ios:bundle-pod-install-repo-update` - install pods and updates repo
+- `ios:bundle-check-pods-updates` - checks outdated pods
 
 The rest of the actions are done in XCode by opening the project's workspace.
 
@@ -118,6 +121,8 @@ The rest of the actions are done in XCode by opening the project's workspace.
 - `check-pods-updates` - checks iOS pods updates
 - `generate-image-resources` - generates image resources based on images from selected folder, check [Images](../docs/resources/images.md) for more
 - `prepare` - if you have a git repository then it prepares scripts `pre-commit` and `post-merge` from package.json
+- `npm-install-force` - `npm install` with `force` to mitigate check issues with older dependencies
+
 
 
 
