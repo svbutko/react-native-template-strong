@@ -19,6 +19,8 @@ it's easier to have this checks
 - `isAndroid`
 - `isAndroidLollipop`
 - `isAndroid11AndHigher`
+- `hasNotch`
+- `hasDynamicIsland`
 
 ## Dimensions dependant
 
@@ -53,6 +55,7 @@ Some basic predefined hit slops, you can change them for your needs:
 
 - `hairlineWidth` - contains the result of `StyleSheet.hairlineWidth`
 - `pixelRatio` - contains the result of `PixelRatio.get()`
+- `perfectSize` - pixel perfect size calculation across devices (`e.g. perfectSize(10)`)
 
 
 
