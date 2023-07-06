@@ -5,8 +5,8 @@ title: Prettier config
 
 Prettier defines next obvious rules:
 - Tab width - 2
-- Print width - 140
-- Only double quotes
+- Print width - 80
+- Only single quotes
 - Trailing coma
 - No bracket spacing
 - JSX bracket shouldn't be on the same line

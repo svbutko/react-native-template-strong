@@ -15,13 +15,16 @@
     "react-native-navigation",
     "typescript",
     "redux",
+    "redux-toolkit",
     "uikit",
     "strong",
     "template",
     "boilerplate",
     "starter",
-    "redux-toolkit",
-    "localization"
+    "localization",
+    "reanimated",
+    "reanimatedv3",
+    "starter-kit"
   ],
   "author": "Sergei Butko (https://twitter.com/@svbutko)",
   "license": "MIT",
