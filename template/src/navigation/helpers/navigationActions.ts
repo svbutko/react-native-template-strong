@@ -1,5 +1,31 @@
-import {Navigation, Options} from 'react-native-navigation';
+import {
+  Navigation,
+  NavigationFunctionComponent,
+  Options,
+} from 'react-native-navigation';
 import {INavigationPage} from '../../types';
+import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
+import {reduxProvider} from '../../core/store/store';
+
+export function registerNavigationComponent(
+  page: INavigationPage,
+  Component: NavigationFunctionComponent<any>,
+  reduxEnabled?: boolean,
+) {
+  if (reduxEnabled) {
+    return Navigation.registerComponent(
+      page.name,
+      () => gestureHandlerRootHOC(reduxProvider(Component)),
+      () => Component,
+    );
+  } else {
+    return Navigation.registerComponent(
+      page.name,
+      () => gestureHandlerRootHOC<any>(Component),
+      () => Component,
+    );
+  }
+}
 
 export function navigateToPage<T>(
   page: INavigationPage,

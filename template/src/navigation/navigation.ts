@@ -1,9 +1,7 @@
 import {Navigation} from 'react-native-navigation';
 import {Pages} from './pages';
 import {Main} from '../modules/main/Main';
-import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
 import {Splash} from '../modules/splash/Splash';
-import {reduxProvider} from '../core/store/store';
 import {Platform} from 'react-native';
 import {localization} from '../common/localization/localization';
 import {PlatformColorsAndroid, PlatformColorsIOS} from '../core/theme/colors';
@@ -15,6 +13,8 @@ import {Onboarding} from '../modules/onboarding/Onboarding';
 import {Search} from '../modules/search/Search';
 import {Settings} from '../modules/settings/Settings';
 import {StorybookUIRoot} from '../../.storybook/Storybook';
+import {registerNavigationComponent} from './helpers/navigationActions';
+
 export function setDefaultOptions() {
   Navigation.setDefaultOptions({
     animations: {
@@ -124,17 +124,13 @@ export function setDefaultOptions() {
 
 export function registerComponents() {
   if (__DEV__) {
-    Navigation.registerComponent(Pages.storybook.name, () => StorybookUIRoot);
+    registerNavigationComponent(Pages.storybook, StorybookUIRoot);
   }
-  Navigation.registerComponent(
-    Pages.splash.name,
-    () => gestureHandlerRootHOC(reduxProvider(Splash)),
-    () => Splash,
-  );
-  Navigation.registerComponent(Pages.onboarding.name, () => Onboarding);
-  Navigation.registerComponent(Pages.main.name, () => Main);
-  Navigation.registerComponent(Pages.search.name, () => Search);
-  Navigation.registerComponent(Pages.settings.name, () => Settings);
-  Navigation.registerComponent(Pages.toast.name, () => ToastOverlay);
-  Navigation.registerComponent(Pages.datePicker.name, () => DatePickerOverlay);
+  registerNavigationComponent(Pages.splash, Splash, true);
+  registerNavigationComponent(Pages.onboarding, Onboarding);
+  registerNavigationComponent(Pages.main, Main);
+  registerNavigationComponent(Pages.search, Search);
+  registerNavigationComponent(Pages.settings, Settings);
+  registerNavigationComponent(Pages.toast, ToastOverlay);
+  registerNavigationComponent(Pages.datePicker, DatePickerOverlay);
 }
