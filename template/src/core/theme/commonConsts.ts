@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
+import {createPerfectSize} from '../../common/utils/createPerfectSize';
 
 const windowDimensions = Dimensions.get('window');
 export const isIos = Platform.OS == 'ios';
@@ -31,6 +32,11 @@ export const hitSlop = {top: 10, bottom: 10, left: 10, right: 10};
 export const hitSlopBig = {top: 20, bottom: 20, left: 20, right: 20};
 
 export const pixelRatio = PixelRatio.get();
+
+export const perfectSize = createPerfectSize(
+  PixelRatio.roundToNearestPixel(windowWidth * pixelRatio),
+  PixelRatio.roundToNearestPixel(windowHeight * pixelRatio),
+);
 
 export const maxWindowDimension = Math.max(windowWidth, windowHeight);
 export const minWindowDimension = Math.min(windowHeight, windowWidth);
