@@ -10,6 +10,17 @@ If you are new to React Native, it would be better to learn a bit about it first
 To work with this template you have to install everything what's needed in order to work with React Native,
 make sure you have [environment ready to work with](https://reactnative.dev/docs/environment-setup).
 
+## Prerequisites
+
+These are the versions of tools on which this template was created and tested (higher versions should be also supported):
+
+- [Android Studio Flamingo | 2022.2.1 Patch 2](https://developer.android.com/studio)
+  - Gradle 7.4.2
+  - JDK 11 (Zulu 11)
+- [XCode 14.3.1 (14E300c)](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+- [Node 20.4.0](https://nodejs.org/)
+  - npm 9.7.2
+
 ## Usage
 
 ```sh
