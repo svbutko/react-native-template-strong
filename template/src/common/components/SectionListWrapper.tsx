@@ -1,18 +1,13 @@
 import React, {FC, useMemo} from 'react';
-import {
-  SectionList,
-  SectionListProps,
-  StyleSheet,
-  ViewStyle,
-} from 'react-native';
+import {SectionList, SectionListProps} from 'react-native';
 import {LoadState} from '../../types';
 import {TryAgain} from './TryAgain';
 import {Separator} from './Separator';
 import {EmptyView} from './EmptyView';
 import {LoadingComponent} from './LoadingComponent';
 import {localization} from '../localization/localization';
-import {isAndroid} from '../../core/theme/commonConsts';
 import {defaultKeyIdExtractor} from '../helpers/defaultKeyIdExtractor';
+import {CommonStyles} from '../../core/theme/commonStyles';
 
 interface IProps extends SectionListProps<any> {
   loadState: LoadState;
@@ -48,8 +43,7 @@ export const SectionListWrapper: FC<IProps> = ({
   } else {
     return (
       <SectionList
-        contentContainerStyle={styles.contentContainer}
-        removeClippedSubviews={isAndroid}
+        contentContainerStyle={CommonStyles.listContentContainer}
         {...props}
         refreshing={refreshing}
         ListEmptyComponent={ListEmptyComponent}
@@ -69,9 +63,3 @@ SectionListWrapper.defaultProps = {
   onEndReachedThreshold: 1,
   ItemSeparatorComponent: Separator,
 };
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    flexGrow: 1,
-  } as ViewStyle,
-});

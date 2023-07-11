@@ -30,6 +30,10 @@ export const CommonStyles = StyleSheet.create({
       PlatformColorsAndroid.background,
     ),
   } as ViewStyle,
+  listContentContainer: {
+    flexGrow: 1,
+    padding: CommonSizes.spacing.medium,
+  } as ViewStyle,
   rowCenter: {
     flexDirection: 'row',
     alignItems: 'center',

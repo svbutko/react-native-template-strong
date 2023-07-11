@@ -56,7 +56,7 @@ RadioButton.defaultProps = {
 const commonLabel: TextStyle = {
   ...CommonStyles.normalText,
   flex: 1,
-  paddingLeft: CommonSizes.spacing.extraSmall,
+  paddingStart: CommonSizes.spacing.extraSmall,
 };
 
 const styles = StyleSheet.create({
