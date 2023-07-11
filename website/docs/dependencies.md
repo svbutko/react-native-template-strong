@@ -11,13 +11,13 @@ Every dependency is provided with types or in case if there are no types it impl
 The versions are updating manually and regularly with new releases.
 
 Build primarily with
-- [React Native](https://reactnative.dev) `0.72.1`
+- [React Native](https://reactnative.dev) `0.72.2`
 - [React Native Navigation](https://wix.github.io/react-native-navigation/docs/before-you-start/) `7.34.0`
 - [Redux Toolkit](https://redux-toolkit.js.org) `1.9.5`
 - [TypeScript](https://www.typescriptlang.org) `5.1.6`
 
 Includes next components:
-- [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `7.3.0`
+- [Date time picker](https://github.com/react-native-datetimepicker/datetimepicker) `7.4.0`
 - [Localization](https://github.com/stefalda/ReactNativeLocalization) `2.3.2`
 - [Orientation locker](https://github.com/wonday/react-native-orientation-locker) `1.5.0`
 - [Permissions](https://github.com/zoontek/react-native-permissions) `3.8.3`
@@ -31,12 +31,12 @@ Includes next components:
 - [Mask input](https://github.com/CaioQuirinoMedeiros/react-native-mask-input) `1.2.3`
 - [DayJS](https://github.com/iamkun/dayjs/) `1.11.9`
 - [Net info](https://github.com/react-native-netinfo/react-native-netinfo) `9.4.1`
-- [Share](https://github.com/react-native-share/react-native-share) `9.2.0`
+- [Share](https://github.com/react-native-share/react-native-share) `9.2.2`
 - [Reanimated](https://github.com/software-mansion/react-native-reanimated) `3.3.0`
 - [Menu](https://github.com/react-native-menu/menu) `0.8.0`
 
 Testing made with:
-- [Jest](https://github.com/facebook/jest) `29.6.0`
+- [Jest](https://github.com/facebook/jest) `29.6.1`
 - [Detox](https://github.com/wix/Detox) `20.11.0`
 - [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) `6.5.4`
 
