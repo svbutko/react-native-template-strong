@@ -21,14 +21,14 @@ interface IProps extends PressableProps {
 }
 
 export const TouchablePlatform: FC<IProps> = memo(
-  ({children, highlightColor, ...props}) => {
+  ({children, highlightColor, style, ...props}) => {
     const pressableStyle = useCallback(
       (state: PressableStateCallbackType) => {
         if (isAndroid) {
-          return props.style;
+          return style;
         } else {
           return [
-            props.style,
+            style,
             state.pressed &&
               ({
                 backgroundColor: highlightColor,
@@ -36,7 +36,7 @@ export const TouchablePlatform: FC<IProps> = memo(
           ];
         }
       },
-      [props.style, highlightColor],
+      [style, highlightColor],
     );
 
     const rippleConfig = useMemo(() => {
@@ -50,7 +50,7 @@ export const TouchablePlatform: FC<IProps> = memo(
         android_disableSound={false}
         android_ripple={rippleConfig}
         {...props}
-        style={pressableStyle as any}
+        style={pressableStyle}
       >
         {children}
       </Pressable>
