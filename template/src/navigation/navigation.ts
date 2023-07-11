@@ -71,6 +71,12 @@ export function setDefaultOptions() {
       searchBarHiddenWhenScrolling: true,
       searchBarPlaceholder: localization.common.search,
       noBorder: false,
+      backButton: {
+        color: platformNativeColor(
+          undefined,
+          PlatformColorsAndroid.onPrimaryText,
+        ),
+      },
     },
     bottomTabs: {
       animate: true,
