@@ -7,6 +7,7 @@ import {EmptyView} from './EmptyView';
 import {LoadingComponent} from './LoadingComponent';
 import {localization} from '../localization/localization';
 import {defaultKeyIdExtractor} from '../helpers/defaultKeyIdExtractor';
+import {CommonSizes} from '../../core/theme/commonSizes';
 
 interface IProps extends FlatListProps<any> {
   loadState: LoadState;
@@ -66,5 +67,6 @@ FlatListWrapper.defaultProps = {
 const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
+    padding: CommonSizes.spacing.medium,
   } as ViewStyle,
 });
