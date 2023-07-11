@@ -24,20 +24,20 @@ Separator.defaultProps = {
   isFull: true,
 };
 
+const sharedStyle: ViewStyle = {
+  height: hairlineWidth,
+  backgroundColor: platformNativeColor(
+    PlatformColorsIOS.separator,
+    PlatformColorsAndroid.divider,
+  ),
+};
+
 const styles = StyleSheet.create({
   container: {
-    height: hairlineWidth,
-    backgroundColor: platformNativeColor(
-      PlatformColorsIOS.separator,
-      PlatformColorsAndroid.divider,
-    ),
+    ...sharedStyle,
     marginHorizontal: CommonSizes.spacing.medium,
   } as ViewStyle,
   fullContainer: {
-    height: hairlineWidth,
-    backgroundColor: platformNativeColor(
-      PlatformColorsIOS.separator,
-      PlatformColorsAndroid.divider,
-    ),
+    ...sharedStyle,
   } as ViewStyle,
 });
