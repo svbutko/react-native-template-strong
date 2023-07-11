@@ -22,7 +22,7 @@ import {
   PlatformColorsAndroid,
   PlatformColorsIOS,
 } from '../../core/theme/colors';
-import {isAndroid, isIos} from '../../core/theme/commonConsts';
+import {isIos} from '../../core/theme/commonConsts';
 import {CommonSizes} from '../../core/theme/commonSizes';
 import {CommonStyles} from '../../core/theme/commonStyles';
 import {platformMixedColor, platformNativeColor} from '../helpers/colorHelpers';
@@ -57,18 +57,7 @@ export const PrimaryButton: FC<IProps> = memo(
     }, [type, rounded, props.disabled]);
 
     const highlightColor = useMemo(() => {
-      switch (type) {
-        case ButtonType.solid:
-          return platformMixedColor(PlatformColorsIOS.systemFill, Colors.white);
-        case ButtonType.outline:
-          return platformMixedColor(undefined, Colors.black);
-        case ButtonType.borderless:
-          return platformMixedColor(undefined, Colors.black);
-        case ButtonType.outlineNegative:
-          return platformMixedColor(undefined, Colors.red);
-        default:
-          return undefined;
-      }
+      return getHighlightColor(type);
     }, [type]);
 
     const content = useMemo(() => {
@@ -76,10 +65,7 @@ export const PrimaryButton: FC<IProps> = memo(
         return (
           <ActivityIndicator
             animating={true}
-            color={platformNativeColor(
-              PlatformColorsIOS.label,
-              PlatformColorsAndroid.primary,
-            )}
+            color={activityIndicatorColor}
             size={'small'}
           />
         );
@@ -92,7 +78,7 @@ export const PrimaryButton: FC<IProps> = memo(
               platformIconProps={platformIconProps}
             />
             <Text style={[styles.label, labelStyle]} numberOfLines={1}>
-              {isAndroid ? label.toUpperCase() : label}
+              {label}
             </Text>
           </>
         );
@@ -110,7 +96,7 @@ export const PrimaryButton: FC<IProps> = memo(
 
     return (
       <TouchablePlatform
-        style={[styles.button, style] as any}
+        style={[styles.button, style] as ViewStyle[]}
         highlightColor={highlightColor}
         {...props}
       >
@@ -118,6 +104,11 @@ export const PrimaryButton: FC<IProps> = memo(
       </TouchablePlatform>
     );
   },
+);
+
+const activityIndicatorColor = platformNativeColor(
+  PlatformColorsIOS.label,
+  PlatformColorsAndroid.primary,
 );
 
 const ButtonIcon: FC<Pick<IProps, 'icon' | 'iconStyle' | 'platformIconProps'>> =
@@ -130,6 +121,21 @@ const ButtonIcon: FC<Pick<IProps, 'icon' | 'iconStyle' | 'platformIconProps'>> =
       return null;
     }
   });
+
+function getHighlightColor(type: ButtonType) {
+  switch (type) {
+    case ButtonType.solid:
+      return platformMixedColor(PlatformColorsIOS.systemFill, Colors.white);
+    case ButtonType.outline:
+      return platformMixedColor(undefined, Colors.black);
+    case ButtonType.borderless:
+      return platformMixedColor(undefined, Colors.black);
+    case ButtonType.outlineNegative:
+      return platformMixedColor(undefined, Colors.red);
+    default:
+      return undefined;
+  }
+}
 
 function getStyles(
   type: ButtonType,
@@ -220,6 +226,11 @@ const commonLabelStyle: TextStyle = {
   color: Colors.white,
   textAlign: 'center',
   textAlignVertical: 'center',
+  ...Platform.select({
+    android: {
+      textTransform: 'uppercase',
+    } as TextStyle,
+  }),
 };
 
 const commonIcon: ImageStyle = {
