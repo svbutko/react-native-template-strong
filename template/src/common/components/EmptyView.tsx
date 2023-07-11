@@ -1,5 +1,5 @@
 import React, {FC, memo} from 'react';
-import {StyleSheet, Text, TextStyle, View, ViewStyle} from 'react-native';
+import {StyleSheet, Text, TextStyle, View} from 'react-native';
 import {CommonSizes} from '../../core/theme/commonSizes';
 import {CommonStyles} from '../../core/theme/commonStyles';
 
@@ -10,7 +10,7 @@ interface IProps {
 
 export const EmptyView: FC<IProps> = memo(({title, description}) => {
   return (
-    <View style={styles.container}>
+    <View style={CommonStyles.flexCenter}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.description}>{description}</Text>
     </View>
@@ -18,10 +18,6 @@ export const EmptyView: FC<IProps> = memo(({title, description}) => {
 });
 
 const styles = StyleSheet.create({
-  container: {
-    ...CommonStyles.flexCenter,
-    padding: CommonSizes.spacing.medium,
-  } as ViewStyle,
   title: {
     ...CommonStyles.normalText,
     fontWeight: '600',
