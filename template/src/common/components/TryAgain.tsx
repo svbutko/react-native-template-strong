@@ -5,7 +5,6 @@ import {
   TextStyle,
   TouchableOpacity,
   View,
-  ViewStyle,
 } from 'react-native';
 import {
   PlatformColorsAndroid,
@@ -23,7 +22,7 @@ interface IProps {
 
 export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
   return (
-    <View style={styles.container}>
+    <View style={CommonStyles.flexCenter}>
       <Text style={styles.title}>{errorText}</Text>
       {onPress != null && (
         <TouchableOpacity onPress={onPress}>
@@ -39,10 +38,6 @@ TryAgain.defaultProps = {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    ...CommonStyles.flexCenter,
-    padding: CommonSizes.spacing.medium,
-  } as ViewStyle,
   title: {
     ...CommonStyles.normalText,
     textAlign: 'center',
