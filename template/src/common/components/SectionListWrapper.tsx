@@ -6,7 +6,6 @@ import {Separator} from './Separator';
 import {EmptyView} from './EmptyView';
 import {LoadingComponent} from './LoadingComponent';
 import {localization} from '../localization/localization';
-import {isAndroid} from '../../core/theme/commonConsts';
 import {defaultKeyIdExtractor} from '../helpers/defaultKeyIdExtractor';
 import {CommonStyles} from '../../core/theme/commonStyles';
 
@@ -45,7 +44,6 @@ export const SectionListWrapper: FC<IProps> = ({
     return (
       <SectionList
         contentContainerStyle={CommonStyles.listContentContainer}
-        removeClippedSubviews={isAndroid}
         {...props}
         refreshing={refreshing}
         ListEmptyComponent={ListEmptyComponent}
