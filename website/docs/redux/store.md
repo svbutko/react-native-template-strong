@@ -29,7 +29,7 @@ It's defined in `src/core/store.ts` near the store:
 
 ```typescript
 const persistConfig: PersistConfig<RootState> = {
-  key: "root",
+  key: 'root',
   storage: AsyncStorage,
   version: 1,
   timeout: 1000,
@@ -41,7 +41,7 @@ It uses `AsyncStorage` as storage, if you don't like it you can change it to you
 It creates `persistor`:
 
 ```typescript
-export const persistor = persistStore(store);
+const persistor = persistStore(store);
 ```
 
 Which is being used in `PersistGate` of `reduxProvider` wrapper:
