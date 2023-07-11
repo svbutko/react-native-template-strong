@@ -77,6 +77,14 @@ export function setDefaultOptions() {
           PlatformColorsAndroid.onPrimaryText,
         ),
       },
+      rightButtonColor: platformNativeColor(
+        PlatformColorsIOS.systemBlue,
+        PlatformColorsAndroid.onPrimaryText,
+      ),
+      leftButtonColor: platformNativeColor(
+        PlatformColorsIOS.systemBlue,
+        PlatformColorsAndroid.onPrimaryText,
+      ),
     },
     bottomTabs: {
       animate: true,
