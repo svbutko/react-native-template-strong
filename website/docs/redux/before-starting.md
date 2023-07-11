@@ -20,22 +20,19 @@ npm uninstall @reduxjs/toolkit react-redux redux-persist @types/react-redux
 ```
 
 - Delete the `src/core/store` folder
+- Remove Redux usage from `registerNavigationComponent`
 - Change `Splash` screen navigation component initialization:
 
 From:
 
 ```typescript jsx
-  Navigation.registerComponent(
-    Pages.splash.name,
-    () => gestureHandlerRootHOC(reduxProvider(Splash)),
-    () => Splash,
-  );
+  registerNavigationComponent(Pages.splash, Splash, true);
 ```
 
 To:
 
 ```typescript jsx
-  Navigation.registerComponent(Pages.splash.name, () => Splash);
+  registerNavigationComponent(Pages.splash, Splash);
 ```
 
 - Remove usage of `useAppSelector` in `Splash` (but you have to manage now `Onboarding` logic your way):
