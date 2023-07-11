@@ -10,10 +10,10 @@ To demonstrate how to create and use it, I will be using some `Orders` state and
 
 ## Creation
 
-Creation of `AsyncThunk` is the same as in original documentation, with your API call do the following:
+Creation of `AsyncThunk` is the same as in original documentation with usage of typed `state` and `dispatch`, with your API call do the following:
 
 ```typescript
-export const takeOrder = createAsyncThunk("orders/take", async (id: string) => {
+export const takeOrder = createAppAsyncThunk("orders/take", async (id: string) => {
   return await ordersApi.takeOrder(id);
 });
 ```
@@ -25,7 +25,7 @@ Where `"orders/take""` is name of your slice and name of your method.
 You can handle the result inline or as I like with functions, all together it looks like this:
 
 ```typescript
-export const takeOrder = createAsyncThunk("order/take", async (id: string) => {
+export const takeOrder = createAppAsyncThunk("order/take", async (id: string) => {
   return await ordersApi.takeOrder(id);
 });
 

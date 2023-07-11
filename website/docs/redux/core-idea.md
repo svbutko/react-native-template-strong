@@ -14,11 +14,7 @@ Only in some rare cases it might be needed to connect to `redux` directly from c
 So we're basically connecting pages where we would like to use `redux`, like so:
 
 ```typescript
-  Navigation.registerComponent(
-    Pages.splash.name,
-    () => gestureHandlerRootHOC(reduxProvider(Splash)),
-    () => Splash,
-  );
+  registerNavigationComponent(Pages.splash, Splash, true);
 ```
 
 And on the page we will be executing our logic with `redux` what we need and getting data from it using `useAppSelector`.
