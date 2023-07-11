@@ -191,10 +191,10 @@ const styles = StyleSheet.create({
     width: 14,
     height: 14,
     resizeMode: 'contain',
-    marginRight: CommonSizes.spacing.extraSmall,
+    marginEnd: CommonSizes.spacing.extraSmall,
   } as ImageStyle,
   loading: {
-    marginRight: CommonSizes.spacing.extraSmall,
+    marginEnd: CommonSizes.spacing.extraSmall,
   } as ViewStyle,
   text: {
     ...CommonStyles.normalText,
