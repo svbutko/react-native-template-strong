@@ -209,10 +209,10 @@ const styles = StyleSheet.create({
     ...CommonStyles.normalText,
     flex: 1,
     textAlignVertical: 'center',
-    paddingLeft: CommonSizes.spacing.medium,
+    paddingStart: CommonSizes.spacing.medium,
     ...Platform.select({
       android: {
-        paddingRight: CommonSizes.spacing.medium,
+        paddingEnd: CommonSizes.spacing.medium,
       },
     }),
   } as TextStyle,
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     ...commonInputContainer,
     ...Platform.select({
       ios: {
-        paddingRight: CommonSizes.spacing.medium,
+        paddingEnd: CommonSizes.spacing.medium,
       },
     }),
   } as TextStyle,

@@ -1,5 +1,5 @@
 import React, {FC, useMemo} from 'react';
-import {FlatList, FlatListProps, StyleSheet, ViewStyle} from 'react-native';
+import {FlatList, FlatListProps} from 'react-native';
 import {LoadState} from '../../types';
 import {TryAgain} from './TryAgain';
 import {Separator} from './Separator';
@@ -7,6 +7,7 @@ import {EmptyView} from './EmptyView';
 import {LoadingComponent} from './LoadingComponent';
 import {localization} from '../localization/localization';
 import {defaultKeyIdExtractor} from '../helpers/defaultKeyIdExtractor';
+import {CommonStyles} from '../../core/theme/commonStyles';
 
 interface IProps extends FlatListProps<any> {
   loadState: LoadState;
@@ -42,7 +43,7 @@ export const FlatListWrapper: FC<IProps> = ({
   } else {
     return (
       <FlatList
-        contentContainerStyle={styles.contentContainer}
+        contentContainerStyle={CommonStyles.listContentContainer}
         {...props}
         refreshing={refreshing}
         ListEmptyComponent={ListEmptyComponent}
@@ -62,9 +63,3 @@ FlatListWrapper.defaultProps = {
   onEndReachedThreshold: 1,
   ItemSeparatorComponent: Separator,
 };
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    flexGrow: 1,
-  } as ViewStyle,
-});

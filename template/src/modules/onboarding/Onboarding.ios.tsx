@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    paddingLeft: moderateScale(CommonSizes.spacing.medium),
+    paddingStart: moderateScale(CommonSizes.spacing.medium),
   } as ViewStyle,
   clauseHeader: {
     ...CommonStyles.normalText,
