@@ -5,6 +5,7 @@ import {localization} from '../common/localization/localization';
 import {SFSymbols} from '../../resources/symbols/SFSymbols';
 import {getPlatformTabsIcon} from './helpers/navigationIconHelpers';
 
+// eslint-disable-next-line import/no-unused-modules
 export function setStorybookRoot() {
   Navigation.setRoot({
     root: {

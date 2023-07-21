@@ -7,13 +7,9 @@ import {
   PressableStateCallbackType,
   ViewStyle,
 } from 'react-native';
-import {
-  Colors,
-  PlatformColorsAndroid,
-  PlatformColorsIOS,
-} from '../../core/theme/colors';
+import {Colors, PlatformColorsIOS} from '../../core/theme/colors';
 import {isAndroid} from '../../core/theme/commonConsts';
-import {platformNativeColor} from '../helpers/colorHelpers';
+import {platformMixedColor} from '../helpers/colorHelpers';
 
 interface IProps extends PressableProps {
   style?: ViewStyle | ViewStyle[];
@@ -21,14 +17,14 @@ interface IProps extends PressableProps {
 }
 
 export const TouchablePlatform: FC<IProps> = memo(
-  ({children, highlightColor, ...props}) => {
+  ({children, highlightColor, style, ...props}) => {
     const pressableStyle = useCallback(
       (state: PressableStateCallbackType) => {
         if (isAndroid) {
-          return props.style;
+          return style;
         } else {
           return [
-            props.style,
+            style,
             state.pressed &&
               ({
                 backgroundColor: highlightColor,
@@ -36,9 +32,12 @@ export const TouchablePlatform: FC<IProps> = memo(
           ];
         }
       },
-      [props.style, highlightColor],
+      [style, highlightColor],
     );
 
+    /**
+     * Android can't use platform native colors
+     */
     const rippleConfig = useMemo(() => {
       return highlightColor != null
         ? {...androidRippleConfig, color: highlightColor}
@@ -50,7 +49,7 @@ export const TouchablePlatform: FC<IProps> = memo(
         android_disableSound={false}
         android_ripple={rippleConfig}
         {...props}
-        style={pressableStyle as any}
+        style={pressableStyle}
       >
         {children}
       </Pressable>
@@ -64,8 +63,8 @@ const androidRippleConfig: PressableAndroidRippleConfig = {
 };
 
 TouchablePlatform.defaultProps = {
-  highlightColor: platformNativeColor(
+  highlightColor: platformMixedColor(
     PlatformColorsIOS.secondarySystemFill,
-    PlatformColorsAndroid.primaryLight,
+    Colors.white,
   ),
 };
