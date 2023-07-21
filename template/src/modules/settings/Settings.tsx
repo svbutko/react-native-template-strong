@@ -4,7 +4,7 @@ import React from 'react';
 import {localization} from '../../common/localization/localization';
 import {CommonStyles} from '../../core/theme/commonStyles';
 
-export const Settings: NavigationFunctionComponent = (): JSX.Element => {
+export const Settings: NavigationFunctionComponent = () => {
   return (
     <ScrollView
       contentInsetAdjustmentBehavior={'automatic'}
