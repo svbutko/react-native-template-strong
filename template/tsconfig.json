@@ -5,8 +5,13 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
-    "lib": ["es2021"],
-    "types": ["react-native", "jest"],
+    "lib": [
+      "es2021"
+    ],
+    "types": [
+      "react-native",
+      "jest"
+    ],
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
@@ -20,7 +25,7 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "__tests__/**/*",
@@ -40,6 +45,6 @@
     "tools",
     "patches",
     "coverage",
-    "vendor",
+    "vendor"
   ]
 }
