@@ -64,12 +64,14 @@ export enum ButtonType {
   outlineNegative = 'outlineNegative',
 }
 
+// eslint-disable-next-line import/no-unused-modules
 export interface IListState<T> {
   data: T[];
   loadState: LoadState;
   error: string | null;
 }
 
+// eslint-disable-next-line import/no-unused-modules
 export interface ISection<T> {
   data: T[];
   id: string;
