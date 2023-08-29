@@ -38,8 +38,5 @@
       "name": "Sergei Butko",
       "url": "https://twitter.com/@svbutko"
     }
-  ],
-  "dependencies": {
-    "ora": "7.0.1"
-  }
+  ]
 }
