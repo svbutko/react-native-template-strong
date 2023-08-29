@@ -22,24 +22,7 @@ import {isTablet} from '../../core/theme/commonConsts';
 import {SFSymbols} from '../../../resources/symbols/SFSymbols';
 import {IconPlatform} from '../../common/components/IconPlatform';
 
-const carouselData: IOnboardingData[] = [
-  {
-    header: localization.onboarding.firstHeader,
-    body: localization.onboarding.firstBody,
-    icon: SFSymbols['hands.sparkles.fill'],
-  },
-  {
-    header: localization.onboarding.secondHeader,
-    body: localization.onboarding.secondBody,
-    icon: SFSymbols['books.vertical.fill'],
-  },
-  {
-    header: localization.onboarding.thirdHeader,
-    body: localization.onboarding.thirdBody,
-    icon: SFSymbols['star.fill'],
-  },
-];
-
+// eslint-disable-next-line import/no-unused-modules
 export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
   const renderClauseItem = useCallback(
     (value: IOnboardingData, index: number) => {
@@ -47,9 +30,9 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
         <View key={index} style={styles.clauseContainer}>
           <IconPlatform
             iosName={value.icon as SFSymbols}
-            size={moderateScale(32)}
+            size={iconSize}
             resizeMode={'contain'}
-            color={PlatformColor(PlatformColorsIOS.systemBlue)}
+            color={iconColor}
             style={styles.clauseIcon}
           />
           <View style={styles.clauseTextContainer}>
@@ -86,6 +69,27 @@ export const Onboarding: NavigationFunctionComponent = ({componentId}) => {
     </SafeAreaView>
   );
 };
+
+const carouselData: IOnboardingData[] = [
+  {
+    header: localization.onboarding.firstHeader,
+    body: localization.onboarding.firstBody,
+    icon: SFSymbols['hands.sparkles.fill'],
+  },
+  {
+    header: localization.onboarding.secondHeader,
+    body: localization.onboarding.secondBody,
+    icon: SFSymbols['books.vertical.fill'],
+  },
+  {
+    header: localization.onboarding.thirdHeader,
+    body: localization.onboarding.thirdBody,
+    icon: SFSymbols['star.fill'],
+  },
+];
+
+const iconSize = moderateScale(32);
+const iconColor = PlatformColor(PlatformColorsIOS.systemBlue);
 
 const styles = StyleSheet.create({
   topContainer: {
