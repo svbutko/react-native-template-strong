@@ -15,7 +15,6 @@ const rename = (target, newName) => {
 
 new Promise((resolve) => {
     spinner.start();
-    // do something
     rename('gitignore', '.gitignore');
     rename('env', '.env');
     resolve();
