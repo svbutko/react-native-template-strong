@@ -30,29 +30,13 @@ import {moderateScale} from 'react-native-size-matters';
 import {IconPlatform} from '../../common/components/IconPlatform';
 import Carousel from 'react-native-reanimated-carousel';
 
-const carouselData: IOnboardingData[] = [
-  {
-    header: localization.onboarding.firstHeader,
-    body: localization.onboarding.firstBody,
-    icon: 'thumb-up',
-  },
-  {
-    header: localization.onboarding.secondHeader,
-    body: localization.onboarding.secondBody,
-    icon: 'description',
-  },
-  {
-    header: localization.onboarding.thirdHeader,
-    body: localization.onboarding.thirdBody,
-    icon: 'star-rate',
-  },
-];
-
+// eslint-disable-next-line import/no-unused-modules
 export const Onboarding: NavigationFunctionComponent = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [orientation, setOrientation] = useState<OrientationType>(() =>
     getCurrentOrientation(),
   );
+
   const dimensions = useWindowDimensions();
 
   useOrientationChange(changedOrientation => {
@@ -97,11 +81,11 @@ export const Onboarding: NavigationFunctionComponent = () => {
   return (
     <SafeAreaView style={CommonStyles.flex1}>
       <Carousel
-        style={CommonStyles.flex1}
         data={carouselData}
         renderItem={carouselItem}
         onSnapToItem={setActiveSlide}
         width={dimensions.width}
+        height={dimensions.height - bottomContainerSize}
         loop={false}
       />
       <View style={styles.bottomContainer}>
@@ -117,14 +101,32 @@ export const Onboarding: NavigationFunctionComponent = () => {
           activeIndex={activeSlide}
           totalItems={carouselData.length}
         />
-        <View style={CommonStyles.flex1} />
       </View>
     </SafeAreaView>
   );
 };
 
+const carouselData: IOnboardingData[] = [
+  {
+    header: localization.onboarding.firstHeader,
+    body: localization.onboarding.firstBody,
+    icon: 'thumb-up',
+  },
+  {
+    header: localization.onboarding.secondHeader,
+    body: localization.onboarding.secondBody,
+    icon: 'description',
+  },
+  {
+    header: localization.onboarding.thirdHeader,
+    body: localization.onboarding.thirdBody,
+    icon: 'star-rate',
+  },
+];
+
 const iconSize = moderateScale(120);
 const iconColor = PlatformColor(PlatformColorsAndroid.primary);
+const bottomContainerSize = moderateScale(150);
 
 const initialStyles = StyleSheet.create({
   itemContainer: {
