@@ -30,6 +30,7 @@ import {isIos} from '../../core/theme/commonConsts';
 import {CommonSizes} from '../../core/theme/commonSizes';
 import {CommonStyles} from '../../core/theme/commonStyles';
 import {platformMixedColor, platformNativeColor} from '../helpers/colorHelpers';
+import {localization} from '../localization/localization';
 
 interface IProps extends TextInputProps {
   nextInputFocusRef?: MutableRefObject<any>;
@@ -52,6 +53,8 @@ interface IProps extends TextInputProps {
     | 'cc-exp'
     | 'cc-exp-month'
     | 'cc-exp-year';
+  required?: boolean;
+  optional?: boolean;
 }
 
 export const PrimaryTextInput: FC<IProps> = memo(
@@ -66,6 +69,8 @@ export const PrimaryTextInput: FC<IProps> = memo(
     onFocus,
     onBlur,
     onSubmitEditing,
+    required,
+    optional,
     ...props
   }) => {
     const [isFocused, setFocused] = useState<boolean>(false);
@@ -110,7 +115,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
 
     return (
       <View style={[styles.container, containerStyle]}>
-        <Label text={label} />
+        <Label text={label} required={required} optional={optional} />
         <TouchableOpacity
           style={inputContainerStyle}
           onPress={onTouchStart}
@@ -118,10 +123,7 @@ export const PrimaryTextInput: FC<IProps> = memo(
         >
           <TextInput
             disableFullscreenUI={true}
-            selectionColor={platformNativeColor(
-              PlatformColorsIOS.systemBlue,
-              PlatformColorsAndroid.primary,
-            )}
+            selectionColor={selectionColor}
             {...props}
             pointerEvents={pointerEvents}
             ref={inputRef}
@@ -137,17 +139,24 @@ export const PrimaryTextInput: FC<IProps> = memo(
   },
 );
 
-const Label: FC<{text?: string}> = memo(({text}) => {
-  if (text != null) {
-    return (
-      <Text style={styles.label} numberOfLines={1}>
-        {text}
-      </Text>
-    );
-  } else {
-    return null;
-  }
-});
+const Label: FC<{text?: string; required?: boolean; optional?: boolean}> = memo(
+  ({text, required, optional}) => {
+    if (text != null) {
+      return (
+        <Text style={styles.label} numberOfLines={1}>
+          {text +
+            (required
+              ? localization.common.required
+              : optional
+              ? localization.common.optional
+              : '')}
+        </Text>
+      );
+    } else {
+      return null;
+    }
+  },
+);
 
 const BottomText: FC<{error?: string | null; hint?: string}> = memo(
   ({error, hint}) => {
@@ -181,11 +190,16 @@ function getInputContainerStyle(
   }
 }
 
+const selectionColor = platformNativeColor(
+  PlatformColorsIOS.systemBlue,
+  PlatformColorsAndroid.primary,
+);
+
 const commonInputContainer: TextStyle = {
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-  height: CommonSizes.spacing.extraLarge,
+  minHeight: CommonSizes.spacing.extraLarge,
   textAlignVertical: 'center',
   textAlign: 'center',
   ...Platform.select({

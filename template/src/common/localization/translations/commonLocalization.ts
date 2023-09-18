@@ -23,5 +23,7 @@ export const commonLocalization = {
     select: 'Select',
     dataSuccessfullyUpdated: 'Data has been successfully updated',
     settings: 'Settings',
+    required: ' (required)',
+    optional: ' (optional)',
   },
 };
