@@ -6,29 +6,40 @@ import {
   DateFormat,
   dateFromFormat,
 } from '../../../src/common/localization/dateFormatter';
-import {showDatePicker} from '../../../src/navigation/helpers/showDatePicker';
 import {CommonStyles} from '../../../src/core/theme/commonStyles';
 import {PrimaryButton} from '../../../src/common/components/PrimaryButton';
 import {Separator} from '../../../src/common/components/Separator';
 import dayjs from 'dayjs';
+import {IDatePickerProps} from '../../../src/common/components/DatePickerOverlay';
+import {Pages} from '../../../src/navigation/pages';
+import {localization} from '../../../src/common/localization/localization';
+import {showModal} from '../../../src/navigation/helpers/showModal';
 
 export const DatePickerOverlayStories: FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const onPress = useCallback(() => {
-    return showDatePicker({
-      value: selectedDate,
-      onDateChange: setSelectedDate,
-    });
+    return showModal<IDatePickerProps>(
+      Pages.datePicker,
+      localization.pages.selectDate,
+      {
+        value: selectedDate,
+        onDateChange: setSelectedDate,
+      },
+    );
   }, [selectedDate, setSelectedDate]);
 
   const onPressMinMax = useCallback(() => {
-    return showDatePicker({
-      value: selectedDate,
-      onDateChange: setSelectedDate,
-      minDate: dayjs().subtract(10, 'days').toDate(),
-      maxDate: dayjs().add(2, 'days').toDate(),
-    });
+    return showModal<IDatePickerProps>(
+      Pages.datePicker,
+      localization.pages.selectDate,
+      {
+        value: selectedDate,
+        onDateChange: setSelectedDate,
+        minDate: dayjs().subtract(10, 'days').toDate(),
+        maxDate: dayjs().add(2, 'days').toDate(),
+      },
+    );
   }, [selectedDate, setSelectedDate]);
 
   return (
