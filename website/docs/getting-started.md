@@ -14,12 +14,12 @@ make sure you have [environment ready to work with](https://reactnative.dev/docs
 
 These are the versions of tools on which this template was created and tested (higher versions should be also supported):
 
-- [Android Studio Flamingo | 2022.2.1 Patch 2](https://developer.android.com/studio)
+- [Android Studio Giraffe | 2022.3.1 Patch 1](https://developer.android.com/studio)
   - Gradle 7.4.2
   - JDK 11 (Zulu 11)
-- [XCode 14.3.1 (14E300c)](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
-- [Node 20.4.0](https://nodejs.org/)
-  - npm 9.7.2
+- [XCode 15.0](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+- [Node 20.7.0](https://nodejs.org/)
+  - npm 10.1.0
 
 ## Usage
 
