@@ -1,23 +1,47 @@
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import {themes as prismThemes} from "prism-react-renderer";
+import type {Config} from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
-/** @type {import("@docusaurus/types").DocusaurusConfig} */
-module.exports = {
+const config: Config = {
   title: "React Native Template Strong",
   tagline: "Quick, opinionated, documented and strong beginning for your next project",
+  favicon: "img/favicon.ico",
+
   url: "https://svbutko.github.io/",
   baseUrl: "/react-native-template-strong/",
-  trailingSlash: undefined,
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+
   organizationName: "svbutko",
   projectName: "react-native-template-strong",
+
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
+
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          showLastUpdateTime: true,
+          sidebarPath: "./sidebars.ts",
+          editUrl: "https://github.com/svbutko/react-native-template-strong/master/website/",
+        },
+        theme: {
+          customCss: "./src/css/custom.css",
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
   themeConfig: {
     algolia: {
-      appId: 'XO9GJZJMTW',
-      apiKey: 'd9b09790edab8cc6a9a4a727c0e5c059',
-      indexName: 'react-native-template-strong',
+      appId: "XO9GJZJMTW",
+      apiKey: "d9b09790edab8cc6a9a4a727c0e5c059",
+      indexName: "react-native-template-strong",
     },
     navbar: {
       title: "React Native Template Strong",
@@ -108,23 +132,10 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Sergei Butko (@svbutko). Built with Docusaurus.`,
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
-  },
-  presets: [
-    [
-      "@docusaurus/preset-classic",
-      {
-        docs: {
-          showLastUpdateTime: true,
-          sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/svbutko/react-native-template-strong/master/website/",
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
-      },
-    ],
-  ],
+  } satisfies Preset.ThemeConfig,
 };
+
+export default config;
