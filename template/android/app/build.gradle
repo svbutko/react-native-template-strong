@@ -128,8 +128,7 @@ dependencies {
         implementation jscFlavor
     }
 
-    //noinspection GradleDynamicVersion
-    androidTestImplementation "com.wix:detox:+"
+    androidTestImplementation 'com.wix:detox:20.14.8'
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "androidx.core:core-splashscreen:1.0.1"
 }
