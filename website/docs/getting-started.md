@@ -14,9 +14,9 @@ make sure you have [environment ready to work with](https://reactnative.dev/docs
 
 These are the versions of tools on which this template was created and tested (higher versions should be also supported):
 
-- [Android Studio Giraffe | 2022.3.1 Patch 1](https://developer.android.com/studio)
-  - Gradle 7.4.2
-  - JDK 11 (Zulu 11)
+- [Android Studio Hedgehog | 2023.1.1 Patch 1](https://developer.android.com/studio)
+  - Gradle 8.3
+  - JDK 17 (Zulu 17)
 - [XCode 15.0](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 - [Node 20.7.0](https://nodejs.org/)
   - npm 10.1.0
