@@ -1,10 +1,8 @@
 package com.helloworld;
 
 import com.facebook.react.PackageList
-import com.facebook.react.ReactNativeHost
 import com.facebook.react.ReactPackage
-import com.facebook.react.ReactHost
-import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
+import com.facebook.react.ReactNativeHost
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load;
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost
@@ -14,7 +12,7 @@ import com.facebook.react.flipper.ReactNativeFlipper
 
 class MainApplication: NavigationApplication() {
 
-    override val reactNativeHost: ReactNativeHost =
+    private val mReactNativeHost: NavigationReactNativeHost =
             object : NavigationReactNativeHost(this) {
                 override fun getPackages(): List<ReactPackage> {
                     // Packages that cannot be autolinked yet can be added manually here, for example:
@@ -30,8 +28,8 @@ class MainApplication: NavigationApplication() {
                 override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
             }
 
-    override val reactHost: ReactHost
-        get() = getDefaultReactHost(this.applicationContext, reactNativeHost)
+    override val reactNativeHost: ReactNativeHost
+        get() = mReactNativeHost
 
     override fun onCreate() {
         super.onCreate()
