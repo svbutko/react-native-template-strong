@@ -98,7 +98,7 @@
     "@react-native-community/slider": "4.5.0",
     "@react-native/babel-preset": "0.73.19",
     "@react-native/metro-config": "0.73.3",
-    "@react-native/typescript-config": "0.74.0",
+    "@react-native/typescript-config": "0.73.1",
     "@storybook/addon-actions": "6.5.16",
     "@storybook/addon-controls": "6.5.16",
     "@storybook/addon-essentials": "6.5.16",
