@@ -1,10 +1,10 @@
-package com.helloworld;
+package com.helloworld
 
 import com.facebook.react.PackageList
 import com.facebook.react.ReactPackage
 import com.facebook.react.ReactNativeHost
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load;
-import com.reactnativenavigation.NavigationApplication;
+import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.load
+import com.reactnativenavigation.NavigationApplication
 import com.reactnativenavigation.react.NavigationReactNativeHost
 import org.wonday.orientation.OrientationActivityLifecycle
 import com.facebook.react.modules.i18nmanager.I18nUtil
