@@ -10,7 +10,6 @@ import com.reactnativenavigation.NavigationApplication
 import com.reactnativenavigation.react.NavigationReactNativeHost
 import org.wonday.orientation.OrientationActivityLifecycle
 import com.facebook.react.modules.i18nmanager.I18nUtil
-import com.facebook.react.flipper.ReactNativeFlipper
 
 class MainApplication: NavigationApplication() {
 
@@ -31,7 +30,7 @@ class MainApplication: NavigationApplication() {
             }
 
     override val reactHost: ReactHost
-        get() = getDefaultReactHost(this.applicationContext, reactNativeHost)
+        get() = getDefaultReactHost(applicationContext, reactNativeHost)
 
     override fun onCreate() {
         super.onCreate()
@@ -41,7 +40,6 @@ class MainApplication: NavigationApplication() {
             // If you opted-in for the New Architecture, we load the native entry point for this app.
             load()
         }
-        ReactNativeFlipper.initializeFlipper(this, reactNativeHost.reactInstanceManager)
         registerActivityLifecycleCallbacks(OrientationActivityLifecycle.getInstance())
     }
 }
