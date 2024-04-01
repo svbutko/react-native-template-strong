@@ -1,14 +1,34 @@
 import React from 'react';
 import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
-import {PersistConfig, persistReducer, persistStore} from 'redux-persist';
+import {PersistConfig, persistReducer, persistStore, Storage} from 'redux-persist';
 import {rootReducer, RootState} from './rootReducer';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {MMKV} from 'react-native-mmkv';
+
+const storage = new MMKV();
+
+const reduxStorage: Storage = {
+    setItem: async (key, value) => {
+        storage.set(key, value);
+
+        return Promise.resolve(true);
+    },
+    getItem: async key => {
+        const value = storage.getString(key);
+
+        return Promise.resolve(value);
+    },
+    removeItem: async key => {
+        storage.delete(key);
+
+        return Promise.resolve();
+    },
+};
 
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
-  storage: AsyncStorage,
+  storage: reduxStorage,
   version: 1,
   timeout: 1000,
 };
