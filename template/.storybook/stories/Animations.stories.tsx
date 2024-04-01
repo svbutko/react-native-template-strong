@@ -1,7 +1,9 @@
-import React from 'react';
-import {storiesOf} from '@storybook/react-native';
+import {Meta} from '@storybook/react';
 import {AnimationsStories} from './components/Animations.stories';
 
-const AnimationsAndInteractionStories = storiesOf('Animations', module);
+const meta = {
+    component: AnimationsStories,
+    title: 'Animations',
+} satisfies Meta<typeof AnimationsStories>;
 
-AnimationsAndInteractionStories.add('Animations', () => <AnimationsStories />);
+export default meta;

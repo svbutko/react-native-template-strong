@@ -12,7 +12,7 @@ import {DatePickerOverlay} from '../common/components/DatePickerOverlay';
 import {Onboarding} from '../modules/onboarding/Onboarding';
 import {Search} from '../modules/search/Search';
 import {Settings} from '../modules/settings/Settings';
-import {StorybookUIRoot} from '../../.storybook/Storybook';
+import StorybookUIRoot from '../../.storybook/Storybook';
 import {registerNavigationComponent} from './helpers/navigationActions';
 
 export function setDefaultOptions() {
