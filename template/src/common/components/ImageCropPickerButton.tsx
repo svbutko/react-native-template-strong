@@ -1,4 +1,4 @@
-import React, {FC, memo, useCallback} from 'react';
+import React, {FC, useCallback} from 'react';
 import ImagePicker, {
   Image as CropperImage,
   Options,
@@ -21,13 +21,13 @@ interface IProps {
   disabled?: boolean;
 }
 
-export const ImageCropPickerButton: FC<IProps> = memo(
+export const ImageCropPickerButton: FC<IProps> =
   ({
     onPickerError,
     onImagePicked,
     onRemoveImage,
     image,
-    icon,
+    icon = ImageResources.camera,
     style,
     iconStyle,
     imageStyle,
@@ -94,12 +94,7 @@ export const ImageCropPickerButton: FC<IProps> = memo(
         disabled={disabled}
       />
     );
-  },
-);
-
-ImageCropPickerButton.defaultProps = {
-  icon: ImageResources.camera,
-};
+  };
 
 const pickerOptions: Options = {
   height: 1000,

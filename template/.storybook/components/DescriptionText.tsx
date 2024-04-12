@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC} from 'react';
 import {StyleSheet, Text, TextStyle} from 'react-native';
 import {CommonSizes} from '../../src/core/theme/commonSizes';
 import {CommonStyles} from '../../src/core/theme/commonStyles';
@@ -8,9 +8,9 @@ interface IProps {
   style?: TextStyle;
 }
 
-export const DescriptionText: FC<IProps> = memo(({children, style}) => {
+export const DescriptionText: FC<IProps> = ({children, style}) => {
   return <Text style={[styles.title, style]}>{children}</Text>;
-});
+};
 
 const styles = StyleSheet.create({
   title: {

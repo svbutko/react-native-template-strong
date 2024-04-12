@@ -1,4 +1,4 @@
-import React, {FC, Fragment, memo} from 'react';
+import React, {FC, Fragment} from 'react';
 import {Separator} from '../../src/common/components/Separator';
 import {DescriptionText} from './DescriptionText';
 
@@ -8,8 +8,7 @@ interface IProps {
   isLast?: boolean;
 }
 
-export const TitleDescriptionBorder: FC<IProps> = memo(
-  ({title, description, isLast}) => {
+export const TitleDescriptionBorder: FC<IProps> = ({title, description, isLast}) => {
     return (
       <Fragment>
         <DescriptionText>{title}</DescriptionText>
@@ -17,5 +16,4 @@ export const TitleDescriptionBorder: FC<IProps> = memo(
         {isLast ? null : <Separator />}
       </Fragment>
     );
-  },
-);
+};

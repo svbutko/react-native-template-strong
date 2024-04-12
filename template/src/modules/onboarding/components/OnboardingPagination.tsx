@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
 import {platformNativeColor} from '../../../common/helpers/colorHelpers';
 import {PlatformColorsAndroid} from '../../../core/theme/colors';
@@ -9,8 +9,7 @@ interface IProps {
   activeIndex: number;
 }
 
-export const OnboardingPagination: FC<IProps> = memo(
-  ({activeIndex, totalItems}) => {
+export const OnboardingPagination: FC<IProps> = ({activeIndex, totalItems}) => {
     const dots = [];
 
     for (let i = 0; i < totalItems; i++) {
@@ -22,9 +21,12 @@ export const OnboardingPagination: FC<IProps> = memo(
       );
     }
 
-    return <View style={styles.container}>{dots}</View>;
-  },
-);
+    return (
+        <View style={styles.container}>
+          {dots}
+        </View>
+    );
+};
 
 /**
  * Border radius is set this way in order to avoid error on Android

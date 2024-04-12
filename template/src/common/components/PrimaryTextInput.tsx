@@ -139,36 +139,33 @@ export const PrimaryTextInput: FC<IProps> = memo(
   },
 );
 
-const Label: FC<{text?: string; required?: boolean; optional?: boolean}> = memo(
+const Label: FC<{text?: string; required?: boolean; optional?: boolean}> =
   ({text, required, optional}) => {
-    if (text != null) {
-      return (
-        <Text style={styles.label} numberOfLines={1}>
-          {text +
-            (required
-              ? localization.common.required
-              : optional
-              ? localization.common.optional
-              : '')}
-        </Text>
-      );
-    } else {
-      return null;
-    }
-  },
-);
+  if (text != null) {
+    return (
+      <Text style={styles.label} numberOfLines={1}>
+        {text +
+          (required
+            ? localization.common.required
+            : optional
+            ? localization.common.optional
+            : '')}
+      </Text>
+    );
+  } else {
+    return null;
+  }
+};
 
-const BottomText: FC<{error?: string | null; hint?: string}> = memo(
-  ({error, hint}) => {
-    if (error != null) {
-      return <Text style={styles.error}>{error}</Text>;
-    } else if (hint != null) {
-      return <Text style={styles.hint}>{hint}</Text>;
-    } else {
-      return null;
-    }
-  },
-);
+const BottomText: FC<{error?: string | null; hint?: string}> = ({error, hint}) => {
+  if (error != null) {
+    return <Text style={styles.error}>{error}</Text>;
+  } else if (hint != null) {
+    return <Text style={styles.hint}>{hint}</Text>;
+  } else {
+    return null;
+  }
+};
 
 function getInputContainerStyle(
   isFocused: boolean,

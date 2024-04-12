@@ -1,4 +1,4 @@
-import React, {FC, memo, useMemo} from 'react';
+import React, {FC, useMemo} from 'react';
 import {StyleSheet, View, ViewStyle} from 'react-native';
 import {
   Colors,
@@ -12,7 +12,7 @@ interface IProps {
   disabled?: boolean;
 }
 
-export const RadioIcon: FC<IProps> = memo(({isSelected, disabled}) => {
+export const RadioIcon: FC<IProps> = ({isSelected, disabled}) => {
   const outerCircleStyle = useMemo(() => {
     return disabled
       ? styles.outerCircle
@@ -26,7 +26,7 @@ export const RadioIcon: FC<IProps> = memo(({isSelected, disabled}) => {
       {isSelected && <View style={styles.innerCircle} />}
     </View>
   );
-});
+};
 
 const commonOuterCircle: ViewStyle = {
   width: 16,

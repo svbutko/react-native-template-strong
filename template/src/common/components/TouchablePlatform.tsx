@@ -1,4 +1,4 @@
-import React, {FC, memo, useCallback, useMemo} from 'react';
+import React, {FC, useCallback, useMemo} from 'react';
 import {
   OpaqueColorValue,
   Pressable,
@@ -16,8 +16,8 @@ interface IProps extends PressableProps {
   highlightColor?: string | null | OpaqueColorValue;
 }
 
-export const TouchablePlatform: FC<IProps> = memo(
-  ({children, highlightColor, style, ...props}) => {
+export const TouchablePlatform: FC<IProps> =
+  ({children, highlightColor = defaultHighlightColor, style, ...props}) => {
     const pressableStyle = useCallback(
       (state: PressableStateCallbackType) => {
         if (isAndroid) {
@@ -54,17 +54,14 @@ export const TouchablePlatform: FC<IProps> = memo(
         {children}
       </Pressable>
     );
-  },
+};
+
+const defaultHighlightColor = platformMixedColor(
+    PlatformColorsIOS.secondarySystemFill,
+    Colors.white,
 );
 
 const androidRippleConfig: PressableAndroidRippleConfig = {
   color: Colors.white,
   borderless: false,
-};
-
-TouchablePlatform.defaultProps = {
-  highlightColor: platformMixedColor(
-    PlatformColorsIOS.secondarySystemFill,
-    Colors.white,
-  ),
 };

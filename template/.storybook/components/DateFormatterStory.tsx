@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC} from 'react';
 import {ScrollView} from 'react-native';
 import {
   calendarDate,
@@ -11,7 +11,7 @@ import {
 import {CommonStyles} from '../../src/core/theme/commonStyles';
 import {TitleDescriptionBorder} from './TitleDescriptionBorder';
 
-export const DateFormatterStory: FC = memo(() => {
+export const DateFormatterStory: FC = () => {
   return (
     <ScrollView style={CommonStyles.flexPlatformBackground}>
       <TitleDescriptionBorder
@@ -37,4 +37,4 @@ export const DateFormatterStory: FC = memo(() => {
       />
     </ScrollView>
   );
-});
+};
