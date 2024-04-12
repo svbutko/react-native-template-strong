@@ -41,13 +41,11 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
   textStyle,
   icon,
   iconStyle,
-  loading,
-  location,
+  loading = false,
+  location = defaultLocation,
 }) => {
-  const [constants, setConstants] = useState<NavigationConstants | undefined>(
-    undefined,
-  );
-  const animatedValue = useRef(new Animated.Value(0)).current;
+  const [constants, setConstants] = useState<NavigationConstants | undefined>(undefined,);
+  const animatedValue = useRef(new Animated.Value(0));
 
   const isTopLocation = useMemo(() => {
     return location == 'top';
@@ -83,25 +81,21 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
   }, [constants, location]);
 
   const closeToast = useCallback(() => {
-    Animated.timing(animatedValue, {
-      toValue: 0,
-      duration: 100,
-      useNativeDriver: true,
-    }).start(() => {
-      Navigation.dismissOverlay(componentId);
+    animatedValue.current.stopAnimation(() => {
+      Animated.timing(animatedValue.current, animatedClosingTimingConfig).start(() => {
+        Navigation.dismissOverlay(componentId);
+      });
     });
-  }, [animatedValue, componentId]);
+  }, [componentId]);
 
   useEffect(() => {
     const containerExist = containerStyle != null;
     let handler: ReturnType<typeof setTimeout> | null = null;
 
     if (containerExist) {
-      Animated.timing(animatedValue, {
-        toValue: 1,
-        duration: 100,
-        useNativeDriver: true,
-      }).start();
+      animatedValue.current.stopAnimation(() => {
+        Animated.timing(animatedValue.current, animatedOpeningTimingConfig).start();
+      });
 
       handler = setTimeout(closeToast, 3100);
     }
@@ -111,7 +105,7 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
         clearTimeout(handler);
       }
     };
-  }, [closeToast, containerStyle, animatedValue]);
+  }, [closeToast, containerStyle]);
 
   const renderIconOrLoading = useMemo(() => {
     if (icon != null) {
@@ -127,10 +121,7 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
         <ActivityIndicator
           style={styles.loading}
           animating={true}
-          color={platformNativeColor(
-            PlatformColorsIOS.systemBackground,
-            PlatformColorsAndroid.primary,
-          )}
+          color={activityIndicatorColor}
           size={'small'}
         />
       );
@@ -146,10 +137,10 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
           styles.container,
           containerStyle,
           {
-            opacity: animatedValue,
+            opacity: animatedValue.current,
             transform: [
               {
-                translateY: animatedValue.interpolate({
+                translateY: animatedValue.current.interpolate({
                   inputRange: [0, 1],
                   outputRange: isTopLocation
                     ? [-CommonSizes.spacing.medium, 0]
@@ -170,6 +161,24 @@ export const ToastOverlay: NavigationFunctionComponent<IToastNavProps> = ({
   } else {
     return null;
   }
+};
+
+const defaultLocation = isIos ? 'top' : 'bottom';
+
+const activityIndicatorColor = platformNativeColor(
+    PlatformColorsIOS.systemBackground,
+    PlatformColorsAndroid.primary,
+);
+
+const animatedOpeningTimingConfig = {
+  toValue: 1,
+  duration: 100,
+  useNativeDriver: true,
+};
+
+const animatedClosingTimingConfig = {
+  ...animatedOpeningTimingConfig,
+  toValue: 0,
 };
 
 const styles = StyleSheet.create({
@@ -205,11 +214,6 @@ const styles = StyleSheet.create({
     flex: 1,
   } as TextStyle,
 });
-
-ToastOverlay.defaultProps = {
-  loading: false,
-  location: isIos ? 'top' : 'bottom',
-};
 
 ToastOverlay.options = {
   layout: {

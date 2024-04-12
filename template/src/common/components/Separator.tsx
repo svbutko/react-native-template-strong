@@ -12,16 +12,12 @@ interface IProps {
   isFull?: boolean;
 }
 
-export const Separator: FC<IProps> = ({isFull}) => {
+export const Separator: FC<IProps> = ({isFull = true}) => {
   const containerStyle = useMemo(() => {
     return isFull ? styles.fullContainer : styles.container;
   }, [isFull]);
 
   return <View style={containerStyle} />;
-};
-
-Separator.defaultProps = {
-  isFull: true,
 };
 
 const sharedStyle: ViewStyle = {

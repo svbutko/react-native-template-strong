@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC} from 'react';
 import {ScrollView} from 'react-native';
 import {
   formatCurrency,
@@ -8,7 +8,7 @@ import {
 import {CommonStyles} from '../../src/core/theme/commonStyles';
 import {TitleDescriptionBorder} from './TitleDescriptionBorder';
 
-export const IntlFormatterStory: FC = memo(() => {
+export const IntlFormatterStory: FC = () => {
   return (
     <ScrollView style={CommonStyles.flexPlatformBackground}>
       <TitleDescriptionBorder
@@ -26,4 +26,4 @@ export const IntlFormatterStory: FC = memo(() => {
       />
     </ScrollView>
   );
-});
+};

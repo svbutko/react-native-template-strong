@@ -1,4 +1,4 @@
-import React, {FC, memo, useCallback} from 'react';
+import React, {FC, useCallback} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
 import {TitleDescriptionBorder} from './TitleDescriptionBorder';
 import {
@@ -8,7 +8,7 @@ import {
 import {CommonStyles} from '../../src/core/theme/commonStyles';
 import {Separator} from '../../src/common/components/Separator';
 
-export const DateFormatList: FC = memo(() => {
+export const DateFormatList: FC = () => {
   const renderItem = useCallback<ListRenderItem<DataItem>>(({item}) => {
     const title = item[1] + '\n' + dateFromFormat(new Date(), item[1]);
 
@@ -22,10 +22,6 @@ export const DateFormatList: FC = memo(() => {
     );
   }, []);
 
-  const keyExtractor = useCallback((item: DataItem) => {
-    return item[0];
-  }, []);
-
   return (
     <FlatList
       data={formats}
@@ -35,7 +31,11 @@ export const DateFormatList: FC = memo(() => {
       ItemSeparatorComponent={Separator}
     />
   );
-});
+};
+
+const keyExtractor = (item: DataItem) => {
+  return item[0];
+};
 
 type DataItem = [string, DateFormat];
 

@@ -1,4 +1,4 @@
-import React, {FC, Fragment, memo, useCallback} from 'react';
+import React, {FC, Fragment} from 'react';
 import {
   FlatList,
   Image,
@@ -15,20 +15,7 @@ interface IProps {
   data: DataItem[];
 }
 
-export const ImagesList: FC<IProps> = memo(({data}) => {
-  const renderItem = useCallback<ListRenderItem<DataItem>>(({item}) => {
-    return (
-      <Fragment>
-        <Image source={item[1]} style={styles.icon} />
-        <DescriptionText>{item[0]}</DescriptionText>
-      </Fragment>
-    );
-  }, []);
-
-  const keyExtractor = useCallback((item: DataItem) => {
-    return item[0];
-  }, []);
-
+export const ImagesList: FC<IProps> = ({data}) => {
   return (
     <FlatList
       data={data}
@@ -38,7 +25,20 @@ export const ImagesList: FC<IProps> = memo(({data}) => {
       ItemSeparatorComponent={Separator}
     />
   );
-});
+};
+
+const renderItem: ListRenderItem<DataItem> = ({item}) => {
+  return (
+      <Fragment>
+        <Image source={item[1]} style={styles.icon} />
+        <DescriptionText>{item[0]}</DescriptionText>
+      </Fragment>
+  );
+};
+
+const keyExtractor = (item: DataItem) => {
+  return item[0];
+};
 
 type DataItem = [string, ImageURISource];
 

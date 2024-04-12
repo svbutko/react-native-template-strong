@@ -1,19 +1,11 @@
-import React, {FC, memo, useCallback} from 'react';
+import React, {FC} from 'react';
 import {FlatList, ListRenderItem} from 'react-native';
 import {FontListItem} from './FontListItem';
 import {CommonStyles} from '../../src/core/theme/commonStyles';
 import {Fonts} from '../../src/core/theme/fonts';
 import {Separator} from '../../src/common/components/Separator';
 
-export const FontsList: FC = memo(() => {
-  const renderItem = useCallback<ListRenderItem<string>>(({item}) => {
-    return <FontListItem key={item} font={item} />;
-  }, []);
-
-  const keyExtractor = useCallback((item: string) => {
-    return item;
-  }, []);
-
+export const FontsList: FC = () => {
   return (
     <FlatList
       data={fonts}
@@ -23,6 +15,14 @@ export const FontsList: FC = memo(() => {
       ItemSeparatorComponent={Separator}
     />
   );
-});
+};
+
+const renderItem: ListRenderItem<string> = ({item}) => {
+  return <FontListItem key={item} font={item}/>;
+};
+
+const keyExtractor = (item: string) => {
+  return item;
+};
 
 const fonts: string[] = Object.keys(Fonts);

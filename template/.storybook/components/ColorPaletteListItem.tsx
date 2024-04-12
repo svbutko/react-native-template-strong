@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC} from 'react';
 import {
   Platform,
   PlatformColor,
@@ -23,29 +23,24 @@ interface IProps {
   isPlatformColor: boolean;
 }
 
-export const ColorPaletteListItem: FC<IProps> = memo(
-  ({color, isPlatformColor}) => {
-    const colorStyle = StyleSheet.flatten([
-      styles.colorContainer,
-      {
-        backgroundColor: isPlatformColor
-          ? PlatformColor(
-              ((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[
-                color
-              ],
-            )
-          : (Colors as any)[color],
-      },
-    ]) as ViewStyle;
-
-    return (
-      <View style={styles.container}>
-        <View style={colorStyle} />
-        <DescriptionText>{color}</DescriptionText>
-      </View>
-    );
-  },
-);
+export const ColorPaletteListItem: FC<IProps> = ({color, isPlatformColor}) => {
+  return (
+    <View style={styles.container}>
+      <View style={[
+        styles.colorContainer,
+        {
+          backgroundColor: isPlatformColor
+              ? PlatformColor(
+                  ((isIos ? PlatformColorsIOS : PlatformColorsAndroid) as any)[color],
+              )
+              : (Colors as any)[color],
+        },
+      ]}
+      />
+      <DescriptionText>{color}</DescriptionText>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

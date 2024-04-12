@@ -1,4 +1,4 @@
-import React, {FC, memo} from 'react';
+import React, {FC} from 'react';
 import {
   StyleSheet,
   Text,
@@ -20,7 +20,7 @@ interface IProps {
   errorText?: string | null;
 }
 
-export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
+export const TryAgain: FC<IProps> = ({onPress, errorText = localization.errors.unknownErrorHasOccurred}) => {
   return (
     <View style={CommonStyles.flexCenter}>
       <Text style={styles.title}>{errorText}</Text>
@@ -31,10 +31,6 @@ export const TryAgain: FC<IProps> = memo(({onPress, errorText}) => {
       )}
     </View>
   );
-});
-
-TryAgain.defaultProps = {
-  errorText: localization.errors.unknownErrorHasOccurred,
 };
 
 const styles = StyleSheet.create({

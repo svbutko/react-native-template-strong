@@ -1,4 +1,4 @@
-import React, {FC, Fragment, memo, ReactNode} from 'react';
+import React, {FC, Fragment, ReactNode} from 'react';
 import {
   Image,
   ImageBackground,
@@ -24,9 +24,9 @@ interface IProps {
   disabled?: boolean;
 }
 
-export const PhotoTakingButton: FC<IProps> = memo(
+export const PhotoTakingButton: FC<IProps> =
   ({
-    icon,
+    icon = ImageResources.camera,
     onPress,
     backgroundImage,
     style,
@@ -34,19 +34,18 @@ export const PhotoTakingButton: FC<IProps> = memo(
     imageStyle,
     disabled,
   }) => {
-    return (
-      <TouchableOpacity
-        style={[styles.button, style] as ViewStyle}
-        onPress={onPress}
-        disabled={disabled}
-      >
-        <BackgroundComponent image={backgroundImage} style={imageStyle}>
-          <Image style={[styles.icon, iconStyle]} source={icon!} />
-        </BackgroundComponent>
-      </TouchableOpacity>
-    );
-  },
-);
+  return (
+    <TouchableOpacity
+      style={[styles.button, style] as ViewStyle}
+      onPress={onPress}
+      disabled={disabled}
+    >
+      <BackgroundComponent image={backgroundImage} style={imageStyle}>
+        <Image style={[styles.icon, iconStyle]} source={icon!} />
+      </BackgroundComponent>
+    </TouchableOpacity>
+  );
+};
 
 interface IBackgroundComponentProps {
   image?: ImageURISource | null;
@@ -54,32 +53,28 @@ interface IBackgroundComponentProps {
   children?: ReactNode;
 }
 
-const BackgroundComponent: FC<IBackgroundComponentProps> = memo(
-  ({image, children, style}) => {
-    if (image != null) {
-      return (
-        <ImageBackground
-          source={image}
-          style={[styles.image, style]}
-          imageStyle={[styles.image, style]}
-        >
-          {children}
-        </ImageBackground>
-      );
-    } else {
-      return <Fragment>{children}</Fragment>;
-    }
-  },
-);
-
-PhotoTakingButton.defaultProps = {
-  icon: ImageResources.camera,
+const BackgroundComponent: FC<IBackgroundComponentProps> = ({image, children, style}) => {
+  if (image != null) {
+    return (
+      <ImageBackground
+        source={image}
+        style={[styles.image, style]}
+        imageStyle={[styles.image, style]}
+      >
+        {children}
+      </ImageBackground>
+    );
+  } else {
+    return <Fragment>{children}</Fragment>;
+  }
 };
+
+const size: number = 120;
 
 const styles = StyleSheet.create({
   button: {
-    height: 120,
-    width: 120,
+    height: size,
+    width: size,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: CommonSizes.borderRadius.small,
@@ -87,8 +82,8 @@ const styles = StyleSheet.create({
     borderColor: platformMixedColor(PlatformColorsIOS.systemFill, Colors.gray),
   } as ViewStyle,
   image: {
-    height: 120,
-    width: 120,
+    height: size,
+    width: size,
     resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'center',
