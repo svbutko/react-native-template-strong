@@ -30,13 +30,13 @@ It's defined in `src/core/store.ts` near the store:
 ```typescript
 const persistConfig: PersistConfig<RootState> = {
   key: 'root',
-  storage: AsyncStorage,
+  storage: reduxStorage,
   version: 1,
   timeout: 1000,
 };
 ```
 
-It uses `AsyncStorage` as storage, if you don't like it you can change it to your own likings.
+It uses `react-native-mmkv` as storage, if you don't like it you can change it to your own likings.
 
 It creates `persistor`:
 
