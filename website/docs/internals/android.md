@@ -12,16 +12,16 @@ By default `proguard` is disabled
 ## Versions
 
 Next versions are being used:
-- kotlinVersion - `1.8.0`
+- kotlinVersion - `1.9.22`
 - buildToolsVersion - `34.0.0`
 - minSdkVersion - `24`
 - compileSdkVersion - `34`
 - targetSdkVersion - `34`
-- ndkVersion - `25.1.8937393`
+- ndkVersion - `26.1.10909125`
 
 ## Gradle
 
-- Gradle version is set to `8.3`
+- Gradle version is set to `8.6`
 
 ## Network security config
 There's a network security config which defines next addresses to be allowed:
