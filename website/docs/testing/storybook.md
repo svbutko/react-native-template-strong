@@ -27,32 +27,14 @@ If you'd like to create a separate stories, then create a file in the `storybook
 Create a stories' module (as example I will use `Components`:
 
 ```typescript jsx
-const ComponentsStories = storiesOf("Components", module);
-```
+import {Meta} from '@storybook/react';
 
-Add your stories into it:
+const meta = {
+    component: ComponentStories,
+    title: 'My own component sotry',
+} satisfies Meta<typeof ComponentStories>;
 
-```typescript jsx
-ComponentsStories.add("PrimaryButton", () => <PrimaryButtonStories />);
-
-ComponentsStories.add("PrimaryTextInput", () => <PrimaryTextInputStories />);
-
-ComponentsStories.add("RadioButton", () => <RadioButtonStories />);
-```
-
-And don't forget to require it in `storybook/stories.ts`:
-
-```typescript jsx
-if (__DEV__) {
-  require("./stories/Theme.stories");
-  require("./stories/Formatter.stories");
-  require("./stories/Resources.stories");
-  require("./stories/Components.stories");
-  require("./stories/ModalsOverlays.stories");
-  require("./stories/Alerts.stories");
-}
-
-export {};
+export default meta;
 ```
 
 ## Plugins
