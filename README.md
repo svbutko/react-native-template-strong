@@ -1,11 +1,11 @@
-<h1 align="center">
+<h1>
     <img src="./website/static/img/strong.png" alt="strong"/>
     <br/>
     React Native Template Strong
     <br/>
 </h1>
 
-<p align="center">
+<p>
     Quick, opinionated, documented and strong beginning for your next project.
 </p>
 
