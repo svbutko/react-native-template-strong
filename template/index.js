@@ -5,7 +5,7 @@ import {DevSettings} from 'react-native';
 if (__DEV__) {
   const {showStorybook} = require('./src/navigation/helpers/showStorybook');
 
-  DevSettings.addItem('Storybook', showStorybook);
+  DevSettings.addMenuItem('Storybook', showStorybook);
 }
 
 initializeApp();
