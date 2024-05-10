@@ -29,6 +29,8 @@ target 'HelloWorld' do
   config = use_native_modules!
 
   use_react_native!(
+    # Temporary workaround until this will be released https://github.com/facebook/react-native/pull/44400
+    privacy_file_aggregation_enabled: false,
     :path => config[:reactNativePath],
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
