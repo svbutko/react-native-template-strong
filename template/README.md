@@ -2,7 +2,7 @@
 
 This project was created with [React Native Template Strong](https://svbutko.github.io/react-native-template-strong/).
 
-Version: [3.0.1](https://github.com/svbutko/react-native-template-strong/releases/tag/v3.0.1)
+Version: [3.0.2](https://github.com/svbutko/react-native-template-strong/releases/tag/v3.0.2)
 
 Thank you for choosing this template.
 
